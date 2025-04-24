@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Formulario de ejemplo </h1>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Z771vqpBP-PtmoRqvoM0B2O3grCiVPWYnQ&s" alt="Descripción de la imagen">
+    <video width="560" height="315" controls>
+        <source src="video.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+    
+
+    
+
+    
+     <form action="datos.html" method="post" enctype="multipart/form-data">
+     <p>
+        Nombres : 
+        <input type="text" name="nombre" id="nombre" size = "50" maxlength="50">
+     </p>
+     <p>
+        Apelledos : 
+        <input type="text" name="ape" id="ape" size = "50" maxlength="50">
+     </p>
+     <p>
+        DNI : 
+        <input type="number" name="num" id="num" size = "8" maxlength="8">
+     </p>
+     <p>
+        fecha de nacimiento : 
+        <input type="date" name="fnac" id="fnac" size = "50" maxlength="50">
+     </p>
+     <p>
+        sexo : 
+        Masculino Femenino
+        <input type="radio" name="sexo" id="" value="M" > Masculino
+        <input type="radio" name="sexo" id="" value="F" > Femenino
+     </p>
+     <p>
+        dame tu correo 
+        <input type="email" name="ema" id="ema" size = "50" maxlength="50">
+     </p>
+     <p>
+        Pais :
+        <select name="pais" id="pais" >
+            <option value="co ">Colombia </option>
+            <option value="ar ">argentina </option>
+            <option value="br ">brasil </option>
+            <option value="pr ">puerto rico </option>
+            <option value="chl ">chile </option>
+
+        </select>
+     </p>
+     <p>
+        Clave : 
+        <input type="password" name="pass" id="pass" size = "30" maxlength="30">
+     </p>
+     <p>
+        fotografia :
+        <input type="file" name="foto" id="foto">
+     </p>
+     <p>
+        deja tu comentario : <br>
+        <textarea name=" cmt" id=" cmt" rows="6"  cols="50">hola </textarea>
+     </p>
+     <p>
+        apruebo el uso de mis datos <input type="checkbox" name="apb" id="apb" checked>
+        deseo recibir ofertas  <input type="checkbox" name="oft" id="oft">
+
+     </p>
+     <p>
+        <input type="submit" value="enviar informacion">
+     </p>
+    
+    </form>
+</body>
+</html>

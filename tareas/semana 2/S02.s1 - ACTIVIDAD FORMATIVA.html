@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="s02s1form.css" />
+    <title>Tablas, Listas, Imágenes y Audio en HTML</title>
+</head>
+<body>
+    <h1>Elementos HTML: Tablas, Listas, Imágenes y Audio</h1>
+
+    <h2>Tablas en HTML</h2>
+    <table border="1">
+        <caption>
+            Lista de clientes - Periodo 2024
+        </caption>
+        <thead>
+            <tr>
+                <th colspan="4">Período 2024</th>
+                <th rowspan="5">Data</th>
+            </tr>
+            <tr>
+                <th>Apellidos</th>
+                <th>Nombre</th>
+                <th>DNI</th>
+                <th>Fecha de nacimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Díaz</td>
+                <td>Joaquín</td>
+                <td>70696243</td>
+                <td>05/08/2005</td>
+            </tr>
+            <tr>
+                <td>Quispe</td>
+                <td>Piero</td>
+                <td>12341413</td>
+                <td>23/01/2012</td>
+            </tr>
+            <tr>
+                <td>Maradona</td>
+                <td>Diego</td>
+                <td>12131444</td>
+                <td>12/11/1960</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr />
+
+    <h2>Listas en HTML</h2>
+    
+    <h3>Lista ordenada</h3>
+    <ol type="1" start="5">
+        <li>Lunes</li>
+        <li>Martes</li>
+        <li>Miércoles</li>
+        <li>Jueves</li>
+    </ol>
+    
+    <h3>Lista no ordenada</h3>
+    <ul type="circle">
+        <li>chiste</li>
+        <li>pista</li>
+        <li>Choclo</li>
+        <li>Puno</li>
+    </ul>
+
+    <h3>Lista de definición</h3>
+    <dl>
+        <dt>Auto</dt>
+        <dd>Medio de transporte</dd>
+        <dt>Canasta Caliente</dt>
+        <dd>Sirve para alimentar gente</dd>
+    </dl>
+    
+    <h3>Países y sus ciudades</h3>
+    <ol type="A">
+        <li>América
+            <ul>
+                <li>Perú
+                    <ol>
+                        <li>Lima</li>
+                        <li>Trujillo</li>
+                        <li>Arequipa</li>
+                        <li>Cusco</li>
+                    </ol>
+                </li>
+                <li>Chile
+                    <ol>
+                        <li>Santiago</li>
+                        <li>Valparaíso</li>
+                        <li>Concepción</li>
+                        <li>Viña del Mar</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Europa
+            <ul>
+                <li>Alemania
+                    <ol>
+                        <li>Berlín</li>
+                        <li>Múnich</li>
+                        <li>Hamburgo</li>
+                        <li>Fráncfort</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Asia
+            <ul>
+                <li>Japón
+                    <ol>
+                        <li>Tokio</li>
+                        <li>Osaka</li>
+                        <li>Kioto</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+    </ol>
+
+    <hr>
+
+    <h2>Imágenes en HTML</h2>
+    <img src="viaLactea.jpeg" alt="Imagen de ejemplo" width="30%">
+    <p> La via lactea   </p>
+
+    <hr>
+
+    <h2>Audio en HTML</h2>
+    <audio controls>
+        <source src="happyrock.mp3" type="audio/mp3">
+        
+    </audio>
+    <p>Canción: Happy Rock</p>
+</body>
+</html>

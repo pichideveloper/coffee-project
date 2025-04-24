@@ -1,0 +1,28 @@
+
+h1 {
+    text-align: center;
+    color: blueviolet;
+}
+
+th {
+    background-color: skyblue;
+}
+
+table {
+    width: 60%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+body {
+     color: aliceblue;
+    background-image: url('latierra.jpeg') ;
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position: center;
+    
+    
+}

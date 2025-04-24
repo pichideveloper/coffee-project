@@ -1,0 +1,39 @@
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+caption{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #4627f5;
+}
+
+th, td {
+    border: 1px solid #af6cce;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #5cb85c;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #30a0e1;
+    transition: background-color 0.3s;
+}
+
+tfoot th {
+    background-color: #5cb85c;
+    color: white;
+}

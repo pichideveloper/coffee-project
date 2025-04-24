@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+    color: blueviolet;
+}
+
+th {
+    background-color: skyblue;
+}
+
+table {
+    width: 60%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+body {
+     color: aliceblue;
+    background-image: url('https://preview.redd.it/what-eminem-picture-makes-you-laugh-for-no-reason-v0-5sx9tjfqirge1.png?width=640&format=png&auto=webp&s=2a4187200b326689d26c997d39ee278fc3ef19f0')
+}
