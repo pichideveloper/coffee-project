@@ -119,8 +119,9 @@ header .navbar {
     display: flex;
     align-items: center;
     min-height: 100vh;
-    color: var(--white-color);
+    color: black;
     justify-content: space-between;
+    font-weight: var(--font-weight-bold);
  }
  .hero-section .hero-details .title {
     font-size:  var(--font-size-xxl);
