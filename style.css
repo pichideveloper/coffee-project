@@ -84,9 +84,9 @@ header .navbar {
 
 
 .navbar .nav-logo .logo-text {
-    color: var(--white-color);
+    color: black;
     font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-bold);
 }
 
 .navbar .nav-menu {
