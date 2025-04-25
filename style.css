@@ -173,13 +173,12 @@ header .navbar {
     background: var(--secondary-color);
  } 
 
- .hero-section .hero-image-wrapper {
-    max-width: 500px;
-    margin-right: 30px;
- }
-.hero-section .hero-image-wrapper2 {
-    max-width: 300px;
-    margin-right: 30px;
+ .hero-image-wrapper, 
+ .hero-image-wrapper-2 {
+     max-width: 250px; /* Ajusta este valor según necesites */
+     border-radius: var(--border-radius-s);
+     overflow: hidden;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
  }
 
  .hero-image-container {
