@@ -182,6 +182,12 @@ header .navbar {
     margin-right: 30px;
  }
 
+ .hero-image-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
   
 
 
