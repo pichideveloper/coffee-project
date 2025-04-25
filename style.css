@@ -119,7 +119,7 @@ header .navbar {
     display: flex;
     align-items: center;
     min-height: 100vh;
-    color: var(--white-color);
+    color: black;
     justify-content: space-between;
  }
  .hero-section .hero-details .title {
