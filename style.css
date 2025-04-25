@@ -118,11 +118,12 @@ header .navbar {
  .hero-section .section-content {
     display: flex;
     align-items: center;
-    min-height: 100vh;
-    color: var(--white-color);
     justify-content: space-between;
-    
- }
+    gap: 40px; /* Espacio entre texto e imágenes */
+}
+
+
+ 
  .hero-section .hero-details .title {
     font-size:  var(--font-size-xxl);
     color: var(--secondary-color);
