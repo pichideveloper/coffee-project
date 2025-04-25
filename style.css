@@ -12,7 +12,7 @@
     /*colores */
 --white-color: #fff;
 --dark-color: #252525;
---primary-color: #3b141c;
+--primary-color: #f9ee3b;
 --secondary-color: #f3961c;
 --light-pink-color: #faf4f5;
 --medium-gray-color: #ccc;
@@ -72,12 +72,16 @@ header{
     z-index: 5;
     background-color: var(--primary-color);
 }
+
+
 header .navbar {
     display: flex;
     padding: 20px;
     align-items: center;
     justify-content: space-between;
 }
+
+
 
 .navbar .nav-logo .logo-text {
     color: var(--white-color);
@@ -92,7 +96,7 @@ header .navbar {
 
 .navbar .nav-menu .nav-link {
     padding: 10px 18px ;
-    color: var(--white-color);
+    color: var(--dark-color);
     font-size: var(--font-size-m);
     border-radius: var(--border-radius-m);
     transition:  0.3s ease;
@@ -106,6 +110,10 @@ header .navbar {
     min-height: 100vh;
     background-color:  var(--primary-color);
  }
+
+
+
+
 
  .hero-section .section-content {
     display: flex;
@@ -124,6 +132,7 @@ header .navbar {
     margin-top: 8px;
     max-width: 70%;
     font-size:  var(--font-size-xl);
+    color: var(--dark-color);
     font-weight:  var(--font-weight-semibold);
  }
 
@@ -132,6 +141,7 @@ header .navbar {
  .hero-section .hero-details .description {
     max-width: 70%;
     margin: 24px 0 40px;
+    color: var(--dark-color);
     font-size: var(--font-size-m);
  }
 
@@ -143,7 +153,7 @@ header .navbar {
  .hero-section .hero-details .button {
     padding: 10px  26px;
     border: 2px solid transparent;
-    color: var(--primary-color);
+    color: var(--dark-color);
     border-radius: var(--border-radius-m);
     background-color: var(--secondary-color);
     font-weight:  var(--font-weight-medium);
@@ -152,12 +162,12 @@ header .navbar {
 
  .hero-section .hero-details .button:hover,
  .hero-section .hero-details .contact-us {
-    color: var(--white-color);
-    border-color: var(--white-color);
+    color: var(--dark-color);
+    border-color: var(--dark-color);
     background: transparent;
  }
  .hero-section .hero-details .contact-us:hover {
-    color: var(--secondary-color);
+    color: var(--dark-color);
     border-color: var(--secondary-color);
     background: var(--secondary-color);
  } 
@@ -166,9 +176,6 @@ header .navbar {
     max-width: 500px;
     margin-right: 30px;
  }
-/* codigo de media query responsive para un ancho maximo 900px */
- 
-/* Media query corregida */
 
   
 
