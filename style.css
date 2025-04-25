@@ -189,6 +189,68 @@ header .navbar {
     gap: 20px;
     align-items: center;
 }
+.menu-section {
+    padding: 60px 0;
+    background: var(--white-color);
+    text-align: center;
+}
+
+.menu-section .title {
+    font-size: var(--font-size-xxl);
+    color: var(--secondary-color);
+    font-family: "Miniver", sans-serif;
+    margin-bottom: 10px;
+}
+
+.menu-section .subtitle {
+    font-size: var(--font-size-n);
+    color: var(--dark-color);
+    margin-bottom: 30px;
+}
+
+.menu-buttons {
+    margin-bottom: 40px;
+}
+
+.menu-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid var(--medium-gray-color);
+    background: none;
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-s);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-btn.active, .menu-btn:hover {
+    background: var(--secondary-color);
+    color: var(--white-color);
+    border-color: var(--secondary-color);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.menu-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+}
+
+.menu-name {
+    margin-top: 10px;
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-medium);
+    color: var(--dark-color);
+}
+
 
   
 
