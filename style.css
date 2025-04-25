@@ -250,6 +250,9 @@ header .navbar {
     font-weight: var(--font-weight-medium);
     color: var(--dark-color);
 }
+.menu-grid {
+    background-color: var(--white-color);
+}
   
 
 
