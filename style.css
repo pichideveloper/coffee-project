@@ -1,257 +1,100 @@
-/* gogle font */
 @import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box ;
-    font-family: "Poppins", sans-serif;
+
+* {
+    box-sizing: border-box;
 }
 
-:root {
-    /*colores */
---white-color: #fff;
---dark-color: #252525;
---primary-color: #e1f226e6;
---secondary-color: #f3961c;
---light-pink-color: #faf4f5;
---medium-gray-color: #ccc;
-
-
-/* Font size */
---font-size-s: 0.9rem;
---font-size-n: 1rem;
---font-size-m: 1.12rem;
---font-size-l: 1.5rem;
---font-size-xl: 2rem;
---font-size-xxl: 2.3rem;
-
-/* Site max width */
---site-max-width: 1300px;
-
-/* Font weight */
---font-weight-normal: 400;
---font-weight-medium: 500;
---font-weight-semibold: 600;
---font-weight-bold: 700;
-
-/* Border radius */
---border-radius-s: 8px;
---border-radius-m: 30px;
---border-radius-circle: 50%;
+/* Ajustar margen top para compensar navbar fijo */
+body {
+  padding-top: 70px;
 }
 
-
-/*estilos para todo el sitio */
-ul  {
-    list-style: none;
+/* Estilos del slider */
+.carousel-item img {
+  max-height: 600px;
+  object-fit: cover;
 }
 
-a{
-    text-decoration: none;
-}
-button {
-    cursor: pointer;
-    border : none;
-    background: none;
+/* Secciones */
+section {
+  scroll-margin-top: 80px; /* Para que el ancla no quede bajo el navbar */
 }
 
-img {
-    width: 100%;
-}
-.section-content{
-    margin: 0 auto;
-    padding: 0 20px;
-    max-width: var(--site-max-width);
+/* Tarjetas de testimonios */
+#testimonios .card {
+  background-color: #f8f9fa;
 }
 
-/* navegacion estilo */
-header{
-    position: fixed;
-    width: 100%;
-    z-index: 5;
-    background-color: var(--primary-color);
+/* Botones y enlaces */
+.btn-outline-light {
+  color: #fff;
+  border-color: #fff;
+}
+.btn-outline-light:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+.navbar .nav-link:hover {
+  background-color: orange;
+  color: white !important;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
-header .navbar {
-    display: flex;
-    padding: 20px;
-    align-items: center;
-    justify-content: space-between;
+/* Modo oscuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
-
-
-.navbar .nav-logo .logo-text {
-    color: black;
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
+body.dark-mode .navbar {
+  background-color: #1f1f1f !important;
 }
 
-.navbar .nav-menu {
-    display: flex;
-    gap: 10px;
+body.dark-mode .card,
+body.dark-mode .alert,
+body.dark-mode section {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
 }
 
-.navbar .nav-menu .nav-link {
-    padding: 10px 18px ;
-    color: var(--dark-color);
-    font-size: var(--font-size-m);
-    border-radius: var(--border-radius-m);
-    transition:  0.3s ease;
-}
- .navbar  .nav-menu .nav-link:hover {
-    color: var(--primary-color);
-    background-color: var(--secondary-color);
- }
-
- .hero-section {
-    min-height: 100vh;
-    background-color:  var(--primary-color);
- }
-
-
-
-
-
- .hero-section .section-content {
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
-    color: var(--white-color);
-    justify-content: space-between;
-    
- }
-
-
- 
- .hero-section .hero-details .title {
-    font-size:  var(--font-size-xxl);
-    color: var(--secondary-color);
-    font-family: "Miniver" ,sans-serif;
- }
-
- .hero-section .hero-details .subtitle {
-    margin-top: 8px;
-    max-width: 70%;
-    font-size:  var(--font-size-xl);
-    color: var(--dark-color);
-    font-weight:  var(--font-weight-semibold);
- }
-
-
-
- .hero-section .hero-details .description {
-    max-width: 70%;
-    margin: 24px 0 40px;
-    color: var(--dark-color);
-    font-size: var(--font-size-m);
- }
-
- .hero-section .hero-details .buttons{
-    display: flex;
-    gap: 23px;
- }
-
- .hero-section .hero-details .button {
-    padding: 10px  26px;
-    border: 2px solid transparent;
-    color: var(--dark-color);
-    border-radius: var(--border-radius-m);
-    background-color: var(--secondary-color);
-    font-weight:  var(--font-weight-medium);
-    transition: 0.3s ease;
- }
-
- .hero-section .hero-details .button:hover,
- .hero-section .hero-details .contact-us {
-    color: var(--dark-color);
-    border-color: var(--dark-color);
-    background: transparent;
- }
- .hero-section .hero-details .contact-us:hover {
-    color: var(--dark-color);
-    border-color: var(--secondary-color);
-    background: var(--secondary-color);
- } 
-
- .hero-image-wrapper, 
- .hero-image-wrapper-2 {
-     max-width: 250px; /* Ajusta este valor según necesites */
-     border-radius: var(--border-radius-s);
-     overflow: hidden;
-     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
- }
-
- .hero-image-container {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-.menu-section {
-    padding: 60px 0;
-    background: var(--white-color);
-    text-align: center;
+body.dark-mode .btn-outline-secondary {
+  border-color: #e0e0e0;
+  color: #e0e0e0;
 }
 
-.menu-section .title {
-    font-size: var(--font-size-xxl);
-    color: var(--secondary-color);
-    font-family: "Miniver", sans-serif;
-    margin-bottom: 10px;
+body.dark-mode .btn-outline-secondary:hover {
+  background-color: #333;
 }
 
-.menu-section .subtitle {
-    font-size: var(--font-size-n);
-    color: var(--dark-color);
-    margin-bottom: 30px;
+.nav-dark-toggle {
+  transition: transform 0.3s ease;
+}
+.nav-dark-toggle:hover {
+  transform: scale(1.1);
+}
+/* Sobrescribir los bg-light en modo oscuro */
+body.dark-mode .bg-light {
+  background-color: #0e0e0e !important;
 }
 
-.menu-buttons {
-    margin-bottom: 40px;
+/* Si quieres que los textos dentro de esas secciones también cambien */
+body.dark-mode .bg-light,
+body.dark-mode .bg-light p,
+body.dark-mode .bg-light h2,
+body.dark-mode .bg-light h3,
+body.dark-mode .bg-light h4,
+body.dark-mode .bg-light h5,
+body.dark-mode .bg-light h6 {
+  color: #e0e0e0 !important;
 }
-
-.menu-btn {
-    padding: 10px 20px;
-    margin: 5px;
-    border: 1px solid var(--medium-gray-color);
-    background: none;
-    font-size: var(--font-size-m);
-    border-radius: var(--border-radius-s);
-    cursor: pointer;
-    transition: 0.3s;
+body.dark-mode .navbar .nav-link {
+  color: #fff !important;
 }
-
-.menu-btn.active, .menu-btn:hover {
-    background: var(--secondary-color);
-    color: var(--white-color);
-    border-color: var(--secondary-color);
-}
-
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-    justify-items: center;
-}
-
-.menu-item img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid var(--secondary-color);
-}
-
-.menu-name {
-    margin-top: 10px;
-    font-size: var(--font-size-m);
-    font-weight: var(--font-weight-medium);
-    color: var(--dark-color);
-}
-.menu-grid {
-    background-color: var(--white-color);
+body.dark-mode #darkModeToggle {
+  color: #fff !important;
+  border-color: #e0e0e0 !important;
 }
   
 
