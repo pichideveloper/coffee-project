@@ -29,12 +29,12 @@ const pool = new Pool({
 });
 
 app.post('/reserva', async (req, res) => {
-  const { nombre, correo, personas, fecha, hora } = req.body;
+  const { nombre, apellido, correo, telefono, fecha, personas, precio, local } = req.body;
 
   try {
     await pool.query(
-      'INSERT INTO reservas (nombre, correo, personas, fecha, hora) VALUES ($1, $2, $3, $4, $5)',
-      [nombre, correo, personas, fecha, hora]
+      'INSERT INTO reservas (nombre_invitado, apellido_invitado, correo_invitado, telefono_invitado, fecha_reserva, numero_invitados, precio, local_invitados) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
+      [nombre, apellido, correo, telefono, fecha, personas, precio, local]
     );
     res.send('Reserva guardada con éxito');
   } catch (err) {

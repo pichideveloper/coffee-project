@@ -10,6 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Iconos -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" href="/public/images/logo1.png" type="image/png">
 </head>
 
 
@@ -294,26 +295,26 @@
     <p>Para reservar una mesa primero llena tus datos. Según el número de personas, paga un adelanto (desde S/20) como
       consumo. Aceptamos todas las tarjetas. Se te enviará un cupón con un código a tu correo. (Sólo de lunes a
       viernes.)</p>
-    <form id="reservaForm" class="row g-3">
+    <form id="reservaForm" class="row g-3" method="POST" action="/reserva">
       <div class="col-md-6">
         <label for="nombre" class="form-label">Nombres Completos</label>
-        <input type="text" class="form-control" id="nombre" required>
+        <input type="text" class="form-control" id="nombre" name="nombre" required>
       </div>
       <div class="col-md-6">
           <label for="apellido" class="form-label">Apellidos Completos</label>
-          <input type="text" class="form-control" id="apellido" required>
+          <input type="text" class="form-control" id="apellido" name="apellido" required>
       </div>
       <div class="col-md-4">
         <label for="email" class="form-label">Correo Electrónico</label>
-        <input type="email" class="form-control" id="email" required>
+        <input type="email" class="form-control" id="email" name="correo" required>
       </div>
       <div class="col-md-4">
         <label for="tel" class="form-label">Teléfono</label>
-        <input type="tel" class="form-control" id="tel">
+        <input type="tel" class="form-control" id="tel" name="telefono">
       </div>
       <div class="col-md-4">
         <label for="personas" class="form-label">N° de Personas</label>
-        <select class="form-select" id="personas" required>
+        <select class="form-select" id="personas" name="personas" required>
           <option value="" selected>Selecciona...</option>
           <option value="3">Hasta 3 personas (S/20)</option>
           <option value="6">Hasta 6 personas (S/35)</option>
@@ -322,7 +323,16 @@
       </div>
       <div class="col-md-4">
         <label for="fecha" class="form-label">Fecha y Hora</label>
-        <input type="datetime-local" class="form-control" id="fecha" required>
+        <input type="datetime-local" class="form-control" id="fecha" name="fecha" required>
+      </div>
+      <div class="col-md-6">
+        <label for="local" class="form-label">Local</label>
+        <select class="form-select" id="local" name="local"required>
+          <option value="" selected>Seleccion...</option>
+          <option value="Huanchaco">Huanchaco</option>
+          <option value="Santa Teresa">Santa Teresa</option>
+        </select>
+
       </div>
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Confirmar Reserva</button>
@@ -330,6 +340,31 @@
     </form>
     <div id="reservaResult" class="mt-3"></div>
   </div>
+  <script>
+    document.getElementById('reservaForm').addEventListener('submit', function(event) {
+      event.preventDefault();  // Prevenir la redirección y el comportamiento predeterminado del formulario
+  
+      const formData = new FormData(this);
+      const data = new URLSearchParams();
+      formData.forEach((value, key) => {
+        data.append(key, value);
+      });
+  
+      fetch('/reserva', {
+        method: 'POST',
+        body: data
+      })
+      .then(response => response.text())
+      .then(message => {
+        
+        location.reload();  // Recargar la página
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Hubo un problema al guardar la reserva.');
+      });
+    });
+  </script>
 </section>
 
 <!-- Sección: Locales / Ubicaciones -->
