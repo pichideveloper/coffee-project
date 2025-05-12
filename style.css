@@ -95,6 +95,22 @@ body.dark-mode #darkModeToggle {
   color: #fff !important;
   border-color: #e0e0e0 !important;
 }
+
+/* Testimonios en modo oscuro */
+body.dark-mode #testimonios {
+  background-color: #0e0e0e !important;
+}
+
+body.dark-mode #testimonios .card {
+  background-color: #1f1f1f !important; 
+  color: #e0e0e0 !important;            
+}
+
+body.dark-mode #testimonios .card p,
+body.dark-mode #testimonios .card em {
+  color: #e0e0e0 !important;           
+}
+
   
 
 
