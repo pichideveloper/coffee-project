@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleBtn.textContent = mode === 'dark' ? '☀️' : '🌙';
     // Cambiar logo del navbar
     navbarLogo.src = mode === 'dark'
-      ? 'images/logo3.png'
+      ? 'images/logo2.png'
       : 'images/logo1.png';
   }
 
