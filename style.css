@@ -1,5 +1,11 @@
 
+:root {
+  --transition-time: 0.3s ease;
+}
 
+.nav-link, .btn, .nav-dark-toggle {
+  transition: all var(--transition-time);
+}
 * {
     box-sizing: border-box;
 }
@@ -125,6 +131,10 @@ body.dark-mode #testimonios .card em {
   border-radius: 15px;
   padding: 20px;
 }
+.carousel-caption {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  backdrop-filter: blur(2px);
+}
 .nav-tabs .nav-link {
   border: none;
   color: #333;
@@ -132,7 +142,9 @@ body.dark-mode #testimonios .card em {
 .nav-tabs .nav-link.active {
   border-bottom: 3px solid #ff6b6b; /* Estilo peruano */
 }
-
+body.dark-mode .card {
+  border: 1px solid rgba(255,255,255,0.1);
+}
   
 
 
