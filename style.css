@@ -111,6 +111,28 @@ body.dark-mode #testimonios .card em {
   color: #e0e0e0 !important;           
 }
 
+
+//// 12/05/2025
+.nav-link {
+  transition: all 0.3s ease;
+}
+.nav-link:hover {
+  color: #ff6b6b !important; /* Color peruano */
+  transform: translateY(-2px);
+}
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+  border-radius: 15px;
+  padding: 20px;
+}
+.nav-tabs .nav-link {
+  border: none;
+  color: #333;
+}
+.nav-tabs .nav-link.active {
+  border-bottom: 3px solid #ff6b6b; /* Estilo peruano */
+}
+
   
 
 
