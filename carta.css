@@ -11,12 +11,37 @@
   background: transparent !important;
 }
 
-///////
+/* ——— Tarjetas de platos en modo oscuro ——— */
+.dark-mode .card {
+  background-color: #1e1e1e !important;
+  color: #fff !important;
+  border-color: #333 !important;
+}
+
+/* ——— Títulos, descripciones y badges en modo oscuro ——— */
+.dark-mode .card-title,
+.dark-mode .card-text,
+.dark-mode .list-inline-item span {
+  color: #fff !important;
+}
+
+/* Badges con fondo en modo oscuro */
+.dark-mode .badge.bg-primary {
+  background-color: #3b82f6 !important; /* Azul claro */
+  color: #fff !important;
+}
+
+.dark-mode .badge.bg-secondary {
+  background-color: #6c757d !important;
+  color: #fff !important;
+}
+
+/* Descripción del encabezado (modo claro) */
 .carta-descripcion {
   color: #333;
 }
 
-/* En modo oscuro */
+/* Descripción del encabezado (modo oscuro) */
 body.dark-mode .carta-descripcion {
   color: #fff;
 }
