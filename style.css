@@ -131,6 +131,20 @@ body.dark-mode .btn-warning.active {
   box-shadow: none;
 }
 
+.nav-tabs .nav-link {
+  color: #ffc107;          
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+  color: #f0b507;          
+}
+
+.nav-tabs .nav-link.active {
+  color: #ffc107 !important;    
+  border-color: #dee2e6 #dee2e6 #fff; 
+}
+
 
 /* Estilo para la sección de la carta */
 #carta {
