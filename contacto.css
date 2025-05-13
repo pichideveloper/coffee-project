@@ -19,10 +19,11 @@
   height: 100%;
 }
 
+/* Eliminar filtros de brillo en las imágenes */
 .carousel-item img {
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.7);
+  /* Quitar el filter brightness original */
 }
 
 .header-overlay {
@@ -31,7 +32,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* ------------------------- SECCIÓN CONTACTO (MANTENER ESTILOS EXISTENTES) ------------------------- */
@@ -64,12 +65,13 @@
 }
 
 /* ------------------------- MODO OSCURO (AGREGAR NUEVOS ESTILOS) ------------------------- */
+/* Modo oscuro - mantener imagen original */
 .dark-mode .carousel-item img {
-  filter: brightness(0.5) contrast(1.2);
+  filter: none !important; /* Eliminar cualquier filtro */
 }
 
 .dark-mode .header-overlay {
-  background: rgba(0, 0, 0, 0.7);
+   background: rgba(0, 0, 0, 0.8);
 }
 
 /* ------------------------- RESPONSIVE (MANTENER Y AGREGAR) ------------------------- */
