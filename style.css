@@ -115,6 +115,19 @@ body.dark-mode #testimonios .card em {
   color: #e0e0e0 !important;           
 }
 
+body.dark-mode .btn-warning {
+  color: #000 !important;
+}
+
+body.dark-mode .btn-warning:focus,
+body.dark-mode .btn-warning:active,
+body.dark-mode .btn-warning.active {
+  color: #000 !important;
+  background-color: #ffc107;
+  box-shadow: none;
+}
+
+
 /* Estilo para la sección de la carta */
 #carta {
   background-color: #f8f9fa;
