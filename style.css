@@ -118,30 +118,5 @@ body.dark-mode #testimonios .card em {
 
 
 //// 12/05/2025
-.nav-link {
-  transition: all 0.3s ease;
-}
-.nav-link:hover {
-  color: #ff6b6b !important; /* Color peruano */
-  transform: translateY(-2px);
-}
-.carousel-caption {
-  background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
-  border-radius: 15px;
-  padding: 20px;
-}
-.carousel-caption {
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-  backdrop-filter: blur(2px);
-}
-.nav-tabs .nav-link {
-  border: none;
-  color: #333;
-}
-.nav-tabs .nav-link.active {
-  border-bottom: 3px solid #ff6b6b; /* Estilo peruano */
-}
-body.dark-mode .card {
-  border: 1px solid rgba(255,255,255,0.1);
-}
+
   
