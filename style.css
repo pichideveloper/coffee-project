@@ -1,199 +1,189 @@
-/* gogle font */
-@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box ;
-    font-family: "Poppins", sans-serif;
-}
-
 :root {
-    /*colores */
---white-color: #fff;
---dark-color: #252525;
---primary-color: #f9ee3b;
---secondary-color: #f3961c;
---light-pink-color: #faf4f5;
---medium-gray-color: #ccc;
+  --transition-time: 0.3s ease;
+}
 
+.nav-link, .btn, .nav-dark-toggle {
+  transition: all var(--transition-time);
+}
+* {
+    box-sizing: border-box;
+}
 
-/* Font size */
---font-size-s: 0.9rem;
---font-size-n: 1rem;
---font-size-m: 1.12rem;
---font-size-l: 1.5rem;
---font-size-xl: 2rem;
---font-size-xxl: 2.3rem;
+/* Ajustar margen top para compensar navbar fijo */
+body {
+  padding-top: 70px;
+}
 
-/* Site max width */
---site-max-width: 1300px;
+/* Estilos del slider */
+.carousel-item img {
+  max-height: 600px;
+  object-fit: cover;
+}
 
-/* Font weight */
---font-weight-normal: 400;
---font-weight-medium: 500;
---font-weight-semibold: 600;
---font-weight-bold: 700;
+/* Secciones */
+section {
+  scroll-margin-top: 80px; /* Para que el ancla no quede bajo el navbar */
+}
 
-/* Border radius */
---border-radius-s: 8px;
---border-radius-m: 30px;
---border-radius-circle: 50%;
+/* Tarjetas de testimonios */
+#testimonios .card {
+  background-color: #f8f9fa;
+}
+
+/* Botones y enlaces */
+.btn-outline-light {
+  color: #fff;
+  border-color: #fff;
+}
+.btn-outline-light:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+.navbar .nav-link:hover {
+  background-color: orange;
+  color: white !important;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .alert,
+body.dark-mode section {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+body.dark-mode .btn-outline-secondary {
+  border-color: #e0e0e0;
+  color: #e0e0e0;
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+  background-color: #333;
+}
+
+.nav-dark-toggle {
+  transition: transform 0.3s ease;
+}
+.nav-dark-toggle:hover {
+  transform: scale(1.1);
+}
+/* Sobrescribir los bg-light en modo oscuro */
+body.dark-mode .bg-light {
+  background-color: #0e0e0e !important;
+}
+
+/* Si quieres que los textos dentro de esas secciones también cambien */
+body.dark-mode .bg-light,
+body.dark-mode .bg-light p,
+body.dark-mode .bg-light h2,
+body.dark-mode .bg-light h3,
+body.dark-mode .bg-light h4,
+body.dark-mode .bg-light h5,
+body.dark-mode .bg-light h6 {
+  color: #e0e0e0 !important;
+}
+body.dark-mode .navbar .nav-link {
+  color: #fff !important;
+}
+body.dark-mode #darkModeToggle {
+  color: #fff !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* Testimonios en modo oscuro */
+body.dark-mode #testimonios {
+  background-color: #0e0e0e !important;
+}
+
+body.dark-mode #testimonios .card {
+  background-color: #1f1f1f !important; 
+  color: #e0e0e0 !important;            
+}
+
+body.dark-mode #testimonios .card p,
+body.dark-mode #testimonios .card em {
+  color: #e0e0e0 !important;           
+}
+
+body.dark-mode #platos .text-muted {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .btn-warning {
+  color: #000 !important;
+}
+
+body.dark-mode .btn-warning:focus,
+body.dark-mode .btn-warning:active,
+body.dark-mode .btn-warning.active {
+  color: #000 !important;
+  background-color: #ffc107;
+  box-shadow: none;
+}
+
+.nav-tabs .nav-link {
+  color: #ffc107;          
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+  color: #f0b507;          
+}
+
+.nav-tabs .nav-link.active {
+  color: #ffc107 !important;    
+  border-color: #dee2e6 #dee2e6 #fff; 
 }
 
 
-/*estilos para todo el sitio */
-ul  {
-    list-style: none;
+/* Estilo para la sección de la carta */
+#carta {
+  background-color: #f8f9fa;
 }
 
-a{
-    text-decoration: none;
-}
-button {
-    cursor: pointer;
-    border : none;
-    background: none;
+.menu-item {
+  margin-bottom: 2rem;
 }
 
-img {
-    width: 100%;
-}
-.section-content{
-    margin: 0 auto;
-    padding: 0 20px;
-    max-width: var(--site-max-width);
+.menu-item h3 {
+  color: #343a40;
+  margin-bottom: 0.5rem;
 }
 
-header{
-    position: fixed;
-    width: 100%;
-    z-index: 5;
-    background-color: var(--primary-color);
+.price {
+  color: #28a745;
+  font-weight: bold;
 }
 
+.menu-item p {
+  color: #6c757d;
+}
 
-header .navbar {
-    display: flex;
-    padding: 20px;
-    align-items: center;
-    justify-content: space-between;
+.menu-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-item ul li {
+  color: #495057;
+  margin-bottom: 0.25rem;
 }
 
 
+//// 12/05/2025
 
-.navbar .nav-logo .logo-text {
-    color: var(--white-color);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-semibold);
-}
-
-.navbar .nav-menu {
-    display: flex;
-    gap: 10px;
-}
-
-.navbar .nav-menu .nav-link {
-    padding: 10px 18px ;
-    color: var(--dark-color);
-    font-size: var(--font-size-m);
-    border-radius: var(--border-radius-m);
-    transition:  0.3s ease;
-}
- .navbar  .nav-menu .nav-link:hover {
-    color: var(--primary-color);
-    background-color: var(--secondary-color);
- }
-
- .hero-section {
-    min-height: 100vh;
-    background-color:  var(--primary-color);
- }
-
-
-
-
-
- .hero-section .section-content {
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
-    color: var(--white-color);
-    justify-content: space-between;
- }
- .hero-section .hero-details .title {
-    font-size:  var(--font-size-xxl);
-    color: var(--secondary-color);
-    font-family: "Miniver" ,sans-serif;
- }
-
- .hero-section .hero-details .subtitle {
-    margin-top: 8px;
-    max-width: 70%;
-    font-size:  var(--font-size-xl);
-    color: var(--dark-color);
-    font-weight:  var(--font-weight-semibold);
- }
-
-
-
- .hero-section .hero-details .description {
-    max-width: 70%;
-    margin: 24px 0 40px;
-    color: var(--dark-color);
-    font-size: var(--font-size-m);
- }
-
- .hero-section .hero-details .buttons{
-    display: flex;
-    gap: 23px;
- }
-
- .hero-section .hero-details .button {
-    padding: 10px  26px;
-    border: 2px solid transparent;
-    color: var(--dark-color);
-    border-radius: var(--border-radius-m);
-    background-color: var(--secondary-color);
-    font-weight:  var(--font-weight-medium);
-    transition: 0.3s ease;
- }
-
- .hero-section .hero-details .button:hover,
- .hero-section .hero-details .contact-us {
-    color: var(--dark-color);
-    border-color: var(--dark-color);
-    background: transparent;
- }
- .hero-section .hero-details .contact-us:hover {
-    color: var(--dark-color);
-    border-color: var(--secondary-color);
-    background: var(--secondary-color);
- } 
-
-
- .hero-section .hero-image-wrapper {
-    max-width: 500px;
-    margin-right: 30px;
- }
-/* codigo de media query responsive para un ancho maximo 900px */
- 
-
-
-/* Estilo uniforme para botones */
-#platos .btn {
-  min-width: 120px; /* Ancho mínimo para igualar tamaño */
-  font-weight: 600;
-  transition: transform 0.2s;
-}
-
-#platos .btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-/* Media query corregida */
-
+  
+//12/05/2025 carta
   
 
 
