@@ -1,45 +1,50 @@
-/* contacto.css - Versión final corregida */
+/* contacto.css - Versión final con carrusel */
 
-/* ------------------------- HEADER ------------------------- */
+/* ------------------------- HEADER CON CARRUSEL ------------------------- */
 .header-contacto {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('images/contacto-bg.jpg') center/cover;
+  position: relative;
   height: 400px;
   margin-top: 70px;
-  position: relative;
-  display: flex;
-  align-items: center;
+  overflow: hidden;
+}
+
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
 }
 
 .header-overlay {
-  width: 100%;
-  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
 }
 
-.contacto-descripcion {
-  color: #fff;
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* ------------------------- SECCIÓN CONTACTO ------------------------- */
-.contacto-form, .contacto-info {
-  transition: all 0.3s ease;
-  min-height: 450px;
-}
-
+/* ------------------------- SECCIÓN CONTACTO (MANTENER ESTILOS EXISTENTES) ------------------------- */
 .contacto-form .form-control {
   border-radius: 0.5rem;
   padding: 0.75rem 1.25rem;
-  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
 }
 
 .contacto-form button {
   padding: 0.75rem;
   font-size: 1.1rem;
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .contacto-form button:hover {
@@ -49,56 +54,32 @@
 .contacto-info i {
   color: #ffc107;
   min-width: 40px;
-  font-size: 1.5rem;
 }
 
-/* ------------------------- MODO OSCURO MEJORADO ------------------------- */
-.dark-mode .header-contacto {
-  background-color: rgba(0, 0, 0, 0.9);
+.contacto-descripcion {
+  color: #fff;
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 15px auto 0;
 }
 
-.dark-mode .contacto-form,
-.dark-mode .contacto-info {
-  background-color: #1a1a1a !important;
-  border: 1px solid #333 !important;
+/* ------------------------- MODO OSCURO (AGREGAR NUEVOS ESTILOS) ------------------------- */
+.dark-mode .carousel-item img {
+  filter: brightness(0.5) contrast(1.2);
 }
 
-.dark-mode .contacto-form input,
-.dark-mode .contacto-form textarea {
-  background-color: #2d2d2d;
-  color: #fff !important;
-  border-color: #444 !important;
+.dark-mode .header-overlay {
+  background: rgba(0, 0, 0, 0.7);
 }
 
-.dark-mode .contacto-form input::placeholder,
-.dark-mode .contacto-form textarea::placeholder {
-  color: #999 !important;
-}
-
-.dark-mode .contacto-descripcion {
-  color: #e0e0e0 !important;
-}
-
-/* ------------------------- RESPONSIVE MEJORADO ------------------------- */
-@media (max-width: 992px) {
-  .header-contacto {
-    height: 350px;
-  }
-  
-  .contacto-form, .contacto-info {
-    min-height: auto;
-    margin-top: 1.5rem;
-  }
-}
-
+/* ------------------------- RESPONSIVE (MANTENER Y AGREGAR) ------------------------- */
 @media (max-width: 768px) {
   .header-contacto {
     height: 300px;
   }
   
-  .contacto-descripcion {
-    font-size: 1.1rem;
-    max-width: 90%;
+  .carousel-item img {
+    object-position: center 30%;
   }
 }
 
@@ -107,15 +88,14 @@
     height: 250px;
   }
   
-  .header-contacto h1 {
-    font-size: 2rem !important;
-  }
-  
   .contacto-descripcion {
     font-size: 1rem;
   }
-  
-  .contacto-info i {
-    font-size: 1.25rem;
-  }
+}
+
+/* ------------------------- DESACTIVAR CONTROLES CARRUSEL ------------------------- */
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators {
+  display: none !important;
 }
