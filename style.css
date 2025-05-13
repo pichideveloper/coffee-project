@@ -45,7 +45,6 @@ section {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
 /* Modo oscuro */
 body.dark-mode {
   background-color: #121212;
@@ -114,6 +113,39 @@ body.dark-mode #testimonios .card {
 body.dark-mode #testimonios .card p,
 body.dark-mode #testimonios .card em {
   color: #e0e0e0 !important;           
+}
+
+/* Estilo para la sección de la carta */
+#carta {
+  background-color: #f8f9fa;
+}
+
+.menu-item {
+  margin-bottom: 2rem;
+}
+
+.menu-item h3 {
+  color: #343a40;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.menu-item p {
+  color: #6c757d;
+}
+
+.menu-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-item ul li {
+  color: #495057;
+  margin-bottom: 0.25rem;
 }
 
 
