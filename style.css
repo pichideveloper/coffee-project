@@ -1,12 +1,6 @@
-:root {
-  --transition-time: 0.3s ease;
-}
 
-.nav-link, .btn, .nav-dark-toggle {
-  transition: all var(--transition-time);
-}
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Ajustar margen top para compensar navbar fijo */
@@ -22,7 +16,8 @@ body {
 
 /* Secciones */
 section {
-  scroll-margin-top: 80px; /* Para que el ancla no quede bajo el navbar */
+  scroll-margin-top: 80px;
+  /* Para que el ancla no quede bajo el navbar */
 }
 
 /* Tarjetas de testimonios */
@@ -35,15 +30,18 @@ section {
   color: #fff;
   border-color: #fff;
 }
+
 .btn-outline-light:hover {
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
+
 .navbar .nav-link:hover {
   background-color: orange;
   color: white !important;
   border-radius: 0.25rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 
 /* Modo oscuro */
 body.dark-mode {
@@ -74,9 +72,11 @@ body.dark-mode .btn-outline-secondary:hover {
 .nav-dark-toggle {
   transition: transform 0.3s ease;
 }
+
 .nav-dark-toggle:hover {
   transform: scale(1.1);
 }
+
 /* Sobrescribir los bg-light en modo oscuro */
 body.dark-mode .bg-light {
   background-color: #0e0e0e !important;
@@ -92,9 +92,11 @@ body.dark-mode .bg-light h5,
 body.dark-mode .bg-light h6 {
   color: #e0e0e0 !important;
 }
+
 body.dark-mode .navbar .nav-link {
   color: #fff !important;
 }
+
 body.dark-mode #darkModeToggle {
   color: #fff !important;
   border-color: #e0e0e0 !important;
@@ -106,16 +108,17 @@ body.dark-mode #testimonios {
 }
 
 body.dark-mode #testimonios .card {
-  background-color: #1f1f1f !important; 
-  color: #e0e0e0 !important;            
-}
-
-body.dark-mode #testimonios .card p,
-body.dark-mode #testimonios .card em {
-  color: #e0e0e0 !important;           
+  background-color: #1f1f1f !important;
+  color: #e0e0e0 !important;
 }
 
 body.dark-mode #platos .text-muted {
+  color: #e0e0e0 !important;
+}
+
+
+body.dark-mode #testimonios .card p,
+body.dark-mode #testimonios .card em {
   color: #e0e0e0 !important;
 }
 
@@ -130,7 +133,6 @@ body.dark-mode .btn-warning.active {
   background-color: #ffc107;
   box-shadow: none;
 }
-
 .nav-tabs .nav-link {
   color: #ffc107;          
 }
@@ -145,45 +147,11 @@ body.dark-mode .btn-warning.active {
   border-color: #dee2e6 #dee2e6 #fff; 
 }
 
-
-/* Estilo para la sección de la carta */
-#carta {
-  background-color: #f8f9fa;
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
 }
 
-.menu-item {
-  margin-bottom: 2rem;
+body.dark-mode .navbar {
+  box-shadow: 0 10px 10px rgba(255, 255, 255, 0.5) !important;
 }
-
-.menu-item h3 {
-  color: #343a40;
-  margin-bottom: 0.5rem;
-}
-
-.price {
-  color: #28a745;
-  font-weight: bold;
-}
-
-.menu-item p {
-  color: #6c757d;
-}
-
-.menu-item ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.menu-item ul li {
-  color: #495057;
-  margin-bottom: 0.25rem;
-}
-
-
-//// 12/05/2025
-
-  
-//12/05/2025 carta
-  
-
 
