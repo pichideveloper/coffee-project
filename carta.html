@@ -3,87 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perú Gastronómico</title>
+  <title>Carta - Perú Gastronómico</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/a2d9d5c9c7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">🇵🇪 Perú Gastronómico</a>
+      <!-- Logo llamita que redirige al index -->
+      <a class="navbar-brand" href="../index.html">
+        <img src="../images/llamita.png" alt="Logo Llamita" width="40" height="40" class="d-inline-block align-text-top me-2" />
+        Perú Gastronómico
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#carta">Carta</a></li>
-          <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Carta</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#testimonios">Testimonios</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#contacto">Contacto</a></li>
         </ul>
         <button id="darkModeToggle" class="btn btn-outline-light ms-3 nav-dark-toggle">Modo Oscuro</button>
       </div>
     </div>
   </nav>
 
-  <!-- Carrusel -->
-  <section id="inicio" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://i.imgur.com/4NplR6m.jpg" class="d-block w-100" alt="Ceviche peruano" />
-      </div>
-      <div class="carousel-item">
-        <img src="https://i.imgur.com/EiFy8ij.jpg" class="d-block w-100" alt="Lomo saltado" />
-      </div>
-      <div class="carousel-item">
-        <img src="https://i.imgur.com/X8nCcvP.jpg" class="d-block w-100" alt="Paisaje del Cusco" />
-      </div>
-    </div>
-  </section>
-
   <!-- Carta -->
   <section id="carta" class="py-5">
     <div class="container">
-      <h2 class="text-center mb-4">Nuestra Carta Peruana</h2>
+      <h2 class="text-center mb-5">Carta Gastronómica del Perú</h2>
       <div class="row">
         <div class="col-md-6 menu-item">
           <h3>Ceviche Clásico <span class="price">S/ 25.00</span></h3>
-          <p>Fresco pescado en jugo de limón, ají limo y cebolla morada.</p>
-          <ul>
-            <li>Con camote y choclo</li>
-            <li>Ají al gusto</li>
-          </ul>
+          <p>Pescado fresco en jugo de limón, ají limo, cebolla morada, camote y choclo.</p>
         </div>
         <div class="col-md-6 menu-item">
           <h3>Lomo Saltado <span class="price">S/ 30.00</span></h3>
-          <p>Carne salteada con cebolla, tomate y papas fritas.</p>
-          <ul>
-            <li>Incluye arroz blanco</li>
-            <li>Opción vegetariana disponible</li>
-          </ul>
+          <p>Carne salteada al wok con cebolla, tomate, papas fritas y arroz.</p>
         </div>
         <div class="col-md-6 menu-item">
-          <h3>Aji de Gallina <span class="price">S/ 22.00</span></h3>
-          <p>Deliciosa crema de ají amarillo con pollo deshilachado.</p>
-          <ul>
-            <li>Servido con papa sancochada y arroz</li>
-          </ul>
+          <h3>Ají de Gallina <span class="price">S/ 22.00</span></h3>
+          <p>Crema de ají amarillo con pollo deshilachado, papa sancochada y huevo duro.</p>
         </div>
         <div class="col-md-6 menu-item">
-          <h3>Anticuchos <span class="price">S/ 18.00</span></h3>
+          <h3>Anticuchos de Corazón <span class="price">S/ 18.00</span></h3>
           <p>Brochetas de corazón de res con papa dorada y salsa de ají.</p>
+        </div>
+        <div class="col-md-6 menu-item">
+          <h3>Papa a la Huancaína <span class="price">S/ 15.00</span></h3>
+          <p>Papas con salsa de ají amarillo, queso fresco y galleta soda. Servido con huevo y aceituna.</p>
+        </div>
+        <div class="col-md-6 menu-item">
+          <h3>Chicha Morada <span class="price">S/ 6.00</span></h3>
+          <p>Bebida tradicional a base de maíz morado, piña, canela y clavo de olor.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Testimonios -->
-  
-
-  <!-- Contacto -->
- 
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
