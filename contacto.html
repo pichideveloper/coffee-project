@@ -65,63 +65,44 @@
 </header>
 
   <!-- SECCIÓN DE CONTACTO -->
-  <section class="container my-5">
-    <div class="row g-4">
-      <!-- Formulario -->
-      <div class="col-lg-6">
-        <div class="card shadow p-4 contacto-form">
-          <h2 class="mb-4">Escríbenos</h2>
-          <form id="formContacto">
-            <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Nombre completo" required>
-            </div>
-            <div class="mb-3">
-              <input type="email" class="form-control" placeholder="Correo electrónico" required>
-            </div>
-            <div class="mb-3">
-              <input type="tel" class="form-control" placeholder="Teléfono">
-            </div>
-            <div class="mb-3">
-              <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
-          </form>
-        </div>
+<section class="container my-5">
+  <div class="row g-4 justify-content-center"> <!-- Añade row y spacing -->
+    
+    <!-- Formulario -->
+    <div class="col-lg-6">
+      <div class="card shadow p-4 h-100 contacto-form">
+        <h2 class="mb-4">Escríbenos</h2>
+        <form id="formContacto">
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Nombre completo" required>
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Correo electrónico" required>
+          </div>
+          <!-- ... resto del formulario ... -->
+        </form>
       </div>
+    </div>
 
-      <!-- Información -->
-      <div class="col-lg-6">
-        <div class="card shadow p-4 h-100 contacto-info">
-          <h2 class="mb-4">Encuéntranos</h2>
-          <div class="contacto-item">
-            <div class="d-flex align-items-center mb-4">
-              <i class='bx bx-map fs-3 me-3'></i>
-              <div>
-                <h5>Dirección Principal</h5>
-                <p>Av. Perú 123, Lima Centro</p>
-              </div>
-            </div>
-            
-            <div class="d-flex align-items-center mb-4">
-              <i class='bx bx-phone fs-3 me-3'></i>
-              <div>
-                <h5>Teléfonos</h5>
-                <p>+51 987 654 321<br>+51 955 444 333</p>
-              </div>
-            </div>
-
-            <div class="d-flex align-items-center mb-4">
-              <i class='bx bx-time fs-3 me-3'></i>
-              <div>
-                <h5>Horario</h5>
-                <p>Lunes a Sábado: 12pm - 11pm<br>Domingos: 12pm - 5pm</p>
-              </div>
+    <!-- Información -->
+    <div class="col-lg-6">
+      <div class="card shadow p-4 h-100 contacto-info">
+        <h2 class="mb-4">Encuéntranos</h2>
+        <div class="contacto-item">
+          <div class="d-flex align-items-center mb-4">
+            <i class='bx bx-map fs-3 me-3'></i>
+            <div>
+              <h5>Dirección Principal</h5>
+              <p>Av. Perú 123, Lima Centro</p>
             </div>
           </div>
+          <!-- ... resto de la info ... -->
         </div>
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer class="bg-dark text-light py-4">
