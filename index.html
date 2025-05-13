@@ -1,11 +1,17 @@
+## index.html
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Prueba 2 Mejorado</title>
+  <!-- CSS propios -->
   <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <!-- GLightbox CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
@@ -86,16 +92,36 @@
   <section id="nosotros" class="py-5">
     <div class="container">
       <h2 class="mb-4">Sobre Nosotros</h2>
-      <p class="lead">“Somos SAPE, una cadena de restaurantes...”</p>
+      <p class="lead">“Somos SAPE, una cadena de restaurantes de sabores marinos y criollos, ofreciendo un servicio personalizado y productos de calidad...”</p>
       <div class="row text-center mt-5">
         <div class="col-md-3 mb-4">
           <div class="feature-card">
             <img src="images/aqui_va_imagen4.png" class="feature-icon" alt="Productos Frescos">
             <h5>Productos Frescos</h5>
-            <p>Seleccionamos los mejores insumos...</p>
+            <p>Seleccionamos los mejores insumos cada día.</p>
           </div>
         </div>
-        <!-- Repetir para Innovación, Buena Atención y Ambiente Familiar -->
+        <div class="col-md-3 mb-4">
+          <div class="feature-card">
+            <img src="images/aqui_va_imagen5.png" class="feature-icon" alt="Innovación">
+            <h5>Innovación</h5>
+            <p>Comida peruana con un toque creativo.</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="feature-card">
+            <img src="images/aqui_va_imagen6.png" class="feature-icon" alt="Buena Atención">
+            <h5>Buena Atención</h5>
+            <p>Servicio amable y eficiente.</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="feature-card">
+            <img src="images/aqui_va_imagen7.png" class="feature-icon" alt="Ambiente Familiar">
+            <h5>Ambiente Familiar</h5>
+            <p>Un lugar para compartir en familia.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -105,34 +131,115 @@
     <div class="container">
       <h2 class="mb-4">Servicios</h2>
       <div class="row text-center">
-        <!-- WIFI, Estacionamiento, Juegos, Delivery igual que antes -->
+        <div class="col-md-3 mb-3">
+          <i class="bi bi-wifi fs-1 text-success"></i>
+          <h5>WIFI Gratis</h5>
+          <p>Conexión a internet gratuita.</p>
+        </div>
+        <div class="col-md-3 mb-3">
+          <i class="bi bi-car-front-fill fs-1 text-success"></i>
+          <h5>Estacionamiento</h5>
+          <p>Playa disponible para tu vehículo.</p>
+        </div>
+        <div class="col-md-3 mb-3">
+          <i class="bi bi-emoji-heart-eyes-fill fs-1 text-success"></i>
+          <h5>Juegos para Niños</h5>
+          <p>Área de entretenimiento infantil.</p>
+        </div>
+        <div class="col-md-3 mb-3">
+          <i class="bi bi-truck fs-1 text-success"></i>
+          <h5>Delivery</h5>
+          <p>Envíos a domicilio.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Platos (igual que tu original) -->
+  <!-- Platos -->
   <section id="platos" class="py-5">
-    <!-- Nav-tabs y contenido de pestañas -->
+    <div class="container">
+      <h2 class="mb-4">Nuestros Platos</h2>
+      <p class="mb-4">Explora nuestras categorías:</p>
+      <div class="row g-4">
+        <!-- Entradas -->
+        <div class="col-md-4">
+          <div class="card menu-card">
+            <img src="images/entradas.jpg" class="card-img-top" alt="Entradas">
+            <div class="card-body text-center">
+              <h5 class="card-title">Entradas</h5>
+              <a href="#" class="btn btn-primary">Ver Entradas</a>
+            </div>
+          </div>
+        </div>
+        <!-- Fusiones -->
+        <div class="col-md-4">
+          <div class="card menu-card">
+            <img src="images/fusiones.jpg" class="card-img-top" alt="Fusiones">
+            <div class="card-body text-center">
+              <h5 class="card-title">Fusiones</h5>
+              <a href="#" class="btn btn-primary">Ver Fusiones</a>
+            </div>
+          </div>
+        </div>
+        <!-- Tortillas -->
+        <div class="col-md-4">
+          <div class="card menu-card">
+            <img src="images/tortillas.jpg" class="card-img-top" alt="Tortillas">
+            <div class="card-body text-center">
+              <h5 class="card-title">Tortillas</h5>
+              <a href="#" class="btn btn-primary">Ver Tortillas</a>
+            </div>
+          </div>
+        </div>
+        <!-- C... (continúa para ceviches, chicharrones, arroces) -->
+      </div>
+    </div>
   </section>
 
-  <!-- Reservas (igual que tu original) -->
+  <!-- Reservas -->
   <section id="reserva" class="bg-light py-5">
-    <!-- Formulario de reservas con JS incluido -->
+    <div class="container">
+      <h2 class="mb-4">Reservar una Mesa</h2>
+      <p>Para reservar llena tus datos y paga un adelanto. Cupón enviado a tu correo.</p>
+      <form id="reservaForm" class="row g-3" method="POST" action="/reserva">
+        <!-- Campos: nombre, apellido, email, teléfono, personas, fecha, local -->
+      </form>
+    </div>
   </section>
 
-  <!-- Locales (igual que tu original) -->
+  <!-- Locales -->
   <section id="locales" class="py-5">
-    <!-- Direcciones y mapas embed -->
+    <div class="container">
+      <h2 class="mb-4">Nuestros Locales</h2>
+      <div class="row mb-4">
+        <div class="col-md-6 mb-3">
+          <h5>Huanchaco</h5>
+          <p>Ca. Ricardo Palma Nº 491…</p>
+        </div>
+        <div class="col-md-6 mb-3">
+          <h5>Santa Teresa</h5>
+          <p>Urb. Santa Teresa…</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <iframe src="https://maps.google.com/?q=492+Huanchaco&output=embed" width="100%" height="250"></iframe>
+        </div>
+        <div class="col-md-6 mb-3">
+          <iframe src="https://maps.google.com/?q=Santa+Teresa+Trujillo&output=embed" width="100%" height="250"></iframe>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Galería con GLightbox -->
+  <!-- Galería -->
   <section id="galeria" class="bg-light py-5">
     <div class="container">
       <h2 class="mb-4">Galería de Fotos</h2>
       <div class="row g-3">
         <div class="col-md-4">
-          <a href="images/aqui_va_imagen5.jpg" class="glightbox">
-            <img src="images/aqui_va_imagen5_thumb.jpg" class="img-fluid rounded" alt="Foto 1">
+          <a href="images/aqui_va_imagen8.jpg" class="glightbox">
+            <img src="images/aqui_va_imagen8_thumb.jpg" class="img-fluid rounded" alt="Foto">
           </a>
         </div>
         <!-- Más imágenes -->
@@ -140,7 +247,7 @@
     </div>
   </section>
 
-  <!-- Testimonios con Carousel -->
+  <!-- Testimonios -->
   <section id="testimonios" class="py-5">
     <div class="container">
       <h2 class="mb-4">Testimonios de Clientes</h2>
@@ -164,17 +271,34 @@
     </div>
   </section>
 
-  <!-- Contacto (igual que tu original) -->
+  <!-- Contacto -->
   <section id="contacto" class="bg-light py-5">
-    <!-- Formulario de contacto y datos -->
+    <div class="container">
+      <h2 class="mb-4">Contáctanos</h2>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <h5>Datos de Contacto</h5>
+          <p><strong>Teléfonos:</strong> (044)…</p>
+        </div>
+        <div class="col-md-6 mb-3">
+          <h5>Escríbenos</h5>
+          <form>
+            <input type="text" class="form-control mb-2" placeholder="Tu Nombre">
+            <input type="email" class="form-control mb-2" placeholder="Tu Correo">
+            <textarea class="form-control mb-2" rows="3" placeholder="Tu Mensaje"></textarea>
+            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer Mejorado -->
+  <!-- Footer -->
   <footer class="bg-dark text-light py-4">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img src="images/aqui_va_imagen6.png" alt="Logo" width="120">
+          <img src="images/aqui_va_imagen9.png" alt="Logo" width="120">
           <p class="mt-2">© 2025 SAPE - Todos los derechos reservados.</p>
         </div>
         <div class="col-md-4">
@@ -198,11 +322,28 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    const lightbox = GLightbox({ selector: '.glightbox' });
-    // Dark mode toggle
-    document.getElementById('darkModeToggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
+    document.addEventListener('DOMContentLoaded', function() {
+      const lightbox = GLightbox({ selector: '.glightbox' });
+      const toggleBtn = document.getElementById('darkModeToggle');
+      const navbarLogo = document.getElementById('navbarLogo');
+      const savedMode = localStorage.getItem('mode') || 'light';
+      function applyMode(mode) {
+        document.body.classList.toggle('dark-mode', mode === 'dark');
+        toggleBtn.textContent = mode === 'dark' ? '☀️' : '🌙';
+        navbarLogo.src = mode === 'dark' ? 'images/logo2.png' : 'images/logo1.png';
+      }
+      applyMode(savedMode);
+      toggleBtn.addEventListener('click', () => {
+        const newMode = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+        applyMode(newMode);
+        localStorage.setItem('mode', newMode);
+      });
     });
   </script>
 </body>
 </html>
+```
+
+
+```
+
