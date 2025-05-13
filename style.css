@@ -115,6 +115,10 @@ body.dark-mode #testimonios .card em {
   color: #e0e0e0 !important;           
 }
 
+body.dark-mode #platos .text-muted {
+  color: #e0e0e0 !important;
+}
+
 body.dark-mode .btn-warning {
   color: #000 !important;
 }
