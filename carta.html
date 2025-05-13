@@ -26,31 +26,33 @@
 <body class="body-c">
   <!-- NAVEGACIÓN -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-        <li class="nav-item"><a class="nav-link" href="carta.html">Platos</a></li> <!-- Cambiado aquí -->
-        <li class="nav-item"><a class="nav-link" href="#reserva">Reservas</a></li>
-        <li class="nav-item"><a class="nav-link" href="#locales">Locales</a></li>
-        <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
-        <li class="nav-item">
-          <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">
-            🌙
-          </button>
-        </li>
-      </ul>
+    <div class="container">
+      <!-- Actualizamos el href del logo para que redireccione a la página principal -->
+      <a class="navbar-brand" href="https://pichideveloper.github.io/coffee-project/#servicios">
+        <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <!-- Mantengo la navegación interna: si te encuentras en la página de platos, el enlace puede ser "Carta" o "Platos" -->
+          <li class="nav-item"><a class="nav-link" href="carta.html">Platos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#reserva">Reservas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#locales">Locales</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+          <li class="nav-item">
+            <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">
+              🌙
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- HEADER -->
   <header class="header-carta">
@@ -134,39 +136,46 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-dark text-white py-4">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <img src="images/logo1.png" alt="Logo SAPE" width="100">
-          <p class="mt-2">Auténtica cocina peruana<br>Desde 1998</p>
-        </div>
-        
-        <div class="col-lg-4">
-          <h4>Contacto</h4>
-          <ul class="list-unstyled">
-            <li><i class='bx bx-map'></i> Av. Perú 123, Lima</li>
-            <li><i class='bx bx-phone'></i> (01) 456-7890</li>
-            <li><i class='bx bx-time'></i> Lun-Dom 12pm - 11pm</li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4">
-          <h4>Redes Sociales</h4>
-          <div class="social-icons">
-            <a href="#" class="text-white"><i class='bx bxl-facebook-square fs-3'></i></a>
-            <a href="#" class="text-white mx-2"><i class='bx bxl-instagram-alt fs-3'></i></a>
-            <a href="#" class="text-white"><i class='bx bxl-whatsapp fs-3'></i></a>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <p class="text-center mb-0">&copy; 2023 SAPE. Todos los derechos reservados</p>
+  <!-- FOOTERS -->
+  <!-- Primer Footer -->
+  <footer class="bg-dark text-light py-3">
+    <div class="container text-center">
+      © 2025 SAPE Internacional
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Pie de Página Detallado -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container">
+      <div class="row">
+        <!-- Columna de contacto o info -->
+        <div class="col-md-4 mb-3">
+          <h5>SAPE</h5>
+          <p>© 2025 SAPE - Todos los derechos reservados.</p>
+        </div>
+        <!-- Columna de secciones -->
+        <div class="col-md-4 mb-3">
+          <h5>Secciones</h5>
+          <ul class="list-unstyled">
+            <li><a href="#platillos" class="text-light text-decoration-none">Platillos</a></li>
+            <li><a href="#reservas" class="text-light text-decoration-none">Reserva</a></li>
+            <li><a href="#contactos" class="text-light text-decoration-none">Contactos</a></li>
+          </ul>
+        </div>
+        <!-- Columna de redes sociales -->
+        <div class="col-md-4 mb-3">
+          <h5>Síguenos</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Facebook</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Twitter</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
