@@ -181,42 +181,6 @@ body.dark-mode .btn-warning.active {
 
 
 //// 12/05/2025
-.header-carta {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/header-carta.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.menu-item {
-  transition: transform 0.3s ease;
-  border: none;
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.menu-item:hover {
-  transform: translateY(-5px);
-}
-
-.menu-item img {
-  height: 250px;
-  object-fit: cover;
-}
-
-.badge.bg-primary {
-  background-color: #dc3545 !important;
-}
-
-.social-icons a {
-  transition: opacity 0.3s ease;
-}
-
-.social-icons a:hover {
-  opacity: 0.8;
-}
   
 //12/05/2025 carta
