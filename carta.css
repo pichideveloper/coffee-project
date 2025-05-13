@@ -1,98 +1,22 @@
-/* carta.css: estilos específicos para la sección de platos */
-
-/* ——— Estilos base ——— */
-#carta {
-  background-color: #f8f9fa;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.menu-item {
-  background-color: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.menu-item img.card-img-top {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  background-color: #fff;
-}
-
-.menu-item .card-body {
-  color: #343a40;
-}
-
-.menu-item .card-title {
-  color: #343a40;
-}
-
-.menu-item .card-text,
-.menu-item ul.list-inline li {
-  color: #6c757d;
-}
-
-.menu-item .badge.bg-primary {
-  background-color: #dc3545;
-  color: #fff;
-}
-
-.menu-item .badge.bg-secondary {
-  background-color: #6c757d;
-  color: #fff;
-}
-
-/* Hover elevación */
-.menu-item:hover {
-  transform: translateY(-5px);
-}
-
-/* ——— Modo oscuro exclusivo para carta ——— */
+/* ——— Fondo general de la sección de cartas en modo oscuro ——— */
+.dark-mode body,
+.dark-mode .body-c,
 .dark-mode #carta {
   background-color: #121212 !important;
 }
 
-.dark-mode #carta .menu-item {
-  background-color: #1e1e1e !important;
-  border: 1px solid #333 !important;
+/* Asegurarnos de que ningún contenedor interno tenga fondo blanco */
+.dark-mode #carta .row,
+.dark-mode #carta .container {
+  background: transparent !important;
 }
 
-.dark-mode #carta .menu-item img.card-img-top {
-  background-color: #1e1e1e !important;
+///////
+.carta-descripcion {
+  color: #333;
 }
 
-.dark-mode #carta .menu-item .card-body {
-  color: #e0e0e0 !important;
+/* En modo oscuro */
+body.dark-mode .carta-descripcion {
+  color: #fff;
 }
-
-.dark-mode #carta .menu-item .card-title {
-  color: #fff !important;
-}
-
-.dark-mode #carta .menu-item .card-text,
-.dark-mode #carta .menu-item ul.list-inline li {
-  color: #b0b0b0 !important;
-}
-
-.dark-mode #carta .menu-item .badge.bg-primary {
-  background-color: #e63946 !important;
-  color: #fff !important;
-}
-
-.dark-mode #carta .menu-item .badge.bg-secondary {
-  background-color: #6c757d !important;
-  color: #fff !important;
-}
-
-/* Sombra en modo oscuro */
-.dark-mode #carta .menu-item.shadow {
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5) !important;
-}
-
-/* Asegurar que el gap entre cards herede fondo oscuro */
-.dark-mode #carta .row {
-  background-color: transparent !important;
-}
-
