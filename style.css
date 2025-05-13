@@ -1,150 +1,44 @@
-
 :root {
   --transition-time: 0.3s ease;
 }
+* { box-sizing: border-box; }
+body { padding-top: 70px; transition: background-color .3s, color .3s; }
+.navbar .nav-link:hover { background-color: orange; color: white !important; border-radius: .25rem; }
+.nav-link, .btn, .nav-dark-toggle { transition: all var(--transition-time); }
 
-.nav-link, .btn, .nav-dark-toggle {
-  transition: all var(--transition-time);
-}
-* {
-    box-sizing: border-box;
-}
+/* Hero */
+.carousel-item img { max-height: 600px; object-fit: cover; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); border-radius: 15px; }
+.carousel-caption { bottom: 20%; left: 10%; text-align: left; backdrop-filter: blur(2px); }
+.btn-warning { background-color: #ff6b6b; border: none; }
+.btn-lg { padding: .75rem 1.5rem; font-size: 1.25rem; }
 
-/* Ajustar margen top para compensar navbar fijo */
-body {
-  padding-top: 70px;
-}
+/* Feature Cards */
+.feature-card { background: #fff; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; }
+.feature-card:hover { transform: translateY(-5px); }
+.feature-icon { width: 60px; height: 60px; margin-bottom: .75rem; }
 
-/* Estilos del slider */
-.carousel-item img {
-  max-height: 600px;
-  object-fit: cover;
-}
+/* Tabs */
+.nav-tabs .nav-link { border: none; color: #333; }
+.nav-tabs .nav-link.active { border-bottom: 3px solid #ff6b6b; }
 
-/* Secciones */
-section {
-  scroll-margin-top: 80px; /* Para que el ancla no quede bajo el navbar */
-}
+/* Lightbox gallery images */
+#gale\.gallery img { cursor: pointer; }
 
-/* Tarjetas de testimonios */
-#testimonios .card {
-  background-color: #f8f9fa;
-}
+/* Testimonios */
+#testiCarousel .blockquote { background: #f8f9fa; padding: 2rem; border-radius: 1rem; }
 
-/* Botones y enlaces */
-.btn-outline-light {
-  color: #fff;
-  border-color: #fff;
-}
-.btn-outline-light:hover {
-  background-color: rgba(255,255,255,0.2);
-}
-.navbar .nav-link:hover {
-  background-color: orange;
-  color: white !important;
-  border-radius: 0.25rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+/* Dark Mode */
+body.dark-mode { background-color: #121212; color: #e0e0e0; }
+body.dark-mode .navbar { background-color: #1f1f1f !important; }
+body.dark-mode .bg-light { background-color: #0e0e0e !important; color: #e0e0e0 !important; }
+body.dark-mode .card, body.dark-mode section { background-color: #1f1f1f; color: #e0e0e0; }
+body.dark-mode .btn-outline-secondary { border-color: #e0e0e0; color: #e0e0e0; }
+body.dark-mode .btn-outline-secondary:hover { background-color: #333; }
+body.dark-mode .card { border: 1px solid rgba(255,255,255,0.1); }
 
-
-/* Modo oscuro */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark-mode .navbar {
-  background-color: #1f1f1f !important;
-}
-
-body.dark-mode .card,
-body.dark-mode .alert,
-body.dark-mode section {
-  background-color: #1f1f1f;
-  color: #e0e0e0;
-}
-
-body.dark-mode .btn-outline-secondary {
-  border-color: #e0e0e0;
-  color: #e0e0e0;
-}
-
-body.dark-mode .btn-outline-secondary:hover {
-  background-color: #333;
-}
-
-.nav-dark-toggle {
-  transition: transform 0.3s ease;
-}
-.nav-dark-toggle:hover {
-  transform: scale(1.1);
-}
-/* Sobrescribir los bg-light en modo oscuro */
-body.dark-mode .bg-light {
-  background-color: #0e0e0e !important;
-}
-
-/* Si quieres que los textos dentro de esas secciones también cambien */
-body.dark-mode .bg-light,
-body.dark-mode .bg-light p,
-body.dark-mode .bg-light h2,
-body.dark-mode .bg-light h3,
-body.dark-mode .bg-light h4,
-body.dark-mode .bg-light h5,
-body.dark-mode .bg-light h6 {
-  color: #e0e0e0 !important;
-}
-body.dark-mode .navbar .nav-link {
-  color: #fff !important;
-}
-body.dark-mode #darkModeToggle {
-  color: #fff !important;
-  border-color: #e0e0e0 !important;
-}
-
-/* Testimonios en modo oscuro */
-body.dark-mode #testimonios {
-  background-color: #0e0e0e !important;
-}
-
-body.dark-mode #testimonios .card {
-  background-color: #1f1f1f !important; 
-  color: #e0e0e0 !important;            
-}
-
-body.dark-mode #testimonios .card p,
-body.dark-mode #testimonios .card em {
-  color: #e0e0e0 !important;           
-}
-
-
-//// 12/05/2025
-.nav-link {
-  transition: all 0.3s ease;
-}
-.nav-link:hover {
-  color: #ff6b6b !important; /* Color peruano */
-  transform: translateY(-2px);
-}
-.carousel-caption {
-  background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
-  border-radius: 15px;
-  padding: 20px;
-}
-.carousel-caption {
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-  backdrop-filter: blur(2px);
-}
-.nav-tabs .nav-link {
-  border: none;
-  color: #333;
-}
-.nav-tabs .nav-link.active {
-  border-bottom: 3px solid #ff6b6b; /* Estilo peruano */
-}
-body.dark-mode .card {
-  border: 1px solid rgba(255,255,255,0.1);
-}
-  
+/* Footer */
+footer a { color: #fff; }
+footer a:hover { color: #ff6b6b; }
 
 
