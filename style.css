@@ -219,3 +219,76 @@ body.dark-mode .btn-warning.active {
   opacity: 0.8;
 }
   
+//12/05/2025 carta
+/* Mejorar visibilidad en modo oscuro para la sección de carta */
+body.dark-mode {
+  --bg-card: #1e1e1e;
+  --text-main: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --badge-primary: #e63946;
+  --badge-secondary: #6c757d;
+}
+
+/* Fondo y texto de las cards de menú */
+body.dark-mode .menu-item {
+  background-color: var(--bg-card) !important;
+}
+
+body.dark-mode .menu-item .card-body {
+  color: var(--text-main);
+}
+
+/* Títulos de plato */
+body.dark-mode .menu-item .card-title {
+  color: #fff;
+}
+
+/* Descripción y listas */
+body.dark-mode .menu-item .card-text,
+body.dark-mode .menu-item ul li {
+  color: var(--text-secondary);
+}
+
+/* Badges de precio */
+body.dark-mode .badge.bg-primary {
+  background-color: var(--badge-primary) !important;
+  color: #fff;
+}
+
+/* Badges secundarias */
+body.dark-mode .badge.bg-secondary {
+  background-color: var(--badge-secondary) !important;
+  color: #fff;
+}
+
+/* Enlaces y nav-links */
+body.dark-mode .nav-link,
+body.dark-mode a.text-light {
+  color: #ccc !important;
+}
+
+body.dark-mode .nav-link:hover {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+/* Overlay de header en carta */
+body.dark-mode .header-carta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+}
+body.dark-mode .header-carta .header-overlay h1,
+body.dark-mode .header-carta .header-overlay p {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ajuste de footer */
+body.dark-mode footer.bg-dark {
+  background-color: #121212 !important;
+  color: #888;
+}
