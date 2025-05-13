@@ -303,3 +303,39 @@ body.dark-mode footer.bg-dark {
 body.dark-mode footer.bg-dark a {
   color: #bbb !important;
 }
+/* ——— Ajustes extra para que las cards sean oscuras y el texto blanco se vea ——— */
+.dark-mode .card.menu-item {
+  background-color: #1e1e1e !important;     /* Fondo oscuro de la card */
+  border: 1px solid #333 !important;        /* Un ligero borde para separar */
+}
+
+.dark-mode .card.menu-item .card-body {
+  background-color: transparent !important; /* El card-body ya hereda el fondo de la card */
+  color: #e0e0e0 !important;                /* Texto principal claro */
+}
+
+/* Forzar fondo de imagen (si se muestra parte de la imagen detrás) */
+.dark-mode .card.menu-item .card-img-top {
+  background-color: #1e1e1e !important;
+}
+
+/* Badges de precio y secundarias */
+.dark-mode .card.menu-item .badge.bg-primary {
+  background-color: #e63946 !important;
+  color: #fff !important;
+}
+.dark-mode .card.menu-item .badge.bg-secondary {
+  background-color: #6c757d !important;
+  color: #fff !important;
+}
+
+/* Asegurar que las listas secundarias también se vean */
+.dark-mode .card.menu-item ul.list-inline .badge {
+  background-color: #6c757d !important;
+  color: #fff !important;
+}
+
+/* Sombra más suave para que no se confunda con el fondo */
+.dark-mode .card.menu-item.shadow {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5) !important;
+}
