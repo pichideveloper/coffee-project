@@ -54,3 +54,15 @@
 .dark-mode .contacto-info h5 {
   color: #ffc107;
 }
+
+.contacto-descripcion {
+  text-align: center; /* Asegura que el texto se alinee al centro */
+  margin-top: 20px;  /* Margen superior para un poco de separación */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Modo oscuro */
+.dark-mode .contacto-descripcion {
+  color: #ccc; /* Color claro en el modo oscuro */
+  text-align: center; /* Alineación central también en modo oscuro */
+}
