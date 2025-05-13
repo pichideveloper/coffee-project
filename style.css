@@ -229,50 +229,60 @@ body.dark-mode {
   --badge-secondary: #6c757d;
 }
 
-/* Fondo y texto de las cards de menú */
-body.dark-mode .menu-item {
+/* Fondo de las cards menú */
+body.dark-mode .card.menu-item {
   background-color: var(--bg-card) !important;
 }
 
-body.dark-mode .menu-item .card-body {
-  color: var(--text-main);
+/* Texto dentro de la card-body */
+body.dark-mode .card.menu-item .card-body {
+  color: var(--text-main) !important;
 }
 
-/* Títulos de plato */
-body.dark-mode .menu-item .card-title {
-  color: #fff;
+/* Título de plato */
+body.dark-mode .card.menu-item .card-title {
+  color: #fff !important;
 }
 
-/* Descripción y listas */
-body.dark-mode .menu-item .card-text,
-body.dark-mode .menu-item ul li {
-  color: var(--text-secondary);
+/* Descripción y lista de ingredientes */
+body.dark-mode .card.menu-item .card-text,
+body.dark-mode .card.menu-item ul li {
+  color: var(--text-secondary) !important;
 }
 
-/* Badges de precio */
-body.dark-mode .badge.bg-primary {
+/* Precios */
+body.dark-mode .card.menu-item .badge.bg-primary {
   background-color: var(--badge-primary) !important;
-  color: #fff;
+  color: #fff !important;
 }
 
-/* Badges secundarias */
-body.dark-mode .badge.bg-secondary {
+/* Badges secundarias (ingredientes, etiquetas) */
+body.dark-mode .card.menu-item .badge.bg-secondary {
   background-color: var(--badge-secondary) !important;
-  color: #fff;
+  color: #fff !important;
 }
 
-/* Enlaces y nav-links */
-body.dark-mode .nav-link,
-body.dark-mode a.text-light {
+/* Enlaces de navegación */
+body.dark-mode .navbar .nav-link,
+body.dark-mode .navbar .nav-link:link,
+body.dark-mode .navbar .nav-link:visited {
   color: #ccc !important;
 }
-
-body.dark-mode .nav-link:hover {
+body.dark-mode .navbar .nav-link:hover {
   background-color: #333 !important;
   color: #fff !important;
 }
 
-/* Overlay de header en carta */
+/* Botón toggle */
+body.dark-mode #darkModeToggle {
+  color: #fff !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* Header de carta overlay */
+body.dark-mode .header-carta {
+  position: relative;
+}
 body.dark-mode .header-carta::before {
   content: "";
   position: absolute;
@@ -280,15 +290,16 @@ body.dark-mode .header-carta::before {
   background: rgba(0,0,0,0.6);
   z-index: 0;
 }
-body.dark-mode .header-carta .header-overlay h1,
-body.dark-mode .header-carta .header-overlay p {
-  color: #fff;
+body.dark-mode .header-carta .header-overlay > * {
   position: relative;
   z-index: 1;
 }
 
-/* Ajuste de footer */
+/* Footer */
 body.dark-mode footer.bg-dark {
   background-color: #121212 !important;
-  color: #888;
+  color: #888 !important;
+}
+body.dark-mode footer.bg-dark a {
+  color: #bbb !important;
 }
