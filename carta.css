@@ -1,1 +1,65 @@
+/* carta.css: estilos específicos para la sección de platos */
+
+/* Base: cards de menú */
+.menu-item {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-item .card-body {
+  color: #343a40;
+}
+
+.menu-item .card-title {
+  color: #343a40;
+}
+
+.menu-item .card-text,
+.menu-item ul li {
+  color: #6c757d;
+}
+
+.menu-item .badge.bg-primary {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.menu-item .badge.bg-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+/* Hover */
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+/* ——— Modo oscuro solo para las cards de plato ——— */
+.dark-mode .menu-item {
+  background-color: #1e1e1e !important;
+  border: 1px solid #333;
+}
+
+.dark-mode .menu-item .card-body {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .menu-item .card-title {
+  color: #fff !important;
+}
+
+.dark-mode .menu-item .card-text,
+.dark-mode .menu-item ul li {
+  color: #b0b0b0 !important;
+}
+
+.dark-mode .menu-item .badge.bg-primary {
+  background-color: #e63946 !important;
+}
+
+.dark-mode .menu-item .badge.bg-secondary {
+  background-color: #6c757d !important;
+}
 
