@@ -259,25 +259,32 @@ body.dark-mode .menu-digital-item {
 
 .menu-digital-caption {
   position: absolute;
-  bottom: 0; /* Posiciona el texto en la parte inferior */
+  bottom: 0;
   left: 0;
   width: 100%;
-  padding: 20px 15px; /* Espaciado interno */
+  padding: 15px; /* Espaciado general */
   text-align: center;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%); /* Gradiente para legibilidad */
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%);
   z-index: 2;
+  display: flex; /* Usamos flex para centrar mejor el contenido del caption */
+  flex-direction: column;
+  justify-content: center; /* Centra el h4 verticalmente dentro del caption */
+  align-items: center; /* Centra el h4 horizontalmente */
+  min-height: 120px; /* Altura mínima para el caption. Ajusta este valor si necesitas más o menos espacio (ej. para 2 líneas de texto cómodamente) */
 }
 
 .menu-digital-caption h4 {
   color: white;
   font-weight: bold;
   margin: 0;
-  font-size: 1.5rem; /* Tamaño del texto, ajusta si es necesario */
-  position: relative; /* Necesario para los pseudo-elementos (las líneas) */
-  display: inline-block; /* Para que las líneas se ajusten al texto */
-  padding-top: 10px; /* Espacio para la línea superior */
-  padding-bottom: 10px; /* Espacio para la línea inferior */
+  font-size: 1.4rem; /* Puedes ajustar el tamaño si es necesario */
+  position: relative; /* Para las líneas ::before y ::after */
+  display: inline-block; /* Para que las líneas se ajusten al ancho del texto */
+  padding-top: 12px;    /* Espacio DENTRO del h4 para la línea superior */
+  padding-bottom: 12px; /* Espacio DENTRO del h4 para la línea inferior */
+  line-height: 1.3;     /* Mejora el espaciado si el texto va a dos líneas */
   text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  max-width: 95%;       /* Evita que el texto (si es muy largo) toque los bordes del caption */
 }
 
 /* Las líneas que aparecen en el hover */
@@ -288,21 +295,21 @@ body.dark-mode .menu-digital-item {
   left: 50%;
   transform: translateX(-50%);
   width: 0; /* Inician sin ancho */
-  height: 2px; /* Grosor de la línea */
+  height: 2px;
   background-color: white;
-  transition: width 0.3s ease-out; /* Animación suave para el ancho */
+  transition: width 0.3s ease-out;
 }
 
 .menu-digital-caption h4::before {
-  top: 0; /* Posición de la línea superior */
+  top: 5px; /* Distancia desde el borde superior del padding del h4 */
 }
 
 .menu-digital-caption h4::after {
-  bottom: 0; /* Posición de la línea inferior */
+  bottom: 5px; /* Distancia desde el borde inferior del padding del h4 */
 }
 
 /* Mostrar las líneas al pasar el mouse sobre el enlace (.menu-digital-link) */
 .menu-digital-link:hover .menu-digital-caption h4::before,
 .menu-digital-link:hover .menu-digital-caption h4::after {
-  width: 70%; /* Ancho de las líneas al aparecer (ej. 70% del texto) */
+  width: 70%; /* Ancho de las líneas al aparecer */
 }
