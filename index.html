@@ -27,14 +27,14 @@
         });
     }
 
-    function enviarCorreoCont(e){
+    function enviarCorreocont(e) {
       e.preventDefault();
       emailjs.sendForm('service_mzu5p4p', 'template_l2msb4y', e.target)
-      .then(() =>{
-        alert("Mensaje enviado correctamente")
-      },(error) =>{
-        alert("Error al enviar el mensaje: " + JSON.stringify(error));
-      });
+        .then(() => {
+          alert("Mensaje enviado correctamente");
+        }, (error) => {
+          alert("Error al enviar el mensaje: " + JSON.stringify(error));
+        });
     }
   </script>
 </head>
@@ -444,7 +444,7 @@
         </div>
         <div class="col-md-6 mb-3">
           <h5>Escríbenos</h5>
-          <form onsubmit="enviarCorreoCont(event)" method="post">
+          <form onsubmit="enviarCorreocont(event2)" method="post">
             <div class="mb-2">
               <input type="text" class="form-control" placeholder="Nombre Completo" name="nombreCon">
             </div>
