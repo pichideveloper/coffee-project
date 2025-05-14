@@ -64,15 +64,6 @@
   margin: 15px auto 0;
 }
 
-/* ------------------------- MODO OSCURO (AGREGAR NUEVOS ESTILOS) ------------------------- */
-/* Modo oscuro - mantener imagen original */
-.dark-mode .carousel-item img {
-  filter: none !important; /* Eliminar cualquier filtro */
-}
-
-.dark-mode .header-overlay {
-   background: rgba(0, 0, 0, 0.8);
-}
 
 /* ------------------------- RESPONSIVE (MANTENER Y AGREGAR) ------------------------- */
 @media (max-width: 768px) {
