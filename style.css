@@ -196,3 +196,113 @@ body.dark-mode .navbar .dropdown-menu .dropdown-item:focus {
   background-color: #ffa500 !important;  
   color: white;
 }
+
+
+13/05/2025
+////
+/* Estilos para la Nueva Sección de Menú Digital */
+#menu-digital {
+  background-color: #f8f9fa; /* Un fondo suave, puedes cambiarlo */
+}
+
+body.dark-mode #menu-digital {
+  background-color: #1e1e1e; /* Fondo para modo oscuro */
+}
+
+body.dark-mode #menu-digital h2,
+body.dark-mode #menu-digital p.lead {
+  color: #e0e0e0 !important;
+}
+
+.menu-digital-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Para que el hover ocupe todo el item */
+  transition: transform 0.3s ease;
+}
+
+.menu-digital-link:hover {
+  transform: translateY(-5px); /* Efecto sutil al pasar el mouse */
+}
+
+.menu-digital-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  height: 100%; /* Para que todos los items tengan la misma altura si están en .d-flex .align-items-stretch */
+  display: flex; /* Para centrar contenido si es necesario */
+  flex-direction: column; /* Apilar imagen y texto */
+}
+
+body.dark-mode .menu-digital-item {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+}
+
+
+.menu-digital-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.menu-digital-img {
+  width: 100%;
+  height: 300px; /* Altura fija para las imágenes, ajusta según necesites */
+  object-fit: cover; /* Para que la imagen cubra el espacio sin deformarse */
+  transition: transform 0.4s ease;
+}
+
+.menu-digital-link:hover .menu-digital-img {
+  transform: scale(1.05); /* Ligero zoom a la imagen al pasar el mouse */
+}
+
+.menu-digital-caption {
+  position: absolute;
+  bottom: 0; /* Posiciona el texto en la parte inferior */
+  left: 0;
+  width: 100%;
+  padding: 20px 15px; /* Espaciado interno */
+  text-align: center;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%); /* Gradiente para legibilidad */
+  z-index: 2;
+}
+
+.menu-digital-caption h4 {
+  color: white;
+  font-weight: bold;
+  margin: 0;
+  font-size: 1.5rem; /* Tamaño del texto, ajusta si es necesario */
+  position: relative; /* Necesario para los pseudo-elementos (las líneas) */
+  display: inline-block; /* Para que las líneas se ajusten al texto */
+  padding-top: 10px; /* Espacio para la línea superior */
+  padding-bottom: 10px; /* Espacio para la línea inferior */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Las líneas que aparecen en el hover */
+.menu-digital-caption h4::before,
+.menu-digital-caption h4::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0; /* Inician sin ancho */
+  height: 2px; /* Grosor de la línea */
+  background-color: white;
+  transition: width 0.3s ease-out; /* Animación suave para el ancho */
+}
+
+.menu-digital-caption h4::before {
+  top: 0; /* Posición de la línea superior */
+}
+
+.menu-digital-caption h4::after {
+  bottom: 0; /* Posición de la línea inferior */
+}
+
+/* Mostrar las líneas al pasar el mouse sobre el enlace (.menu-digital-link) */
+.menu-digital-link:hover .menu-digital-caption h4::before,
+.menu-digital-link:hover .menu-digital-caption h4::after {
+  width: 70%; /* Ancho de las líneas al aparecer (ej. 70% del texto) */
+}
