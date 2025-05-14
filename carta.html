@@ -27,39 +27,91 @@
 </head>
 
 <body class="body-c">
-  <!-- NAVEGACIÓN -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
-    <div class="container">
-      <a class="navbar-brand" href="https://pichideveloper.github.io/coffee-project/">
-        <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#nosotros">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="carta.html">Platos</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#reserva">Reservas</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#locales">Locales</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#galeria">Galería</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-          
-          <li class="nav-item">
-            <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
-          </li>
-        </ul>
-      </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <!-- Inicio como link normal -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#inicio">Inicio</a>
+        </li>
+        <!-- Nosotros -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navNosotros" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</a>
+          <ul class="dropdown-menu" aria-labelledby="navNosotros">
+            <li><a class="dropdown-item" href="index.html#nosotros">Sección Nosotros</a></li>
+            <li><a class="dropdown-item" href="nosotros.html">Más sobre nosotros</a></li>
+          </ul>
+        </li>
+        <!-- Servicios -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navServicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+          <ul class="dropdown-menu" aria-labelledby="navServicios">
+            <li><a class="dropdown-item" href="index.html#servicios">Sección Servicios</a></li>
+            <li><a class="dropdown-item" href="servicios.html">Lista de servicios</a></li>
+          </ul>
+        </li>
+        <!-- Platos -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navPlatos" role="button" data-bs-toggle="dropdown" aria-expanded="false">Platos</a>
+          <ul class="dropdown-menu" aria-labelledby="navPlatos">
+            <li><a class="dropdown-item" href="index.html#platos">Sección Platos</a></li>
+            <li><a class="dropdown-item" href="carta.html">Carta completa</a></li>
+          </ul>
+        </li>
+        <!-- Reservas -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navReservas" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reservas</a>
+          <ul class="dropdown-menu" aria-labelledby="navReservas">
+            <li><a class="dropdown-item" href="index.html#reserva">Reservar ahora</a></li>
+            <li><a class="dropdown-item" href="reservas.html">Ver reservas</a></li>
+          </ul>
+        </li>
+        <!-- Locales -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navLocales" role="button" data-bs-toggle="dropdown" aria-expanded="false">Locales</a>
+          <ul class="dropdown-menu" aria-labelledby="navLocales">
+            <li><a class="dropdown-item" href="index.html#locales">Ubicación de locales</a></li>
+            <li><a class="dropdown-item" href="locales.html">Ver todos</a></li>
+          </ul>
+        </li>
+        <!-- Galería -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navGaleria" role="button" data-bs-toggle="dropdown" aria-expanded="false">Galería</a>
+          <ul class="dropdown-menu" aria-labelledby="navGaleria">
+            <li><a class="dropdown-item" href="index.html#galeria">Ver galería</a></li>
+            <li><a class="dropdown-item" href="galeria.html">Galería completa</a></li>
+          </ul>
+        </li>
+        <!-- Contacto -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navContacto" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacto</a>
+          <ul class="dropdown-menu" aria-labelledby="navContacto">
+            <li><a class="dropdown-item" href="index.html#contacto">Formulario</a></li>
+            <li><a class="dropdown-item" href="contacto.html">Página de contacto</a></li>
+          </ul>
+        </li>
+        <!-- Botón modo oscuro -->
+        <li class="nav-item">
+          <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <!-- HEADER -->
   <header class="header-carta">
     <div class="header-overlay">
       <h1 class="text-center text-white display-4">Nuestra Carta</h1>
-      <p style="text-align: center;">Descubre los sabores auténticos del Perú</p>
+      <p class="text-center lead carta-descripcion">Descubre los sabores auténticos del Perú</p>
 
     </div>
   </header>
@@ -74,7 +126,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <h3 class="card-title mb-0">Ceviche Mixto</h3>
-              <span class="badge bg-primary fs-5">S/ 35.00</span>
+              <span class="badge bg-warning fs-5">S/ 35.00</span>
             </div>
             <p class="card-text">Pescado fresco, mariscos, leche de tigre, camote, choclo y cancha serrana.</p>
             <ul class="list-inline">
@@ -92,7 +144,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <h3 class="card-title mb-0">Lomo Saltado</h3>
-              <span class="badge bg-primary fs-5">S/ 30.00</span>
+              <span class="badge bg-warning fs-5">S/ 30.00</span>
             </div>
             <p class="card-text">Salteado de lomo fino con cebolla, tomate, ají amarillo y papas fritas.</p>
             <ul class="list-inline">
@@ -109,7 +161,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <h3 class="card-title mb-0">Ají de Gallina</h3>
-              <span class="badge bg-primary fs-5">S/ 25.00</span>
+              <span class="badge bg-warning fs-5">S/ 25.00</span>
             </div>
             <p class="card-text">Gallina desmenuzada en crema de ají amarillo, acompañado de papas y arroz.</p>
             <ul class="list-inline">
@@ -126,7 +178,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <h3 class="card-title mb-0">Anticuchos</h3>
-              <span class="badge bg-primary fs-5">S/ 28.00</span>
+              <span class="badge bg-warning fs-5">S/ 28.00</span>
             </div>
             <p class="card-text">Brochetas de corazón de res marinadas en ají panca y vinagre.</p>
             <ul class="list-inline">
@@ -144,7 +196,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <h3 class="card-title mb-0">Chupetin</h3>
-              <span class="badge bg-primary fs-5">S/ GAAA </span>
+              <span class="badge bg-warning fs-5">S/ GAAA </span>
             </div>
             <p class="card-text">YA NEGRA VOTAME TU CANCION</p>
             <ul class="list-inline">
