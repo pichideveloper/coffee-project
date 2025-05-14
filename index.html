@@ -29,7 +29,12 @@
 
     function enviarCorreoCont(e){
       e.preventDefault();
-      emailjs.sendForm('service_mzu5p4p', '', e.target)
+      emailjs.sendForm('service_mzu5p4p', 'template_l2msb4y', e.target)
+      .then(() =>{
+        alert("Mensaje enviado correctamente")
+      },(error) =>{
+        alert("Error al enviar el mensaje: " + JSON.stringify(error));
+      });
     }
   </script>
 </head>
@@ -441,13 +446,13 @@
           <h5>Escríbenos</h5>
           <form>
             <div class="mb-2">
-              <input type="text" class="form-control" placeholder="Nombre Completo">
+              <input type="text" class="form-control" placeholder="Nombre Completo" name="nombreCon">
             </div>
             <div class="mb-2">
-              <input type="email" class="form-control" placeholder="Correo de Contacto">
+              <input type="email" class="form-control" placeholder="Correo de Contacto" name="correoCon">
             </div>
             <div class="mb-2">
-              <textarea class="form-control" rows="3" placeholder="Mensaje Detallado"></textarea>
+              <textarea class="form-control" rows="3" placeholder="Mensaje Detallado" name="mensajeCon"></textarea>
             </div>
             <button type="submit" class="btn btn-warning text-light me-2">Enviar Mensaje</button>
           </form>
