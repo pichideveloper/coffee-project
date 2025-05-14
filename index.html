@@ -284,7 +284,7 @@
       <p>Para reservar una mesa primero llena tus datos. Según el número de personas, paga un adelanto (desde S/20) como
         consumo. Aceptamos todas las tarjetas. Se te enviará un cupón con un código a tu correo. (Sólo de lunes a
         viernes.)</p>
-      <form id="reservaForm" class="row g-3" onsubmit="enviarCorreo(event)">
+      <form id="reservaForm" class="row g-3" onsubmit="enviarCorreo(event)" method="post">
         <div class="col-md-6">
           <label for="nombre" class="form-label">Nombres Completo</label>
           <input type="text" class="form-control" id="nombre" name="nombre" required>
