@@ -219,6 +219,7 @@ body.dark-mode #menu-digital p.lead {
   color: inherit;
   display: block; /* Para que el hover ocupe todo el item */
   transition: transform 0.3s ease;
+  height: 100%;
 }
 
 .menu-digital-link:hover {
@@ -248,9 +249,8 @@ body.dark-mode .menu-digital-item {
 
 .menu-digital-img {
   width: 100%;
-  height: 300px; /* Altura fija para las imágenes, ajusta según necesites */
+  height: 320px; /* Altura fija para las imágenes, ajusta según necesites */
   object-fit: cover; /* Para que la imagen cubra el espacio sin deformarse */
-  transition: transform 0.4s ease;
 }
 
 .menu-digital-link:hover .menu-digital-img {
@@ -312,4 +312,17 @@ body.dark-mode .menu-digital-item {
 .menu-digital-link:hover .menu-digital-caption h4::before,
 .menu-digital-link:hover .menu-digital-caption h4::after {
   width: 70%; /* Ancho de las líneas al aparecer */
+}
+
+/* 4. Forzar ancho igual en todas las columnas */
+#menu-digital .row > div {
+  flex: 1 0 264px; /* Ancho base = 264px (igual al de tus imágenes) */
+  max-width: 264px; /* Evita que se estiren */
+  margin: 0 auto; /* Centrar en caso de wrap */
+}
+
+/* 5. Contenedor principal - Centrar columnas */
+#menu-digital .row {
+  justify-content: center;
+  gap: 1rem; /* Espaciado uniforme */
 }
