@@ -17,7 +17,7 @@
       emailjs.init("VFO34VNSCYXvEdt_b"); 
     })();
 
-    function enviarCorreo(e) {
+    function enviarCorreoRes(e) {
       e.preventDefault();
       emailjs.sendForm('service_mzu5p4p', 'template_x07xoeb', e.target)
         .then(() => {
@@ -25,6 +25,11 @@
         }, (error) => {
           alert("Error al enviar el mensaje: " + JSON.stringify(error));
         });
+    }
+
+    function enviarCorreoCont(e){
+      e.preventDefault();
+      emailjs.sendForm('service_mzu5p4p', '', e.target)
     }
   </script>
 </head>
@@ -284,7 +289,7 @@
       <p>Para reservar una mesa primero llena tus datos. Según el número de personas, paga un adelanto (desde S/20) como
         consumo. Aceptamos todas las tarjetas. Se te enviará un cupón con un código a tu correo. (Sólo de lunes a
         viernes.)</p>
-      <form id="reservaForm" class="row g-3" onsubmit="enviarCorreo(event)" method="post">
+      <form id="reservaForm" class="row g-3" onsubmit="enviarCorreoRes(event)" method="post">
         <div class="col-md-6">
           <label for="nombre" class="form-label">Nombres Completo</label>
           <input type="text" class="form-control" id="nombre" name="nombre" required>
