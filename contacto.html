@@ -19,32 +19,86 @@
 </head>
 
 <body class="body-contacto">
-  <!-- NAVEGACIÓN -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#nosotros">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="carta.html">Platos</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#reserva">Reservas</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#locales">Locales</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#galeria">Galería</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
-          <li class="nav-item">
-            <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
-          </li>
-        </ul>
-      </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <!-- Inicio como link normal -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#inicio">Inicio</a>
+        </li>
+        <!-- Nosotros -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navNosotros" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</a>
+          <ul class="dropdown-menu" aria-labelledby="navNosotros">
+            <li><a class="dropdown-item" href="index.html#nosotros">Sección Nosotros</a></li>
+            <li><a class="dropdown-item" href="nosotros.html">Más sobre nosotros</a></li>
+          </ul>
+        </li>
+        <!-- Servicios -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navServicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+          <ul class="dropdown-menu" aria-labelledby="navServicios">
+            <li><a class="dropdown-item" href="index.html#servicios">Sección Servicios</a></li>
+            <li><a class="dropdown-item" href="servicios.html">Lista de servicios</a></li>
+          </ul>
+        </li>
+        <!-- Platos -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navPlatos" role="button" data-bs-toggle="dropdown" aria-expanded="false">Platos</a>
+          <ul class="dropdown-menu" aria-labelledby="navPlatos">
+            <li><a class="dropdown-item" href="index.html#platos">Sección Platos</a></li>
+            <li><a class="dropdown-item" href="carta.html">Carta completa</a></li>
+          </ul>
+        </li>
+        <!-- Reservas -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navReservas" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reservas</a>
+          <ul class="dropdown-menu" aria-labelledby="navReservas">
+            <li><a class="dropdown-item" href="index.html#reserva">Reservar ahora</a></li>
+            <li><a class="dropdown-item" href="reservas.html">Ver reservas</a></li>
+          </ul>
+        </li>
+        <!-- Locales -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navLocales" role="button" data-bs-toggle="dropdown" aria-expanded="false">Locales</a>
+          <ul class="dropdown-menu" aria-labelledby="navLocales">
+            <li><a class="dropdown-item" href="index.html#locales">Ubicación de locales</a></li>
+            <li><a class="dropdown-item" href="locales.html">Ver todos</a></li>
+          </ul>
+        </li>
+        <!-- Galería -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navGaleria" role="button" data-bs-toggle="dropdown" aria-expanded="false">Galería</a>
+          <ul class="dropdown-menu" aria-labelledby="navGaleria">
+            <li><a class="dropdown-item" href="index.html#galeria">Ver galería</a></li>
+            <li><a class="dropdown-item" href="galeria.html">Galería completa</a></li>
+          </ul>
+        </li>
+        <!-- Contacto -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navContacto" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacto</a>
+          <ul class="dropdown-menu" aria-labelledby="navContacto">
+            <li><a class="dropdown-item" href="index.html#contacto">Formulario</a></li>
+            <li><a class="dropdown-item" href="contacto.html">Página de contacto</a></li>
+          </ul>
+        </li>
+        <!-- Botón modo oscuro -->
+        <li class="nav-item">
+          <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
 
   <!-- HEADER CON CARRUSEL -->
   <header class="header-contacto">
@@ -90,7 +144,7 @@
             <div class="mb-3">
               <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+            <button type="submit" class="btn btn-warning text-light w-100">Enviar Mensaje</button>
           </form>
         </div>
       </div>
