@@ -1,0 +1,179 @@
+/* style.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 70px; /* Adjusted for fixed navbar height */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+/* Navbar Logo */
+#navbarLogo {
+  max-height: 50px;
+  width: auto;
+}
+
+.navbar {
+    min-height: 70px; /* Ensure navbar is tall enough for logo and items */
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075); /* Softer shadow than default fixed-top */
+}
+
+/* Hero Carousel (Slider de Inicio) */
+#inicio {
+  padding-top: 0; /* Remove padding as navbar is fixed and body has padding-top */
+}
+
+#heroCarousel .carousel-item {
+  height: 80vh; /* Adjust height as needed, vh for viewport height */
+  min-height: 400px; /* Minimum height for smaller screens */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+#heroCarousel .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.55); /* Semi-transparent background for caption */
+  padding: 25px 20px;
+  border-radius: .5rem;
+  bottom: 5%; /* Position caption a bit higher */
+}
+
+#heroCarousel .carousel-caption h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+#heroCarousel .carousel-caption p {
+  font-size: 1.3rem;
+  margin-bottom: 1.25rem;
+  color: #f8f9fa;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+#heroCarousel .btn {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+}
+
+
+/* General Section Styling */
+section {
+  padding: 50px 0;
+}
+
+section .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 2.5rem;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+section .section-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #0d6efd; /* Bootstrap primary color */
+    bottom: 0;
+    left: calc(50% - 30px);
+}
+
+
+/* Nosotros Section */
+#nosotros {
+  background-color: #f9f9f9; /* A very light grey */
+}
+
+#nosotros img {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#nosotros .lead {
+    font-size: 1.15rem;
+    color: #555;
+}
+
+/* Servicios Section */
+#servicios .card {
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden; /* To ensure icon background doesn't overflow on hover */
+}
+
+#servicios .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,.15)!important;
+}
+
+#servicios .card .icon-container {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #0d6efd; /* Bootstrap primary color for icons */
+    background-color: rgba(13, 110, 253, 0.1); /* Light primary background */
+    width: 80px;
+    height: 80px;
+    line-height: 80px; /* Vertically center icon */
+    border-radius: 50%;
+    display: inline-block; /* Center the container itself */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#servicios .card:hover .icon-container {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+#servicios .card-title {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+#servicios .card-text {
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+/* Footer Styling */
+footer.bg-dark {
+    padding-top: 30px; /* Reduced padding */
+    padding-bottom: 30px; /* Reduced padding */
+    font-size: 0.9rem;
+}
+
+footer h5 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+footer p, footer ul li a {
+    color: #adb5bd;
+}
+
+footer ul li a:hover {
+    color: #ffffff;
+    text-decoration: none; /* Remove underline, personal preference */
+}
+
+footer ul {
+    padding-left: 0; /* Remove default padding */
+}
+
+/* Dark Mode Toggle Button */
+.nav-dark-toggle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    line-height: 1; /* Ensure icon is centered */
+}
