@@ -1,179 +1,108 @@
-/* Lista-Servicios.css */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding-top: 70px; /* Adjusted for fixed navbar height */
-  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+
+/* Dark Mode Styles - Add to Lista-Servicios.css */
+
+body.dark-mode {
+    background-color: #212529; /* A common dark background color (Bootstrap's $dark) */
+    color: #dee2e6;           /* A light grey for general text, ensuring readability */
 }
 
-/* Navbar Logo */
-#navbarLogo {
-  max-height: 50px;
-  width: auto;
+/* --- Navbar Adjustments for Dark Mode --- */
+body.dark-mode .navbar.bg-light {
+    background-color: #343a40 !important; /* Darker background for the navbar */
+    border-bottom: 1px solid #495057; /* Optional: a subtle border */
 }
 
-.navbar {
-    min-height: 70px; /* Ensure navbar is tall enough for logo and items */
-    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075); /* Softer shadow than default fixed-top */
+body.dark-mode .navbar-light .navbar-brand,
+body.dark-mode .navbar-light .navbar-brand:hover,
+body.dark-mode .navbar-light .navbar-brand:focus {
+    color: #f8f9fa; /* Light color for the brand name */
 }
 
-/* Hero Carousel (Slider de Inicio) */
-#inicio {
-  padding-top: 0; /* Remove padding as navbar is fixed and body has padding-top */
+/* Make sure the navbar logo (if it's a dark image) is visible */
+body.dark-mode #navbarLogo.needs-dark-mode-inversion { /* Add class 'needs-dark-mode-inversion' to your logo img if it's dark */
+    filter: brightness(0) invert(1);
 }
 
-#heroCarousel .carousel-item {
-  height: 80vh; /* Adjust height as needed, vh for viewport height */
-  min-height: 400px; /* Minimum height for smaller screens */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+body.dark-mode .navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.7); /* Lighter color for navbar links */
 }
 
-#heroCarousel .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.55); /* Semi-transparent background for caption */
-  padding: 25px 20px;
-  border-radius: .5rem;
-  bottom: 5%; /* Position caption a bit higher */
+body.dark-mode .navbar-light .navbar-nav .nav-link:hover,
+body.dark-mode .navbar-light .navbar-nav .nav-link:focus,
+body.dark-mode .navbar-light .navbar-nav .nav-link.active {
+    color: #ffffff; /* White for active/hovered navbar links */
 }
 
-#heroCarousel .carousel-caption h2 {
-  font-size: 2.8rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-  color: #fff;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+body.dark-mode .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.25);
 }
 
-#heroCarousel .carousel-caption p {
-  font-size: 1.3rem;
-  margin-bottom: 1.25rem;
-  color: #f8f9fa;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-#heroCarousel .btn {
-    font-size: 1.1rem;
-    padding: 0.75rem 1.5rem;
+body.dark-mode .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 
-/* General Section Styling */
-section {
-  padding: 50px 0;
+/* --- Content Text Adjustments for Dark Mode --- */
+body.dark-mode .section-title {
+    color: #f8f9fa; /* Very light color for main section titles */
+}
+/* The ::after for section-title uses Bootstrap primary color, which should be fine. */
+/* If not, you can style 'body.dark-mode .section-title::after' */
+
+body.dark-mode p.lead {
+    color: #ced4da; /* Lighter color for lead paragraphs */
 }
 
-section .section-title {
-  text-align: center;
-  margin-bottom: 40px;
-  font-weight: 600;
-  font-size: 2.5rem;
-  position: relative;
-  padding-bottom: 15px;
+/* --- Service Item Specific Text in Dark Mode --- */
+/* This targets the section you provided: #nuestros-servicios */
+
+body.dark-mode #nuestros-servicios .service-item h3 {
+    color: #e9ecef; /* A slightly off-white for service item titles */
 }
 
-section .section-title::after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #0d6efd; /* Bootstrap primary color */
-    bottom: 0;
-    left: calc(50% - 30px);
+/* This is crucial for your descriptive texts */
+body.dark-mode #nuestros-servicios .service-item p,
+body.dark-mode #nuestros-servicios .service-item p.text-muted {
+    color: #adb5bd; /* A legible light grey for paragraph text (Bootstrap's $gray-500) */
 }
 
-
-/* Nosotros Section */
-#nosotros {
-  background-color: #f9f9f9; /* A very light grey */
+body.dark-mode #nuestros-servicios .service-item .service-features li {
+    color: #adb5bd; /* Same light grey for the feature list items */
 }
 
-#nosotros img {
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
+/* Bootstrap icons (bi-wifi, bi-check-circle-fill etc.) with .text-primary or .text-success
+   should remain visible as these colors are generally vibrant. If not, you can add:
+body.dark-mode .text-primary { color: #58a6ff !important; } // Example: a lighter blue
+body.dark-mode .text-success { color: #56d364 !important; } // Example: a lighter green
+*/
 
-#nosotros .lead {
-    font-size: 1.15rem;
-    color: #555;
+/* --- Dark Mode Toggle Button --- */
+body.dark-mode button#darkModeToggle.btn-outline-secondary {
+    background-color: #495057;
+    border-color: #6c757d;
+    color: #f8f9fa; /* Moon icon color */
 }
-
-/* Servicios Section */
-#servicios .card {
-  border: none;
-  border-radius: 8px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  overflow: hidden; /* To ensure icon background doesn't overflow on hover */
-}
-
-#servicios .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,.15)!important;
-}
-
-#servicios .card .icon-container {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    color: #0d6efd; /* Bootstrap primary color for icons */
-    background-color: rgba(13, 110, 253, 0.1); /* Light primary background */
-    width: 80px;
-    height: 80px;
-    line-height: 80px; /* Vertically center icon */
-    border-radius: 50%;
-    display: inline-block; /* Center the container itself */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#servicios .card:hover .icon-container {
-    background-color: #0d6efd;
-    color: #fff;
-}
-
-#servicios .card-title {
-  margin-top: 0.5rem;
-  font-weight: 600;
-  font-size: 1.25rem;
-}
-
-#servicios .card-text {
-    font-size: 0.95rem;
-    color: #6c757d;
-}
-
-/* Footer Styling */
-footer.bg-dark {
-    padding-top: 30px; /* Reduced padding */
-    padding-bottom: 30px; /* Reduced padding */
-    font-size: 0.9rem;
-}
-
-footer h5 {
+body.dark-mode button#darkModeToggle.btn-outline-secondary:hover {
+    background-color: #5a6268;
+    border-color: #6c757d;
     color: #ffffff;
-    margin-bottom: 1rem;
-    font-weight: 500;
 }
 
-footer p, footer ul li a {
-    color: #adb5bd;
+
+/* --- Footer --- */
+/* Your footer uses .bg-dark and light text, so it's mostly dark-mode friendly.
+   These rules ensure consistency if other styles interfere. */
+body.dark-mode footer.bg-dark {
+    border-top: 1px solid #495057; /* Optional: a top border for separation */
+}
+body.dark-mode footer.bg-dark h5 {
+    color: #f8f9fa; /* Ensure footer headings are light */
 }
 
-footer ul li a:hover {
+body.dark-mode footer.bg-dark p,
+body.dark-mode footer.bg-dark ul li a {
+    color: #adb5bd; /* Ensure footer text and links are light grey */
+}
+body.dark-mode footer.bg-dark ul li a:hover {
     color: #ffffff;
-    text-decoration: none; /* Remove underline, personal preference */
-}
-
-footer ul {
-    padding-left: 0; /* Remove default padding */
-}
-
-/* Dark Mode Toggle Button */
-.nav-dark-toggle {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    line-height: 1; /* Ensure icon is centered */
 }
