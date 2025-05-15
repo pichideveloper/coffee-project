@@ -1,77 +1,37 @@
 /* Lista-Servicios.css */
-/* Estilos para modo claro y oscuro */
+/* Corrección específica para textos en modo oscuro */
 
-#nuestros-servicios {
-  transition: background-color 0.3s ease;
+/* Modo oscuro - Sobrescribir Bootstrap */
+[data-bs-theme="dark"] #nuestros-servicios {
+  --texto-primario: #f8f9fa; /* Blanco suave */
+  --texto-secundario: #dee2e6; /* Gris claro */
+  --fondo-seccion: #212529; /* Fondo oscuro de Bootstrap */
 }
 
-/* Textos principales */
-.section-title,
-.h4.fw-bold,
-.service-features li {
-  color: inherit; /* Hereda el color del tema padre */
+/* Aplicar a todos los textos descriptivos */
+[data-bs-theme="dark"] .service-item .text-muted {
+  color: var(--texto-secundario) !important;
+  opacity: 0.9;
 }
 
-/* Modo oscuro */
-@media (prefers-color-scheme: dark) {
-  [data-bs-theme="dark"] #nuestros-servicios {
-    --texto-primario: #e0e0e0;
-    --texto-secundario: #a0a0a0;
-    --fondo-seccion: #1a1a1a;
-    
-    background-color: var(--fondo-seccion);
-  }
-
-  /* Clases específicas de Bootstrap a sobreescribir */
-  [data-bs-theme="dark"] .text-muted {
-    color: var(--texto-secundario) !important;
-    opacity: 0.9;
-  }
-
-  [data-bs-theme="dark"] .service-item p {
-    color: var(--texto-primario);
-    opacity: 0.85;
-  }
-
-  [data-bs-theme="dark"] .service-features li {
-    color: var(--texto-secundario);
-  }
-
-  [data-bs-theme="dark"] .bi-check-circle-fill {
-    color: #4CAF50 !important; /* Mantenemos el verde para los check */
-  }
+/* Textos principales de cada servicio */
+[data-bs-theme="dark"] .service-item p:not(.text-muted) {
+  color: var(--texto-primario) !important;
+  opacity: 0.95;
 }
 
-/* Asegurar contraste en textos */
-.text-muted {
-  color: #6c757d !important; /* Color original en modo claro */
+/* Elementos de lista */
+[data-bs-theme="dark"] .service-features li {
+  color: var(--texto-secundario) !important;
 }
 
-.service-item p {
-  color: #495057; /* Color optimizado para modo claro */
+/* Iconos de check */
+[data-bs-theme="dark"] .bi-check-circle-fill {
+  color: #20c997 !important; /* Verde más vibrante */
 }
 
-/* Corrección específica para tarjetas de servicios */
-.service-item {
-  padding: 1.5rem;
-  border-radius: 12px;
-  background-color: inherit; /* Hereda el fondo del tema */
-}
-
-/* Mejorar legibilidad en ambos modos */
-.h4.fw-bold {
-  border-bottom: 2px solid var(--bs-primary);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.service-features li {
-  padding-left: 1.75rem;
-  position: relative;
-}
-
-.service-features .bi-check-circle-fill {
-  position: absolute;
-  left: 0;
-  top: 0.25em;
+/* Asegurar contraste en títulos */
+[data-bs-theme="dark"] .h4.fw-bold {
+  color: var(--texto-primario) !important;
+  border-color: var(--texto-primario) !important;
 }
