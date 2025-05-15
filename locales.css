@@ -5,14 +5,14 @@
 :root {
   --bg-card: #fff;
   --text-card: #333;
-  --btn-bg: #b02a20;
+  --btn-bg: #ffc107;
   --btn-text: #fff;
   --card-shadow: rgba(0,0,0,0.1);
 }
 body.dark-mode {
   --bg-card: #2a2a2a;
   --text-card: #ddd;
-  --btn-bg: #cd5c5c;
+  --btn-bg: ##FFCA2C;
   --btn-text: #fff;
   --card-shadow: rgba(0,0,0,0.5);
 }
