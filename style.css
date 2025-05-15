@@ -356,8 +356,8 @@ section .section-title::after {
 #servicios .card .icon-container {
   font-size: 2.8rem; /* Tamaño del icono */
   margin-bottom: 1rem;
-  color: #0d6efd; /* Color del icono (Bootstrap primary) */
-  background-color: rgba(13, 110, 253, 0.1); /* Fondo suave para el contenedor del icono */
+  color: #FFC107; /* Color del icono (Bootstrap primary) */
+  background-color: rgba(255, 193, 7, 0.1); /* Fondo suave para el contenedor del icono */
   width: 80px;
   height: 80px;
   line-height: 80px; /* Centra el icono verticalmente */
@@ -367,8 +367,8 @@ section .section-title::after {
 }
 
 #servicios .card:hover .icon-container {
-  background-color: #0d6efd; /* Fondo del icono al pasar el mouse */
-  color: #fff; /* Color del icono al pasar el mouse */
+  background-color: #FFC107; /* Fondo del icono al pasar el mouse */
+  color: #343a40; /* Color del icono al pasar el mouse */
 }
 
 #servicios .card-title {
@@ -407,13 +407,13 @@ body.dark-mode #servicios .card {
 }
 
 body.dark-mode #servicios .card .icon-container {
-  color: #FFC107; /* Un azul más brillante/claro para el icono */
-  background-color: rgba(255, 193, 7, 0.1); /* Fondo del icono adaptado para modo oscuro */
+  color: #FFCA2C; /* Un azul más brillante/claro para el icono */
+  background-color: rgba(255, 202, 44, 0.15); /* Fondo del icono adaptado para modo oscuro */
 }
 
 body.dark-mode #servicios .card:hover .icon-container {
-  background-color: #FFC107; /* Fondo del icono al pasar el mouse en modo oscuro */
-  color: #343a40; /* Color de icono oscuro sobre fondo claro (del hover) */
+  background-color: #FFCA2C; /* Fondo del icono al pasar el mouse en modo oscuro */
+  color: #1f1f1f; /* Color de icono oscuro sobre fondo claro (del hover) */
 }
 
 body.dark-mode #servicios .card-title {
