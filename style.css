@@ -450,6 +450,6 @@ justify-content: space-around; /* Espacio uniforme entre los iconos */
  }
 
 .social-icons a {
-color: #333;
-font-size: 36px;
+color: #AAA;
+font-size: 20px;
 }
