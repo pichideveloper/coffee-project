@@ -440,3 +440,16 @@ border: 1px solid rgba(255,255,255,25%);
 border-radius: 10%;
 }
 
+
+
+
+/*iconos */
+.social-icons {
+ display: flex; /* Usamos Flexbox para distribuir los iconos */
+justify-content: space-around; /* Espacio uniforme entre los iconos */
+ }
+
+.social-icons a {
+color: #333;
+font-size: 36px;
+}
