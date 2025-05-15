@@ -1,108 +1,77 @@
+/* Lista-Servicios.css */
+/* Estilos para modo claro y oscuro */
 
-/* Dark Mode Styles - Add to Lista-Servicios.css */
-
-body.dark-mode {
-    background-color: #212529; /* A common dark background color (Bootstrap's $dark) */
-    color: #dee2e6;           /* A light grey for general text, ensuring readability */
+#nuestros-servicios {
+  transition: background-color 0.3s ease;
 }
 
-/* --- Navbar Adjustments for Dark Mode --- */
-body.dark-mode .navbar.bg-light {
-    background-color: #343a40 !important; /* Darker background for the navbar */
-    border-bottom: 1px solid #495057; /* Optional: a subtle border */
+/* Textos principales */
+.section-title,
+.h4.fw-bold,
+.service-features li {
+  color: inherit; /* Hereda el color del tema padre */
 }
 
-body.dark-mode .navbar-light .navbar-brand,
-body.dark-mode .navbar-light .navbar-brand:hover,
-body.dark-mode .navbar-light .navbar-brand:focus {
-    color: #f8f9fa; /* Light color for the brand name */
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  [data-bs-theme="dark"] #nuestros-servicios {
+    --texto-primario: #e0e0e0;
+    --texto-secundario: #a0a0a0;
+    --fondo-seccion: #1a1a1a;
+    
+    background-color: var(--fondo-seccion);
+  }
+
+  /* Clases específicas de Bootstrap a sobreescribir */
+  [data-bs-theme="dark"] .text-muted {
+    color: var(--texto-secundario) !important;
+    opacity: 0.9;
+  }
+
+  [data-bs-theme="dark"] .service-item p {
+    color: var(--texto-primario);
+    opacity: 0.85;
+  }
+
+  [data-bs-theme="dark"] .service-features li {
+    color: var(--texto-secundario);
+  }
+
+  [data-bs-theme="dark"] .bi-check-circle-fill {
+    color: #4CAF50 !important; /* Mantenemos el verde para los check */
+  }
 }
 
-/* Make sure the navbar logo (if it's a dark image) is visible */
-body.dark-mode #navbarLogo.needs-dark-mode-inversion { /* Add class 'needs-dark-mode-inversion' to your logo img if it's dark */
-    filter: brightness(0) invert(1);
+/* Asegurar contraste en textos */
+.text-muted {
+  color: #6c757d !important; /* Color original en modo claro */
 }
 
-body.dark-mode .navbar-light .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.7); /* Lighter color for navbar links */
+.service-item p {
+  color: #495057; /* Color optimizado para modo claro */
 }
 
-body.dark-mode .navbar-light .navbar-nav .nav-link:hover,
-body.dark-mode .navbar-light .navbar-nav .nav-link:focus,
-body.dark-mode .navbar-light .navbar-nav .nav-link.active {
-    color: #ffffff; /* White for active/hovered navbar links */
+/* Corrección específica para tarjetas de servicios */
+.service-item {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: inherit; /* Hereda el fondo del tema */
 }
 
-body.dark-mode .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.25);
+/* Mejorar legibilidad en ambos modos */
+.h4.fw-bold {
+  border-bottom: 2px solid var(--bs-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
-body.dark-mode .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+.service-features li {
+  padding-left: 1.75rem;
+  position: relative;
 }
 
-
-/* --- Content Text Adjustments for Dark Mode --- */
-body.dark-mode .section-title {
-    color: #f8f9fa; /* Very light color for main section titles */
-}
-/* The ::after for section-title uses Bootstrap primary color, which should be fine. */
-/* If not, you can style 'body.dark-mode .section-title::after' */
-
-body.dark-mode p.lead {
-    color: #ced4da; /* Lighter color for lead paragraphs */
-}
-
-/* --- Service Item Specific Text in Dark Mode --- */
-/* This targets the section you provided: #nuestros-servicios */
-
-body.dark-mode #nuestros-servicios .service-item h3 {
-    color: #e9ecef; /* A slightly off-white for service item titles */
-}
-
-/* This is crucial for your descriptive texts */
-body.dark-mode #nuestros-servicios .service-item p,
-body.dark-mode #nuestros-servicios .service-item p.text-muted {
-    color: #adb5bd; /* A legible light grey for paragraph text (Bootstrap's $gray-500) */
-}
-
-body.dark-mode #nuestros-servicios .service-item .service-features li {
-    color: #adb5bd; /* Same light grey for the feature list items */
-}
-
-/* Bootstrap icons (bi-wifi, bi-check-circle-fill etc.) with .text-primary or .text-success
-   should remain visible as these colors are generally vibrant. If not, you can add:
-body.dark-mode .text-primary { color: #58a6ff !important; } // Example: a lighter blue
-body.dark-mode .text-success { color: #56d364 !important; } // Example: a lighter green
-*/
-
-/* --- Dark Mode Toggle Button --- */
-body.dark-mode button#darkModeToggle.btn-outline-secondary {
-    background-color: #495057;
-    border-color: #6c757d;
-    color: #f8f9fa; /* Moon icon color */
-}
-body.dark-mode button#darkModeToggle.btn-outline-secondary:hover {
-    background-color: #5a6268;
-    border-color: #6c757d;
-    color: #ffffff;
-}
-
-
-/* --- Footer --- */
-/* Your footer uses .bg-dark and light text, so it's mostly dark-mode friendly.
-   These rules ensure consistency if other styles interfere. */
-body.dark-mode footer.bg-dark {
-    border-top: 1px solid #495057; /* Optional: a top border for separation */
-}
-body.dark-mode footer.bg-dark h5 {
-    color: #f8f9fa; /* Ensure footer headings are light */
-}
-
-body.dark-mode footer.bg-dark p,
-body.dark-mode footer.bg-dark ul li a {
-    color: #adb5bd; /* Ensure footer text and links are light grey */
-}
-body.dark-mode footer.bg-dark ul li a:hover {
-    color: #ffffff;
+.service-features .bi-check-circle-fill {
+  position: absolute;
+  left: 0;
+  top: 0.25em;
 }
