@@ -52,9 +52,9 @@ body.dark-mode .navbar {
   background-color: #1f1f1f !important;
 }
 
-body.dark-mode .card,
+body.dark-mode .card, /* Estilo general para cards en modo oscuro */
 body.dark-mode .alert,
-body.dark-mode section {
+body.dark-mode section { /* Estilo general para sections en modo oscuro */
   background-color: #1f1f1f;
   color: #e0e0e0;
 }
@@ -84,6 +84,7 @@ body.dark-mode .bg-light {
 /* Si quieres que los textos dentro de esas secciones también cambien */
 body.dark-mode .bg-light,
 body.dark-mode .bg-light p,
+body.dark-mode .bg-light h1, /* Añadido h1 para consistencia */
 body.dark-mode .bg-light h2,
 body.dark-mode .bg-light h3,
 body.dark-mode .bg-light h4,
@@ -103,11 +104,11 @@ body.dark-mode #darkModeToggle {
 
 /* Testimonios en modo oscuro */
 body.dark-mode #testimonios {
-  background-color: #0e0e0e !important;
+  background-color: #0e0e0e !important; /* Hereda de .bg-light si #testimonios tiene .bg-light */
 }
 
 body.dark-mode #testimonios .card {
-  background-color: #1f1f1f !important;
+  background-color: #1f1f1f !important; /* Hereda de .dark-mode .card */
   color: #e0e0e0 !important;
 }
 
@@ -133,12 +134,12 @@ body.dark-mode .btn-warning.active {
   box-shadow: none;
 }
 .nav-tabs .nav-link {
-  color: #ffc107;          
+  color: #ffc107;        
 }
 
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
-  color: #f0b507;          
+  color: #f0b507;        
 }
 
 .nav-tabs .nav-link.active {
@@ -179,24 +180,24 @@ body.dark-mode .navbar .dropdown-menu {
 }
 
 body.dark-mode .navbar .dropdown-menu .dropdown-item {
-  color: #ffffff !important;           
+  color: #ffffff !important;        
   transition: background-color 0.2s;
 }
 
 body.dark-mode .navbar .dropdown-menu .dropdown-item:hover,
 body.dark-mode .navbar .dropdown-menu .dropdown-item:focus {
   background-color: #ffa500 !important;  
-  color: black !important;             
+  color: black !important;          
 }
 
 .navbar .dropdown-menu .dropdown-item:hover,
 .navbar .dropdown-menu .dropdown-item:focus {
   background-color: #ffa500 !important;  
-  color: white;
+  color: white; /* Texto blanco en modo claro para el dropdown hover */
 }
 
 
-13/05/2025
+/* 13/05/2025 - Comentario original del usuario, lo mantengo por si es una referencia para él */
 ////
 /* Estilos para la Nueva Sección de Menú Digital */
 #menu-digital {
@@ -310,4 +311,115 @@ body.dark-mode .menu-digital-item {
 .menu-digital-link:hover .menu-digital-caption h4::before,
 .menu-digital-link:hover .menu-digital-caption h4::after {
   width: 70%; /* Ancho de las líneas al aparecer */
+}
+
+
+/* =============================================== */
+/* NUEVOS ESTILOS GENERALES DE SECCIÓN (TÍTULO)    */
+/* =============================================== */
+section .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 2.5rem; /* Ajusta según tu diseño general */
+  position: relative;
+  padding-bottom: 15px;
+}
+
+section .section-title::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #0d6efd; /* Color primario de Bootstrap */
+  bottom: 0;
+  left: calc(50% - 30px);
+}
+
+/* =============================================== */
+/* NUEVOS ESTILOS ESPECÍFICOS PARA LA SECCIÓN SERVICIOS  */
+/* =============================================== */
+#servicios .card {
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden; /* Para asegurar que el fondo del icono no se desborde en hover */
+  background-color: #fff; /* Fondo blanco para las tarjetas en modo claro */
+}
+
+#servicios .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,.15)!important;
+}
+
+#servicios .card .icon-container {
+  font-size: 2.8rem; /* Tamaño del icono */
+  margin-bottom: 1rem;
+  color: #0d6efd; /* Color del icono (Bootstrap primary) */
+  background-color: rgba(13, 110, 253, 0.1); /* Fondo suave para el contenedor del icono */
+  width: 80px;
+  height: 80px;
+  line-height: 80px; /* Centra el icono verticalmente */
+  border-radius: 50%; /* Hace el contenedor circular */
+  display: inline-block; /* Permite centrarlo con mx-auto en la card */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#servicios .card:hover .icon-container {
+  background-color: #0d6efd; /* Fondo del icono al pasar el mouse */
+  color: #fff; /* Color del icono al pasar el mouse */
+}
+
+#servicios .card-title {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #343a40; /* Color oscuro para el título en modo claro */
+}
+
+#servicios .card-text {
+  font-size: 0.95rem;
+  color: #6c757d; /* Color gris para el texto en modo claro */
+}
+
+/* =============================================== */
+/* AJUSTES PARA MODO OSCURO - SECCIÓN SERVICIOS   */
+/* (Estos complementan tus reglas generales de modo oscuro) */
+/* =============================================== */
+
+/* El fondo de la sección #servicios.bg-light ya está cubierto por tu regla general:
+   body.dark-mode .bg-light { background-color: #0e0e0e !important; }
+   Y los textos generales dentro de .bg-light (h2, p) también:
+   body.dark-mode .bg-light h2, body.dark-mode .bg-light p { color: #e0e0e0 !important; }
+*/
+
+/* Título de la sección Servicios en modo oscuro (ya cubierto si .section-title es un h2 dentro de .bg-light) */
+/* body.dark-mode #servicios .section-title { color: #e0e0e0 !important; } */ /* Esta línea es redundante si la anterior se aplica */
+
+body.dark-mode #servicios .section-title::after {
+  background: #58a6ff; /* Un azul más claro para la línea decorativa en modo oscuro */
+}
+
+body.dark-mode #servicios .card {
+  background-color: #1f1f1f; /* Mantiene tu color de card general en modo oscuro */
+  /* La sombra en hover ya debería funcionar bien sobre este fondo */
+}
+
+body.dark-mode #servicios .card .icon-container {
+  color: #58a6ff; /* Un azul más brillante/claro para el icono */
+  background-color: rgba(88, 166, 255, 0.15); /* Fondo del icono adaptado para modo oscuro */
+}
+
+body.dark-mode #servicios .card:hover .icon-container {
+  background-color: #58a6ff; /* Fondo del icono al pasar el mouse en modo oscuro */
+  color: #121212; /* Color de icono oscuro sobre fondo claro (del hover) */
+}
+
+body.dark-mode #servicios .card-title {
+  color: #e0e0e0; /* Color de texto claro para el título en modo oscuro (tu color general para texto en cards oscuras) */
+}
+
+body.dark-mode #servicios .card-text {
+  color: #adb5bd; /* Un gris más claro para el texto en modo oscuro, para mejor contraste */
 }
