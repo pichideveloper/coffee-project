@@ -1,0 +1,64 @@
+/* Lista-Servicios.css */
+/* Corrección específica para textos en modo oscuro */
+
+/* Modo oscuro - Sobrescribir Bootstrap */
+[data-bs-theme="dark"] #nuestros-servicios {
+  --texto-primario: #f8f9fa; /* Blanco suave */
+  --texto-secundario: #dee2e6; /* Gris claro */
+  --fondo-seccion: #212529; /* Fondo oscuro de Bootstrap */
+}
+
+/* Aplicar a todos los textos descriptivos */
+[data-bs-theme="dark"] .service-item .text-muted {
+  color: var(--texto-secundario) !important;
+  opacity: 0.9;
+}
+
+/* Textos principales de cada servicio */
+[data-bs-theme="dark"] .service-item p:not(.text-muted) {
+  color: var(--texto-primario) !important;
+  opacity: 0.95;
+}
+
+/* Elementos de lista */
+[data-bs-theme="dark"] .service-features li {
+  color: var(--texto-secundario) !important;
+}
+
+/* Iconos de check */
+[data-bs-theme="dark"] .bi-check-circle-fill {
+  color: #20c997 !important; /* Verde más vibrante */
+}
+
+/* Asegurar contraste en títulos */
+[data-bs-theme="dark"] .h4.fw-bold {
+  color: var(--texto-primario) !important;
+  border-color: var(--texto-primario) !important;
+}
+
+/* Uniformizar tamaño de imágenes */
+.service-item img {
+  width: 100%;
+  height: 380px; /* Altura fija para todas */
+  object-fit: cover; /* Recorta manteniendo proporciones */
+  object-position: center;
+  border-radius: 12px !important;
+}
+
+/* Ajustar alineación vertical */
+.service-item.row {
+  align-items: stretch !important;
+}
+
+/* Contenedor texto */
+.service-item > div[class^="col-lg-6"]:not(:first-child) {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Mantener proporción en móviles */
+@media (max-width: 992px) {
+  .service-item img {
+    height: 280px;
+  }
+}

@@ -1,0 +1,45 @@
+
+/* Estilos para la galería en galeriaCompleta.html */
+body {
+    padding-top: 100px; /* Ajusta según la altura de tu navbar fijo */
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre las imágenes */
+    padding: 20px; /* Padding alrededor del contenedor de la galería */
+    justify-content: center;
+}
+
+.gallery-item {
+    width: 280px; /* Ancho deseado para las miniaturas */
+    height: 200px; /* Alto deseado para las miniaturas */
+    overflow: hidden; /* Para que la imagen no se salga del contenedor si es más grande */
+    border-radius: 8px; /* Bordes redondeados para las miniaturas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto box-shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen cubra el espacio sin deformarse */
+    display: block;
+    border-radius: 8px; /* Para que la imagen también tenga bordes redondeados si es visible */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Efecto de zoom ligero al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el mouse */
+}
+
+/* Estilos para Lightbox (puedes personalizarlos más si es necesario) */
+.lb-data .lb-caption {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.lb-data .lb-number {
+    font-size: 0.9em;
+}

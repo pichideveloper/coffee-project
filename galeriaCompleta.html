@@ -1,167 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurante SAPE</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- Correo -->
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("VFO34VNSCYXvEdt_b"); 
-    })();
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Completa - Restaurante SAPE</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="galeriaCompleta.css"> 
+    
+    <link rel="stylesheet" href="style.css"> 
 
-    function enviarCorreo(e) {
-      e.preventDefault();
-      emailjs.sendForm('service_mzu5p4p', 'template_x07xoeb', e.target)
-        .then(() => {
-          alert("Mensaje enviado correctamente");
-        }, (error) => {
-          alert("Error al enviar el mensaje: " + JSON.stringify(error));
-        });
-    }
-  </script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+    // (function(){
+    //   emailjs.init("VFO34VNSCYXvEdt_b");  
+    // })();
+    // function enviarCorreo(e) { /* ... tu función ... */ }
+    </script>
 </head>
 
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">
-      <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto">
-        <!-- Inicio como link normal -->
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#inicio">Inicio</a>
-        </li>
-        <!-- Nosotros -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navNosotros" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</a>
-          <ul class="dropdown-menu" aria-labelledby="navNosotros">
-            <li><a class="dropdown-item" href="index.html#nosotros">Sección Nosotros</a></li>
-            <li><a class="dropdown-item" href="nosotros.html">Más sobre nosotros</a></li>
-          </ul>
-        </li>
-        <!-- Servicios -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navServicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
-          <ul class="dropdown-menu" aria-labelledby="navServicios">
-            <li><a class="dropdown-item" href="index.html#servicios">Sección Servicios</a></li>
-            <li><a class="dropdown-item" href="servicios.html">Lista de servicios</a></li>
-          </ul>
-        </li>
-        <!-- Platos -->
-        <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navPlatos" role="button" data-bs-toggle="dropdown" aria-expanded="false">Platos</a>
-  <ul class="dropdown-menu" aria-labelledby="navPlatos">
-    <li><a class="dropdown-item" href="index.html#menu-digital">Ver Carta Digital</a></li> <li><a class="dropdown-item" href="carta.html">Especialidades del Chef</a></li>
-  </ul>
-</li>
-        <!-- Reservas -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navReservas" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reservas</a>
-          <ul class="dropdown-menu" aria-labelledby="navReservas">
-            <li><a class="dropdown-item" href="index.html#reserva">Reservar ahora</a></li>
-            <li><a class="dropdown-item" href="reservas.html">Ver reservas</a></li>
-          </ul>
-        </li>
-        <!-- Locales -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navLocales" role="button" data-bs-toggle="dropdown" aria-expanded="false">Locales</a>
-          <ul class="dropdown-menu" aria-labelledby="navLocales">
-            <li><a class="dropdown-item" href="index.html#locales">Ubicación de locales</a></li>
-            <li><a class="dropdown-item" href="locales.html">Ver todos</a></li>
-          </ul>
-        </li>
-        <!-- Galería -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navGaleria" role="button" data-bs-toggle="dropdown" aria-expanded="false">Galería</a>
-          <ul class="dropdown-menu" aria-labelledby="navGaleria">
-            <li><a class="dropdown-item" href="index.html#galeria">Ver galería</a></li>
-            <li><a class="dropdown-item" href="galeriaCompleta.html">Galería completa</a></li>
-          </ul>
-        </li>
-        <!-- Contacto -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navContacto" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacto</a>
-          <ul class="dropdown-menu" aria-labelledby="navContacto">
-            <li><a class="dropdown-item" href="index.html#contacto-index">Formulario</a></li>
-            <li><a class="dropdown-item" href="contacto.html">Página de contacto</a></li>
-          </ul>
-        </li>
-        <!-- Botón modo oscuro -->
-        <li class="nav-item">
-          <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-  <!-- Sección: Slider de Inicio -->
-  
-  <!-- Sección: Nosotros -->
-  
-
-  <!-- Sección: Servicios -->
-
-
-  
-   <!-- Footer -->
-  <footer class="bg-dark text-light py-3">
-    <div class="container text-center">
-      © 2025 SAPE Internacional
-    </div>
-  </footer>
-
-  <!-- Pie de página -->
-  <footer class="bg-dark text-light py-4">
-    <div class="container">
-      <div class="row">
-        <!-- Columna de contacto o info -->
-        <div class="col-md-4 mb-3">
-          <h5>SAPE</h5>
-          <p>© 2025 SAPE - Todos los derechos reservados.</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120" onerror="this.onerror=null; this.src='https://placehold.co/120x50/cccccc/000000?text=Logo+SAPE';">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navNosotros" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</a>
+                        <ul class="dropdown-menu" aria-labelledby="navNosotros">
+                            <li><a class="dropdown-item" href="index.html#nosotros">Sección Nosotros</a></li>
+                            <li><a class="dropdown-item" href="nosotros.html">Más sobre nosotros</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navServicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+                        <ul class="dropdown-menu" aria-labelledby="navServicios">
+                            <li><a class="dropdown-item" href="index.html#servicios">Sección Servicios</a></li>
+                            <li><a class="dropdown-item" href="Lista-Servicios.html">Lista de servicios</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navPlatos" role="button" data-bs-toggle="dropdown" aria-expanded="false">Platos</a>
+                        <ul class="dropdown-menu" aria-labelledby="navPlatos">
+                            <li><a class="dropdown-item" href="index.html#menu-digital">Ver Carta Digital</a></li>
+                            <li><a class="dropdown-item" href="carta.html">Especialidades del Chef</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navReservas" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reservas</a>
+                        <ul class="dropdown-menu" aria-labelledby="navReservas">
+                            <li><a class="dropdown-item" href="index.html#reserva">Reservar ahora</a></li>
+                            <li><a class="dropdown-item" href="reservas.html">Ver reservas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navLocales" role="button" data-bs-toggle="dropdown" aria-expanded="false">Locales</a>
+                        <ul class="dropdown-menu" aria-labelledby="navLocales">
+                            <li><a class="dropdown-item" href="index.html#locales">Ubicación de locales</a></li>
+                            <li><a class="dropdown-item" href="locales.html">Ver todos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navGaleria" role="button" data-bs-toggle="dropdown" aria-expanded="false">Galería</a>
+                        <ul class="dropdown-menu" aria-labelledby="navGaleria">
+                            <li><a class="dropdown-item" href="index.html#galeria">Ver galería</a></li>
+                            <li><a class="dropdown-item active" href="galeriaCompleta.html">Galería completa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navContacto" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacto</a>
+                        <ul class="dropdown-menu" aria-labelledby="navContacto">
+                            <li><a class="dropdown-item" href="index.html#contacto-index">Formulario</a></li>
+                            <li><a class="dropdown-item" href="contacto.html">Página de contacto</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <!-- Columna de secciones -->
-        <div class="col-md-4 mb-3">
-          <h5>Secciones</h5>
-          <ul class="list-unstyled">
-            <li><a class="dropdown-item" href="index.html#menu-digital">Ver Carta Digital</a></li>
-            <li><a href="#reserva" class="text-light text-decoration-none">Reserva</a></li>
-             <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
-          </ul>
+    </nav>
+
+    <main class="container mt-5 pt-5">
+        <h2 class="text-center mb-4">Nuestra Galería de Fotos</h2>
+        <p class="text-center mb-5">Haz clic en cualquier imagen para verla en grande y navegar por la galería.</p>
+
+        <div class="gallery-container">
+
+            <!--imagen 1 -->
+            <a href="images/gallery/ejemplo1Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 1" class="gallery-item">
+                <img src="images/gallery/ejemplo1Galeria.jpg" alt="Descripción de la Imagen 1" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img1';">
+            </a>
+            <!--imagen 2 -->
+            <a href="images/gallery/ejemplo2Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 2" class="gallery-item">
+                <img src="images/gallery/ejemplo2Galeria.jpg" alt="Descripción de la Imagen 2" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img2';">
+            </a>
+            <!--imagen 3 -->
+            <a href="images/gallery/ejemplo3Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 3" class="gallery-item">
+                <img src="images/gallery/ejemplo3Galeria.jpg" alt="Descripción de la Imagen 3" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img3';">
+            </a>
+            <!--imagen 4 -->
+            <a href="images/gallery/ejemplo4Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 4" class="gallery-item">
+                <img src="images/gallery/ejemplo4Galeria.jpg" alt="Descripción de la Imagen 4" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img4';">
+            </a>
+            <!--imagen 5 -->
+            <a href="images/gallery/ejemplo5Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 5" class="gallery-item">
+                <img src="images/gallery/ejemplo5Galeria.jpg" alt="Descripción de la Imagen 5" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img5';">
+            </a>
+            <!--imagen 6 -->
+            <a href="images/gallery/ejemplo6Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 6" class="gallery-item">
+                <img src="images/gallery/ejemplo6Galeria.jpg" alt="Descripción de la Imagen 6" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img6';">
+            </a>
+            
+            <!--imagen 7 -->
+            <a href="images/gallery/ejemplo7Galeria.png" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 7" class="gallery-item">
+                <img src="images/gallery/ejemplo7Galeria.png" alt="Descripción de la Imagen 7" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img7';">
+            </a>
+            <!--imagen 8 -->
+            <a href="images/gallery/ejemplo8Galeria.webp" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 8" class="gallery-item">
+                <img src="images/gallery/ejemplo8Galeria.webp" alt="Descripción de la Imagen 8" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img8';">
+            </a>
+            <!--imagen 9 -->
+            <a href="images/gallery/ejemplo9Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 9" class="gallery-item">
+                <img src="images/gallery/ejemplo9Galeria.jpg" alt="Descripción de la Imagen 9" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img9';">
+            </a>
+            <!--imagen 10 -->
+            <a href="images/gallery/ejemplo10Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 10" class="gallery-item">
+                <img src="images/gallery/ejemplo10Galeria.jpg" alt="Descripción de la Imagen 10" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img10';">
+            </a>
+            <!--imagen 11 -->
+             <a href="images/gallery/ejemplo11Galeria.webp" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 11" class="gallery-item">
+                <img src="images/gallery/ejemplo11Galeria.webp" alt="Descripción de la Imagen 11" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img11';">
+            </a>
+            <!--imagen 12 -->
+             <a href="images/gallery/ejemplo12Galeria.webp" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 12" class="gallery-item">
+                <img src="images/gallery/ejemplo12Galeria.webp" alt="Descripción de la Imagen 12" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img12';">
+            </a>
+            </div>
+    </main>
+
+    <footer class="bg-dark text-light py-3 mt-5">
+        <div class="container text-center">
+            © 2025 SAPE Internacional
         </div>
-        <!-- Columna de redes sociales -->
-        <div class="col-md-4 mb-3">
-          <h5>Síguenos</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-light text-decoration-none">Facebook</a></li>
-            <li><a href="#" class="text-light text-decoration-none">Twitter</a></li>
-            <li><a href="#" class="text-light text-decoration-none">Instagram</a></li>
-          </ul>
+    </footer>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>SAPE</h5>
+                    <p>© 2025 SAPE - Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Secciones</h5>
+                    <ul class="list-unstyled">
+                        <li><a class="dropdown-item text-light" href="index.html#menu-digital">Ver Carta Digital</a></li>
+                        <li><a href="index.html#reserva" class="text-light text-decoration-none">Reserva</a></li>
+                        <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Síguenos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.facebook.com/share/1LvsywagCF/" class="text-light text-decoration-none" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li><a href="https://www.twitter.com" class="text-light text-decoration-none" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                        <li><a href="https://www.instagram.com/kenzowo_?igsh=eGV1ODM5bGx2bzh5" class="text-light text-decoration-none" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Tu JavaScript externo -->
-  <script src="index.js"></script>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    
+    <script src="index.js"></script>
+
+    <script>
+    // Comprobación de carga de Lightbox2 y configuración
+    if (typeof lightbox !== 'undefined') {
+        console.log('Lightbox2 cargado correctamente.');
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': "Imagen %1 de %2",
+            'disableScrolling': true // Buena opción para evitar scroll de fondo
+        });
+    } else {
+        console.error('ERROR: Lightbox2 no se cargó. Revisa el enlace al JS de Lightbox2 o errores de red.');
+    }
+    </script>
 
 </body>
-
 </html>
-  

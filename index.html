@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurante SAPE</title>
+  <link rel="icon" href="images/logo1.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,6 +13,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <!-- Correo -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  
   <script>
     (function(){
       emailjs.init("VFO34VNSCYXvEdt_b"); 
@@ -133,7 +136,7 @@
             <h1>Bienvenidos a SAPE</h1>
             <p>Restaurante peruano de platos marinos y criollos</p>
             <a href="#reserva" class="btn btn-warning text-light me-2">Reservar una Mesa</a>
-            <a href="#platos" class="btn btn-outline-light">Ver la Carta</a>
+            <a href="index.html#menu-digital" class="btn btn-outline-light">Ver la Carta</a>
           </div>
         </div>
 
@@ -144,7 +147,7 @@
           <div class="carousel-caption d-none d-md-block">
             <h1>Variedad y Tradición</h1>
             <p>Disfruta de nuestros deliciosos platos marinos</p>
-            <a href="#platos" class="btn btn-warning text-light me-2">Ver la Carta</a>
+            <a href="index.html#menu-digital" class="btn btn-warning text-light me-2">Ver la Carta</a>
             <a href="#reserva" class="btn btn-outline-light">Reservar una Mesa</a>
           </div>
         </div>
@@ -181,58 +184,88 @@
         superar tus expectativas… ¡Ven a SAPEar!”</p>
       <div class="row text-center mt-5">
         <div class="col-md-3 mb-3">
-          <i class="bi bi-star-fill fs-1 text-primary"></i>
+          <div class="glass">
+          <i class="bi bi-star-fill fs-1 text-warning"></i>
           <h5 class="mt-2">Productos Frescos</h5>
           <p>Seleccionamos los mejores insumos cada día, manteniéndolos frescos en un ambiente limpio y ordenado.</p>
+             </div>
         </div>
         <div class="col-md-3 mb-3">
-          <i class="bi bi-award-fill fs-1 text-primary"></i>
+          <div class="glass">
+          <i class="bi bi-award-fill fs-1 text-warning"></i>
           <h5 class="mt-2">Innovación</h5>
           <p>Comida peruana con sabor único, innovando en cada preparación para cautivar paladares exigentes.</p>
         </div>
+        </div>
         <div class="col-md-3 mb-3">
-          <i class="bi bi-emoji-smile-fill fs-1 text-primary"></i>
+          <div class="glass">
+          <i class="bi bi-emoji-smile-fill fs-1 text-warning"></i>
           <h5 class="mt-2">Buena Atención</h5>
           <p>Atención cálida y oportuna: resolvemos tus inquietudes con un servicio de primer nivel.</p>
         </div>
+          </div>
         <div class="col-md-3 mb-3">
-          <i class="bi bi-people-fill fs-1 text-primary"></i>
+          <div class="glass">
+          <i class="bi bi-people-fill fs-1 text-warning"></i>
           <h5 class="mt-2">Ambiente Familiar</h5>
           <p>Un ambiente para sentirse en familia, con estacionamiento, música en vivo, Wi-Fi, baños limpios y más
             comodidades.</p>
+        </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Sección: Servicios -->
-  <section id="servicios" class="bg-light py-5">
-    <div class="container">
-      <h2 class="mb-4">Servicios</h2>
-      <div class="row text-center">
-        <div class="col-md-3 mb-3">
-          <i class="bi bi-wifi fs-1 text-warning"></i>
-          <h5 class="mt-2">WIFI Gratis</h5>
-          <p>Conexión a internet gratuita en todos nuestros locales.</p>
+  <section id="servicios" class="py-5 bg-light"> <!-- Añade bg-light aquí -->
+  <div class="container">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card text-center p-3 w-100">
+          <div class="icon-container mx-auto">
+            <i class="bi bi-wifi"></i> </div>
+          <div class="card-body">
+            <h5 class="card-title">WIFI Gratis</h5>
+            <p class="card-text">Conexión a internet de alta velocidad gratuita en todos nuestros locales.</p>
+          </div>
         </div>
-        <div class="col-md-3 mb-3">
-          <i class="bi bi-car-front-fill fs-1 text-warning"></i>
-          <h5 class="mt-2">Estacionamiento</h5>
-          <p>Playa de estacionamiento disponible para tus vehículos.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card text-center p-3 w-100">
+          <div class="icon-container mx-auto">
+            <i class="bi bi-p-square-fill"></i> </div>
+          <div class="card-body">
+            <h5 class="card-title">Estacionamiento</h5>
+            <p class="card-text">Amplia playa de estacionamiento vigilada disponible para tu comodidad.</p>
+          </div>
         </div>
-        <div class="col-md-3 mb-3">
-          <i class="bi bi-emoji-heart-eyes-fill fs-1 text-warning"></i>
-          <h5 class="mt-2">Juegos para Niños</h5>
-          <p>Área de entretenimiento para los más pequeños de la casa.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card text-center p-3 w-100">
+          <div class="icon-container mx-auto">
+            <i class="bi bi-joystick"></i> </div>
+          <div class="card-body">
+            <h5 class="card-title">Juegos para Niños</h5>
+            <p class="card-text">Área de entretenimiento segura y divertida para los más pequeños de la casa.</p>
+          </div>
         </div>
-        <div class="col-md-3 mb-3">
-          <i class="bi bi-truck fs-1 text-warning"></i>
-          <h5 class="mt-2">Delivery</h5>
-          <p>Servicio de delivery a domicilio, central telefónica: (044) 216410.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card text-center p-3 w-100">
+          <div class="icon-container mx-auto ">
+            <i class="bi bi-truck"></i> </div>
+          <div class="card-body">
+            <h5 class="card-title">Delivery Confiable</h5>
+            <p class="card-text">Servicio de delivery rápido a domicilio. Central: (044) 216410.</p>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+    <div class="text-center mt-5">
+        </div>
+  </div>
+</section>
 
   <!-- Sección: Menú de Platos -->
  <section id="menu-digital" class="py-5">
@@ -346,28 +379,31 @@
       <h2 class="mb-4">Nuestros Locales</h2>
       <div class="row mb-4">
         <div class="col-md-6 mb-3">
-          <h5>Mansiche</h5>
-          <p>Av. Mansiche 1641, Trujillo 13011 (044)278997</p>
-          <a href="https://www.google.com/maps/embed?pb=!3m2!1ses-419!2spe!4v1747244092686!5m2!1ses-419!2spe!6m8!1m7!1s_KBN4exa64hy13XW8e6eOw!2m2!1d-8.101479229028435!2d-79.0440255513154!3f0.7818202644418086!4f2.4349437724742415!5f0.7820865974627469" target="_blank"
-            class="btn btn-sm btn-outline-warning">Ver en Maps</a>
+          <h5>Huanchaco</h5>
+          <p>Avenida Victor Larco Herrera 812, Huanchaco 13000 (044)278997</p>
+          <a href="https://www.google.com/maps/place/El+Paisa/@-8.0780675,-79.1023225,14z/data=!4m5!3m4!1s0x0:0xb617d18151756743!8m2!3d-8.0765499!4d-79.1191149?shorturl=1" target="_blank" class="btn btn-sm btn-outline-warning">Ver en Maps</a>
+        
         </div>
         <div class="col-md-6 mb-3">
           <h5>Santa Teresa</h5>
           <p>Ca. Algallpampa Mz LL Lt.12, Urb. Santa Teresa (044)215606</p>
-          <a href="https://maps.google.com/?q=Ca.+Algallpampa+Mz+LL+Lt.12+Santa+Teresa" target="_blank"
-            class="btn btn-sm btn-outline-warning">Ver en Maps</a>
+          <a href="https://www.google.com/maps/place/Restaurant+Cevicheria+El+Paisa/@-8.1107228,-79.0296298,14z/data=!4m6!3m5!1s0x91ad161ee64d1f19:0xe9693163bdb8121a!8m2!3d-8.0909529!4d-79.0153791!16s%2Fg%2F11b76qkfqz?entry=ttu&g_ep=EgoyMDI1MDUxMi4wIKXMDSoASAFQAw%3D%3D" 
+          target="_blank" class="btn btn-sm btn-outline-warning">Ver en Maps</a>
+
+
+      
         </div>
       </div>
       <div class="row">
-        <!-- Google Maps 1 -->
+       <!-- Google Maps 1 -->
         <div class="col-md-6 mb-3">
-          <iframe src="https://maps.google.com/maps?q=492%20Huanchaco&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%"
-            height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3622.423463659993!2d-79.11946434749876!3d-8.072816645119893!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3957beabd6af%3A0xb617d18151756743!2sEl%20Paisa!5e0!3m2!1ses-419!2spe!4v1747246614023!5m2!1ses-419!2spe" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <!-- Google Maps 2 -->
         <div class="col-md-6 mb-3">
-          <iframe src="https://maps.google.com/maps?q=Santa%20Teresa%20Trujillo&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31599.27399051663!2d-79.0296298!3d-8.1107228!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad161ee64d1f19%3A0xe9693163bdb8121a!2sRestaurant%20Cevicheria%20El%20Paisa!5e0!3m2!1ses-419!2spe!4v1747247054970!5m2!1ses-419!2spe"
+           width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
         </div>
       </div>
     </div>
