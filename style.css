@@ -446,7 +446,7 @@ border-radius: 10%;
 /*iconos */
 .social-icons {
  display: flex; /* Usamos Flexbox para distribuir los iconos */
-justify-content: space-around; /* Espacio uniforme entre los iconos */
+gap: 10px
  }
 
 .social-icons a {
