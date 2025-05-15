@@ -5,24 +5,46 @@
 
 /* Ajustar margen top para compensar navbar fijo */
 body {
-  padding-top: 70px;
+  padding-top: 70px; /* Ajusta si la altura de tu navbar cambia */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sugerencia de fuente base */
+  scroll-behavior: smooth;
+}
+
+#navbarLogo {
+    max-height: 50px; /* Ajusta esto según el tamaño de tu logo */
+    width: auto;
 }
 
 /* Estilos del slider */
 .carousel-item img {
-  max-height: 600px;
+  max-height: 600px; /* Ajusta según tus imágenes */
   object-fit: cover;
 }
+.carousel-caption h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+.carousel-caption p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+.carousel-caption .btn {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+}
+
 
 /* Secciones */
 section {
-  scroll-margin-top: 80px;
-  /* Para que el ancla no quede bajo el navbar */
+  scroll-margin-top: 80px; /* Para que el ancla no quede bajo el navbar */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 /* Tarjetas de testimonios */
 #testimonios .card {
-  background-color: #f8f9fa;
+  background-color: #f8f9fa; /* Color de fondo para tarjetas de testimonios en modo claro */
 }
 
 /* Botones y enlaces */
@@ -33,13 +55,51 @@ section {
 
 .btn-outline-light:hover {
   background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
+/* Consistencia para botones warning (dorados) */
+.btn-warning {
+    color: #000 !important; /* Texto oscuro para mejor contraste en botones amarillos */
+}
+.btn-warning:hover {
+    color: #000 !important;
+    background-color: #e0a800; /* Un dorado un poco más oscuro al pasar el mouse */
+    border-color: #d39e00;
+}
+
+
 .navbar .nav-link:hover {
-  background-color: orange;
+  background-color: orange; /* Naranja para hover en links de navbar */
   color: white !important;
   border-radius: 0.25rem;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*
+13/05/2025
+////
+General Section Title Styling (Golden Accent)
+*/
+section .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 2.5rem;
+  position: relative;
+  padding-bottom: 15px;
+  /* El color del texto será manejado por las reglas generales de modo claro/oscuro */
+}
+
+section .section-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #ffc107; /* Color dorado para el subrayado */
+    bottom: 0;
+    left: calc(50% - 30px);
 }
 
 
@@ -53,12 +113,17 @@ body.dark-mode .navbar {
   background-color: #1f1f1f !important;
 }
 
+/* Estilos generales para tarjetas, alertas y secciones en modo oscuro */
 body.dark-mode .card,
 body.dark-mode .alert,
-body.dark-mode section {
+body.dark-mode section:not(.bg-dark) { /* No aplicar a secciones que ya son oscuras como el footer */
   background-color: #1f1f1f;
   color: #e0e0e0;
 }
+body.dark-mode .card { /* Asegurar que las tarjetas tengan un borde sutil en modo oscuro si no tienen sombra visible */
+    border: 1px solid #2a2a2a;
+}
+
 
 body.dark-mode .btn-outline-secondary {
   border-color: #e0e0e0;
@@ -67,6 +132,7 @@ body.dark-mode .btn-outline-secondary {
 
 body.dark-mode .btn-outline-secondary:hover {
   background-color: #333;
+  color: #fff;
 }
 
 .nav-dark-toggle {
@@ -79,74 +145,112 @@ body.dark-mode .btn-outline-secondary:hover {
 
 /* Sobrescribir los bg-light en modo oscuro */
 body.dark-mode .bg-light {
-  background-color: #0e0e0e !important;
+  background-color: #1a1a1a !important; /* Un gris oscuro ligeramente diferente para .bg-light sections */
 }
 
-/* Si quieres que los textos dentro de esas secciones también cambien */
+/* Textos dentro de secciones .bg-light en modo oscuro */
 body.dark-mode .bg-light,
 body.dark-mode .bg-light p,
+body.dark-mode .bg-light h1,
 body.dark-mode .bg-light h2,
 body.dark-mode .bg-light h3,
 body.dark-mode .bg-light h4,
 body.dark-mode .bg-light h5,
-body.dark-mode .bg-light h6 {
+body.dark-mode .bg-light h6,
+body.dark-mode .bg-light .lead,
+body.dark-mode .bg-light label,
+body.dark-mode .bg-light .form-select,
+body.dark-mode .bg-light .form-control {
   color: #e0e0e0 !important;
 }
+body.dark-mode .bg-light .form-control,
+body.dark-mode .bg-light .form-select {
+    background-color: #2c2c2c;
+    border-color: #444;
+}
+body.dark-mode .bg-light .form-control::placeholder {
+    color: #aaa;
+}
+
 
 body.dark-mode .navbar .nav-link {
-  color: #fff !important;
+  color: #f0f0f0 !important; /* Un poco menos brillante que blanco puro */
 }
+body.dark-mode .navbar .nav-link:hover {
+  background-color: #ffc107; /* Dorado para hover en navbar en dark mode */
+  color: #121212 !important; /* Texto oscuro para contraste */
+}
+
 
 body.dark-mode #darkModeToggle {
   color: #fff !important;
   border-color: #e0e0e0 !important;
 }
+body.dark-mode #darkModeToggle:hover {
+    background-color: #333;
+    color: #ffc107 !important; /* Ícono dorado al pasar el mouse */
+}
+
 
 /* Testimonios en modo oscuro */
-body.dark-mode #testimonios {
-  background-color: #0e0e0e !important;
+body.dark-mode #testimonios.bg-light { /* Específico para #testimonios si tiene .bg-light */
+  background-color: #1a1a1a !important; /* Coincide con la regla general de .bg-light */
 }
 
 body.dark-mode #testimonios .card {
-  background-color: #1f1f1f !important;
+  background-color: #232323 !important; /* Un poco más oscuro para las tarjetas de testimonios */
   color: #e0e0e0 !important;
+  border-color: #383838;
 }
-
-body.dark-mode #platos .text-muted {
-  color: #e0e0e0 !important;
-}
-
 
 body.dark-mode #testimonios .card p,
 body.dark-mode #testimonios .card em {
-  color: #e0e0e0 !important;
+  color: #d5d5d5 !important; /* Un gris ligeramente más claro para el texto del testimonio */
 }
 
+/* Para botones .btn-warning en modo oscuro (si el default de Bootstrap no es suficiente) */
 body.dark-mode .btn-warning {
-  color: #000 !important;
+  color: #000 !important; /* Texto negro */
+  background-color: #ffc107; /* Fondo dorado */
+  border-color: #ffc107;
+}
+body.dark-mode .btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
 }
 
-body.dark-mode .btn-warning:focus,
-body.dark-mode .btn-warning:active,
-body.dark-mode .btn-warning.active {
-  color: #000 !important;
-  background-color: #ffc107;
-  box-shadow: none;
-}
+/* Estilos para .nav-tabs (ya presentes en tu CSS) */
 .nav-tabs .nav-link {
-  color: #ffc107;          
+  color: #ffc107;
 }
-
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
-  color: #f0b507;          
+  color: #f0b507;
+  border-color: #ffda6a #ffda6a #ffc107;
 }
-
 .nav-tabs .nav-link.active {
-  color: #ffc107 !important;    
-  border-color: #dee2e6 #dee2e6 #fff; 
+  color: #212529 !important; /* Texto oscuro para pestaña activa */
+  background-color: #ffc107 !important; /* Fondo dorado */
+  border-color: #ffc107 #ffc107 #ffc107 !important;
 }
 
+body.dark-mode .nav-tabs .nav-link {
+    color: #ffc107;
+    border-color: transparent transparent #444;
+}
+body.dark-mode .nav-tabs .nav-link:hover,
+body.dark-mode .nav-tabs .nav-link:focus {
+    color: #ffd053;
+    border-color: #555 #555 #ffc107;
+}
+body.dark-mode .nav-tabs .nav-link.active {
+    color: #121212 !important;
+    background-color: #ffc107 !important;
+    border-color: #ffc107 #ffc107 #ffc107 !important;
+}
+
+
+/* Estilos Polaroid (ya presentes en tu CSS) */
 div.polaroid {
   width: 284px;
   padding: 10px 10px 20px 10px;
@@ -154,106 +258,105 @@ div.polaroid {
   background-color: white;
   box-shadow: 10px 10px 5px #aaaaaa;
 }
-
 body.dark-mode div.polaroid {
-  width: 284px;
-  padding: 10px 10px 20px 10px;
-  color: white;
-  border: 1px solid black;
-  background-color: #1f1f1f;
-  box-shadow: 10px 10px 5px black;
+  color: white; /* El texto dentro de polaroid será blanco */
+  border: 1px solid #333;
+  background-color: #1f1f1f; /* Fondo de tarjeta oscuro */
+  box-shadow: 10px 10px 5px rgba(0,0,0,0.5); /* Sombra más oscura */
 }
-
 div.rotate_right {
   float: left;
   transform: rotate(7deg);
 }
-
 div.rotate_left {
   float: left;
   transform: rotate(-8deg);
 }
 
+/* Dropdowns en Navbar para modo oscuro (ya presentes en tu CSS) */
 body.dark-mode .navbar .dropdown-menu {
-  background-color: #2c2c2c !important; 
-  border: none;
+  background-color: #2c2c2c !important;
+  border: 1px solid #383838 !important; /* Borde sutil */
 }
-
 body.dark-mode .navbar .dropdown-menu .dropdown-item {
-  color: #ffffff !important;           
+  color: #ffffff !important;
   transition: background-color 0.2s;
 }
-
 body.dark-mode .navbar .dropdown-menu .dropdown-item:hover,
 body.dark-mode .navbar .dropdown-menu .dropdown-item:focus {
-  background-color: #ffa500 !important;  
-  color: black !important;             
+  background-color: #ffc107 !important;  /* Dorado para hover */
+  color: black !important; /* Texto negro para contraste */
 }
 
+/* Dropdowns en Navbar para modo claro (mejorado para consistencia) */
 .navbar .dropdown-menu .dropdown-item:hover,
 .navbar .dropdown-menu .dropdown-item:focus {
-  background-color: #ffa500 !important;  
-  color: white;
+  background-color: #ffc107 !important; /* Dorado para hover */
+  color: black !important; /* Texto negro para contraste */
 }
 
 
+/*
 13/05/2025
 ////
-/* Estilos para la Nueva Sección de Menú Digital */
+Estilos para la Sección de Menú Digital (#menu-digital)
+*/
 #menu-digital {
-  background-color: #f8f9fa; /* Un fondo suave, puedes cambiarlo */
+  background-color: #f8f9fa; /* Un fondo suave para modo claro */
 }
-
-body.dark-mode #menu-digital {
-  background-color: #1e1e1e; /* Fondo para modo oscuro */
+body.dark-mode #menu-digital.bg-light, /* Si menu-digital también usa bg-light */
+body.dark-mode #menu-digital { /* O si no usa bg-light y depende de esta regla */
+  background-color: #1a1a1a !important; /* Coincide con otras .bg-light sections */
 }
 
 body.dark-mode #menu-digital h2,
 body.dark-mode #menu-digital p.lead {
-  color: #e0e0e0 !important;
+  color: #e0e0e0 !important; /* Asegura que el texto sea claro */
 }
 
 .menu-digital-link {
   text-decoration: none;
   color: inherit;
-  display: block; /* Para que el hover ocupe todo el item */
+  display: block;
   transition: transform 0.3s ease;
 }
-
 .menu-digital-link:hover {
-  transform: translateY(-5px); /* Efecto sutil al pasar el mouse */
+  transform: translateY(-5px);
 }
 
 .menu-digital-item {
   position: relative;
   overflow: hidden;
-  border-radius: 0.5rem; /* Bordes redondeados */
+  border-radius: 0.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  height: 100%; /* Para que todos los items tengan la misma altura si están en .d-flex .align-items-stretch */
-  display: flex; /* Para centrar contenido si es necesario */
-  flex-direction: column; /* Apilar imagen y texto */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Añadido transform aquí también */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff; /* Fondo blanco para el item en modo claro */
 }
-
 body.dark-mode .menu-digital-item {
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0, 0.2); /* Sombra un poco más visible en dark */
     border: 1px solid #333;
+    background-color: #232323; /* Fondo oscuro para el item */
 }
-
-
-.menu-digital-item:hover {
+.menu-digital-item:hover { /* General hover, no solo link */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  /* transform: translateY(-5px); Ya está en .menu-digital-link:hover */
 }
+body.dark-mode .menu-digital-item:hover {
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.1); /* Sutil brillo dorado */
+}
+
 
 .menu-digital-img {
   width: 100%;
-  height: 300px; /* Altura fija para las imágenes, ajusta según necesites */
-  object-fit: cover; /* Para que la imagen cubra el espacio sin deformarse */
+  height: 250px; /* Reducido un poco para mejor proporción en tarjetas de 4 columnas */
+  object-fit: cover;
   transition: transform 0.4s ease;
 }
-
 .menu-digital-link:hover .menu-digital-img {
-  transform: scale(1.05); /* Ligero zoom a la imagen al pasar el mouse */
+  transform: scale(1.05);
 }
 
 .menu-digital-caption {
@@ -261,54 +364,146 @@ body.dark-mode .menu-digital-item {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 15px; /* Espaciado general */
+  padding: 20px 15px; /* Más padding vertical */
   text-align: center;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%);
   z-index: 2;
-  display: flex; /* Usamos flex para centrar mejor el contenido del caption */
+  display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra el h4 verticalmente dentro del caption */
-  align-items: center; /* Centra el h4 horizontalmente */
-  min-height: 120px; /* Altura mínima para el caption. Ajusta este valor si necesitas más o menos espacio (ej. para 2 líneas de texto cómodamente) */
+  justify-content: flex-end; /* Alinea al final (abajo) */
+  align-items: center;
+  min-height: 100px; /* Ajustado */
 }
-
 .menu-digital-caption h4 {
   color: white;
   font-weight: bold;
   margin: 0;
-  font-size: 1.4rem; /* Puedes ajustar el tamaño si es necesario */
-  position: relative; /* Para las líneas ::before y ::after */
-  display: inline-block; /* Para que las líneas se ajusten al ancho del texto */
-  padding-top: 12px;    /* Espacio DENTRO del h4 para la línea superior */
-  padding-bottom: 12px; /* Espacio DENTRO del h4 para la línea inferior */
-  line-height: 1.3;     /* Mejora el espaciado si el texto va a dos líneas */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-  max-width: 95%;       /* Evita que el texto (si es muy largo) toque los bordes del caption */
+  font-size: 1.3rem; /* Ajustado */
+  position: relative;
+  display: inline-block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 1.2;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  max-width: 95%;
 }
-
-/* Las líneas que aparecen en el hover */
 .menu-digital-caption h4::before,
 .menu-digital-caption h4::after {
   content: '';
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 0; /* Inician sin ancho */
+  width: 0;
   height: 2px;
-  background-color: white;
+  background-color: #ffc107; /* Líneas doradas */
   transition: width 0.3s ease-out;
 }
-
 .menu-digital-caption h4::before {
-  top: 5px; /* Distancia desde el borde superior del padding del h4 */
+  top: 0; /* Justo arriba del padding */
 }
-
 .menu-digital-caption h4::after {
-  bottom: 5px; /* Distancia desde el borde inferior del padding del h4 */
+  bottom: 0; /* Justo abajo del padding */
 }
-
-/* Mostrar las líneas al pasar el mouse sobre el enlace (.menu-digital-link) */
 .menu-digital-link:hover .menu-digital-caption h4::before,
 .menu-digital-link:hover .menu-digital-caption h4::after {
-  width: 70%; /* Ancho de las líneas al aparecer */
+  width: 80%; /* Líneas más anchas */
+}
+
+
+/*
+13/05/2025
+////
+Styling for "Nuestros Servicios" Section (#servicios)
+Golden Theme & Expansion Effect
+*/
+#servicios .card {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+#servicios .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+
+#servicios .icon-container {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.1);
+    width: 70px;
+    height: 70px;
+    line-height: initial; /* Reset for flex */
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#servicios .card:hover .icon-container {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+#servicios .card-title {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #343a40;
+}
+
+#servicios .card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Dark Mode Adjustments for #servicios Section */
+body.dark-mode #servicios .card {
+  background-color: #232323; /* Un poco más claro que el fondo de sección genérico */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra más notoria en dark */
+  border: 1px solid #383838; /* Borde sutil para definición */
+}
+
+body.dark-mode #servicios .card:hover {
+  box-shadow: 0 10px 30px rgba(255, 193, 7, 0.12); /* Sutil brillo dorado */
+}
+
+body.dark-mode #servicios .icon-container {
+    background-color: rgba(255, 193, 7, 0.15); /* Un poco más opaco para dark */
+}
+
+body.dark-mode #servicios .card:hover .icon-container {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+body.dark-mode #servicios .card-title {
+  color: #f0f0f0;
+}
+
+body.dark-mode #servicios .card-text {
+  color: #adb5bd;
+}
+
+/* Asegurar que #servicios con .bg-light se adapte */
+body.dark-mode #servicios.bg-light {
+    background-color: #1a1a1a !important; /* Coincide con tu regla de .bg-light */
+}
+
+/* Ajustes finales para el footer si es necesario */
+body.dark-mode footer.bg-dark h5 {
+    color: #f0f0f0; /* Títulos del footer un poco más brillantes */
+}
+body.dark-mode footer.bg-dark p,
+body.dark-mode footer.bg-dark a:not(.btn) { /* No afectar botones en footer */
+    color: #adb5bd;
+}
+body.dark-mode footer.bg-dark a:not(.btn):hover {
+    color: #ffc107; /* Enlaces del footer dorados al pasar el mouse */
 }
