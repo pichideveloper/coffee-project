@@ -35,3 +35,30 @@
   color: var(--texto-primario) !important;
   border-color: var(--texto-primario) !important;
 }
+
+/* Uniformizar tamaño de imágenes */
+.service-item img {
+  width: 100%;
+  height: 380px; /* Altura fija para todas */
+  object-fit: cover; /* Recorta manteniendo proporciones */
+  object-position: center;
+  border-radius: 12px !important;
+}
+
+/* Ajustar alineación vertical */
+.service-item.row {
+  align-items: stretch !important;
+}
+
+/* Contenedor texto */
+.service-item > div[class^="col-lg-6"]:not(:first-child) {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Mantener proporción en móviles */
+@media (max-width: 992px) {
+  .service-item img {
+    height: 280px;
+  }
+}
