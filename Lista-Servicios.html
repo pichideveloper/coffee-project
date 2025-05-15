@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurante SAPE</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- Correo -->
+  <link rel="stylesheet" href="Lista-Servicios.css">
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("VFO34VNSCYXvEdt_b"); 
+      emailjs.init("VFO34VNSCYXvEdt_b");
     })();
 
     function enviarCorreo(e) {
@@ -30,22 +27,18 @@
 </head>
 
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
-      <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo"> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto">
-        <!-- Inicio como link normal -->
         <li class="nav-item">
           <a class="nav-link" href="index.html#inicio">Inicio</a>
         </li>
-        <!-- Nosotros -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navNosotros" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</a>
           <ul class="dropdown-menu" aria-labelledby="navNosotros">
@@ -53,7 +46,6 @@
             <li><a class="dropdown-item" href="nosotros.html">Más sobre nosotros</a></li>
           </ul>
         </li>
-        <!-- Servicios -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navServicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
           <ul class="dropdown-menu" aria-labelledby="navServicios">
@@ -61,14 +53,13 @@
             <li><a class="dropdown-item" href="Lista-Servicios.html">Lista de servicios</a></li>
           </ul>
         </li>
-        <!-- Platos -->
         <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navPlatos" role="button" data-bs-toggle="dropdown" aria-expanded="false">Platos</a>
-  <ul class="dropdown-menu" aria-labelledby="navPlatos">
-    <li><a class="dropdown-item" href="index.html#menu-digital">Ver Carta Digital</a></li> <li><a class="dropdown-item" href="carta.html">Especialidades del Chef</a></li>
-  </ul>
-</li>
-        <!-- Reservas -->
+          <a class="nav-link dropdown-toggle" href="#" id="navPlatos" role="button" data-bs-toggle="dropdown" aria-expanded="false">Platos</a>
+          <ul class="dropdown-menu" aria-labelledby="navPlatos">
+            <li><a class="dropdown-item" href="index.html#menu-digital">Ver Carta Digital</a></li>
+            <li><a class="dropdown-item" href="carta.html">Especialidades del Chef</a></li>
+          </ul>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navReservas" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reservas</a>
           <ul class="dropdown-menu" aria-labelledby="navReservas">
@@ -76,7 +67,6 @@
             <li><a class="dropdown-item" href="reservas.html">Ver reservas</a></li>
           </ul>
         </li>
-        <!-- Locales -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navLocales" role="button" data-bs-toggle="dropdown" aria-expanded="false">Locales</a>
           <ul class="dropdown-menu" aria-labelledby="navLocales">
@@ -84,7 +74,6 @@
             <li><a class="dropdown-item" href="locales.html">Ver todos</a></li>
           </ul>
         </li>
-        <!-- Galería -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navGaleria" role="button" data-bs-toggle="dropdown" aria-expanded="false">Galería</a>
           <ul class="dropdown-menu" aria-labelledby="navGaleria">
@@ -92,7 +81,6 @@
             <li><a class="dropdown-item" href="galeriaCompleta.html">Galería completa</a></li>
           </ul>
         </li>
-        <!-- Contacto -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navContacto" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacto</a>
           <ul class="dropdown-menu" aria-labelledby="navContacto">
@@ -100,7 +88,6 @@
             <li><a class="dropdown-item" href="contacto.html">Página de contacto</a></li>
           </ul>
         </li>
-        <!-- Botón modo oscuro -->
         <li class="nav-item">
           <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
         </li>
@@ -109,58 +96,180 @@
   </div>
 </nav>
 
-
-  <!-- Sección: Slider de Inicio -->
-  
-  <!-- Sección: Nosotros -->
-  
-
-  <!-- Sección: Servicios -->
-
-
-  
-   <!-- Footer -->
-  <footer class="bg-dark text-light py-3">
-    <div class="container text-center">
-      © 2025 SAPE Internacional
+<section id="inicio" class="p-0"> <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-  </footer>
-
-  <!-- Pie de página -->
-  <footer class="bg-dark text-light py-4">
-    <div class="container">
-      <div class="row">
-        <!-- Columna de contacto o info -->
-        <div class="col-md-4 mb-3">
-          <h5>SAPE</h5>
-          <p>© 2025 SAPE - Todos los derechos reservados.</p>
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+              <div class="carousel-caption">
+                <h2>Bienvenido a SAPE</h2>
+                <p>Donde cada plato cuenta una historia de sabor y tradición.</p>
+                <a href="index.html#menu-digital" class="btn btn-primary btn-lg mt-3">Explora Nuestro Menú</a>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Columna de secciones -->
-        <div class="col-md-4 mb-3">
-          <h5>Secciones</h5>
-          <ul class="list-unstyled">
-            <li><a class="dropdown-item" href="index.html#menu-digital">Ver Carta Digital</a></li>
-            <li><a href="#reserva" class="text-light text-decoration-none">Reserva</a></li>
-             <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
-          </ul>
+      </div>
+      <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80');">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+              <div class="carousel-caption">
+                <h2>Ambiente Único y Acogedor</h2>
+                <p>Disfruta de momentos inolvidables en un espacio diseñado para ti y los tuyos.</p>
+                <a href="index.html#reserva" class="btn btn-primary btn-lg mt-3">Haz Tu Reserva</a>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Columna de redes sociales -->
-        <div class="col-md-4 mb-3">
-          <h5>Síguenos</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-light text-decoration-none">Facebook</a></li>
-            <li><a href="#" class="text-light text-decoration-none">Twitter</a></li>
-            <li><a href="#" class="text-light text-decoration-none">Instagram</a></li>
-          </ul>
+      </div>
+      <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');">
+         <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+              <div class="carousel-caption">
+                <h2>Calidad y Frescura Garantizada</h2>
+                <p>Ingredientes seleccionados con esmero para ofrecerte la mejor experiencia culinaria.</p>
+                <a href="index.html#nosotros" class="btn btn-primary btn-lg mt-3">Conoce Nuestra Pasión</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Tu JavaScript externo -->
-  <script src="index.js"></script>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+</section>
+
+<section id="nosotros" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Sobre Restaurante SAPE</h2>
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <p class="lead mb-4">En Restaurante SAPE, nos enorgullece ser un referente de la alta cocina, donde la pasión por los sabores auténticos se une con un servicio excepcional. Desde nuestros inicios, hemos trabajado para crear un espacio donde cada comida es una celebración.</p>
+        <p class="mb-3">Nuestra filosofía se basa en el uso de ingredientes frescos, preferentemente locales, para elaborar platos que no solo deleitan el paladar, sino que también cuentan la historia de nuestra tierra. Cada receta es cuidadosamente preparada por nuestro equipo de chefs expertos, quienes combinan técnicas tradicionales con toques de innovación.</p>
+        <p>Más que un restaurante, SAPE es un punto de encuentro para amigos, familias y colegas. Te invitamos a descubrir la calidez de nuestro ambiente y la exquisitez de nuestra propuesta gastronómica.</p>
+        <a href="nosotros.html" class="btn btn-outline-primary mt-3">Conoce más de nuestra historia</a>
+      </div>
+      <div class="col-lg-6 mt-4 mt-lg-0">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="img-fluid rounded shadow-lg" alt="Interior acogedor de Restaurante SAPE">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card text-center p-3 w-100">
+          <div class="icon-container mx-auto">
+            <i class="bi bi-wifi"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">WIFI Gratis</h5>
+            <p class="card-text">Conexión a internet de alta velocidad gratuita en todos nuestros locales.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card text-center p-3 w-100">
+          <div class="icon-container mx-auto">
+            <i class="bi bi-p-square-fill"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Estacionamiento</h5>
+            <p class="card-text">Amplia playa de estacionamiento vigilada disponible para tu comodidad.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card text-center p-3 w-100">
+          <div class="icon-container mx-auto">
+            <i class="bi bi-joystick"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Juegos para Niños</h5>
+            <p class="card-text">Área de entretenimiento segura y divertida para los más pequeños de la casa.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card text-center p-3 w-100">
+          <div class="icon-container mx-auto">
+            <i class="bi bi-truck"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Delivery Confiable</h5>
+            <p class="card-text">Servicio de delivery rápido a domicilio. Central: (044) 216410.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+        <a href="Lista-Servicios.html" class="btn btn-primary btn-lg">Ver todos los servicios</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark text-light pt-5 pb-4"> <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-lg-4 mb-4">
+        <h5 class="text-uppercase fw-bold mb-4">Restaurante SAPE</h5>
+        <p><img src="images/logo1.png" alt="SAPE Logo Blanco" style="max-height: 40px; filter: brightness(0) invert(1); margin-bottom: 10px;"><br>
+          Auténtica cocina con ingredientes frescos y un ambiente acogedor. Tu mejor opción para disfrutar de momentos inolvidables.
+        </p>
+        <p class="small mt-3">© 2025 SAPE Internacional - Todos los derechos reservados.</p>
+      </div>
+
+      <div class="col-md-4 col-lg-2 mx-auto mb-4">
+        <h5 class="text-uppercase fw-bold mb-4">Secciones</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="index.html#inicio" class="text-light text-decoration-none">Inicio</a></li>
+          <li class="mb-2"><a href="index.html#nosotros" class="text-light text-decoration-none">Nosotros</a></li>
+          <li class="mb-2"><a href="index.html#menu-digital" class="text-light text-decoration-none">Carta Digital</a></li>
+          <li class="mb-2"><a href="index.html#reserva" class="text-light text-decoration-none">Reservas</a></li>
+          <li class="mb-2"><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 col-lg-3 mx-auto mb-4">
+          <h5 class="text-uppercase fw-bold mb-4">Contacto</h5>
+          <p><i class="bi bi-geo-alt-fill me-2"></i> Av. Principal 123, Ciudad</p>
+          <p><i class="bi bi-envelope-fill me-2"></i> info@saperestaurante.com</p>
+          <p><i class="bi bi-telephone-fill me-2"></i> +51 (044) 216410</p>
+          <p><i class="bi bi-whatsapp me-2"></i> +51 987 654 321</p>
+      </div>
+      
+      <div class="col-md-4 col-lg-2 mx-auto mb-md-0 mb-4">
+        <h5 class="text-uppercase fw-bold mb-4">Síguenos</h5>
+        <ul class="list-unstyled d-flex flex-row justify-content-start">
+          <li class="me-3"><a href="#" class="text-light fs-4"><i class="bi bi-facebook"></i></a></li>
+          <li class="me-3"><a href="#" class="text-light fs-4"><i class="bi bi-instagram"></i></a></li>
+          <li class="me-3"><a href="#" class="text-light fs-4"><i class="bi bi-twitter"></i></a></li>
+           <li class="me-3"><a href="#" class="text-light fs-4"><i class="bi bi-tiktok"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
 
 </body>
-
 </html>
