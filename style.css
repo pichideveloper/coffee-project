@@ -332,7 +332,7 @@ section .section-title::after {
   display: block;
   width: 60px;
   height: 3px;
-  background: #0d6efd; /* Color primario de Bootstrap */
+  background: #FFC107; /* Color primario de Bootstrap */
   bottom: 0;
   left: calc(50% - 30px);
 }
@@ -398,7 +398,7 @@ section .section-title::after {
 /* body.dark-mode #servicios .section-title { color: #e0e0e0 !important; } */ /* Esta línea es redundante si la anterior se aplica */
 
 body.dark-mode #servicios .section-title::after {
-  background: #58a6ff; /* Un azul más claro para la línea decorativa en modo oscuro */
+  background: #FFCA2C; /* Un azul más claro para la línea decorativa en modo oscuro */
 }
 
 body.dark-mode #servicios .card {
@@ -407,13 +407,13 @@ body.dark-mode #servicios .card {
 }
 
 body.dark-mode #servicios .card .icon-container {
-  color: #58a6ff; /* Un azul más brillante/claro para el icono */
-  background-color: rgba(88, 166, 255, 0.15); /* Fondo del icono adaptado para modo oscuro */
+  color: #FFC107; /* Un azul más brillante/claro para el icono */
+  background-color: rgba(255, 193, 7, 0.1); /* Fondo del icono adaptado para modo oscuro */
 }
 
 body.dark-mode #servicios .card:hover .icon-container {
-  background-color: #58a6ff; /* Fondo del icono al pasar el mouse en modo oscuro */
-  color: #121212; /* Color de icono oscuro sobre fondo claro (del hover) */
+  background-color: #FFC107; /* Fondo del icono al pasar el mouse en modo oscuro */
+  color: #343a40; /* Color de icono oscuro sobre fondo claro (del hover) */
 }
 
 body.dark-mode #servicios .card-title {
