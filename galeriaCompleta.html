@@ -28,7 +28,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
+        <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120" onerror="this.onerror=null; this.src='https://placehold.co/120x50/cccccc/000000?text=Logo+SAPE';">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
         <span class="navbar-toggler-icon"></span>
@@ -100,23 +100,23 @@
     <p class="text-center mb-5">Haz clic en cualquier imagen para verla en grande y navegar por la galería.</p>
 
     <div class="gallery-container">
-      <a href="images/gallery/nombre_completo_de_tu_imagen1.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 1" class="gallery-item">
-        <img src="images/gallery/ejemplo1Galeria.jpg" alt="Descripción de la Imagen 1">
+      <a href="images/gallery/ejemplo1Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 1" class="gallery-item">
+        <img src="images/gallery/ejemplo1Galeria.jpg" alt="Descripción de la Imagen 1" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img1';">
       </a>
-      <a href="images/gallery/nombre_completo_de_tu_imagen2.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 2" class="gallery-item">
-        <img src="images/gallery/ejemplo2Galeria.jpg" alt="Descripción de la Imagen 2">
+      <a href="images/gallery/ejemplo2Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 2" class="gallery-item">
+        <img src="images/gallery/ejemplo2Galeria.jpg" alt="Descripción de la Imagen 2" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img2';">
       </a>
-      <a href="images/gallery/nombre_completo_de_tu_imagen3.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 3" class="gallery-item">
-        <img src="images/gallery/ejemplo3Galeria.jpg" alt="Descripción de la Imagen 3">
+      <a href="images/gallery/ejemplo3Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 3" class="gallery-item">
+        <img src="images/gallery/ejemplo3Galeria.jpg" alt="Descripción de la Imagen 3" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img3';">
       </a>
-      <a href="images/gallery/nombre_completo_de_tu_imagen4.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 4" class="gallery-item">
-        <img src="images/gallery/ejemplo4Galeria.jpg" alt="Descripción de la Imagen 4">
+      <a href="images/gallery/ejemplo4Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 4" class="gallery-item">
+        <img src="images/gallery/ejemplo4Galeria.jpg" alt="Descripción de la Imagen 4" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img4';">
       </a>
-      <a href="images/gallery/nombre_completo_de_tu_imagen5.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 5" class="gallery-item">
-        <img src="images/gallery/ejemplo5Galeria.jpg" alt="Descripción de la Imagen 5">
+      <a href="images/gallery/ejemplo5Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 5" class="gallery-item">
+        <img src="images/gallery/ejemplo5Galeria.jpg" alt="Descripción de la Imagen 5" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img5';">
       </a>
-      <a href="images/gallery/nombre_completo_de_tu_imagen6.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 6" class="gallery-item">
-        <img src="images/gallery/ejemplo6Galeria.jpg" alt="Descripción de la Imagen 6">
+      <a href="images/gallery/ejemplo6Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 6" class="gallery-item">
+        <img src="images/gallery/ejemplo6Galeria.jpg" alt="Descripción de la Imagen 6" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img6';">
       </a>
       </div>
   </main>
@@ -145,9 +145,9 @@
         <div class="col-md-4 mb-3">
           <h5>Síguenos</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.facebook.com/share/1LvsywagCF/" class="text-light text-decoration-none">Facebook</a></li>
-            <li><a href="https://www.twitter.com" class="text-light text-decoration-none">Twitter</a></li>
-            <li><a href="https://www.instagram.com/kenzowo_?igsh=eGV1ODM5bGx2bzh5" class="text-light text-decoration-none">Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/1LvsywagCF/" class="text-light text-decoration-none" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://www.twitter.com" class="text-light text-decoration-none" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            <li><a href="https://www.instagram.com/kenzowo_?igsh=eGV1ODM5bGx2bzh5" class="text-light text-decoration-none" target="_blank" rel="noopener noreferrer">Instagram</a></li>
           </ul>
         </div>
       </div>
@@ -161,12 +161,18 @@
   <script src="index.js"></script>
 
   <script>
-    // Opciones de configuración para Lightbox2 (opcional)
-    lightbox.option({
-      'resizeDuration': 200,
-      'wrapAround': true, // Permite navegar de la última a la primera imagen y viceversa
-      'albumLabel': "Imagen %1 de %2" // Personaliza el texto del contador
-    })
+    // Comprobación de carga de Lightbox2 y configuración
+    if (typeof lightbox !== 'undefined') {
+      console.log('Lightbox2 cargado correctamente.');
+      lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'albumLabel': "Imagen %1 de %2",
+        'disableScrolling': true // Buena opción para evitar scroll de fondo
+      });
+    } else {
+      console.error('ERROR: Lightbox2 no se cargó. Revisa el enlace al JS de Lightbox2 o errores de red.');
+    }
   </script>
 
 </body>
