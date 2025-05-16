@@ -21,7 +21,7 @@ body.dark-mode {
 /* Sección de locales */
 #locales {
   background: var(--bg-card);
-  padding: 4rem 0 2rem;  /* más espacio arriba para bajar el título */
+  padding: 5rem 0 2rem;  /* más espacio arriba para bajar el título */
 }
 
 /* Título */
@@ -131,4 +131,24 @@ body.dark-mode {
 
 body.dark-mode .lead.text-muted {
   color: #9a9a9a !important;
+}
+
+#locales .section-title {
+  letter-spacing: 2px;
+  color: var(--text-card) !important;
+}
+#locales .section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+#locales .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--btn-bg);
 }
