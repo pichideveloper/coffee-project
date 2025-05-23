@@ -1,1 +1,53 @@
 
+/* Estilos generales sección Nosotros */
+#nosotros {
+    padding: 60px 0;
+}
+
+#nosotros h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c2c2c;
+}
+
+#nosotros p {
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+/* Estilos equipo */
+#equipo {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.team-card {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.team-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 3px solid #e9ecef;
+}
+
+.team-card h5 {
+    color: #dc3545;
+    margin-bottom: 10px;
+}
+
+.team-card p {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 250px;
+}
