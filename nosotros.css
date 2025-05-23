@@ -42,7 +42,7 @@
 }
 
 .team-card h5 {
-    color: #dc3545;
+    color: #ffc107;
     margin-bottom: 10px;
 }
 
@@ -68,7 +68,7 @@
 .dark-mode #nosotros h4 {
     color: #fff;
     font-family: 'Merriweather', serif;
-    border-bottom: 2px solid #c52d2f;
+    border-bottom: 2px solid ##ffc107;
     padding-bottom: 0.5rem;
 }
 
