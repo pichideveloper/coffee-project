@@ -158,16 +158,16 @@
           <h2 class="mb-4">Escríbenos</h2>
           <form id="formContacto" onsubmit="enviarCorreocont(event)" method="post">
             <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Nombre completo" required>
+              <input type="text" class="form-control" placeholder="Nombre completo" name="nombreCon" required>
             </div>
             <div class="mb-3">
-              <input type="email" class="form-control" placeholder="Correo electrónico" required>
+              <input type="email" class="form-control" placeholder="Correo electrónico" name="correoCon" required>
             </div>
             <div class="mb-3">
-              <input type="tel" class="form-control" placeholder="Teléfono">
+              <input type="tel" class="form-control" placeholder="Teléfono" name="telefonoCon">
             </div>
             <div class="mb-3">
-              <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
+              <textarea class="form-control" rows="5" placeholder="Mensaje" name="menjaseCon" required></textarea>
             </div>
             <button type="submit" class="btn btn-warning text-light w-100">Enviar Mensaje</button>
           </form>
