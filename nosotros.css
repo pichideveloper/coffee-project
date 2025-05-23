@@ -51,3 +51,44 @@
     margin: 0 auto;
     max-width: 250px;
 }
+
+/* Añadir en el CSS existente */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+/* Modo oscuro */
+.dark-mode #nosotros {
+    background: #000 !important;
+    color: #e0e0e0;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.dark-mode #nosotros h2,
+.dark-mode #nosotros h3,
+.dark-mode #nosotros h4 {
+    color: #fff;
+    font-family: 'Merriweather', serif;
+    border-bottom: 2px solid #c52d2f;
+    padding-bottom: 0.5rem;
+}
+
+.dark-mode #nosotros p {
+    color: #d1d1d1;
+    font-family: 'Merriweather', serif;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.dark-mode .team-card {
+    background: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+}
+
+.dark-mode .team-card h5 {
+    color: #ff6b6b;
+}
+
+/* Fuente general para el texto */
+#nosotros {
+    font-family: 'Merriweather', serif;
+}
