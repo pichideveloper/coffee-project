@@ -1,33 +1,42 @@
+/* Importación de fuentes (debe ir al principio) */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+/* --- ESTILOS GENERALES --- */
 
 /* Estilos generales sección Nosotros */
 #nosotros {
+    /* La clase py-5 (padding-top: 3rem; padding-bottom: 3rem;) ya está en tu HTML.
+       Este padding: 60px 0; es un poco más (aprox. 3.75rem).
+       Considera si necesitas ambos o si py-5 es suficiente para el espaciado vertical.
+       Como está dentro de <main class="container">, el '0' de padding horizontal aquí no
+       causará que el contenido se pegue a los bordes del viewport. */
     padding: 60px 0;
 }
 
 #nosotros h2 {
     text-align: center;
-    margin-bottom: 40px;
-    color: #2c2c2c;
+    margin-bottom: 40px; /* Bootstrap: mb-4 (1.5rem) o mb-5 (3rem) */
+    color: #2c2c2c;     /* Se sobrescribe en modo oscuro */
 }
 
 #nosotros p {
     text-align: justify;
-    max-width: 800px;
-    margin: 0 auto 30px;
+    max-width: 800px; /* Límite para los párrafos principales */
+    margin: 0 auto 30px; /* Centrado y margen inferior. Bootstrap: mb-4 o mb-5 */
     line-height: 1.8;
 }
 
-/* Estilos equipo */
+/* Estilos generales sección Equipo */
 #equipo {
     padding: 60px 0;
-    background: #f8f9fa;
+    background: #f8f9fa; /* Fondo para modo claro */
 }
 
 .team-card {
     text-align: center;
     margin-bottom: 30px;
     padding: 20px;
-    background: white;
+    background: white; /* Fondo para modo claro */
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
 }
@@ -37,68 +46,101 @@
     height: 180px;
     object-fit: cover;
     border-radius: 50%;
-    margin: 0 auto 20px;
-    border: 3px solid #e9ecef;
+    margin: 0 auto 20px; /* Centrado y margen inferior */
+    border: 3px solid #e9ecef; /* Borde para modo claro */
 }
 
 .team-card h5 {
-    color: #ffc107;
+    color: #ffc107; /* Color de acento para modo claro */
     margin-bottom: 10px;
 }
 
 .team-card p {
     text-align: center;
     margin: 0 auto;
-    max-width: 250px;
+    max-width: 250px; /* Límite para la descripción en la tarjeta */
 }
 
-/* Añadir en el CSS existente */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 
-/* Modo oscuro */
+/* --- MODO OSCURO --- */
 /* —————————————— */
 /* Modo oscuro corregido */
 /* —————————————— */
 
-/* 1) Arreglar doble ## en border-bottom */
+/* Estilos Modo Oscuro para #nosotros */
+.dark-mode #nosotros {
+    /* Asegura que la sección herede el fondo del body/main y no tenga uno propio */
+    background-color: transparent;
+}
+
 .dark-mode #nosotros h2,
-.dark-mode #nosotros h3,
-.dark-mode #nosotros h4 {
-    color: #fff;
+.dark-mode #nosotros h4 { /* h4 para Misión/Visión */
+    color: #fff; /* O tu variable de color de texto principal para modo oscuro */
     font-family: 'Merriweather', serif;
-    border-bottom: 2px solid #ffc107;  /* <- antes: ##ffc107 */
+    border-bottom: 2px solid #ffc107; /* Color de acento */
     padding-bottom: 0.5rem;
 }
 
-/* 2) Incluir la sección “equipo” */
-.dark-mode #equipo {
-    background: #121212 !important;
-    padding: 60px 0;
+/* Opcional: Si los h4 de Misión y Visión deben ir centrados */
+/*
+.dark-mode #nosotros .col-md-6 h4 {
+   text-align: center;
+}
+*/
+
+.dark-mode #nosotros p {
+    color: #d1d1d1; /* Un gris claro para buena legibilidad en párrafos */
 }
 
-.dark-mode #equipo h3 {
+.dark-mode #nosotros .col-md-6 {
+    background-color: transparent; /* Evita fondos que hagan que las columnas resalten como "cuadros" */
+    margin-bottom: 1.5rem; /* Espacio inferior si se apilan en vistas móviles */
+    /* Bootstrap ya añade padding lateral (gutter) a las columnas.
+       Si el texto *dentro* de estas columnas aún se siente muy pegado a sus propios bordes: */
+    /* padding-top: 0.5rem; */
+    /* padding-bottom: 0.5rem; */
+}
+
+/* Opcional: Si el texto justificado de los párrafos en Misión/Visión se ve mal */
+/*
+.dark-mode #nosotros .col-md-6 p {
+   text-align: left;
+}
+*/
+
+/* Estilos Modo Oscuro para #equipo (basado en tu CSS original) */
+.dark-mode #equipo {
+    background: #121212 !important; /* Considera si el !important es realmente necesario */
+    /* padding: 60px 0; Ya está definido en los estilos generales, no es necesario repetirlo
+                        a menos que quieras un padding diferente específicamente para modo oscuro.
+                        Si es el mismo, puedes quitar esta línea para evitar redundancia. */
+}
+
+.dark-mode #equipo h3 { /* Asumo que este h3 es el título "Conoce a nuestro equipo" */
     color: #fff;
     font-family: 'Merriweather', serif;
     border-bottom: 2px solid #ffc107;
     padding-bottom: 0.5rem;
-    text-align: center;
+    text-align: center; /* El título del equipo ya estaba centrado */
 }
 
 .dark-mode .team-card {
-    background: #1a1a1a;
-    box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+    background: #1a1a1a; /* Fondo de tarjeta más oscuro */
+    box-shadow: 0 4px 15px rgba(255,255,255,0.08); /* Sombra más sutil para modo oscuro */
 }
 
 .dark-mode .team-card img {
-    border-color: #333; /* opcional: ajustar el borde de la imagen */
+    border-color: #333; /* Borde de imagen más oscuro */
 }
 
 .dark-mode .team-card h5 {
-    color: #ff6b6b;
+    color: #ff6b6b; /* Un color de acento diferente para el equipo, como lo tenías */
 }
 
 .dark-mode .team-card p {
     color: #d1d1d1;
-    font-family: 'Merriweather', serif;
-    line-height: 1.6;
+    font-family: 'Merriweather', serif; /* Asegura consistencia de fuente si es deseado */
+    line-height: 1.6; /* Ligeramente diferente al 1.8 de #nosotros p, puede ser intencional */
 }
+
+/* --- Fin Modo Oscuro --- */
