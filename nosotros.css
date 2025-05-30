@@ -56,27 +56,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 
 /* Modo oscuro */
-.dark-mode #nosotros {
-    background: #121212 !important;
-    color: #e0e0e0;
-    padding: 2rem;
-    border-radius: 8px;
-}
+/* —————————————— */
+/* Modo oscuro corregido */
+/* —————————————— */
 
+/* 1) Arreglar doble ## en border-bottom */
 .dark-mode #nosotros h2,
 .dark-mode #nosotros h3,
 .dark-mode #nosotros h4 {
     color: #fff;
     font-family: 'Merriweather', serif;
-    border-bottom: 2px solid ##ffc107;
+    border-bottom: 2px solid #ffc107;  /* <- antes: ##ffc107 */
     padding-bottom: 0.5rem;
 }
 
-.dark-mode #nosotros p {
-    color: #d1d1d1;
+/* 2) Incluir la sección “equipo” */
+.dark-mode #equipo {
+    background: #121212 !important;
+    padding: 60px 0;
+}
+
+.dark-mode #equipo h3 {
+    color: #fff;
     font-family: 'Merriweather', serif;
-    line-height: 1.8;
-    font-size: 1.1rem;
+    border-bottom: 2px solid #ffc107;
+    padding-bottom: 0.5rem;
+    text-align: center;
 }
 
 .dark-mode .team-card {
@@ -84,11 +89,16 @@
     box-shadow: 0 4px 15px rgba(255,255,255,0.1);
 }
 
+.dark-mode .team-card img {
+    border-color: #333; /* opcional: ajustar el borde de la imagen */
+}
+
 .dark-mode .team-card h5 {
     color: #ff6b6b;
 }
 
-/* Fuente general para el texto */
-#nosotros {
+.dark-mode .team-card p {
+    color: #d1d1d1;
     font-family: 'Merriweather', serif;
+    line-height: 1.6;
 }
