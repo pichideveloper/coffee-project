@@ -1,5 +1,74 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // --- 1) Modo Oscuro + Cambio de Logo (Implementación Unificada) ---
+
+  // --- 1) Lógica para el Modal de Detalles del Plato ---
+  const platoDetalleModalEl = document.getElementById('platoDetalleModal');
+
+  if (platoDetalleModalEl) {
+    platoDetalleModalEl.addEventListener('show.bs.modal', function (event) {
+      // Elemento que activó el modal (la tarjeta del plato)
+      const card = event.relatedTarget;
+
+      // Obtener los datos de los atributos data-* de la tarjeta
+      const nombre = card.getAttribute('data-nombre');
+      const nombreExtendido = card.getAttribute('data-nombre-extendido') || nombre;
+      const imgSrc = card.getAttribute('data-img');
+      const descripcionLarga = card.getAttribute('data-descripcion-larga');
+      const ingredientesStr = card.getAttribute('data-ingredientes');
+      const precio = card.getAttribute('data-precio');
+      const notas = card.getAttribute('data-notas');
+
+      // Seleccionar los elementos dentro del modal para actualizarlos
+      const modalTitle = platoDetalleModalEl.querySelector('#platoDetalleModalLabel');
+      const modalImg = platoDetalleModalEl.querySelector('#modalPlatoImg');
+      const modalNombreExt = platoDetalleModalEl.querySelector('#modalPlatoNombreExtendido');
+      const modalDesc = platoDetalleModalEl.querySelector('#modalPlatoDescripcion');
+      const modalIngredientesList = platoDetalleModalEl.querySelector('#modalPlatoIngredientes');
+      const modalPrecio = platoDetalleModalEl.querySelector('#modalPlatoPrecio');
+      const modalNotas = platoDetalleModalEl.querySelector('#modalPlatoNotasAdicionales');
+
+      // Actualizar el contenido del modal
+      if (modalTitle) modalTitle.textContent = nombre;
+      if (modalImg) {
+        modalImg.src = imgSrc;
+        modalImg.alt = nombreExtendido; // Para accesibilidad
+      }
+      if (modalNombreExt) modalNombreExt.textContent = nombreExtendido;
+      if (modalDesc) modalDesc.textContent = descripcionLarga;
+      if (modalPrecio) modalPrecio.textContent = precio;
+      
+      if (modalNotas && notas) {
+        modalNotas.textContent = notas;
+        modalNotas.style.display = 'block';
+      } else if (modalNotas) {
+        modalNotas.textContent = '';
+        modalNotas.style.display = 'none';
+      }
+
+      // Procesar y mostrar la lista de ingredientes
+      if (modalIngredientesList) {
+        modalIngredientesList.innerHTML = ''; // Limpiar lista anterior
+        if (ingredientesStr) {
+          const ingredientesArray = ingredientesStr.split(','); // Asume separación por comas
+          ingredientesArray.forEach(ingrediente => {
+            if (ingrediente.trim() !== '') {
+              const li = document.createElement('li');
+              li.textContent = ingrediente.trim();
+              modalIngredientesList.appendChild(li);
+            }
+          });
+        } else {
+          const li = document.createElement('li');
+          li.textContent = 'Ingredientes no detallados.';
+          modalIngredientesList.appendChild(li);
+        }
+      }
+    });
+  } else {
+    console.warn('Elemento modal con ID "platoDetalleModal" no encontrado.');
+  }
+  // --- Fin de la lógica del Modal de Detalles del Plato ---
+
+  // --- 2) Modo Oscuro + Cambio de Logo (Implementación Unificada) ---
   const toggleBtn = document.getElementById('darkModeToggle');
   const navbarLogo = document.getElementById('navbarLogo'); // Logo del navbar
   const body = document.body;
@@ -40,21 +109,22 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     console.warn('Faltan elementos para el modo oscuro: darkModeToggle o navbarLogo no encontrados.');
   }
+  // --- Fin Modo Oscuro + Cambio de Logo ---
 
-  // --- 2) Lógica para el modal de PDF ---
-  var pdfModalElement = document.getElementById('pdfModal');
+  // --- 3) Lógica para el modal de PDF ---
+  var pdfModalElement = document.getElementById('pdfModal'); // Se mantiene var como en tu original
 
   if (pdfModalElement) {
-    var pdfViewer = document.getElementById('pdfViewer');
-    var modalTitle = pdfModalElement.querySelector('.modal-title');
+    var pdfViewer = document.getElementById('pdfViewer'); // Se mantiene var
+    var modalTitlePDF = pdfModalElement.querySelector('.modal-title'); // Renombrado para evitar conflicto con modalTitle de plato
 
     pdfModalElement.addEventListener('show.bs.modal', function(event) {
       var triggerElement = event.relatedTarget;
       var pdfSrc = triggerElement.getAttribute('data-pdf-src');
       var pdfTitleText = triggerElement.getAttribute('data-pdf-title');
 
-      if (modalTitle) {
-        modalTitle.textContent = pdfTitleText;
+      if (modalTitlePDF) {
+        modalTitlePDF.textContent = pdfTitleText;
       }
 
       if (pdfViewer) {
@@ -71,7 +141,9 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     console.warn('Elemento con id "pdfModal" no encontrado. La funcionalidad del modal PDF no se activará.');
   }
+  // --- Fin Lógica para el modal de PDF ---
 
   // --- Aquí puedes añadir cualquier otro código JavaScript que necesites ---
+  // console.log("DOM completamente cargado y todos los scripts inicializados.");
 
 }); // Fin de DOMContentLoaded
