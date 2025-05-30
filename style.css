@@ -453,3 +453,79 @@ gap: 10px
 color: #AAA;
 font-size: 20px;
 }
+
+
+
+/* Estilos existentes en style.css ... */
+
+/* Estilos para el iframe del PDF en el modal */
+.pdf-iframe-style {
+    width: 100%;
+    height: 75vh; /* 75% de la altura de la ventana gráfica. Puedes ajustarlo */
+    /* Si prefieres una altura fija, podrías usar algo como:
+       height: 600px; 
+       max-height: 80vh; /* Para asegurar que no sea demasiado alto en pantallas pequeñas */
+    border: none; /* Equivalente a frameborder="0" */
+}
+
+/* Opcional: Si quieres asegurar que el modal-body no tenga padding */
+#pdfModal .modal-body {
+    padding: 0;
+}
+
+/* ---- MODO OSCURO ---- */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .bg-light {
+    background-color: #1e1e1e !important; /* Sobrescribir bg-light */
+    color: #e0e0e0;
+}
+body.dark-mode .navbar-light {
+    background-color: #1e1e1e !important; /* Navbar */
+}
+body.dark-mode .navbar-light .navbar-nav .nav-link {
+    color: #c0c0c0; /* Color de links en navbar */
+}
+body.dark-mode .navbar-light .navbar-nav .nav-link:hover {
+    color: #ffffff;
+}
+body.dark-mode .navbar-light .navbar-brand img {
+    /* Si tienes un logo oscuro, ya lo cambias con JS. Si no, puedes aplicar un filtro */
+    /* filter: invert(1) hue-rotate(180deg); */
+}
+body.dark-mode .card {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #3a3a3a;
+}
+body.dark-mode .form-control, body.dark-mode .form-select {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #3a3a3a;
+}
+body.dark-mode .form-control::placeholder {
+    color: #888;
+}
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+    color: #f5f5f5;
+}
+body.dark-mode .text-dark { /* En caso de usar text-dark en modo oscuro */
+     color: #e0e0e0 !important;
+}
+body.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+body.dark-mode .modal-header, body.dark-mode .modal-footer {
+    border-color: #3a3a3a;
+}
+body.dark-mode .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%); /* Para que el botón de cerrar se vea en fondo oscuro */
+}
+
+/* Otros estilos para modo oscuro que necesites */
+
+
