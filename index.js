@@ -1,109 +1,77 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // ——— 1) Modo Oscuro + Cambio de Logo ———
-  const toggleBtn    = document.getElementById('darkModeToggle');
-  const navbarLogo   = document.getElementById('navbarLogo');
-  const savedMode    = localStorage.getItem('mode') || 'light';
+  // --- 1) Modo Oscuro + Cambio de Logo (Implementación Unificada) ---
+  const toggleBtn = document.getElementById('darkModeToggle');
+  const navbarLogo = document.getElementById('navbarLogo'); // Logo del navbar
+  const body = document.body;
 
-  function applyMode(mode) {
-    // Alternar clase dark-mode en body
-    document.body.classList.toggle('dark-mode', mode === 'dark');
-    // Cambiar ícono del toggle
-    toggleBtn.textContent = mode === 'dark' ? '☀️' : '🌙';
-    // Cambiar logo del navbar
-    navbarLogo.src = mode === 'dark'
-      ? 'images/logo2.png'
-      : 'images/logo1.png';
-  }
+  // Asegúrate de que los elementos esenciales existen
+  if (toggleBtn && navbarLogo) {
+    const logoLight = 'images/logo1.png'; // Logo para modo claro
+    const logoDark = 'images/logo2.png';  // Logo para modo oscuro (ajusta si es 'logo_dark.png')
+    const localStorageKey = 'user_theme_preference'; // Usar una sola clave para localStorage
 
-  // Aplicar modo guardado al cargar
-  applyMode(savedMode);
-
-  // Escuchar clic para alternar modo y guardar preferencia
-  toggleBtn.addEventListener('click', () => {
-    const newMode = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
-    applyMode(newMode);
-    localStorage.setItem('mode', newMode);
-  });
-});
-
-// Espera a que el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', function () {
-
-    // Código existente que puedas tener en tu index.js ...
-
-    // Lógica para el modal de PDF
-    var pdfModalElement = document.getElementById('pdfModal');
-
-    // Asegurarnos de que el elemento del modal existe antes de añadirle listeners
-    if (pdfModalElement) {
-        var pdfViewer = document.getElementById('pdfViewer');
-        var modalTitle = pdfModalElement.querySelector('.modal-title');
-
-        pdfModalElement.addEventListener('show.bs.modal', function (event) {
-            // Botón o enlace que disparó el modal
-            var triggerElement = event.relatedTarget;
-
-            // Extraer información de los atributos data-* del elemento que disparó el modal
-            var pdfSrc = triggerElement.getAttribute('data-pdf-src');
-            var pdfTitleText = triggerElement.getAttribute('data-pdf-title');
-
-            // Actualizar el título del modal
-            if (modalTitle) {
-                modalTitle.textContent = pdfTitleText;
-            }
-
-            // Actualizar el src del iframe
-            // Añadimos #toolbar=0 para intentar ocultar la barra de herramientas del visor PDF (funciona en algunos navegadores/visores)
-            if (pdfViewer) {
-                pdfViewer.src = pdfSrc + '#toolbar=0&navpanes=0'; // Añadimos navpanes=0 también
-            }
-        });
-
-        // Opcional: Limpiar el src del iframe cuando el modal se oculte para detener la carga del PDF y liberar recursos
-        pdfModalElement.addEventListener('hidden.bs.modal', function () {
-            if (pdfViewer) {
-                pdfViewer.src = ''; // Limpia el src para detener el PDF
-            }
-        });
-    } else {
-        console.warn('Elemento con id "pdfModal" no encontrado. La funcionalidad del modal PDF no se activará.');
+    function applyUserTheme(theme) {
+      body.classList.toggle('dark-mode', theme === 'dark');
+      toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      navbarLogo.src = theme === 'dark' ? logoDark : logoLight;
     }
 
-    // Otro código que puedas tener en tu index.js, como el del modo oscuro, etc.
-    // Por ejemplo, tu código del darkModeToggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const navbarLogo = document.getElementById('navbarLogo');
-    const body = document.body;
-    const logoLight = 'images/logo1.png'; // Asumo que logo1.png es para modo claro
-    const logoDark = 'images/logo_dark.png'; // Debes tener un logo para modo oscuro, ej: logo_dark.png
+    // Aplicar modo guardado al cargar o el preferido por el sistema
+    let savedTheme = localStorage.getItem(localStorageKey);
 
-    // Función para aplicar el modo (oscuro o claro)
-    function applyTheme(isDark) {
-        if (isDark) {
-            body.classList.add('dark-mode');
-            if (darkModeToggle) darkModeToggle.textContent = '☀️';
-            if (navbarLogo) navbarLogo.src = logoDark;
+    if (!savedTheme) {
+        // Si no hay preferencia guardada, intenta detectar la preferencia del sistema
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            savedTheme = 'dark';
         } else {
-            body.classList.remove('dark-mode');
-            if (darkModeToggle) darkModeToggle.textContent = '🌙';
-            if (navbarLogo) navbarLogo.src = logoLight;
+            savedTheme = 'light';
         }
     }
+    
+    applyUserTheme(savedTheme);
 
-    // Comprobar preferencia guardada
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'dark') {
-        applyTheme(true);
-    } else {
-        applyTheme(false); // Por defecto o si es 'light'
-    }
+    // Escuchar clic para alternar modo y guardar preferencia
+    toggleBtn.addEventListener('click', () => {
+      const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+      applyUserTheme(newTheme);
+      localStorage.setItem(localStorageKey, newTheme);
+    });
 
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('click', () => {
-            const isDarkMode = body.classList.toggle('dark-mode');
-            applyTheme(isDarkMode);
-            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-        });
-    }
+  } else {
+    console.warn('Faltan elementos para el modo oscuro: darkModeToggle o navbarLogo no encontrados.');
+  }
+
+  // --- 2) Lógica para el modal de PDF ---
+  var pdfModalElement = document.getElementById('pdfModal');
+
+  if (pdfModalElement) {
+    var pdfViewer = document.getElementById('pdfViewer');
+    var modalTitle = pdfModalElement.querySelector('.modal-title');
+
+    pdfModalElement.addEventListener('show.bs.modal', function(event) {
+      var triggerElement = event.relatedTarget;
+      var pdfSrc = triggerElement.getAttribute('data-pdf-src');
+      var pdfTitleText = triggerElement.getAttribute('data-pdf-title');
+
+      if (modalTitle) {
+        modalTitle.textContent = pdfTitleText;
+      }
+
+      if (pdfViewer) {
+        // Añadimos #toolbar=0 para ocultar la barra de herramientas y navpanes=0 para los paneles de navegación
+        pdfViewer.src = pdfSrc + '#toolbar=0&navpanes=0';
+      }
+    });
+
+    pdfModalElement.addEventListener('hidden.bs.modal', function() {
+      if (pdfViewer) {
+        pdfViewer.src = ''; // Limpia el src para detener el PDF y liberar recursos
+      }
+    });
+  } else {
+    console.warn('Elemento con id "pdfModal" no encontrado. La funcionalidad del modal PDF no se activará.');
+  }
+
+  // --- Aquí puedes añadir cualquier otro código JavaScript que necesites ---
 
 }); // Fin de DOMContentLoaded
