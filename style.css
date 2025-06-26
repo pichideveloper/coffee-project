@@ -2,258 +2,645 @@
   box-sizing: border-box;
 }
 
+/* Fuentes personalizadas */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;600;700;800&display=swap");
+
+/* Variables CSS para colores consistentes - TONALIDADES NEGRAS, NARANJAS Y AMARILLAS */
+:root {
+  --primary-color: #ff8c00;
+  /* Naranja oscuro */
+  --primary-dark: #ff6b00;
+  /* Naranja más oscuro */
+  --secondary-color: #ffd700;
+  /* Amarillo dorado */
+  --accent-color: #ffa500;
+  /* Naranja medio */
+  --text-dark: #1a1a1a;
+  /* Negro suave */
+  --text-light: #4a4a4a;
+  /* Gris oscuro */
+  --bg-light: #f5f5f5;
+  /* Gris muy claro */
+  --bg-dark: #0d0d0d;
+  /* Negro profundo */
+  --bg-medium: #1a1a1a;
+  /* Negro medio */
+  --bg-card: #2a2a2a;
+  /* Gris oscuro para tarjetas */
+  --white: #ffffff;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-dark: rgba(0, 0, 0, 0.25);
+  --shadow-orange: rgba(255, 140, 0, 0.3);
+}
+
 /* Ajustar margen top para compensar navbar fijo */
 body {
-  padding-top: 70px;
+  padding-top: 80px;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--white);
 }
 
-/* Estilos del slider */
-.carousel-item img {
-  max-height: 600px;
-  object-fit: cover;
+/* Títulos con fuente elegante */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  color: var(--text-dark);
 }
 
-/* Secciones */
-section {
-  scroll-margin-top: 80px;
-  /* Para que el ancla no quede bajo el navbar */
+/* =============================================== */
+/* NAVBAR MEJORADO */
+/* =============================================== */
+.navbar {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 1rem 0;
 }
 
-/* Tarjetas de testimonios */
-#testimonios .card {
-  background-color: #f8f9fa;
-}
-
-/* Botones y enlaces */
-.btn-outline-light {
-  color: #fff;
-  border-color: #fff;
-}
-
-.btn-outline-light:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.navbar .nav-link:hover {
-  background-color: orange;
-  color: white !important;
-  border-radius: 0.25rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-
-/* Modo oscuro */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark-mode .navbar {
-  background-color: #1f1f1f !important;
-}
-
-body.dark-mode .card, /* Estilo general para cards en modo oscuro */
-body.dark-mode .alert,
-body.dark-mode section { /* Estilo general para sections en modo oscuro */
-  background-color: #1f1f1f;
-  color: #e0e0e0;
-}
-
-body.dark-mode .btn-outline-secondary {
-  border-color: #e0e0e0;
-  color: #e0e0e0;
-}
-
-body.dark-mode .btn-outline-secondary:hover {
-  background-color: #333;
-}
-
-.nav-dark-toggle {
+.navbar-brand img {
   transition: transform 0.3s ease;
 }
 
-.nav-dark-toggle:hover {
-  transform: scale(1.1);
+.navbar-brand:hover img {
+  transform: scale(1.05);
 }
 
-/* Sobrescribir los bg-light en modo oscuro */
-body.dark-mode .bg-light {
-  background-color: #0e0e0e !important;
+.navbar-nav .nav-link {
+  font-weight: 600;
+  color: var(--text-dark) !important;
+  margin: 0 0.3rem;
+  padding: 0.8rem 1.5rem !important;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
 }
 
-/* Si quieres que los textos dentro de esas secciones también cambien */
-body.dark-mode .bg-light,
-body.dark-mode .bg-light p,
-body.dark-mode .bg-light h1, /* Añadido h1 para consistencia */
-body.dark-mode .bg-light h2,
-body.dark-mode .bg-light h3,
-body.dark-mode .bg-light h4,
-body.dark-mode .bg-light h5,
-body.dark-mode .bg-light h6 {
-  color: #e0e0e0 !important;
+.navbar-nav .nav-link:hover {
+  background: var(--primary-color);
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--shadow-orange);
 }
 
-body.dark-mode .navbar .nav-link {
-  color: #fff !important;
+/* =============================================== */
+/* TIPOGRAFÍA INSPIRADA EN ARTS DISTRICT KITCHEN */
+/* =============================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", "Arial Black", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-body.dark-mode #darkModeToggle {
-  color: #fff !important;
-  border-color: #e0e0e0 !important;
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Testimonios en modo oscuro */
-body.dark-mode #testimonios {
-  background-color: #0e0e0e !important; /* Hereda de .bg-light si #testimonios tiene .bg-light */
+/* =============================================== */
+/* CARRUSEL MEJORADO */
+/* =============================================== */
+.carousel-item img {
+  max-height: 70vh;
+  object-fit: cover;
+  transition: filter 0.4s ease;
 }
 
-body.dark-mode #testimonios .card {
-  background-color: #1f1f1f !important; /* Hereda de .dark-mode .card */
-  color: #e0e0e0 !important;
+.carousel-caption {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-color: var(--primary-color);
+  border-radius: 15px;
+  padding: 2rem;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+  text-align: center;
+  background: linear-gradient(
+    45deg,
+    rgba(13, 13, 13, 0.9),
+    rgba(26, 26, 26, 0.7)
+  );
+  border-color: var(--primary-color);
+  color: #e2e8f0;
+  transition: background 0.4s ease, border 0.4s ease;
 }
 
-body.dark-mode #platos .text-muted {
-  color: #e0e0e0 !important;
+.carousel-caption h1,
+.carousel-caption p {
+  transition: color 0.4s ease, text-shadow 0.4s ease;
 }
 
-
-body.dark-mode #testimonios .card p,
-body.dark-mode #testimonios .card em {
-  color: #e0e0e0 !important;
+.carousel-caption h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
-body.dark-mode .btn-warning {
-  color: #000 !important;
+.carousel-caption p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
 }
 
-body.dark-mode .btn-warning:focus,
-body.dark-mode .btn-warning:active,
-body.dark-mode .btn-warning.active {
-  color: #000 !important;
-  background-color: #ffc107;
-  box-shadow: none;
-}
-.nav-tabs .nav-link {
-  color: #ffc107;        
-}
-
-.nav-tabs .nav-link:hover,
-.nav-tabs .nav-link:focus {
-  color: #f0b507;        
+.carousel-caption .btn {
+  margin: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.nav-tabs .nav-link.active {
-  color: #ffc107 !important;    
-  border-color: #dee2e6 #dee2e6 #fff; 
+.carousel-caption .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-div.polaroid {
-  width: 284px;
-  padding: 10px 10px 20px 10px;
-  border: 1px solid #BFBFBF;
-  background-color: white;
-  box-shadow: 10px 10px 5px #aaaaaa;
+/* --- MODO CLARO (POR DEFECTO) --- */
+.carousel-item img {
+  filter: brightness(0.95);
+  /* Imagen casi sin filtro */
 }
 
-body.dark-mode div.polaroid {
-  width: 284px;
-  padding: 10px 10px 20px 10px;
-  color: white;
-  border: 1px solid black;
-  background-color: #1f1f1f;
-  box-shadow: 10px 10px 5px black;
+.carousel-caption {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(245, 245, 245, 0.75)
+  );
+  border-color: var(--primary-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+  color: #e2e8f0;
 }
 
-div.rotate_right {
-  float: left;
-  transform: rotate(7deg);
+.carousel-caption h1 {
+  background: linear-gradient(
+    0deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-div.rotate_left {
-  float: left;
-  transform: rotate(-8deg);
+.carousel-caption p {
+  color: var(--text-light);
 }
 
-body.dark-mode .navbar .dropdown-menu {
-  background-color: #2c2c2c !important; 
+.carousel-caption .btn-warning {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   border: none;
+  color: white;
 }
 
-body.dark-mode .navbar .dropdown-menu .dropdown-item {
-  color: #ffffff !important;        
-  transition: background-color 0.2s;
+.carousel-caption .btn-outline-light {
+  border: 2px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
 }
 
-body.dark-mode .navbar .dropdown-menu .dropdown-item:hover,
-body.dark-mode .navbar .dropdown-menu .dropdown-item:focus {
-  background-color: #ffa500 !important;  
-  color: black !important;          
+.carousel-caption .btn-outline-light:hover {
+  background: var(--primary-color);
+  color: white !important;
 }
 
-.navbar .dropdown-menu .dropdown-item:hover,
-.navbar .dropdown-menu .dropdown-item:focus {
-  background-color: #ffa500 !important;  
-  color: white; /* Texto blanco en modo claro para el dropdown hover */
+/* --- MODO OSCURO (CUANDO body.dark-mode ESTÁ ACTIVO) --- */
+body.dark-mode .carousel-item img {
+  filter: brightness(0.7);
+  /* Filtro oscuro original */
 }
 
+body.dark-mode .carousel-caption {
+  background: linear-gradient(
+    45deg,
+    rgba(13, 13, 13, 0.9),
+    rgba(26, 26, 26, 0.8)
+  );
+  /* Fondo oscuro original */
 
-/* 13/05/2025 - Comentario original del usuario, lo mantengo por si es una referencia para él */
-////
-/* Estilos para la Nueva Sección de Menú Digital */
+  border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+body.dark-mode .carousel-caption h1 {
+  background: linear-gradient(
+    0deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.dark-mode .carousel-caption p {
+  color: #e2e8f0;
+  /* Color de texto claro original */
+}
+
+body.dark-mode .carousel-caption .btn-outline-light {
+  border: 2px solid var(--secondary-color);
+  background: rgba(255, 215, 0, 0.1);
+  color: var(--secondary-color);
+}
+
+body.dark-mode .carousel-caption .btn-outline-light:hover {
+  background: var(--secondary-color);
+  color: var(--text-dark) !important;
+}
+
+/* =============================================== */
+/* SECCIONES GENERALES */
+/* =============================================== */
+section {
+  scroll-margin-top: 100px;
+  padding: 5rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  font-size: 3rem;
+  position: relative;
+  padding-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  bottom: 0;
+  left: calc(50% - 40px);
+  border-radius: 2px;
+}
+
+/* =============================================== */
+/* SECCIÓN NOSOTROS MEJORADA */
+/* =============================================== */
+#nosotros {
+  background: linear-gradient(135deg, var(--bg-light) 0%, #e8e8e8 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#nosotros::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23FF8C00" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23FFD700" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23FFA500" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  z-index: 0;
+}
+
+#nosotros .container {
+  position: relative;
+  z-index: 1;
+}
+
+#nosotros .lead {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--text-light);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px var(--shadow-light);
+  border: 1px solid rgba(255, 140, 0, 0.2);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  box-shadow: 0 8px 32px var(--shadow-light);
+}
+
+.glass:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px var(--shadow-orange);
+  background: rgba(255, 255, 255, 0.4);
+  border-color: var(--primary-color);
+}
+
+.glass i {
+  font-size: 3.5rem !important;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.glass h5 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.glass p {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* =============================================== */
+/* SECCIÓN SERVICIOS MEJORADA */
+/* =============================================== */
+#servicios {
+  background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+  position: relative;
+}
+
+#servicios::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 50%,
+      rgba(255, 140, 0, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 215, 0, 0.1) 0%,
+      transparent 50%
+    );
+  z-index: 0;
+}
+
+#servicios .container {
+  position: relative;
+  z-index: 1;
+}
+
+#servicios .card {
+  border: none;
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: 0 10px 30px var(--shadow-light);
+  height: 100%;
+  position: relative;
+  border: 1px solid rgba(255, 140, 0, 0.1);
+}
+
+#servicios .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+#servicios .card:hover::before {
+  transform: scaleX(1);
+}
+
+#servicios .card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px var(--shadow-orange);
+  border-color: var(--primary-color);
+}
+
+#servicios .card .icon-container {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 140, 0, 0.1),
+    rgba(255, 215, 0, 0.1)
+  );
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 140, 0, 0.2);
+}
+
+#servicios .card .icon-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  transform: translate(-50%, -50%);
+}
+
+#servicios .card:hover .icon-container::before {
+  width: 100%;
+  height: 100%;
+}
+
+#servicios .card:hover .icon-container {
+  color: white;
+  transform: scale(1.1) rotate(5deg);
+  border-color: var(--primary-color);
+}
+
+#servicios .card-title {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+#servicios .card-text {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* =============================================== */
+/* SECCIÓN MENÚ DIGITAL MEJORADA */
+/* =============================================== */
 #menu-digital {
-  background-color: #f8f9fa; /* Un fondo suave, puedes cambiarlo */
+  background: linear-gradient(135deg, #ffffff 0%, var(--bg-light) 100%);
+  color: var(--text-dark);
+  position: relative;
+  overflow: hidden;
+}
+.card {
+  --bs-card-spacer-x: 0rem !important;
+}
+#menu-digital::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="food-pattern" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="%23FF8C00" opacity="0.1"/><circle cx="40" cy="25" r="1.5" fill="%23FFD700" opacity="0.1"/><circle cx="25" cy="40" r="1" fill="%23FFA500" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23food-pattern)"/></svg>');
+  z-index: 0;
 }
 
-body.dark-mode #menu-digital {
-  background-color: #1e1e1e; /* Fondo para modo oscuro */
+#menu-digital .container {
+  position: relative;
+  z-index: 1;
 }
 
-body.dark-mode #menu-digital h2,
-body.dark-mode #menu-digital p.lead {
-  color: #e0e0e0 !important;
+#menu-digital h2 {
+  color: var(--text-dark);
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+#menu-digital .lead {
+  color: var(--text-light);
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
 }
 
 .menu-digital-link {
   text-decoration: none;
   color: inherit;
-  display: block; /* Para que el hover ocupe todo el item */
-  transition: transform 0.3s ease;
+  display: block;
+  transition: all 0.4s ease;
 }
 
 .menu-digital-link:hover {
-  transform: translateY(-5px); /* Efecto sutil al pasar el mouse */
+  transform: translateY(-10px);
 }
 
 .menu-digital-item {
   position: relative;
   overflow: hidden;
-  border-radius: 0.5rem; /* Bordes redondeados */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  height: 100%; /* Para que todos los items tengan la misma altura si están en .d-flex .align-items-stretch */
-  display: flex; /* Para centrar contenido si es necesario */
-  flex-direction: column; /* Apilar imagen y texto */
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, #ffffff, var(--bg-light));
+  border: 1px solid rgba(255, 140, 0, 0.3);
 }
 
-body.dark-mode .menu-digital-item {
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
-    border: 1px solid #333;
+.menu-digital-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 140, 0, 0.1),
+    rgba(255, 215, 0, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
+.menu-digital-link:hover .menu-digital-item::before {
+  opacity: 1;
+}
 
 .menu-digital-item:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 25px 50px rgba(255, 140, 0, 0.3);
+  transform: scale(1.02);
+  border-color: var(--primary-color);
 }
 
 .menu-digital-img {
   width: 100%;
-  height: 300px; /* Altura fija para las imágenes, ajusta según necesites */
-  object-fit: cover; /* Para que la imagen cubra el espacio sin deformarse */
-  transition: transform 0.4s ease;
+  height: 300px;
+  object-fit: cover;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .menu-digital-link:hover .menu-digital-img {
-  transform: scale(1.05); /* Ligero zoom a la imagen al pasar el mouse */
+  transform: scale(1.1);
+  filter: brightness(1.1) saturate(1.2);
 }
 
 .menu-digital-caption {
@@ -261,271 +648,873 @@ body.dark-mode .menu-digital-item {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 15px; /* Espaciado general */
+  padding: 2rem;
   text-align: center;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%);
-  z-index: 2;
-  display: flex; /* Usamos flex para centrar mejor el contenido del caption */
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 249, 250, 0.8) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 3;
+  display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra el h4 verticalmente dentro del caption */
-  align-items: center; /* Centra el h4 horizontalmente */
-  min-height: 120px; /* Altura mínima para el caption. Ajusta este valor si necesitas más o menos espacio (ej. para 2 líneas de texto cómodamente) */
+  justify-content: center;
+  align-items: center;
+  min-height: 140px;
 }
 
 .menu-digital-caption h4 {
-  color: white;
-  font-weight: bold;
+  color: var(--text-dark);
+  font-weight: 700;
   margin: 0;
-  font-size: 1.4rem; /* Puedes ajustar el tamaño si es necesario */
-  position: relative; /* Para las líneas ::before y ::after */
-  display: inline-block; /* Para que las líneas se ajusten al ancho del texto */
-  padding-top: 12px;    /* Espacio DENTRO del h4 para la línea superior */
-  padding-bottom: 12px; /* Espacio DENTRO del h4 para la línea inferior */
-  line-height: 1.3;     /* Mejora el espaciado si el texto va a dos líneas */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-  max-width: 95%;       /* Evita que el texto (si es muy largo) toque los bordes del caption */
+  font-size: 1.6rem;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 0;
+  line-height: 1.3;
+  max-width: 95%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Las líneas que aparecen en el hover */
 .menu-digital-caption h4::before,
 .menu-digital-caption h4::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 0; /* Inician sin ancho */
-  height: 2px;
-  background-color: white;
-  transition: width 0.3s ease-out;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  transition: width 0.4s ease-out;
+  border-radius: 2px;
 }
 
 .menu-digital-caption h4::before {
-  top: 5px; /* Distancia desde el borde superior del padding del h4 */
+  top: 0;
 }
 
 .menu-digital-caption h4::after {
-  bottom: 5px; /* Distancia desde el borde inferior del padding del h4 */
+  bottom: 0;
 }
 
-/* Mostrar las líneas al pasar el mouse sobre el enlace (.menu-digital-link) */
 .menu-digital-link:hover .menu-digital-caption h4::before,
 .menu-digital-link:hover .menu-digital-caption h4::after {
-  width: 70%; /* Ancho de las líneas al aparecer */
+  width: 80%;
 }
 
-
 /* =============================================== */
-/* NUEVOS ESTILOS GENERALES DE SECCIÓN (TÍTULO)    */
+/* SECCIÓN RESERVAS MEJORADA */
 /* =============================================== */
-section .section-title {
-  text-align: center;
-  margin-bottom: 40px;
-  font-weight: 600;
-  font-size: 2.5rem; /* Ajusta según tu diseño general */
+#reserva {
+  background: linear-gradient(135deg, var(--bg-light) 0%, #e8e8e8 100%);
   position: relative;
-  padding-bottom: 15px;
 }
 
-section .section-title::after {
-  content: '';
+#reserva::before {
+  content: "";
   position: absolute;
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #FFC107; /* Color primario de Bootstrap */
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  left: calc(50% - 30px);
+  background: radial-gradient(
+    circle at 70% 30%,
+    rgba(255, 140, 0, 0.1) 0%,
+    transparent 50%
+  );
+  z-index: 0;
 }
 
-/* =============================================== */
-/* NUEVOS ESTILOS ESPECÍFICOS PARA LA SECCIÓN SERVICIOS  */
-/* =============================================== */
-#servicios .card {
-  border: none;
-  border-radius: 8px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  overflow: hidden; /* Para asegurar que el fondo del icono no se desborde en hover */
-  background-color: #fff; /* Fondo blanco para las tarjetas en modo claro */
+#reserva .container {
+  position: relative;
+  z-index: 1;
 }
 
-#servicios .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,.15)!important;
+#reserva h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
 }
 
-#servicios .card .icon-container {
-  font-size: 2.8rem; /* Tamaño del icono */
-  margin-bottom: 1rem;
-  color: #FFC107; /* Color del icono (Bootstrap primary) */
-  background-color: rgba(255, 193, 7, 0.1); /* Fondo suave para el contenedor del icono */
-  width: 80px;
-  height: 80px;
-  line-height: 80px; /* Centra el icono verticalmente */
-  border-radius: 50%; /* Hace el contenedor circular */
-  display: inline-block; /* Permite centrarlo con mx-auto en la card */
-  transition: background-color 0.3s ease, color 0.3s ease;
+#reserva p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
 }
 
-#servicios .card:hover .icon-container {
-  background-color: #FFC107; /* Fondo del icono al pasar el mouse */
-  color: #343a40; /* Color del icono al pasar el mouse */
+#reservaForm {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px var(--shadow-light);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 140, 0, 0.2);
 }
 
-#servicios .card-title {
-  margin-top: 0.5rem;
+#reservaForm::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+
+.form-label {
   font-weight: 600;
-  font-size: 1.25rem;
-  color: #343a40; /* Color oscuro para el título en modo claro */
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
-#servicios .card-text {
-  font-size: 0.95rem;
-  color: #6c757d; /* Color gris para el texto en modo claro */
+.form-control,
+.form-select {
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(255, 140, 0, 0.25);
+  background: white;
+  transform: translateY(-2px);
+}
+
+.form-control::placeholder {
+  color: #adb5bd;
+  font-style: italic;
+}
+
+#reservaForm .btn-warning {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border: none;
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px var(--shadow-orange);
+  color: white;
+}
+
+#reservaForm .btn-warning:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px var(--shadow-orange);
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
 }
 
 /* =============================================== */
-/* AJUSTES PARA MODO OSCURO - SECCIÓN SERVICIOS   */
-/* (Estos complementan tus reglas generales de modo oscuro) */
+/* SECCIÓN LOCALES MEJORADA */
 /* =============================================== */
+#locales {
+  background: white;
+  position: relative;
+}
 
-/* El fondo de la sección #servicios.bg-light ya está cubierto por tu regla general:
-   body.dark-mode .bg-light { background-color: #0e0e0e !important; }
-   Y los textos generales dentro de .bg-light (h2, p) también:
-   body.dark-mode .bg-light h2, body.dark-mode .bg-light p { color: #e0e0e0 !important; }
-*/
+#locales h2 {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
 
-/* Título de la sección Servicios en modo oscuro (ya cubierto si .section-title es un h2 dentro de .bg-light) */
-/* body.dark-mode #servicios .section-title { color: #e0e0e0 !important; } */ /* Esta línea es redundante si la anterior se aplica */
+#locales h5 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
 
-body.dark-mode #servicios .section-title::after {
-  background: #FFCA2C; /* Un azul más claro para la línea decorativa en modo oscuro */
+#locales p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+#locales .btn-outline-primary {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#locales .btn-outline-primary:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px var(--shadow-orange);
+}
+
+/* =============================================== */
+/* SECCIÓN GALERÍA MEJORADA */
+/* =============================================== */
+#galeria {
+  background: linear-gradient(135deg, var(--bg-light) 0%, #e8e8e8 100%);
+  position: relative;
+}
+
+#galeria h2 {
+  color: var(--text-dark);
+}
+
+/* =============================================== */
+/* SECCIÓN TESTIMONIOS MEJORADA */
+/* =============================================== */
+#testimonios {
+  background: linear-gradient(135deg, #ffffff 0%, var(--bg-light) 100%);
+  position: relative;
+}
+
+#testimonios h2 {
+  color: var(--text-dark);
+}
+
+#testimonios .card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+#testimonios .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px var(--shadow-orange);
+  border-color: var(--primary-color);
+}
+
+/* =============================================== */
+/* SECCIÓN CONTACTO MEJORADA */
+/* =============================================== */
+#contacto-index {
+  background: linear-gradient(135deg, var(--bg-light) 0%, #e8e8e8 100%);
+  position: relative;
+}
+
+#contacto-index h2.mb-4 {
+  color: var(--text-dark);
+  /* This is the problem line for dark mode */
+}
+
+/* =============================================== */
+/* FOOTER MEJORADO */
+/* =============================================== */
+footer {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 100%);
+  color: white;
+  padding: 3rem 0 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footer-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="%23FF8C00" opacity="0.1"/><circle cx="15" cy="15" r="0.5" fill="%23FFD700" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23footer-pattern)"/></svg>');
+  z-index: 0;
+}
+
+footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+footer h5 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+footer p,
+footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--primary-color);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.social-icons a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+.social-icons a:hover {
+  color: white;
+  background: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px var(--shadow-orange);
+  border-color: var(--primary-color);
+}
+
+/* =============================================== */
+/* MODO OSCURO MEJORADO */
+/* =============================================== */
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: #e2e8f0;
+}
+
+/* Navbar en modo oscuro */
+body.dark-mode .navbar {
+  background: rgba(13, 13, 13, 0.95) !important;
+  border-bottom: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+body.dark-mode .navbar-nav .nav-link {
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode .navbar-nav .nav-link:hover {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white !important;
+}
+
+/* Carrusel en modo oscuro */
+body.dark-mode .carousel-caption {
+  background: linear-gradient(
+    45deg,
+    rgba(13, 13, 13, 0.9),
+    rgba(26, 26, 26, 0.7)
+  );
+  border-color: var(--primary-color);
+  color: #e2e8f0;
+}
+
+body.dark-mode .carousel-caption p {
+  color: #a0aec0;
+}
+
+/* Sección Nosotros en modo oscuro */
+body.dark-mode #nosotros {
+  background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
+}
+
+body.dark-mode #nosotros .lead {
+  background: rgba(42, 42, 42, 0.9);
+  /* GRIS/PLOMO COMO SOLICITADO */
+  color: #e2e8f0;
+  border-color: var(--primary-color);
+}
+
+body.dark-mode .glass {
+  background: rgba(42, 42, 42, 0.3);
+  /* GRIS/PLOMO COMO SOLICITADO */
+  border: 1px solid rgba(255, 140, 0, 0.4);
+}
+
+body.dark-mode .glass:hover {
+  background: rgba(42, 42, 42, 0.5);
+  /* GRIS/PLOMO COMO SOLICITADO */
+  border-color: var(--primary-color);
+}
+
+body.dark-mode .glass h5 {
+  color: #e2e8f0;
+}
+
+body.dark-mode .glass p {
+  color: #a0aec0;
+}
+
+/* Servicios en modo oscuro */
+body.dark-mode #servicios {
+  background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
 }
 
 body.dark-mode #servicios .card {
-  background-color: #1f1f1f; /* Mantiene tu color de card general en modo oscuro */
-  /* La sombra en hover ya debería funcionar bien sobre este fondo */
+  background: linear-gradient(145deg, var(--bg-card), var(--bg-medium));
+  color: #e2e8f0;
+  border-color: rgba(255, 140, 0, 0.3);
 }
 
-body.dark-mode #servicios .card .icon-container {
-  color: #FFCA2C; /* Un azul más brillante/claro para el icono */
-  background-color: rgba(255, 202, 44, 0.15); /* Fondo del icono adaptado para modo oscuro */
-}
-
-body.dark-mode #servicios .card:hover .icon-container {
-  background-color: #FFCA2C; /* Fondo del icono al pasar el mouse en modo oscuro */
-  color: #1f1f1f; /* Color de icono oscuro sobre fondo claro (del hover) */
+body.dark-mode #servicios .card:hover {
+  border-color: var(--primary-color);
 }
 
 body.dark-mode #servicios .card-title {
-  color: #e0e0e0; /* Color de texto claro para el título en modo oscuro (tu color general para texto en cards oscuras) */
+  color: #e2e8f0;
 }
 
 body.dark-mode #servicios .card-text {
-  color: #adb5bd; /* Un gris más claro para el texto en modo oscuro, para mejor contraste */
+  color: #a0aec0;
 }
 
-.glass{
-  background: rgba(48, 48, 48, 0.1);
--webkit-backdrop-filter: blur(5px);
-backdrop-filter: blur(5px);
-border: 1px solid rgba(90, 90, 90, 0.25);
-border-radius: 10%;
+/* Reservas en modo oscuro */
+body.dark-mode #reserva {
+  background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
 }
 
-body.dark-mode .glass{
-  background: rgba(255,255,255,0.1);
--webkit-backdrop-filter: blur(5px);
-backdrop-filter: blur(5px);
-border: 1px solid rgba(255,255,255,25%);
-border-radius: 10%;
+body.dark-mode #reserva h2 {
+  color: #e2e8f0;
 }
 
-
-
-
-/*iconos */
-.social-icons {
- display: flex; /* Usamos Flexbox para distribuir los iconos */
-gap: 10px
- }
-
-.social-icons a {
-color: #AAA;
-font-size: 20px;
+body.dark-mode #reserva p {
+  color: #a0aec0;
 }
 
+body.dark-mode #reservaForm {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+}
 
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background: var(--bg-medium);
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
 
-/* Estilos existentes en style.css ... */
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+  background: var(--bg-card);
+  border-color: var(--primary-color);
+}
 
-/* Estilos para el iframe del PDF en el modal */
+body.dark-mode .form-label {
+  color: #e2e8f0;
+}
+
+/* Locales en modo oscuro */
+body.dark-mode #locales {
+  background: var(--bg-medium);
+}
+
+body.dark-mode #locales h2 {
+  color: #e2e8f0;
+}
+
+body.dark-mode #locales h5 {
+  color: var(--primary-color);
+}
+
+body.dark-mode #locales p {
+  color: #a0aec0;
+}
+
+/* GALERÍA EN MODO OSCURO - CORREGIDO */
+body.dark-mode #galeria {
+  background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
+}
+
+body.dark-mode #galeria h2 {
+  color: #e2e8f0;
+}
+
+/* TESTIMONIOS EN MODO OSCURO - CORREGIDO */
+body.dark-mode #testimonios {
+  background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
+}
+
+body.dark-mode #testimonios h2 {
+  color: #e2e8f0;
+}
+
+body.dark-mode #testimonios .card {
+  background-color: rgba(42, 42, 42, 0.9);
+  color: #e2e8f0;
+  border-color: rgba(255, 140, 0, 0.4);
+}
+
+body.dark-mode #testimonios .card p,
+body.dark-mode #testimonios .card em {
+  color: #a0aec0;
+}
+
+/* MENÚ DIGITAL EN MODO OSCURO - CORREGIDO */
+body.dark-mode #menu-digital {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 100%);
+  color: white;
+}
+
+body.dark-mode #menu-digital h2 {
+  color: white;
+}
+
+body.dark-mode #menu-digital .lead {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .menu-digital-item {
+  background: linear-gradient(145deg, var(--bg-card), var(--bg-medium));
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .menu-digital-caption {
+  background: linear-gradient(
+    to top,
+    rgba(13, 13, 13, 0.95) 0%,
+    rgba(26, 26, 26, 0.8) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+body.dark-mode .menu-digital-caption h4 {
+  color: white;
+}
+
+/* Títulos de sección en modo oscuro */
+body.dark-mode .section-title {
+  color: #e2e8f0;
+}
+
+/* =============================================== */
+/* BOTÓN MODO OSCURO */
+/* =============================================== */
+#darkModeToggle {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+#darkModeToggle:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 4px 15px var(--shadow-orange);
+}
+
+body.dark-mode #darkModeToggle {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+body.dark-mode #darkModeToggle:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* =============================================== */
+/* RESPONSIVE DESIGN */
+/* =============================================== */
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 2.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  #nosotros .lead {
+    font-size: 1.2rem;
+    padding: 1.5rem;
+  }
+
+  .glass {
+    margin-bottom: 2rem;
+  }
+
+  #reservaForm {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .navbar {
+    padding: 0.5rem 0;
+  }
+
+  .carousel-caption {
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    padding: 1.5rem;
+  }
+
+  .carousel-caption h1 {
+    font-size: 2rem;
+  }
+
+  .carousel-caption .btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* =============================================== */
+/* ANIMACIONES ADICIONALES */
+/* =============================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* =============================================== */
+/* ESTILOS PARA MODAL PDF (mantenidos del original) */
+/* =============================================== */
 .pdf-iframe-style {
-    width: 100%;
-    height: 75vh; /* 75% de la altura de la ventana gráfica. Puedes ajustarlo */
-    /* Si prefieres una altura fija, podrías usar algo como:
-       height: 600px; 
-       max-height: 80vh; /* Para asegurar que no sea demasiado alto en pantallas pequeñas */
-    border: none; /* Equivalente a frameborder="0" */
+  width: 100%;
+  height: 75vh;
+  border: none;
 }
 
-/* Opcional: Si quieres asegurar que el modal-body no tenga padding */
 #pdfModal .modal-body {
-    padding: 0;
+  padding: 0;
 }
 
-/* ---- MODO OSCURO ---- */
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-body.dark-mode .bg-light {
-    background-color: #1e1e1e !important; /* Sobrescribir bg-light */
-    color: #e0e0e0;
-}
-body.dark-mode .navbar-light {
-    background-color: #1e1e1e !important; /* Navbar */
-}
-body.dark-mode .navbar-light .navbar-nav .nav-link {
-    color: #c0c0c0; /* Color de links en navbar */
-}
-body.dark-mode .navbar-light .navbar-nav .nav-link:hover {
-    color: #ffffff;
-}
-body.dark-mode .navbar-light .navbar-brand img {
-    /* Si tienes un logo oscuro, ya lo cambias con JS. Si no, puedes aplicar un filtro */
-    /* filter: invert(1) hue-rotate(180deg); */
-}
-body.dark-mode .card {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-    border-color: #3a3a3a;
-}
-body.dark-mode .form-control, body.dark-mode .form-select {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-    border-color: #3a3a3a;
-}
-body.dark-mode .form-control::placeholder {
-    color: #888;
-}
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
-    color: #f5f5f5;
-}
-body.dark-mode .text-dark { /* En caso de usar text-dark en modo oscuro */
-     color: #e0e0e0 !important;
-}
 body.dark-mode .modal-content {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
+  background-color: var(--bg-card);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 140, 0, 0.3);
 }
-body.dark-mode .modal-header, body.dark-mode .modal-footer {
-    border-color: #3a3a3a;
+
+body.dark-mode .modal-header,
+body.dark-mode .modal-footer {
+  border-color: rgba(255, 140, 0, 0.3);
 }
+
 body.dark-mode .btn-close {
-    filter: invert(1) grayscale(100%) brightness(200%); /* Para que el botón de cerrar se vea en fondo oscuro */
+  filter: invert(1) grayscale(100%) brightness(200%);
 }
 
-/* Otros estilos para modo oscuro que necesites */
+/* =============================================== */
+/* ESTILOS ADICIONALES PARA COMPATIBILIDAD */
+/* =============================================== */
+.btn-warning {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border: none;
+  color: white;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  color: white;
+}
+
+body.dark-mode .btn-warning {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+}
+
+body.dark-mode .btn-warning:hover {
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  color: white;
+}
+
+/* CONTACTO EN MODO OSCURO - CORREGIDO FINAL */
+body.dark-mode #contacto-index {
+  background: linear-gradient(
+    135deg,
+    var(--bg-medium) 0%,
+    var(--bg-card) 100%
+  ) !important;
+  color: var(--white);
+}
+
+body.dark-mode #contacto-index h2.mb-4 {
+  color: var(--white) !important;
+  /* Forces the color to white in dark mode */
+}
+
+/* --- ADD THESE RULES FOR PLACEHOLDER COLORS IN DARK MODE --- */
+body.dark-mode .form-control::placeholder {
+  color: #a0aec0 !important;
+  /* A light gray from your palette */
+  opacity: 1;
+  /* Firefox sometimes requires this to override default opacity */
+}
+
+body.dark-mode .form-control::-webkit-input-placeholder {
+  /* Chrome, Safari, Opera */
+  color: #a0aec0 !important;
+}
+
+body.dark-mode .form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: #a0aec0 !important;
+  opacity: 1;
+}
+
+body.dark-mode .form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #a0aec0 !important;
+  opacity: 1;
+}
+
+body.dark-mode .form-control:-ms-input-placeholder {
+  /* Internet Explorer */
+  color: #a0aec0 !important;
+}
+
+body.dark-mode .form-control::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #a0aec0 !important;
+}
+
+/* ----------------------------------------------------------- */
+
+body.dark-mode .form-label {
+  color: #e2e8f0;
+}
 
 
+
+
+.img-container {
+  position: relative;         
+  display: inline-block;      
+  width: 100%;
+  margin-bottom: 20px;        
+  /* Updated shadow: increased blur and opacity for a stronger effect */
+  box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.img-container img {
+  display: block;
+}
+
+/* Top decorative border */
+.img-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;  
+  background: linear-gradient(to right, #ffcc00, #ff9900);
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  z-index: 2;
+}
+
+/* Right decorative border */
+.img-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;  
+  height: 100%;
+  background: linear-gradient(to bottom, #ffcc00, #ff9900);
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  z-index: 2;
+}
