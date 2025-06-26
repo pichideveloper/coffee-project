@@ -1,591 +1,855 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante SAPE</title>
+    <link rel="icon" href="images/icon.png" type="image/png" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurante SAPE</title>
-  <link rel="icon" href="images/icon.png" type="image/png">
+    <!-- Font Awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
-  <!-- Font Awesome  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Correo -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-  <link rel="stylesheet" href="style.css">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- Correo -->
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("VFO34VNSCYXvEdt_b");
+      })();
 
-  <script>
-    (function(){
-      emailjs.init("VFO34VNSCYXvEdt_b"); 
-    })();
+      function enviarCorreoRes(e) {
+        e.preventDefault();
+        emailjs.sendForm("service_mzu5p4p", "template_x07xoeb", e.target).then(
+          () => {
+            alert("Mensaje enviado correctamente");
+          },
+          (error) => {
+            alert("Error al enviar el mensaje: " + JSON.stringify(error));
+          }
+        );
+      }
 
-    function enviarCorreoRes(e) {
-      e.preventDefault();
-      emailjs.sendForm('service_mzu5p4p', 'template_x07xoeb', e.target)
-        .then(() => {
-          alert("Mensaje enviado correctamente");
-        }, (error) => {
-          alert("Error al enviar el mensaje: " + JSON.stringify(error));
-        });
-    }
+      function enviarCorreocont(e) {
+        e.preventDefault();
+        emailjs.sendForm("service_mzu5p4p", "template_l2msb4y", e.target).then(
+          () => {
+            alert("Mensaje enviado correctamente");
+          },
+          (error) => {
+            alert("Error al enviar el mensaje: " + JSON.stringify(error));
+          }
+        );
+      }
+    </script>
+  </head>
 
-    function enviarCorreocont(e) {
-      e.preventDefault();
-      emailjs.sendForm('service_mzu5p4p', 'template_l2msb4y', e.target)
-        .then(() => {
-          alert("Mensaje enviado correctamente");
-        }, (error) => {
-          alert("Error al enviar el mensaje: " + JSON.stringify(error));
-        });
-    }
-  </script>
-</head>
-
-<body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">
-      <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#inicio">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="nosotros.html">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Lista-Servicios.html">Servicios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="carta.html">Platos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#reserva">Reservas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Locales.html">Locales</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="galeriaCompleta.html">Galería</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contacto.html">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  <!-- Sección: Slider de Inicio -->
-  <section id="inicio" class="pt-5">
-    <div id="carouselInicio" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <img src="https://images.unsplash.com/photo-1664214456946-e7ef7a632239?auto=format&fit=crop&w=1200"
-            class="d-block w-100" alt="Ceviche mixto">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Bienvenidos a SAPE</h1>
-            <p>Restaurante peruano de platos marinos y criollos</p>
-            <a href="#reserva" class="btn btn-warning text-light me-2">Reservar una Mesa</a>
-            <a href="index.html#menu-digital" class="btn btn-outline-light">Ver la Carta</a>
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <img src="https://images.unsplash.com/photo-1664214456782-95f4b1a4437b?auto=format&fit=crop&w=1200"
-            class="d-block w-100" alt="Arroz con mariscos">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Variedad y Tradición</h1>
-            <p>Disfruta de nuestros deliciosos platos marinos</p>
-            <a href="index.html#menu-digital" class="btn btn-warning text-light me-2">Ver la Carta</a>
-            <a href="#reserva" class="btn btn-outline-light">Reservar una Mesa</a>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-          <img src="https://images.unsplash.com/photo-1731570225640-7ddad4231679?auto=format&fit=crop&w=1200"
-            class="d-block w-100" alt="Chicharrón mixto">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Ambiente Agradable</h1>
-            <p>Disfruta de música en vivo y un ambiente familiar</p>
-            <a href="#nosotros" class="btn btn-warning text-light me-2">Sobre Nosotros</a>
-            <a href="#reserva" class="btn btn-outline-light">Reservar una Mesa</a>
-          </div>
-        </div>
-
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselInicio" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselInicio" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-    </div>
-  </section>
-
-  <!-- Sección: Nosotros -->
-  <section id="nosotros" class="py-5">
-    <div class="container">
-      <h2 class="mb-4">Sobre Nosotros</h2>
-      <p class="lead">"Somos SAPE, una cadena de restaurantes de sabores marinos y criollos, que te ofrece un ambiente
-        acogedor para todos los paladares,
-        con un servicio personalizado, productos de primera calidad y un equipo humano apasionado y comprometido en
-        superar tus expectativas… ¡Ven a SAPEar!"</p>
-      <div class="row text-center mt-5">
-        <div class="col-md-3 mb-3">
-          <div class="glass">
-          <i class="bi bi-star-fill fs-1 text-warning"></i>
-          <h5 class="mt-2">Productos Frescos</h5>
-          <p>Seleccionamos los mejores insumos cada día, manteniéndolos frescos en un ambiente limpio y ordenado.</p>
-             </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <div class="glass">
-          <i class="bi bi-award-fill fs-1 text-warning"></i>
-          <h5 class="mt-2">Innovación</h5>
-          <p>Comida peruana con sabor único, innovando en cada preparación para cautivar paladares exigentes.</p>
-        </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <div class="glass">
-          <i class="bi bi-emoji-smile-fill fs-1 text-warning"></i>
-          <h5 class="mt-2">Buena Atención</h5>
-          <p>Atención cálida y oportuna: resolvemos tus inquietudes con un servicio de primer nivel.</p>
-        </div>
-          </div>
-        <div class="col-md-3 mb-3">
-          <div class="glass">
-          <i class="bi bi-people-fill fs-1 text-warning"></i>
-          <h5 class="mt-2">Ambiente Familiar</h5>
-          <p>Un ambiente para sentirse en familia, con estacionamiento, música en vivo, Wi-Fi, baños limpios y más
-            comodidades.</p>
-        </div>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            id="navbarLogo"
+            src="images/logo1.png"
+            alt="SAPE Logo"
+            width="120"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Lista-Servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="carta.html">Platos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#reserva">Reservas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Locales.html">Locales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="galeriaCompleta.html">Galería</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <button
+                id="darkModeToggle"
+                class="btn btn-outline-secondary nav-dark-toggle ms-2"
+              >
+                🌙
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Sección: Servicios -->
-  <section id="servicios" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="section-title">Nuestros Servicios</h2>
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
-          <div class="card text-center p-3 w-100">
-            <div class="icon-container mx-auto">
-              <i class="bi bi-wifi"></i> </div>
-            <div class="card-body">
-              <h5 class="card-title">WIFI Gratis</h5>
-              <p class="card-text">Conexión a internet de alta velocidad gratuita en todos nuestros locales.</p>
+    <!-- Sección: Slider de Inicio -->
+    <section id="inicio" class="pt-5">
+      <div id="carouselInicio" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <img
+              src="https://images.unsplash.com/photo-1664214456946-e7ef7a632239?auto=format&fit=crop&w=1200"
+              class="d-block w-100"
+              alt="Ceviche mixto"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Bienvenidos a SAPE</h1>
+              <p>Restaurante peruano de platos marinos y criollos</p>
+              <a href="#reserva" class="btn btn-warning text-light me-2"
+                >Reservar una Mesa</a
+              >
+              <a href="index.html#menu-digital" class="btn btn-outline-light"
+                >Ver la Carta</a
+              >
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1664214456782-95f4b1a4437b?auto=format&fit=crop&w=1200"
+              class="d-block w-100"
+              alt="Arroz con mariscos"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Variedad y Tradición</h1>
+              <p>Disfruta de nuestros deliciosos platos marinos</p>
+              <a
+                href="index.html#menu-digital"
+                class="btn btn-warning text-light me-2"
+                >Ver la Carta</a
+              >
+              <a href="#reserva" class="btn btn-outline-light"
+                >Reservar una Mesa</a
+              >
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1731570225640-7ddad4231679?auto=format&fit=crop&w=1200"
+              class="d-block w-100"
+              alt="Chicharrón mixto"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Ambiente Agradable</h1>
+              <p>Disfruta de música en vivo y un ambiente familiar</p>
+              <a href="#nosotros" class="btn btn-warning text-light me-2"
+                >Sobre Nosotros</a
+              >
+              <a href="#reserva" class="btn btn-outline-light"
+                >Reservar una Mesa</a
+              >
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
-          <div class="card text-center p-3 w-100">
-            <div class="icon-container mx-auto">
-              <i class="bi bi-p-square-fill"></i> </div>
-            <div class="card-body">
-              <h5 class="card-title">Estacionamiento</h5>
-              <p class="card-text">Amplia playa de estacionamiento vigilada disponible para tu comodidad.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
-          <div class="card text-center p-3 w-100">
-            <div class="icon-container mx-auto">
-              <i class="bi bi-joystick"></i> </div>
-            <div class="card-body">
-              <h5 class="card-title">Juegos para Niños</h5>
-              <p class="card-text">Área de entretenimiento segura y divertida para los más pequeños de la casa.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
-          <div class="card text-center p-3 w-100">
-            <div class="icon-container mx-auto ">
-              <i class="bi bi-truck"></i> </div>
-            <div class="card-body">
-              <h5 class="card-title">Delivery Confiable</h5>
-              <p class="card-text">Servicio de delivery rápido a domicilio. Central: (044) 216410.</p>
-            </div>
-          </div>
-        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselInicio"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselInicio"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
-      <div class="text-center mt-5">
-        </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Sección: Menú de Platos -->
-  <section id="menu-digital" class="py-5">
-       <div class="container">
-           <h2 class="text-center mb-5">La Carta</h2>
-           <p class="text-center lead mb-5">Nuestra cocina rinde homenaje a la tradición limeña y se celebra en la mesa con generosidad.</p>
-           <div class="row">
-               <div class="col-md-6 col-lg-3 mb-4 d-flex align-items-stretch">
-                   <a href="#"
-                      class="menu-digital-link w-100"
-                      data-bs-toggle="modal"
-                      data-bs-target="#pdfModal"
-                      data-pdf-src="documentos/carta_principal.pdf"
-                      data-pdf-title="La Carta Principal">
-                       <div class="menu-digital-item">
-                           <img src="images/Cebiche_Desktop.webp" alt="Platos de la Carta" class="img-fluid menu-digital-img">
-                           <div class="menu-digital-caption">
-                               <h4>La Carta</h4>
-                           </div>
-                       </div>
-                   </a>
-               </div>
-
-               <div class="col-md-6 col-lg-3 mb-4 d-flex align-items-stretch">
-                   <a href="#"
-                      class="menu-digital-link w-100"
-                      data-bs-toggle="modal"
-                      data-bs-target="#pdfModal"
-                      data-pdf-src="documentos/postres.pdf"
-                      data-pdf-title="Postres">
-                       <div class="menu-digital-item">
-                           <img src="images/Postres_Desktop.webp" alt="Postres" class="img-fluid menu-digital-img">
-                           <div class="menu-digital-caption">
-                               <h4>Postres</h4>
-                           </div>
-                       </div>
-                   </a>
-               </div>
-
-               <div class="col-md-6 col-lg-3 mb-4 d-flex align-items-stretch">
-                   <a href="#"
-                      class="menu-digital-link w-100"
-                      data-bs-toggle="modal"
-                      data-bs-target="#pdfModal"
-                      data-pdf-src="documentos/bebidas.pdf"
-                      data-pdf-title="Bebidas y Cócteles">
-                       <div class="menu-digital-item">
-                           <img src="images/Bebidas_Desktop.webp" alt="Bebidas y cócteles" class="img-fluid menu-digital-img">
-                           <div class="menu-digital-caption">
-                               <h4>Bebidas y Cócteles</h4>
-                           </div>
-                       </div>
-                   </a>
-               </div>
-
-               <div class="col-md-6 col-lg-3 mb-4 d-flex align-items-stretch">
-                   <a href="#"
-                      class="menu-digital-link w-100"
-                      data-bs-toggle="modal"
-                      data-bs-target="#pdfModal"
-                      data-pdf-src="documentos/vinos.pdf"
-                      data-pdf-title="Vinos">
-                       <div class="menu-digital-item">
-                           <img src="images/Vino_Desktop.webp" alt="Vinos" class="img-fluid menu-digital-img">
-                           <div class="menu-digital-caption">
-                               <h4>Vinos</h4>
-                           </div>
-                       </div>
-                   </a>
-               </div>
-           </div>
-       </div>
-   </section>
-
-  <!-- Sección: Reservas -->
-  <section id="reserva" class="bg-light py-5">
-    <div class="container">
-      <h2 class="mb-4">Reservar una Mesa</h2>
-      <p>Para reservar una mesa primero llena tus datos. Según el número de personas, paga un adelanto (desde S/20) como
-        consumo. Aceptamos todas las tarjetas. Se te enviará un cupón con un código a tu correo. (Sólo de lunes a
-        viernes.)</p>
-      <form id="reservaForm" class="row g-3" onsubmit="enviarCorreoRes(event)" method="post">
-        <div class="col-md-6">
-          <label for="nombre" class="form-label">Nombres Completo</label>
-          <input type="text" class="form-control" id="nombre" name="nombre" required>
-        </div>
-        <div class="col-md-6">
-          <label for="nombre" class="form-label">Apellidos Completo</label>
-          <input type="text" class="form-control" id="nombre" name="apellido" required>
-        </div>
-        <div class="col-md-6">
-          <label for="email" class="form-label">Correo Electrónico</label>
-          <input type="email" class="form-control" id="email" name="correo" required>
-        </div>
-        <div class="col-md-6">
-          <label for="tel" class="form-label">Teléfono</label>
-          <input type="tel" class="form-control" id="tel" name="telefono">
-        </div>
-        <div class="col-md-4">
-          <label for="personas" class="form-label">N° de Personas</label>
-          <select class="form-select" id="personas" name="personas" required>
-            <option value="" selected>Selecciona...</option>
-            <option value="3">Hasta 3 personas (S/20)</option>
-            <option value="6">Hasta 6 personas (S/35)</option>
-            <option value="10">Más de 6 personas (S/50)</option>
-          </select>
-        </div>
-        <div class="col-md-4">
-          <label for="fecha" class="form-label">Fecha y Hora</label>
-          <input type="datetime-local" class="form-control" id="fecha" name="fecha" required>
-        </div>
-        <div class="col-md-4">
-          <label for="local" class="form-label">Local</label>
-          <select class="form-select" id="Local" name="local" required>
-            <option value="" selected>Selecciona...</option>
-            <option value="Huanchaco">Huanchaco</option>
-            <option value="SantaTeresa">Santa Teresa</option>
-          </select>
-        </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-warning text-light me-2">Confirmar Reserva</button>
-        </div>
-      </form>
-      <div id="reservaResult" class="mt-3"></div>
-    </div>
-  </section>
-
-  <!-- Sección: Locales / Ubicaciones -->
-  <section id="locales" class="py-5">
-    <div class="container">
-      <h2 class="mb-4">Nuestros Locales</h2>
-      <div class="row mb-4">
-        <div class="col-md-6 mb-3">
-          <h5>Huanchaco</h5>
-          <p>Avenida Victor Larco Herrera 812, Huanchaco 13000 (044)278997</p>
-          <a href="https://www.google.com/maps/place/El+Paisa/@-8.0780675,-79.1023225,14z/data=!4m5!3m4!1s0x0:0xb617d18151756743!8m2!3d-8.0765499!4d-79.1191149?shorturl=1" target="_blank" class="btn btn-sm btn-outline-warning">Ver en Maps</a>
-        </div>
-        <div class="col-md-6 mb-3">
-          <h5>Santa Teresa</h5>
-          <p>Ca. Algallpampa Mz LL Lt.12, Urb. Santa Teresa (044)215606</p>
-          <a href="https://www.google.com/maps/place/Restaurant+Cevicheria+El+Paisa/@-8.1107228,-79.0296298,14z/data=!4m6!3m5!1s0x91ad161ee64d1f19:0xe9693163bdb8121a!8m2!3d-8.0909529!4d-79.0153791!16s%2Fg%2F11b76qkfqz?entry=ttu&g_ep=EgoyMDI1MDUxMi4wIKXMDSoASAFQAw%3D%3D" 
-          target="_blank" class="btn btn-sm btn-outline-warning">Ver en Maps</a>
-        </div>
-      </div>
-      <div class="row">
-       <!-- Google Maps 1 -->
-        <div class="col-md-6 mb-3">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3622.423463659993!2d-79.11946434749876!3d-8.072816645119893!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3957beabd6af%3A0xb617d18151756743!2sEl%20Paisa!5e0!3m2!1ses-419!2spe!4v1747246614023!5m2!1ses-419!2spe" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <!-- Google Maps 2 -->
-        <div class="col-md-6 mb-3">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31599.27399051663!2d-79.0296298!3d-8.1107228!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad161ee64d1f19%3A0xe9693163bdb8121a!2sRestaurant%20Cevicheria%20El%20Paisa!5e0!3m2!1ses-419!2spe!4v1747247054970!5m2!1ses-419!2spe"
-           width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección: Galería de Fotos -->
-  <section id="galeria" class="bg-light py-5">
-    <div class="container">
-      <h2 class="mb-4 text-center">Galería de Fotos</h2>
-      <div class="row g-3">
-        <div class="col-md-4">
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1664214456946-e7ef7a632239?auto=format&fit=crop&w=600"
-              alt="Ceviche" class="img-fluid rounded">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1731570225640-7ddad4231679?auto=format&fit=crop&w=600"
-              alt="Chicharrón" class="img-fluid rounded">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1635008690770-26e82887ec3a?auto=format&fit=crop&w=600"
-              alt="Ambiente del restaurante" class="img-fluid rounded">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección: Testimonios -->
-  <section id="testimonios" class="bg-light py-5">
-    <div class="container">
-      <h2 class="mb-4">Testimonios de Clientes</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p>"La comida es exquisita y el servicio impecable. ¡Recomendado!"</p>
-              <p class="text-end"><em>– María G.</em></p>
+    <!-- Sección: Nosotros -->
+    <section id="nosotros" class="py-5">
+      <div class="container">
+        <h2 class="mb-4" style="text-align: center">Sobre Nosotros</h2>
+        <p class="lead">
+          “Somos SAPE, una cadena de restaurantes de sabores marinos y criollos,
+          que te ofrece un ambiente acogedor para todos los paladares, con un
+          servicio personalizado, productos de primera calidad y un equipo
+          humano apasionado y comprometido en superar tus expectativas… ¡Ven a
+          SAPEar!”
+        </p>
+        <div class="row text-center mt-5">
+          <div class="col-md-3 mb-3">
+            <div class="glass">
+              <i class="bi bi-star-fill fs-1 text-warning"></i>
+              <h5 class="mt-2">Productos Frescos</h5>
+              <p>
+                Seleccionamos los mejores insumos cada día, manteniéndolos
+                frescos en un ambiente limpio y ordenado.
+              </p>
             </div>
           </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p>"Ambiente familiar y platos deliciosos. ¡Volveré pronto!"</p>
-              <p class="text-end"><em>– José L.</em></p>
+          <div class="col-md-3 mb-3">
+            <div class="glass">
+              <i class="bi bi-award-fill fs-1 text-warning"></i>
+              <h5 class="mt-2">Innovación</h5>
+              <p>
+                Comida peruana con sabor único, innovando en cada preparación
+                para cautivar paladares exigentes.
+              </p>
             </div>
           </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p>"Excelentes ceviches y atención muy amable. ¡Me encantó!"</p>
-              <p class="text-end"><em>– Ana P.</em></p>
+          <div class="col-md-3 mb-3">
+            <div class="glass">
+              <i class="bi bi-emoji-smile-fill fs-1 text-warning"></i>
+              <h5 class="mt-2">Buena Atención</h5>
+              <p>
+                Atención cálida y oportuna: resolvemos tus inquietudes con un
+                servicio de primer nivel.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="glass">
+              <i class="bi bi-people-fill fs-1 text-warning"></i>
+              <h5 class="mt-2">Ambiente Familiar</h5>
+              <p>
+                Un ambiente para sentirse en familia, con estacionamiento,
+                música en vivo, Wi-Fi, baños limpios y más comodidades.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Sección: Contacto -->
-  <section id="contacto-index" class="bg-light py-5">
-    <div class="container">
-      <h2 class="mb-4">Contáctanos</h2>
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <h5>Datos de Contacto</h5>
-          <p><strong>Teléfonos:</strong><br>
-            (044)200450 - Las Gemas 418 Urb. Santa Inés<br>
-            (044)225803 - Pedro Urraca 515 Urb. San Andrés<br>
-            (044)278997 - Av. Victor Larco 812 Huanchaco<br>
-            (044)216410 - Mz N Lt 10 Urb. Santa Teresa</p>
-          <p><strong>Email:</strong> sapecompany.in@gmail.com</p>
-          <p><strong>Horario de Atención:</strong><br>Lunes a Domingo: 9:00am - 5:00pm</p>
-        </div>
-        <div class="col-md-6 mb-3">
-          <h5>Escríbenos</h5>
-          <form onsubmit="enviarCorreocont(event)" method="post">
-            <div class="mb-2">
-              <input type="text" class="form-control" placeholder="Nombre Completo" name="nombreCon">
-            </div>
-            <div class="mb-2">
-              <input type="email" class="form-control" placeholder="Correo de Contacto" name="correoCon">
-            </div>
-            <div class="mb-2">
-              <textarea class="form-control" rows="3" placeholder="Mensaje Detallado" name="mensajeCon"></textarea>
-            </div>
-            <button type="submit" class="btn btn-warning text-light me-2">Enviar Mensaje</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Mejorado -->
-  <footer class="bg-dark text-light py-4">
-    <div class="container">
-      <div class="row">
-        <!-- Columna de logo y derechos -->
-        <div class="col-md-4 mb-4 mb-md-0 d-flex align-items-center">
-          <img src="images/logo3.png" alt="Logo SAPE" class="me-3" style="width: 80px;">
-          <div>
-            <h5>SAPE</h5>
-            <p class="mb-0">© 2025 SAPE - Todos los derechos reservados.</p>
-          </div>
-        </div>
-
-        <!-- Columna de enlaces -->
-        <div class="col-md-4 mb-4 mb-md-0">
-          <div class="row">
-            <div class="col-6">
-              <ul class="list-unstyled">
-                <li><a href="index.html#menu-digital" class="text-light text-decoration-none">Carta Digital</a></li>
-                <li><a href="nosotros.html" class="text-light text-decoration-none">Nosotros</a></li>
-                <li><a href="Lista-Servicios.html" class="text-light text-decoration-none">Servicios</a></li>
-              </ul>
-            </div>
-            <div class="col-6">
-              <ul class="list-unstyled">
-                <li><a href="#reserva" class="text-light text-decoration-none">Reservas</a></li>
-                <li><a href="Locales.html" class="text-light text-decoration-none">Locales</a></li>
-                <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Columna de redes y pagos -->
-        <div class="col-md-4">
-          <div class="row">
-            <div class="col-md-6 mb-3 mb-md-0">
-              <h5>Síguenos</h5>
-              <div class="social-icons">
-                <a href="https://www.facebook.com/share/1LvsywagCF/" target="_blank" class="text-light me-2">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/kenzowo_?igsh=eGV1ODM5bGx2bzh5" target="_blank" class="text-light me-2">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.tiktok.com/@butisito1/video/7468897608619117830" target="_blank" class="text-light me-2">
-                  <i class="fab fa-tiktok"></i>
-                </a>
-                <a href="https://www.twitter.com" target="_blank" class="text-light">
-                  <i class="fab fa-twitter"></i>
-                </a>
+    <!-- Sección: Servicios -->
+    <section id="servicios" class="py-5 bg-light">
+      <!-- Añade bg-light aquí -->
+      <div class="container">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+            <div class="card text-center p-3 w-100">
+              <div class="icon-container mx-auto">
+                <i class="bi bi-wifi"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">WIFI Gratis</h5>
+                <p class="card-text">
+                  Conexión a internet de alta velocidad gratuita en todos
+                  nuestros locales.
+                </p>
               </div>
             </div>
-            <div class="col-md-6">
-              <h5>Métodos de Pago</h5>
-              <div class="d-flex gap-2 flex-wrap">
-                <img src="images/visa.png" alt="Visa" style="width: 40px; height: auto;">
-                <img src="images/mercado-pago.png" alt="Mercado Pago" style="width: 40px; height: auto;">
-                <img src="images/mastercard.png" alt="Mastercard" style="width: 40px; height: auto;">
-                <img src="images/pagoefectivo.png" alt="PagoEfectivo" style="width: 40px; height: auto;">
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+            <div class="card text-center p-3 w-100">
+              <div class="icon-container mx-auto">
+                <i class="bi bi-p-square-fill"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Estacionamiento</h5>
+                <p class="card-text">
+                  Amplia playa de estacionamiento vigilada disponible para tu
+                  comodidad.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+            <div class="card text-center p-3 w-100">
+              <div class="icon-container mx-auto">
+                <i class="bi bi-joystick"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Juegos para Niños</h5>
+                <p class="card-text">
+                  Área de entretenimiento segura y divertida para los más
+                  pequeños de la casa.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+            <div class="card text-center p-3 w-100">
+              <div class="icon-container mx-auto">
+                <i class="bi bi-truck"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Delivery Confiable</h5>
+                <p class="card-text">
+                  Servicio de delivery rápido a domicilio. Central: (044)
+                  216410.
+                </p>
               </div>
             </div>
           </div>
         </div>
+        <div class="text-center mt-5"></div>
       </div>
+    </section>
+    <!-- Sección: Menú de Platos -->
+    <section id="menu-digital" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">La Carta</h2>
+        <p class="text-center lead mb-5">
+          Nuestra cocina rinde homenaje a la tradición limeña y se celebra en la
+          mesa con generosidad.
+        </p>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4 d-flex align-items-stretch">
+            <a
+              href="#"
+              class="menu-digital-link w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#pdfModal"
+              data-pdf-src="documentos/carta_principal.pdf"
+              data-pdf-title="La Carta Principal"
+            >
+              <div class="menu-digital-item">
+                <img
+                  src="images/Cebiche_Desktop.webp"
+                  alt="Platos de la Carta"
+                  class="img-fluid menu-digital-img"
+                />
+                <div class="menu-digital-caption">
+                  <h4>La Carta</h4>
+                </div>
+              </div>
+            </a>
+          </div>
 
-      <!-- Línea divisoria y derechos de autor adicionales -->
-      <div class="row mt-4">
-        <div class="col-12">
-          <hr class="border-secondary">
-          <p class="text-center mb-0 small">
-            <i class="fas fa-map-marker-alt me-2"></i> Av. Victor Larco 812, Huanchaco | 
-            <i class="fas fa-phone-alt me-2"></i> (044) 278997 |
-            <i class="fas fa-envelope me-2"></i> sapecompany.in@gmail.com
-          </p>
-          <p class="text-center mt-2 mb-0 small">© 2025 SAPE Internacional</p>
+          <div class="col-md-6 col-lg-3 mb-4 d-flex align-items-stretch">
+            <a
+              href="#"
+              class="menu-digital-link w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#pdfModal"
+              data-pdf-src="documentos/postres.pdf"
+              data-pdf-title="Postres"
+            >
+              <div class="menu-digital-item">
+                <img
+                  src="images/Postres_Desktop.webp"
+                  alt="Postres"
+                  class="img-fluid menu-digital-img"
+                />
+                <div class="menu-digital-caption">
+                  <h4>Postres</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-3 mb-4 d-flex align-items-stretch">
+            <a
+              href="#"
+              class="menu-digital-link w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#pdfModal"
+              data-pdf-src="documentos/bebidas.pdf"
+              data-pdf-title="Bebidas y Cócteles"
+            >
+              <div class="menu-digital-item">
+                <img
+                  src="images/Bebidas_Desktop.webp"
+                  alt="Bebidas y cócteles"
+                  class="img-fluid menu-digital-img"
+                />
+                <div class="menu-digital-caption">
+                  <h4>Bebidas y Cócteles</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-3 mb-4 d-flex align-items-stretch">
+            <a
+              href="#"
+              class="menu-digital-link w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#pdfModal"
+              data-pdf-src="documentos/vinos.pdf"
+              data-pdf-title="Vinos"
+            >
+              <div class="menu-digital-item">
+                <img
+                  src="images/Vino_Desktop.webp"
+                  alt="Vinos"
+                  class="img-fluid menu-digital-img"
+                />
+                <div class="menu-digital-caption">
+                  <h4>Vinos</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Reservas -->
+    <section id="reserva" class="bg-light py-5">
+      <div class="container">
+        <h2 class="mb-4" style="text-align: center">Reservar una Mesa</h2>
+        <p>
+          Para reservar una mesa primero llena tus datos. Según el número de
+          personas, paga un adelanto (desde S/20) como consumo. Aceptamos todas
+          las tarjetas. Se te enviará un cupón con un código a tu correo. (Sólo
+          de lunes a viernes.)
+        </p>
+        <form
+          id="reservaForm"
+          class="row g-3"
+          onsubmit="enviarCorreoRes(event)"
+          method="post"
+        >
+          <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombres Completo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              name="nombre"
+              required
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="nombre" class="form-label">Apellidos Completo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              name="apellido"
+              required
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="correo"
+              required
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="tel" class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" id="tel" name="telefono" />
+          </div>
+          <div class="col-md-4">
+            <label for="personas" class="form-label">N° de Personas</label>
+            <select class="form-select" id="personas" name="personas" required>
+              <option value="" selected>Selecciona...</option>
+              <option value="3">Hasta 3 personas (S/20)</option>
+              <option value="6">Hasta 6 personas (S/35)</option>
+              <option value="10">Más de 6 personas (S/50)</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="fecha" class="form-label">Fecha y Hora</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              id="fecha"
+              name="fecha"
+              required
+            />
+          </div>
+          <div class="col-md-4">
+            <label for="local" class="form-label">Local</label>
+            <select class="form-select" id="Local" name="local" required>
+              <option value="" selected>Selecciona...</option>
+              <option value="Huanchaco">Huanchaco</option>
+              <option value="SantaTeresa">Santa Teresa</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-warning text-light me-2">
+              Confirmar Reserva
+            </button>
+          </div>
+        </form>
+        <div id="reservaResult" class="mt-3"></div>
+      </div>
+    </section>
+
+    <!-- Sección: Locales / Ubicaciones -->
+    <section id="locales" class="py-5">
+      <div class="container">
+        <h2 class="mb-4" style="text-align: center">Nuestros Locales</h2>
+        <div class="row mb-4">
+          <div class="col-md-6 mb-3">
+            <h5>Huanchaco</h5>
+            <p>Avenida Victor Larco Herrera 812, Huanchaco 13000 (044)278997</p>
+            <a
+              href="https://www.google.com/maps/place/El+Paisa/@-8.0780675,-79.1023225,14z/data=!4m5!3m4!1s0x0:0xb617d18151756743!8m2!3d-8.0765499!4d-79.1191149?shorturl=1"
+              target="_blank"
+              class="btn btn-sm btn-outline-warning"
+              >Ver en Maps</a
+            >
+          </div>
+          <div class="col-md-6 mb-3">
+            <h5>Santa Teresa</h5>
+            <p>Ca. Algallpampa Mz LL Lt.12, Urb. Santa Teresa (044)215606</p>
+            <a
+              href="https://www.google.com/maps/place/Restaurant+Cevicheria+El+Paisa/@-8.1107228,-79.0296298,14z/data=!4m6!3m5!1s0x91ad161ee64d1f19:0xe9693163bdb8121a!8m2!3d-8.0909529!4d-79.0153791!16s%2Fg%2F11b76qkfqz?entry=ttu&g_ep=EgoyMDI1MDUxMi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              class="btn btn-sm btn-outline-warning"
+              >Ver en Maps</a
+            >
+          </div>
+        </div>
+        <div class="row">
+          <!-- Google Maps 1 -->
+          <div class="col-md-6 mb-3">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3622.423463659993!2d-79.11946434749876!3d-8.072816645119893!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3957beabd6af%3A0xb617d18151756743!2sEl%20Paisa!5e0!3m2!1ses-419!2spe!4v1747246614023!5m2!1ses-419!2spe"
+              width="100%"
+              height="250"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <!-- Google Maps 2 -->
+          <div class="col-md-6 mb-3">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31599.27399051663!2d-79.0296298!3d-8.1107228!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad161ee64d1f19%3A0xe9693163bdb8121a!2sRestaurant%20Cevicheria%20El%20Paisa!5e0!3m2!1ses-419!2spe!4v1747247054970!5m2!1ses-419!2spe"
+              width="100%"
+              height="250"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Galería de Fotos -->
+    <section id="galeria" class="bg-light py-5">
+      <div class="container">
+        <h2 class="mb-4 text-center">Galería de Fotos</h2>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="img-container">
+              <img
+                src="https://images.unsplash.com/photo-1664214456946-e7ef7a632239?auto=format&fit=crop&w=600"
+                alt="Ceviche"
+                class="img-fluid rounded"
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="img-container">
+              <img
+                src="https://images.unsplash.com/photo-1731570225640-7ddad4231679?auto=format&fit=crop&w=600"
+                alt="Chicharrón"
+                class="img-fluid rounded"
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="img-container">
+              <img
+                src="https://images.unsplash.com/photo-1635008690770-26e82887ec3a?auto=format&fit=crop&w=600"
+                alt="Ambiente del restaurante"
+                class="img-fluid rounded"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Testimonios -->
+    <section id="testimonios" class="bg-light py-5">
+      <div class="container">
+        <h2 class="mb-4" style="text-align: center">Testimonios de Clientes</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <p>
+                  "La comida es exquisita y el servicio impecable.
+                  ¡Recomendado!"
+                </p>
+                <p class="text-end"><em>– María G.</em></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <p>"Ambiente familiar y platos deliciosos. ¡Volveré pronto!"</p>
+                <p class="text-end"><em>– José L.</em></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <p>"Excelentes ceviches y atención muy amable. ¡Me encantó!"</p>
+                <p class="text-end"><em>– Ana P.</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Contacto -->
+    <section id="contacto-index" class="bg-light py-5">
+      <div class="container">
+        <h2 class="mb-4">Contáctanos</h2>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <h5>Datos de Contacto</h5>
+            <p>
+              <strong>Teléfonos:</strong><br />
+              (044)200450 - Las Gemas 418 Urb. Santa Inés<br />
+              (044)225803 - Pedro Urraca 515 Urb. San Andrés<br />
+              (044)278997 - Av. Victor Larco 812 Huanchaco<br />
+              (044)216410 - Mz N Lt 10 Urb. Santa Teresa
+            </p>
+            <p><strong>Email:</strong> sapecompany.in@gmail.com</p>
+            <p>
+              <strong>Horario de Atención:</strong><br />Lunes a Domingo: 9:00am
+              - 5:00pm
+            </p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <h5>Escríbenos</h5>
+            <form onsubmit="enviarCorreocont(event)" method="post">
+              <div class="mb-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nombre Completo"
+                  name="nombreCon"
+                />
+              </div>
+              <div class="mb-2">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Correo de Contacto"
+                  name="correoCon"
+                />
+              </div>
+              <div class="mb-2">
+                <textarea
+                  class="form-control"
+                  rows="3"
+                  placeholder="Mensaje Detallado"
+                  name="mensajeCon"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-warning text-light me-2">
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-3">
+      <div class="container text-center">© 2025 SAPE Internacional</div>
+    </footer>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-light py-4">
+      <div class="container">
+        <div class="row">
+          <!-- Columna de contacto o info (izquierda) -->
+          <div class="col-md-4 mb-3 d-flex align-items-center">
+            <img
+              src="images/logo3.png"
+              alt="Logo SAPE"
+              class="me-3"
+              style="width: 80px"
+            />
+            <div>
+              <h5>SAPE</h5>
+              <p class="mb-0">© 2025 SAPE - Todos los derechos reservados.</p>
+            </div>
+          </div>
+
+          <!-- Columna de secciones (centro) -->
+          <div class="col-md-4 mb-3">
+            <h5>Secciones</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  class="dropdown-item text-light"
+                  href="index.html#menu-digital"
+                  >Ver Carta Digital</a
+                >
+              </li>
+              <li>
+                <a href="#reserva" class="text-light text-decoration-none"
+                  >Reserva</a
+                >
+              </li>
+              <li>
+                <a href="contacto.html" class="text-light text-decoration-none"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna de redes y pagos (derecha) -->
+          <div class="col-md-4 mb-3">
+            <div class="row align-items-center">
+              <!-- Fila para alinear verticalmente -->
+              <!-- Redes Sociales -->
+              <div class="col-12 col-sm-6 mb-3 mb-sm-0">
+                <!-- Mitad del ancho en móvil -->
+                <h5>Síguenos</h5>
+                <div class="social-icons">
+                  <a
+                    href="https://www.twitter.com"
+                    target="_blank"
+                    class="text-light me-2"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/kenzowo_?igsh=eGV1ODM5bGx2bzh5"
+                    target="_blank"
+                    class="text-light me-2"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/share/1LvsywagCF/"
+                    target="_blank"
+                    class="text-light me-2"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@butisito1/video/7468897608619117830"
+                    target="_blank"
+                    class="text-light"
+                  >
+                    <i class="fab fa-tiktok"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Métodos de Pago -->
+              <div class="col-12 col-sm-6">
+                <!-- Mitad del ancho en móvil -->
+                <h5>Métodos de Pago</h5>
+                <div class="d-flex gap-2 flex-wrap">
+                  <img
+                    src="images/visa.png"
+                    alt="Visa"
+                    style="width: 50px; height: auto"
+                  />
+                  <img
+                    src="images/mercado-pago.png"
+                    alt="Mercado Pago"
+                    style="width: 50px; height: auto"
+                  />
+                  <img
+                    src="images/mastercard.png"
+                    alt="Mastercard"
+                    style="width: 50px; height: auto"
+                  />
+                  <img
+                    src="images/pagoefectivo.png"
+                    alt="PagoEfectivo"
+                    style="width: 50px; height: auto"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="modal fade"
+      id="pdfModal"
+      tabindex="-1"
+      aria-labelledby="pdfModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="pdfModalLabel">Título del Menú</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-0">
+            <iframe
+              id="pdfViewer"
+              src=""
+              class="pdf-iframe-style"
+              frameborder="0"
+            ></iframe>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
 
-  <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="pdfModalLabel">Título del Menú</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body p-0">
-          <iframe id="pdfViewer" src="" class="pdf-iframe-style" frameborder="0"></iframe>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Tu JavaScript externo -->
-  <script src="index.js"></script>
-
-</body>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Tu JavaScript externo -->
+    <script src="index.js"></script>
+  </body>
 </html>
