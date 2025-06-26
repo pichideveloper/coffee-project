@@ -614,9 +614,6 @@ body.dark-mode .mapa-title {
 /* =============================================== */
 /* EFECTOS ADICIONALES */
 /* =============================================== */
-.contacto-form-card:hover {
-  animation: pulse 2s infinite;
-}
 
 .info-item:nth-child(odd) {
   animation: fadeInUp 0.6s ease-out;
