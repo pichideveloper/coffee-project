@@ -34,6 +34,7 @@
   --shadow-orange: rgba(255, 140, 0, 0.3);
 }
 
+/* Ajustar margen top para compensar navbar fijo */
 body {
   padding-top: 80px;
   font-family: "Inter", sans-serif;
@@ -42,6 +43,7 @@ body {
   background-color: var(--white);
 }
 
+/* Títulos con fuente elegante */
 h1,
 h2,
 h3,
@@ -187,6 +189,7 @@ h6 {
 /* --- MODO CLARO (POR DEFECTO) --- */
 .carousel-item img {
   filter: brightness(0.95);
+  /* Imagen casi sin filtro */
 }
 
 .carousel-caption {
@@ -240,6 +243,7 @@ h6 {
 /* --- MODO OSCURO (CUANDO body.dark-mode ESTÁ ACTIVO) --- */
 body.dark-mode .carousel-item img {
   filter: brightness(0.7);
+  /* Filtro oscuro original */
 }
 
 body.dark-mode .carousel-caption {
@@ -248,6 +252,7 @@ body.dark-mode .carousel-caption {
     rgba(13, 13, 13, 0.9),
     rgba(26, 26, 26, 0.8)
   );
+  /* Fondo oscuro original */
 
   border: 1px solid rgba(255, 140, 0, 0.3);
 }
@@ -265,6 +270,7 @@ body.dark-mode .carousel-caption h1 {
 
 body.dark-mode .carousel-caption p {
   color: #e2e8f0;
+  /* Color de texto claro original */
 }
 
 body.dark-mode .carousel-caption .btn-outline-light {
@@ -922,6 +928,7 @@ section {
 
 #contacto-index h2.mb-4 {
   color: var(--text-dark);
+  /* This is the problem line for dark mode */
 }
 
 /* =============================================== */
@@ -1040,23 +1047,27 @@ body.dark-mode .carousel-caption p {
   color: #a0aec0;
 }
 
+/* Sección Nosotros en modo oscuro */
 body.dark-mode #nosotros {
   background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
 }
 
 body.dark-mode #nosotros .lead {
   background: rgba(42, 42, 42, 0.9);
+  /* GRIS/PLOMO COMO SOLICITADO */
   color: #e2e8f0;
   border-color: var(--primary-color);
 }
 
 body.dark-mode .glass {
   background: rgba(42, 42, 42, 0.3);
+  /* GRIS/PLOMO COMO SOLICITADO */
   border: 1px solid rgba(255, 140, 0, 0.4);
 }
 
 body.dark-mode .glass:hover {
   background: rgba(42, 42, 42, 0.5);
+  /* GRIS/PLOMO COMO SOLICITADO */
   border-color: var(--primary-color);
 }
 
@@ -1068,6 +1079,7 @@ body.dark-mode .glass p {
   color: #a0aec0;
 }
 
+/* Servicios en modo oscuro */
 body.dark-mode #servicios {
   background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
 }
@@ -1090,6 +1102,7 @@ body.dark-mode #servicios .card-text {
   color: #a0aec0;
 }
 
+/* Reservas en modo oscuro */
 body.dark-mode #reserva {
   background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
 }
@@ -1124,6 +1137,7 @@ body.dark-mode .form-label {
   color: #e2e8f0;
 }
 
+/* Locales en modo oscuro */
 body.dark-mode #locales {
   background: var(--bg-medium);
 }
@@ -1140,6 +1154,7 @@ body.dark-mode #locales p {
   color: #a0aec0;
 }
 
+/* GALERÍA EN MODO OSCURO - CORREGIDO */
 body.dark-mode #galeria {
   background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
 }
@@ -1148,6 +1163,7 @@ body.dark-mode #galeria h2 {
   color: #e2e8f0;
 }
 
+/* TESTIMONIOS EN MODO OSCURO - CORREGIDO */
 body.dark-mode #testimonios {
   background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
 }
@@ -1167,6 +1183,7 @@ body.dark-mode #testimonios .card em {
   color: #a0aec0;
 }
 
+/* MENÚ DIGITAL EN MODO OSCURO - CORREGIDO */
 body.dark-mode #menu-digital {
   background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 100%);
   color: white;
@@ -1198,6 +1215,7 @@ body.dark-mode .menu-digital-caption h4 {
   color: white;
 }
 
+/* Títulos de sección en modo oscuro */
 body.dark-mode .section-title {
   color: #e2e8f0;
 }
@@ -1413,32 +1431,41 @@ body.dark-mode #contacto-index {
 
 body.dark-mode #contacto-index h2.mb-4 {
   color: var(--white) !important;
+  /* Forces the color to white in dark mode */
 }
 
+/* --- ADD THESE RULES FOR PLACEHOLDER COLORS IN DARK MODE --- */
 body.dark-mode .form-control::placeholder {
   color: #a0aec0 !important;
+  /* A light gray from your palette */
   opacity: 1;
+  /* Firefox sometimes requires this to override default opacity */
 }
 
 body.dark-mode .form-control::-webkit-input-placeholder {
+  /* Chrome, Safari, Opera */
   color: #a0aec0 !important;
 }
 
 body.dark-mode .form-control:-moz-placeholder {
+  /* Firefox 18- */
   color: #a0aec0 !important;
   opacity: 1;
 }
 
 body.dark-mode .form-control::-moz-placeholder {
+  /* Firefox 19+ */
   color: #a0aec0 !important;
   opacity: 1;
 }
 
 body.dark-mode .form-control:-ms-input-placeholder {
+  /* Internet Explorer */
   color: #a0aec0 !important;
 }
 
 body.dark-mode .form-control::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: #a0aec0 !important;
 }
 
@@ -1448,43 +1475,50 @@ body.dark-mode .form-label {
   color: #e2e8f0;
 }
 
-
-
-
 .img-container {
-  position: relative;         
-  display: inline-block;      
+  position: relative;
+  display: inline-block;
   width: 100%;
-  margin-bottom: 20px;        
+  margin-bottom: 20px;
+  /* Updated shadow: increased blur and opacity for a stronger effect */
   box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
 }
 
 .img-container img {
   display: block;
 }
 
+/* Top decorative border */
 .img-container::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 10px;  
+  height: 10px;
   background: linear-gradient(to right, #ffcc00, #ff9900);
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   z-index: 2;
 }
 
+/* Right decorative border */
 .img-container::after {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
-  width: 10px;  
+  width: 10px;
   height: 100%;
   background: linear-gradient(to bottom, #ffcc00, #ff9900);
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
   z-index: 2;
+}
+
+.img-container:hover {
+  transform: scale(1.2);
+  transform: translateY(-10px);
+  box-shadow: 10px 6px 30px var(--shadow-orange);
 }
