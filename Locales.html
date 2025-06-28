@@ -242,74 +242,95 @@
   <!-- extras -->
 
   <!-- Footer -->
-  <footer class="bg-dark text-light py-3">
-    <div class="container text-center">
-      © 2025 SAPE Internacional
-    </div>
-  </footer>
+  <footer class="bg-dark text-light pt-4 pb-3">
+  <div class="container">
 
-  <!-- Pie de página -->
-  <footer class="bg-dark text-light py-4">
-    <div class="container">
-      <div class="row">
-        <!-- Columna de contacto o info (izquierda) -->
-        <div class="col-md-4 mb-3 d-flex align-items-center">
-          <img src="images/logo3.png" alt="Logo SAPE" class="me-3" style="width: 80px;">
-          <div>
-            <h5>SAPE</h5>
-            <p class="mb-0">© 2025 SAPE - Todos los derechos reservados.</p>
+    <!-- Primera fila: logo, enlaces y redes/pagos -->
+    <div class="row">
+
+      <!-- Logo y derechos -->
+      <div class="col-md-4 mb-4 d-flex align-items-center">
+        <img src="images/logo3.png" alt="Logo SAPE" class="me-3" style="width: 80px;">
+        <div>
+          <h5 class="mb-1">SAPE</h5>
+          <p class="mb-0 small">© 2025 SAPE Internacional<br>Todos los derechos reservados.</p>
+        </div>
+      </div>
+
+      <!-- Enlaces rápidos / Secciones -->
+      <div class="col-md-4 mb-4">
+        <h5 class="mb-3">Enlaces</h5>
+        <div class="row">
+          <div class="col-6">
+            <ul class="list-unstyled small">
+              <li><a href="index.html#inicio" class="text-light text-decoration-none">Inicio</a></li>
+              <li><a href="nosotros.html" class="text-light text-decoration-none">Nosotros</a></li>
+              <li><a href="Lista-Servicios.html" class="text-light text-decoration-none">Servicios</a></li>
+              <li><a href="Locales.html" class="text-light text-decoration-none">Locales</a></li>
+              <li><a href="galeriaCompleta.html" class="text-light text-decoration-none">Galería</a></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul class="list-unstyled small">
+              <li><a href="carta.html" class="text-light text-decoration-none">Ver Carta Digital</a></li>
+              <li><a href="#reserva" class="text-light text-decoration-none">Reserva</a></li>
+              <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
+              <li><a href="carta.html#platos" class="text-light text-decoration-none">Platos</a></li>
+              <li><a href="galeriaCompleta.html" class="text-light text-decoration-none">Fotos</a></li>
+            </ul>
           </div>
         </div>
+      </div>
 
-        <!-- Columna de secciones (centro) -->
-        <div class="col-md-4 mb-3">
-          <h5>Secciones</h5>
-          <ul class="list-unstyled">
-            <li><a class="dropdown-item text-light" href="index.html#menu-digital">Ver Carta Digital</a></li>
-            <li><a href="#reserva" class="text-light text-decoration-none">Reserva</a></li>
-            <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
-          </ul>
-        </div>
-
-        <!-- Columna de redes y pagos (derecha) -->
-        <div class="col-md-4 mb-3">
-          <div class="row align-items-center"> <!-- Fila para alinear verticalmente -->
-            <!-- Redes Sociales -->
-            <div class="col-12 col-sm-6 mb-3 mb-sm-0"> <!-- Mitad del ancho en móvil -->
-              <h5>Síguenos</h5>
-              <div class="social-icons">
-                <a href="https://www.twitter.com" target="_blank" class="text-light me-2">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/kenzowo_?igsh=eGV1ODM5bGx2bzh5" target="_blank"
-                  class="text-light me-2">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/share/1LvsywagCF/" target="_blank" class="text-light me-2">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.tiktok.com/@butisito1/video/7468897608619117830" target="_blank"
-                  class="text-light">
-                  <i class="fab fa-tiktok"></i>
-                </a>
-              </div>
+      <!-- Redes sociales y métodos de pago -->
+      <div class="col-md-4 mb-4">
+        <div class="row">
+          <div class="col-12 col-sm-6 mb-3 mb-sm-0">
+            <h5 class="mb-2">Síguenos</h5>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/share/1LvsywagCF/" target="_blank" class="text-light me-2">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/kenzowo_?igsh=eGV1ODM5bGx2bzh5" target="_blank" class="text-light me-2">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.tiktok.com/@butisito1/video/7468897608619117830" target="_blank" class="text-light me-2">
+                <i class="fab fa-tiktok"></i>
+              </a>
+              <a href="https://www.twitter.com" target="_blank" class="text-light">
+                <i class="fab fa-twitter"></i>
+              </a>
             </div>
-
-            <!-- Métodos de Pago -->
-            <div class="col-12 col-sm-6"> <!-- Mitad del ancho en móvil -->
-              <h5>Métodos de Pago</h5>
-              <div class="d-flex gap-2 flex-wrap">
-                <img src="images/visa.png" alt="Visa" style="width: 50px; height: auto;">
-                <img src="images/mercado-pago.png" alt="Mercado Pago" style="width: 50px; height: auto;">
-                <img src="images/mastercard.png" alt="Mastercard" style="width: 50px; height: auto;">
-                <img src="images/pagoefectivo.png" alt="PagoEfectivo" style="width: 50px; height: auto;">
-              </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <h5 class="mb-2">Métodos de Pago</h5>
+            <div class="d-flex gap-2 flex-wrap">
+              <img src="images/visa.png" alt="Visa" style="width: 40px; height: auto;">
+              <img src="images/mercado-pago.png" alt="Mercado Pago" style="width: 40px; height: auto;">
+              <img src="images/mastercard.png" alt="Mastercard" style="width: 40px; height: auto;">
+              <img src="images/pagoefectivo.png" alt="PagoEfectivo" style="width: 40px; height: auto;">
             </div>
           </div>
         </div>
       </div>
+
     </div>
-  </footer>
+
+    <!-- Línea divisoria -->
+    <hr class="border-secondary">
+
+    <!-- Info de contacto -->
+    <div class="row">
+      <div class="col-12 text-center small">
+        <p class="mb-1">
+          <i class="fas fa-map-marker-alt me-2"></i> Av. Victor Larco 812, Huanchaco |
+          <i class="fas fa-phone-alt ms-3 me-2"></i> (044) 278997 |
+          <i class="fas fa-envelope ms-3 me-2"></i> sapecompany.in@gmail.com
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Tu JavaScript externo -->
