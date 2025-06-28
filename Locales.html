@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurante SAPE</title>
+  <title>Nuestros Locales - Restaurante SAPE</title>
   <link rel="icon" href="images/icon.png" type="image/png">
 
   <!-- Font Awesome  -->
@@ -20,14 +20,15 @@
   <!-- Correo -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
+
   <script>
-    (function(){
-      emailjs.init("VFO34VNSCYXvEdt_b"); 
+    (function () {
+      emailjs.init("VFO34VNSCYXvEdt_b");
     })();
 
     function enviarCorreoRes(e) {
       e.preventDefault();
-      emailjs.sendForm('service_mzu5p4p', 'template_x07xoeb', e.target)
+      emailjs.sendForm("service_mzu5p4p", "template_x07xoeb", e.target)
         .then(() => {
           alert("Mensaje enviado correctamente");
         }, (error) => {
@@ -37,7 +38,7 @@
 
     function enviarCorreocont(e) {
       e.preventDefault();
-      emailjs.sendForm('service_mzu5p4p', 'template_l2msb4y', e.target)
+      emailjs.sendForm("service_mzu5p4p", "template_l2msb4y", e.target)
         .then(() => {
           alert("Mensaje enviado correctamente");
         }, (error) => {
@@ -48,268 +49,273 @@
 </head>
 
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">
-      <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#inicio">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="nosotros.html">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Lista-Servicios.html">Servicios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="carta.html">Platos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#reserva">Reservas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Locales.html">Locales</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="galeriaCompleta.html">Galería</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contacto.html">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- espacio para cartas de mapa -->
-<section id="locales" class="py-5 bg-light">
-  <div class="container">
-    <div class="text-center mb-5">
-      <br>
-      <br>
-      <h2 class="display-5 fw-bold text-uppercase mb-3">Nuestros Locales</h2>
-      <p class="lead text-muted">Descubre nuestras sedes en las mejores ubicaciones</p>
-    </div>
-
-    <div class="row g-4">
-      <!-- Bloque 1 -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card locale-card h-100">
-          <img src="images/locales/local1.jpg" class="card-img-top" alt="Local Santa Inés">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Santa Inés</h5>
-            <p class="card-text mb-1">Las Gemas 418</p>
-            <p class="card-text teléfono">(044) 200450</p>
-            <a href="https://www.google.com/maps/place/Machu+Picchu/@-13.1631412,-72.5449629,15z" target="_blank" class="btn btn-local mt-auto">
-              <i class="bi bi-geo-alt-fill"></i> Ver Mapa
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bloque 2 -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card locale-card h-100">
-          <img src="images/locales/local2.jpg" class="card-img-top" alt="Local San Andrés">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">San Andrés</h5>
-            <p class="card-text mb-1">Pedro Urraca 515</p>
-            <p class="card-text teléfono">(044) 225803</p>
-            <a href="https://www.google.com/maps/place/Taj+Mahal/@27.1751448,78.0421422,15z" target="_blank" class="btn btn-local mt-auto">
-              <i class="bi bi-geo-alt-fill"></i> Ver Mapa
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bloque 3 -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card locale-card h-100">
-          <img src="images/locales/local3.jpg" class="card-img-top" alt="Local Huanchaco">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Huanchaco</h5>
-            <p class="card-text mb-1">Av. Victor Larco 812</p>
-            <p class="card-text teléfono">(044) 278997</p>
-            <a href="https://www.google.com/maps/place/Colosseum,+Piazza+del+Colosseo,+Rome,+Italy/@41.8902102,12.4922309,15z" target="_blank" class="btn btn-local mt-auto">
-              <i class="bi bi-geo-alt-fill"></i> Ver Mapa
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bloque 4 -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card locale-card h-100">
-          <img src="images/locales/local4.jpg" class="card-img-top" alt="Local Santa Teresa">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Santa Teresa</h5>
-            <p class="card-text mb-1">Mz N Lt 10</p>
-            <p class="card-text teléfono">(044) 216410</p>
-            <a href="https://www.google.com/maps/place/Chich%C3%A9n+Itz%C3%A1/@20.6843005,-88.5677738,15z" target="_blank" class="btn btn-local mt-auto">
-              <i class="bi bi-geo-alt-fill"></i> Ver Mapa
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bloque 5 -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card locale-card h-100">
-          <img src="images/locales/local5.jpg" class="card-img-top" alt="Local Centro Histórico">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Centro Histórico</h5>
-            <p class="card-text mb-1">Jr. Pizarro 123</p>
-            <p class="card-text teléfono">(044) 245678</p>
-            <a href="https://www.google.com/maps/place/Cristo+Redentor/@-22.951916,-43.210487,15z" target="_blank" class="btn btn-local mt-auto">
-              <i class="bi bi-geo-alt-fill"></i> Ver Mapa
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bloque 6 -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card locale-card h-100">
-          <img src="images/locales/local6.jpg" class="card-img-top" alt="Local Miraflores">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Miraflores</h5>
-            <p class="card-text mb-1">Av. Larco 589</p>
-            <p class="card-text teléfono">(044) 265432</p>
-            <a href="https://www.google.com/maps/place/Petra/@30.3284543,35.4443627,15z" target="_blank" class="btn btn-local mt-auto">
-              <i class="bi bi-geo-alt-fill"></i> Ver Mapa
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bloque 7 -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card locale-card h-100">
-          <img src="images/locales/local7.jpg" class="card-img-top" alt="Local La Molina">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">La Molina</h5>
-            <p class="card-text mb-1">Av. La Molina 345</p>
-            <p class="card-text teléfono">(044) 287654</p>
-            <a href="https://www.google.com/maps/place/Great+Wall+of+China/@40.4319077,116.5703749,15z" target="_blank" class="btn btn-local mt-auto">
-              <i class="bi bi-geo-alt-fill"></i> Ver Mapa
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bloque 8 -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card locale-card h-100">
-          <img src="images/locales/local8.jpg" class="card-img-top" alt="Local San Isidro">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">San Isidro</h5>
-            <p class="card-text mb-1">Calle Los Pinos 678</p>
-            <p class="card-text teléfono">(044) 298765</p>
-            <a href="https://www.google.com/maps/place/Great+Pyramid+of+Giza/@29.9792345,31.1342019,15z" target="_blank" class="btn btn-local mt-auto">
-              <i class="bi bi-geo-alt-fill"></i> Ver Mapa
-            </a>
-          </div>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Lista-Servicios.html">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="carta.html">Platos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#reserva">Reservas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Locales.html">Locales</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="galeriaCompleta.html">Galería</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- Footer Mejorado -->
-<footer class="bg-dark text-light py-4">
-  <div class="container">
-    <div class="row">
-      <!-- Columna de logo y derechos -->
-      <div class="col-md-4 mb-4 mb-md-0 d-flex align-items-center">
-        <img src="images/logo3.png" alt="Logo SAPE" class="me-3" style="width: 80px;">
-        <div>
-          <h5>SAPE</h5>
-          <p class="mb-0">© 2025 SAPE - Todos los derechos reservados.</p>
-        </div>
+  <section id="locales-hero" class="d-flex align-items-center justify-content-center text-white text-center">
+    <div class="container">
+      <h1 class="display-3 fw-bold">Nuestros Locales</h1>
+      <p class="lead">Encuéntranos en las mejores ubicaciones de la ciudad.</p>
+    </div>
+  </section>
+
+  <section id="locales" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <br>
+        <br>
+        <h2 class="display-5 fw-bold text-uppercase mb-3">Nuestros Locales</h2>
+        <p class="lead text-muted">Descubre nuestras sedes en las mejores ubicaciones</p>
       </div>
 
-      <!-- Columna de enlaces (sin título) -->
-      <div class="col-md-4 mb-4 mb-md-0">
-        <div class="row">
-          <div class="col-6">
-            <ul class="list-unstyled">
-              <li><a href="index.html#inicio" class="text-light text-decoration-none">Inicio</a></li>
-              <li><a href="nosotros.html" class="text-light text-decoration-none">Nosotros</a></li>
-              <li><a href="Lista-Servicios.html" class="text-light text-decoration-none">Servicios</a></li>
-            </ul>
-          </div>
-          <div class="col-6">
-            <ul class="list-unstyled">
-              <li><a href="carta.html" class="text-light text-decoration-none">Platos</a></li>
-              <li><a href="Locales.html" class="text-light text-decoration-none">Locales</a></li>
-              <li><a href="galeriaCompleta.html" class="text-light text-decoration-none">Galería</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Columna de redes y pagos -->
-      <div class="col-md-4">
-        <div class="row">
-          <div class="col-md-6 mb-3 mb-md-0">
-            <h5>Síguenos</h5>
-            <div class="social-icons">
-              <a href="https://www.facebook.com/share/1LvsywagCF/" target="_blank" class="text-light me-2">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://www.instagram.com/kenzowo_?igsh=eGV1ODM5bGx2bzh5" target="_blank" class="text-light me-2">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://www.tiktok.com/@butisito1/video/7468897608619117830" target="_blank" class="text-light me-2">
-                <i class="fab fa-tiktok"></i>
-              </a>
-              <a href="https://www.twitter.com" target="_blank" class="text-light">
-                <i class="fab fa-twitter"></i>
+      <div class="row g-4">
+        <!-- Bloque 1 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card locale-card h-100">
+            <img src="images/locales/local1.jpg" class="card-img-top" alt="Local Santa Inés">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Santa Inés</h5>
+              <p class="card-text mb-1">Las Gemas 418</p>
+              <p class="card-text teléfono">(044) 200450</p>
+              <a href="https://www.google.com/maps/place/Machu+Picchu/@-13.1631412,-72.5449629,15z" target="_blank"
+                class="btn btn-local mt-auto">
+                <i class="bi bi-geo-alt-fill"></i> Ver Mapa
               </a>
             </div>
           </div>
-          <div class="col-md-6">
-            <h5>Métodos de Pago</h5>
-            <div class="d-flex gap-2 flex-wrap">
-              <img src="images/visa.png" alt="Visa" style="width: 40px; height: auto;">
-              <img src="images/mercado-pago.png" alt="Mercado Pago" style="width: 40px; height: auto;">
-              <img src="images/mastercard.png" alt="Mastercard" style="width: 40px; height: auto;">
-              <img src="images/pagoefectivo.png" alt="PagoEfectivo" style="width: 40px; height: auto;">
+        </div>
+
+        <!-- Bloque 2 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card locale-card h-100">
+            <img src="images/locales/local2.jpg" class="card-img-top" alt="Local San Andrés">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">San Andrés</h5>
+              <p class="card-text mb-1">Pedro Urraca 515</p>
+              <p class="card-text teléfono">(044) 225803</p>
+              <a href="https://www.google.com/maps/place/Taj+Mahal/@27.1751448,78.0421422,15z" target="_blank"
+                class="btn btn-local mt-auto">
+                <i class="bi bi-geo-alt-fill"></i> Ver Mapa
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 3 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card locale-card h-100">
+            <img src="images/locales/local3.jpg" class="card-img-top" alt="Local Huanchaco">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Huanchaco</h5>
+              <p class="card-text mb-1">Av. Victor Larco 812</p>
+              <p class="card-text teléfono">(044) 278997</p>
+              <a href="https://www.google.com/maps/place/Colosseum,+Piazza+del+Colosseo,+Rome,+Italy/@41.8902102,12.4922309,15z"
+                target="_blank" class="btn btn-local mt-auto">
+                <i class="bi bi-geo-alt-fill"></i> Ver Mapa
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 4 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card locale-card h-100">
+            <img src="images/locales/local4.jpg" class="card-img-top" alt="Local Santa Teresa">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Santa Teresa</h5>
+              <p class="card-text mb-1">Mz N Lt 10</p>
+              <p class="card-text teléfono">(044) 216410</p>
+              <a href="https://www.google.com/maps/place/Chich%C3%A9n+Itz%C3%A1/@20.6843005,-88.5677738,15z"
+                target="_blank" class="btn btn-local mt-auto">
+                <i class="bi bi-geo-alt-fill"></i> Ver Mapa
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 5 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card locale-card h-100">
+            <img src="images/locales/local5.jpg" class="card-img-top" alt="Local Centro Histórico">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Centro Histórico</h5>
+              <p class="card-text mb-1">Jr. Pizarro 123</p>
+              <p class="card-text teléfono">(044) 245678</p>
+              <a href="https://www.google.com/maps/place/Cristo+Redentor/@-22.951916,-43.210487,15z" target="_blank"
+                class="btn btn-local mt-auto">
+                <i class="bi bi-geo-alt-fill"></i> Ver Mapa
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 6 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card locale-card h-100">
+            <img src="images/locales/local6.jpg" class="card-img-top" alt="Local Miraflores">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Miraflores</h5>
+              <p class="card-text mb-1">Av. Larco 589</p>
+              <p class="card-text teléfono">(044) 265432</p>
+              <a href="https://www.google.com/maps/place/Petra/@30.3284543,35.4443627,15z" target="_blank"
+                class="btn btn-local mt-auto">
+                <i class="bi bi-geo-alt-fill"></i> Ver Mapa
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 7 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card locale-card h-100">
+            <img src="images/locales/local7.jpg" class="card-img-top" alt="Local La Molina">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">La Molina</h5>
+              <p class="card-text mb-1">Av. La Molina 345</p>
+              <p class="card-text teléfono">(044) 287654</p>
+              <a href="https://www.google.com/maps/place/Great+Wall+of+China/@40.4319077,116.5703749,15z"
+                target="_blank" class="btn btn-local mt-auto">
+                <i class="bi bi-geo-alt-fill"></i> Ver Mapa
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 8 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card locale-card h-100">
+            <img src="images/locales/local8.jpg" class="card-img-top" alt="Local San Isidro">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">San Isidro</h5>
+              <p class="card-text mb-1">Calle Los Pinos 678</p>
+              <p class="card-text teléfono">(044) 298765</p>
+              <a href="https://www.google.com/maps/place/Great+Pyramid+of+Giza/@29.9792345,31.1342019,15z"
+                target="_blank" class="btn btn-local mt-auto">
+                <i class="bi bi-geo-alt-fill"></i> Ver Mapa
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Información de contacto -->
-    <div class="row mt-4">
-      <div class="col-12">
-        <hr class="border-secondary">
-        <p class="text-center mb-0 small">
-          <i class="fas fa-map-marker-alt me-2"></i> Av. Victor Larco 812, Huanchaco | 
-          <i class="fas fa-phone-alt me-2"></i> (044) 278997 |
-          <i class="fas fa-envelope me-2"></i> sapecompany.in@gmail.com
-        </p>
-        <p class="text-center mt-2 mb-0 small">© 2025 SAPE Internacional - Todos los derechos reservados</p>
+  <!-- extras -->
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-3">
+    <div class="container text-center">
+      © 2025 SAPE Internacional
+    </div>
+  </footer>
+
+  <!-- Pie de página -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container">
+      <div class="row">
+        <!-- Columna de contacto o info (izquierda) -->
+        <div class="col-md-4 mb-3 d-flex align-items-center">
+          <img src="images/logo3.png" alt="Logo SAPE" class="me-3" style="width: 80px;">
+          <div>
+            <h5>SAPE</h5>
+            <p class="mb-0">© 2025 SAPE - Todos los derechos reservados.</p>
+          </div>
+        </div>
+
+        <!-- Columna de secciones (centro) -->
+        <div class="col-md-4 mb-3">
+          <h5>Secciones</h5>
+          <ul class="list-unstyled">
+            <li><a class="dropdown-item text-light" href="index.html#menu-digital">Ver Carta Digital</a></li>
+            <li><a href="#reserva" class="text-light text-decoration-none">Reserva</a></li>
+            <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna de redes y pagos (derecha) -->
+        <div class="col-md-4 mb-3">
+          <div class="row align-items-center"> <!-- Fila para alinear verticalmente -->
+            <!-- Redes Sociales -->
+            <div class="col-12 col-sm-6 mb-3 mb-sm-0"> <!-- Mitad del ancho en móvil -->
+              <h5>Síguenos</h5>
+              <div class="social-icons">
+                <a href="https://www.twitter.com" target="_blank" class="text-light me-2">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/kenzowo_?igsh=eGV1ODM5bGx2bzh5" target="_blank"
+                  class="text-light me-2">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1LvsywagCF/" target="_blank" class="text-light me-2">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.tiktok.com/@butisito1/video/7468897608619117830" target="_blank"
+                  class="text-light">
+                  <i class="fab fa-tiktok"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Métodos de Pago -->
+            <div class="col-12 col-sm-6"> <!-- Mitad del ancho en móvil -->
+              <h5>Métodos de Pago</h5>
+              <div class="d-flex gap-2 flex-wrap">
+                <img src="images/visa.png" alt="Visa" style="width: 50px; height: auto;">
+                <img src="images/mercado-pago.png" alt="Mercado Pago" style="width: 50px; height: auto;">
+                <img src="images/mastercard.png" alt="Mastercard" style="width: 50px; height: auto;">
+                <img src="images/pagoefectivo.png" alt="PagoEfectivo" style="width: 50px; height: auto;">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
-
-<!-- Bootstrap JS Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Tu JavaScript externo -->
-<script src="index.js"></script>
+  </footer>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Tu JavaScript externo -->
+  <script src="index.js"></script>
 
 </body>
+
 </html>
