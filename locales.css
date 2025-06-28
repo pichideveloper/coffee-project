@@ -1,142 +1,513 @@
-/* locales.css */
+/* ===========================
+   LOCALES.CSS - REDISEÑO CON CLARA DIFERENCIACIÓN DE MODOS
+   =========================== */
 
-/* —————————————— */
-/* Variables para modo claro/oscuro */
+/* Importación de fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600&display=swap");
+
+/* ===========================
+   VARIABLES CSS ESPECÍFICAS PARA LOCALES
+   =========================== */
 :root {
-  --bg-card: #fff;
-  --text-card: #333;
-  --btn-bg: #ffc107;
-  --btn-text: #fff;
-  --card-shadow: rgba(0,0,0,0.1);
+  /* MODO CLARO - Colores brillantes y cálidos */
+  --locales-bg-hero:linear-gradient(115deg,#FF6D00 0%,#FF8C00 40%,#FFAB40 80%);
+  --locales-bg-main: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 50%, #E8F4FD 100%);
+  --locales-card-bg: rgba(255, 255, 255, 0.95);
+  --locales-card-border: rgba(255, 140, 0, 0.2);
+  --locales-card-shadow: 0 8px 25px rgba(255, 140, 0, 0.15);
+  --locales-title-color: #2C3E50;
+  --locales-subtitle-color: #2C3E50;
+  --locales-card-title-color: #FF8C00;
+  --locales-text-color: #34495E;
+  --locales-phone-color: #2C3E50;
+  --locales-btn-bg: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
+  --locales-btn-text: #FFFFFF;
+  --locales-btn-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+  --locales-hero-overlay: rgba(255, 140, 0, 0.1);
+  --locales-pattern: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><pattern id='grain-light' width='100' height='100' patternUnits='userSpaceOnUse'><circle cx='25' cy='25' r='2' fill='%23FF8C00' opacity='0.1'/><circle cx='75' cy='75' r='1.5' fill='%23FFD700' opacity='0.08'/><circle cx='50' cy='10' r='1' fill='%23FFC107' opacity='0.06'/></pattern></defs><rect width='100' height='100' fill='url(%23grain-light)'/></svg>");
 }
+
 body.dark-mode {
-  --bg-card: #2a2a2a;
-  --text-card: #ddd;
-  --btn-bg: #D4AF37;
-  --btn-text: #fff;
-  --card-shadow: rgba(0,0,0,0.5);
+  /* MODO OSCURO - Colores profundos y contrastantes */
+  --locales-bg-hero:  linear-gradient(115deg,#FFAB40  0%,#FF8C00 40%,#FF6D00 80%);
+  --locales-bg-main: linear-gradient(135deg, #66380067 0%, #161B22 50%, #66380067 100%);
+  --locales-card-bg: rgba(33, 38, 45, 0.95);
+  --locales-card-border: rgba(255, 215, 0, 0.3);
+  --locales-card-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  --locales-title-color: #F0F6FC;
+  --locales-subtitle-color: #ffffff;
+  --locales-card-title-color: #FFD700;
+  --locales-text-color: #C9D1D9;
+  --locales-phone-color: #F0F6FC;
+  --locales-btn-bg: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  --locales-btn-text: #0D1117;
+  --locales-btn-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  --locales-hero-overlay: rgba(255, 215, 0, 0.15);
+  --locales-pattern: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><pattern id='grain-dark' width='100' height='100' patternUnits='userSpaceOnUse'><circle cx='25' cy='25' r='2' fill='%23FFD700' opacity='0.15'/><circle cx='75' cy='75' r='1.5' fill='%23FF8C00' opacity='0.12'/><circle cx='50' cy='10' r='1' fill='%23FFC107' opacity='0.1'/></pattern></defs><rect width='100' height='100' fill='url(%23grain-dark)'/></svg>");
 }
 
-/* —————————————— */
-/* Sección de locales */
-#locales {
-  background: var(--bg-card);
-  padding: 5rem 0 2rem;  /* más espacio arriba para bajar el título */
-}
-
-/* Título */
-#locales h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
+/* ===========================
+   SECCIÓN HERO DE LOCALES
+   =========================== */
+#locales-hero {
+  background: var(--locales-bg-hero);
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin: 0 auto 2rem;  /* margen superior 0 (ya lo maneja el padding) y 2rem debajo */
-  color: var(--text-card);
+  transition: all 0.5s ease;
 }
 
-/* Grid de tarjetas */
-#locales .locale-card {
-  background-color: var(--bg-card);
-  color: var(--text-card);
-  box-shadow: 0 2px 6px var(--card-shadow);
-  border-radius: .5rem;
-  border: none;
-  overflow: hidden;         /* para que la sombra de la img no se vea recortada */
-  transition: transform 0.3s, box-shadow 0.3s;
+#locales-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--locales-pattern);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+#locales-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--locales-hero-overlay);
+  pointer-events: none;
+}
+
+#locales-hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+#locales-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--locales-title-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+#locales-hero p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
+  color: var(--locales-subtitle-color);
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   SECCIÓN PRINCIPAL DE LOCALES
+   =========================== */
+#locales {
+  background: var(--locales-bg-main);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+#locales::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--locales-pattern);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+#locales .container {
+  position: relative;
+  z-index: 2;
+}
+
+#locales h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--locales-title-color);
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+#locales h2::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--locales-btn-bg);
+  border-radius: 2px;
+}
+
+#locales .lead {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  color: var(--locales-subtitle-color);
+  text-align: center;
+  margin-bottom: 4rem;
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   TARJETAS DE LOCALES
+   =========================== */
+.locale-card {
+  background: var(--locales-card-bg);
+  border: 2px solid var(--locales-card-border);
+  border-radius: 20px;
+  box-shadow: var(--locales-card-shadow);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: flex;
   flex-direction: column;
-}
-#locales .locale-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px var(--card-shadow);
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(10px);
 }
 
-/* Imagen superior */
-#locales .locale-card img {
-  object-fit: cover;
-  height: 180px;
+.locale-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--locales-btn-bg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.locale-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  border-color: var(--locales-card-title-color);
+}
+
+.locale-card:hover::before {
+  opacity: 0.05;
+}
+
+.locale-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.locale-card img {
   width: 100%;
-  transition: transform 0.3s, box-shadow 0.3s;
-  padding: .25rem;  /* crea un “bloque” alrededor de la imagen */
-  background: var(--bg-card);
-  border-radius: .5rem; 
-}
-#locales .locale-card img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px var(--card-shadow);
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  border-bottom: 2px solid var(--locales-card-border);
 }
 
-/* Cuerpo de la tarjeta */
-#locales .card-body {
+.locale-card:hover img {
+  transform: scale(1.1);
+}
+
+.locale-card .card-body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-}
-#locales .card-body .card-title {
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
-}
-#locales .card-body .card-text {
-  margin: 0;
-  font-size: 0.9rem;
-}
-#locales .card-body .teléfono {
-  margin: 0.5rem 0 1rem;
-  font-size: 1rem;
-  font-weight: 500;
+  padding: 2rem;
+  background: var(--locales-card-bg);
 }
 
-/* Botón “Ver Mapa” */
-#locales .btn-local {
-  background-color: var(--btn-bg);
-  color: var(--btn-text) !important;  /* forzar contraste en dark mode */
+.locale-card .card-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--locales-card-title-color);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.locale-card .card-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: var(--locales-text-color);
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.locale-card .teléfono {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--locales-phone-color);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-local {
+  background: var(--locales-btn-bg);
+  color: var(--locales-btn-text) !important;
   border: none;
-  width: 100%;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: var(--locales-btn-shadow);
+  margin-top: auto;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
-  font-size: 0.9rem;
-  margin-top: auto;
-  transition: background-color 0.3s, filter 0.3s;
-}
-#locales .btn-local:hover {
-  filter: brightness(0.9);
-}
-#locales .btn-local .bi {
-  margin-right: 0.25rem;
 }
 
-.section-title {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 15px;
+.btn-local:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+  color: var(--locales-btn-text) !important;
 }
 
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: var(--btn-bg);
+.btn-local .bi {
+  margin-right: 8px;
+  font-size: 1.2rem;
 }
 
-.lead.text-muted {
-  color: #6c757d !important;
-  font-size: 1.1rem;
+/* ===========================
+   ANIMACIONES ESPECÍFICAS
+   =========================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-body.dark-mode .lead.text-muted {
-  color: #9a9a9a !important;
+@keyframes slideInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+#locales-hero h1 {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+#locales-hero p {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+#locales h2 {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+#locales .lead {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.locale-card {
+  animation: slideInScale 0.6s ease-out both;
+}
+
+.locale-card:nth-child(1) { animation-delay: 0.1s; }
+.locale-card:nth-child(2) { animation-delay: 0.2s; }
+.locale-card:nth-child(3) { animation-delay: 0.3s; }
+.locale-card:nth-child(4) { animation-delay: 0.4s; }
+.locale-card:nth-child(5) { animation-delay: 0.5s; }
+.locale-card:nth-child(6) { animation-delay: 0.6s; }
+.locale-card:nth-child(7) { animation-delay: 0.7s; }
+.locale-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+@media (max-width: 992px) {
+  #locales-hero {
+    height: 400px;
+  }
+  
+  #locales-hero h1 {
+    font-size: 3.5rem;
+  }
+  
+  #locales-hero p {
+    font-size: 1.2rem;
+  }
+  
+  #locales h2 {
+    font-size: 2.8rem;
+  }
+  
+  .locale-card .card-title {
+    font-size: 1.6rem;
+  }
+  
+  .locale-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  #locales-hero {
+    height: 350px;
+  }
+  
+  #locales-hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  #locales-hero p {
+    font-size: 1rem;
+  }
+  
+  #locales {
+    padding: 80px 0;
+  }
+  
+  #locales h2 {
+    font-size: 2.2rem;
+  }
+  
+  .locale-card img {
+    height: 180px;
+  }
+  
+  .locale-card .card-body {
+    padding: 1.5rem;
+  }
+  
+  .locale-card .card-title {
+    font-size: 1.4rem;
+  }
+  
+  .locale-card .card-text,
+  .locale-card .teléfono {
+    font-size: 1rem;
+  }
+  
+  .btn-local {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #locales-hero {
+    height: 300px;
+  }
+  
+  #locales-hero h1 {
+    font-size: 2rem;
+  }
+  
+  #locales-hero p {
+    font-size: 0.9rem;
+  }
+  
+  #locales {
+    padding: 60px 0;
+  }
+  
+  #locales h2 {
+    font-size: 1.8rem;
+  }
+  
+  .locale-card img {
+    height: 150px;
+  }
+  
+  .locale-card .card-body {
+    padding: 1rem;
+  }
+  
+  .locale-card .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .locale-card .card-text,
+  .locale-card .teléfono {
+    font-size: 0.9rem;
+  }
+  
+  .btn-local {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===========================
+   TRANSICIONES DE MODO
+   =========================== */
+#locales-hero,
+#locales,
+.locale-card,
+.locale-card .card-title,
+.locale-card .card-text,
+.locale-card .teléfono,
+.btn-local {
+  transition: all 0.5s ease;
+}
+
+/* Asegurar que los cambios de modo sean muy visibles */
+body.dark-mode #locales-hero {
+  background: var(--locales-bg-hero) !important;
+  color: var(--locales-title-color);
+}
+
+body.dark-mode #locales {
+  background: var(--locales-bg-main) !important;
+}
+
+body.dark-mode .locale-card {
+  background: var(--locales-card-bg);
+  border-color: var(--locales-card-border);
+  box-shadow: var(--locales-card-shadow);
+}
+
+body.dark-mode .locale-card .card-title {
+  color: var(--locales-card-title-color);
+}
+
+body.dark-mode .locale-card .card-text {
+  color: var(--locales-text-color);
+}
+
+body.dark-mode .locale-card .teléfono {
+  color: var(--locales-phone-color);
+}
+
+body.dark-mode .btn-local {
+  background: var(--locales-btn-bg);
+  color: var(--locales-btn-text) !important;
+  box-shadow: var(--locales-btn-shadow);
 }
 
 
-#locales .section-title {
-  letter-spacing: 2px;
-  color: var(--text-card) !important;
-  display: inline-block; /* opcional si quieres que el ancho se ajuste al texto */
-}
 
