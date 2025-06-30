@@ -1,0 +1,556 @@
+/* ===========================
+   RESERVAS.CSS - PÁGINA DE RESERVAS
+   =========================== */
+
+/* Importación de fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600&display=swap");
+
+/* ===========================
+   VARIABLES CSS ESPECÍFICAS PARA RESERVAS
+   =========================== */
+:root {
+  /* MODO CLARO - Colores cálidos y elegantes */
+  --reservas-bg-hero: linear-gradient(115deg,#FF6D00 0%,#FF8C00 40%,#FFAB40 80%);
+  --reservas-bg-main: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
+  --reservas-card-bg: rgba(255, 255, 255, 0.95);
+  --reservas-card-border: rgba(255, 140, 0, 0.2);
+  --reservas-card-shadow: 0 10px 30px rgba(255, 140, 0, 0.15);
+  --reservas-title-color: #2C3E50;
+  --reservas-subtitle-color: #5D6D7E;
+  --reservas-text-color: #34495E;
+  --reservas-label-color: #2C3E50;
+  --reservas-input-bg: #FFFFFF;
+  --reservas-input-border: rgba(255, 140, 0, 0.3);
+  --reservas-input-focus: #FF8C00;
+  --reservas-btn-bg: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
+  --reservas-btn-text: #FFFFFF;
+  --reservas-btn-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+  --reservas-info-bg: rgba(255, 248, 220, 0.8);
+  --reservas-info-border: rgba(255, 140, 0, 0.2);
+  --reservas-icon-color: #FF8C00;
+  --reservas-pattern: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><pattern id='reservas-light' width='100' height='100' patternUnits='userSpaceOnUse'><circle cx='25' cy='25' r='2' fill='%23FF8C00' opacity='0.1'/><circle cx='75' cy='75' r='1.5' fill='%23FFD700' opacity='0.08'/></pattern></defs><rect width='100' height='100' fill='url(%23reservas-light)'/></svg>");
+}
+
+body.dark-mode {
+  /* MODO OSCURO - Colores profundos y elegantes */
+  --reservas-bg-hero: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%);
+  --reservas-bg-main: linear-gradient(135deg, #0D1117 0%, #161B22 100%);
+  --reservas-card-bg: rgba(33, 38, 45, 0.95);
+  --reservas-card-border: rgba(255, 215, 0, 0.3);
+  --reservas-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --reservas-title-color: #F0F6FC;
+  --reservas-subtitle-color: #8B949E;
+  --reservas-text-color: #C9D1D9;
+  --reservas-label-color: #F0F6FC;
+  --reservas-input-bg: rgba(33, 38, 45, 0.8);
+  --reservas-input-border: rgba(255, 215, 0, 0.3);
+  --reservas-input-focus: #FFD700;
+  --reservas-btn-bg: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  --reservas-btn-text: #0D1117;
+  --reservas-btn-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  --reservas-info-bg: rgba(33, 38, 45, 0.8);
+  --reservas-info-border: rgba(255, 215, 0, 0.2);
+  --reservas-icon-color: #FFD700;
+  --reservas-pattern: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><pattern id='reservas-dark' width='100' height='100' patternUnits='userSpaceOnUse'><circle cx='25' cy='25' r='2' fill='%23FFD700' opacity='0.15'/><circle cx='75' cy='75' r='1.5' fill='%23FF8C00' opacity='0.12'/></pattern></defs><rect width='100' height='100' fill='url(%23reservas-dark)'/></svg>");
+}
+
+/* ===========================
+   SECCIÓN HERO DE RESERVAS
+   =========================== */
+#reservas-hero {
+  background: var(--reservas-bg-hero);
+  min-height: 40vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+#reservas-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--reservas-pattern);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+#reservas-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 140, 0, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#reservas-hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+#reservas-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--reservas-title-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+#reservas-hero p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.3rem;
+  color: var(--reservas-subtitle-color);
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   SECCIÓN FORMULARIO DE RESERVAS
+   =========================== */
+#reservas-form {
+  background: var(--reservas-bg-main);
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+#reservas-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--reservas-pattern);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.reserva-card {
+  background: var(--reservas-card-bg);
+  border: 2px solid var(--reservas-card-border);
+  border-radius: 25px;
+  box-shadow: var(--reservas-card-shadow);
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+}
+
+.reserva-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.reserva-card .card-header {
+  background: var(--reservas-btn-bg);
+  color: var(--reservas-btn-text);
+  padding: 2rem;
+  border-bottom: none;
+}
+
+.reserva-card .card-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.reserva-card .card-body {
+  padding: 2.5rem;
+  background: var(--reservas-card-bg);
+}
+
+/* ===========================
+   ESTILOS DEL FORMULARIO
+   =========================== */
+.form-label {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: var(--reservas-label-color);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-label i {
+  color: var(--reservas-icon-color);
+  margin-right: 0.5rem;
+}
+
+.form-control,
+.form-select {
+  background: var(--reservas-input-bg);
+  border: 2px solid var(--reservas-input-border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: var(--reservas-text-color);
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--reservas-input-focus);
+  box-shadow: 0 0 0 0.2rem rgba(255, 140, 0, 0.25);
+  background: var(--reservas-input-bg);
+  color: var(--reservas-text-color);
+}
+
+.form-control::placeholder {
+  color: var(--reservas-subtitle-color);
+  opacity: 0.7;
+}
+
+/* ===========================
+   BOTÓN DE RESERVA
+   =========================== */
+.btn-reserva {
+  background: var(--reservas-btn-bg);
+  color: var(--reservas-btn-text) !important;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: var(--reservas-btn-shadow);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+}
+
+.btn-reserva:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+  color: var(--reservas-btn-text) !important;
+}
+
+.btn-reserva:active {
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   SECCIÓN INFORMACIÓN ADICIONAL
+   =========================== */
+#info-reservas {
+  background: var(--reservas-bg-main);
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+#info-reservas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--reservas-pattern);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.info-card {
+  background: var(--reservas-info-bg);
+  border: 2px solid var(--reservas-info-border);
+  border-radius: 20px;
+  padding: 2rem;
+  height: 100%;
+  transition: all 0.4s ease;
+  position: relative;
+  backdrop-filter: blur(5px);
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border-color: var(--reservas-icon-color);
+}
+
+.info-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--reservas-btn-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.info-icon i {
+  font-size: 2rem;
+  color: var(--reservas-btn-text);
+}
+
+.info-card:hover .info-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.info-card h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--reservas-title-color);
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.info-card p {
+  font-family: "Inter", sans-serif;
+  color: var(--reservas-text-color);
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.info-card .fw-bold {
+  color: var(--reservas-icon-color);
+  font-size: 1.1rem;
+}
+
+/* ===========================
+   ANIMACIONES
+   =========================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+#reservas-hero h1 {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+#reservas-hero p {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.reserva-card {
+  animation: slideInScale 0.8s ease-out 0.4s both;
+}
+
+.info-card {
+  animation: slideInScale 0.6s ease-out both;
+}
+
+.info-card:nth-child(1) { animation-delay: 0.6s; }
+.info-card:nth-child(2) { animation-delay: 0.8s; }
+.info-card:nth-child(3) { animation-delay: 1s; }
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+@media (max-width: 992px) {
+  #reservas-hero {
+    min-height: 50vh;
+  }
+  
+  #reservas-hero h1 {
+    font-size: 3rem;
+  }
+  
+  #reservas-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .reserva-card .card-header {
+    padding: 1.5rem;
+  }
+  
+  .reserva-card .card-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .reserva-card .card-body {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #reservas-hero {
+    min-height: 40vh;
+  }
+  
+  #reservas-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  #reservas-hero p {
+    font-size: 1rem;
+  }
+  
+  .reserva-card .card-header {
+    padding: 1.2rem;
+  }
+  
+  .reserva-card .card-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .reserva-card .card-body {
+    padding: 1.5rem;
+  }
+  
+  .btn-reserva {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    min-width: 200px;
+  }
+  
+  .info-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .info-icon i {
+    font-size: 1.5rem;
+  }
+  
+  .info-card h4 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #reservas-hero h1 {
+    font-size: 2rem;
+  }
+  
+  #reservas-hero p {
+    font-size: 0.9rem;
+  }
+  
+  .reserva-card .card-header {
+    padding: 1rem;
+  }
+  
+  .reserva-card .card-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .reserva-card .card-body {
+    padding: 1rem;
+  }
+  
+  .btn-reserva {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    min-width: 180px;
+  }
+  
+  .info-card {
+    padding: 1.5rem;
+  }
+}
+
+/* ===========================
+   TRANSICIONES DE MODO OSCURO
+   =========================== */
+#reservas-hero,
+#reservas-form,
+#info-reservas,
+.reserva-card,
+.info-card,
+.form-control,
+.form-select,
+.form-label,
+.btn-reserva {
+  transition: all 0.5s ease;
+}
+
+/* Asegurar que los cambios de modo sean muy visibles */
+body.dark-mode #reservas-hero {
+  background: var(--reservas-bg-hero) !important;
+}
+
+body.dark-mode #reservas-form,
+body.dark-mode #info-reservas {
+  background: var(--reservas-bg-main) !important;
+}
+
+body.dark-mode .reserva-card {
+  background: var(--reservas-card-bg) !important;
+  border-color: var(--reservas-card-border);
+  box-shadow: var(--reservas-card-shadow);
+}
+
+body.dark-mode .reserva-card .card-body {
+  background: var(--reservas-card-bg) !important;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background: var(--reservas-input-bg) !important;
+  border-color: var(--reservas-input-border);
+  color: var(--reservas-text-color);
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+  background: var(--reservas-input-bg) !important;
+  border-color: var(--reservas-input-focus);
+  color: var(--reservas-text-color);
+}
+
+body.dark-mode .info-card {
+  background: var(--reservas-info-bg) !important;
+  border-color: var(--reservas-info-border);
+}
+
+body.dark-mode .btn-reserva {
+  background: var(--reservas-btn-bg) !important;
+  color: var(--reservas-btn-text) !important;
+  box-shadow: var(--reservas-btn-shadow);
+}
+
+/* ===========================
+   FOOTER PAYMENT METHODS
+   =========================== */
+.payment-method {
+  height: 30px;
+  width: auto;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.payment-method:hover {
+  filter: brightness(1);
+}
+
