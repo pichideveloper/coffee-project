@@ -20,8 +20,8 @@
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <!-- Estilos locales -->
   <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Font Awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Estilos de la carta -->
   <link rel="stylesheet" href="carta.css">
   <link rel="icon" href="images/logo1.png" type="image/png">
@@ -29,68 +29,69 @@
 
 <body class="body-c">
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">
-      <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto">
-        <!-- Inicio como link normal -->
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#inicio">Inicio</a>
-        </li>
- 
-        <!-- Nosotros -->
-       <li class="nav-item">
-          <a class="nav-link" href="nosotros.html">Nosotros </a>
-        </li>
-
-        <!-- Servicios -->
-         <li class="nav-item">
-          <a class="nav-link" href="Lista-Servicios.html">Servicios </a>
-        </li>
-  
-        <!-- Platos -->
-        <li class="nav-item">
-          <a class="nav-link" href="carta.html">Platos </a>
-        </li>
-        <!-- Reservas -->
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#reserva">Reservas </a>
-        </li>
-        <!-- Locales Nuevo-->
-        <li class="nav-item">
-          <a class="nav-link" href="Locales.html">Locales</a>
-        </li>
-      
-        <!-- Galería -->
-        <li class="nav-item">
-          <a class="nav-link" href="galeriaCompleta.html">Galería</a>
-        </li>
-        
-        <!-- Contacto -->
-          <li class="nav-item">
-          <a class="nav-link" href="contacto.html">Contacto</a>
-        </li>
-        
-        <!-- Botón modo oscuro -->
-        <li class="nav-item">
-          <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            id="navbarLogo"
+            src="images/logo1.png"
+            alt="SAPE Logo"
+            width="120"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Lista-Servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="carta.html">Platos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reservar.html">Reservas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Locales.html">Locales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="galeriaCompleta.html">Galería</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <button
+                id="darkModeToggle"
+                class="btn btn-outline-secondary nav-dark-toggle ms-2"
+              >
+                🌙
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
   <!-- HEADER -->
   <header class="header-carta">
     <div class="header-overlay">
       <h1 class="text-center text-white display-4">Nuestra Carta</h1>
       <p class="text-center lead carta-descripcion">Descubre los sabores auténticos del Perú</p>
+
     </div>
   </header>
 
@@ -99,6 +100,7 @@
     <div class="row g-4">
       
       <!-- Plato 1 -->
+      
       <div class="card menu-item shadow" 
        data-bs-toggle="modal" 
        data-bs-target="#platoDetalleModal"
@@ -179,9 +181,15 @@
   </div>    
       
 </div>
+    
+    
+ 
+    
   </section>
 
-  <!-- FOOTER MEJORADO -->
+  <!-- FOOTERS -->
+  <!-- Pie de página -->
+  <!-- Footer -->
  <footer class="bg-dark text-light pt-4 pb-3">
   <div class="container">
 
@@ -271,89 +279,51 @@
     </div>
   </div>
 </footer>
-  <!-- Modal de Detalle de Plato -->
-  <div class="modal fade" id="platoDetalleModal" tabindex="-1" aria-labelledby="platoDetalleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="platoDetalleModalLabel">Nombre del Plato</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6 mb-3 mb-md-0">
-                <img src="images/placeholder-plato.jpg" id="modalPlatoImg" class="img-fluid" alt="Imagen del Plato">
-              </div>
-              <div class="col-md-6">
-                <h3 id="modalPlatoNombreExtendido">Nombre del Plato Detallado</h3>
-                <p id="modalPlatoDescripcion" class="my-3">Descripción detallada del plato aquí...</p>
-                
-                <h5>Ingredientes Principales:</h5>
-                <ul id="modalPlatoIngredientes" class="lista-ingredientes mb-3"></ul>
 
-                <div id="modalPlatoNotasAdicionales" class="text-muted fst-italic mb-3"></div>
 
-                <div class="d-flex justify-content-between align-items-center">
-                  <h4>Precio:</h4>
-                  <span id="modalPlatoPrecio" class="badge bg-warning fs-4">S/ 00.00</span>
+
+<div class="modal fade" id="platoDetalleModal" tabindex="-1" aria-labelledby="platoDetalleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered"> <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="platoDetalleModalLabel">Nombre del Plato</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <img src="images/placeholder-plato.jpg" id="modalPlatoImg" class="img-fluid" alt="Imagen del Plato">
+            </div>
+            <div class="col-md-6">
+              <h3 id="modalPlatoNombreExtendido">Nombre del Plato Detallado</h3>
+              <p id="modalPlatoDescripcion" class="my-3">Descripción detallada del plato aquí...</p>
+              
+              <h5>Ingredientes Principales:</h5>
+              <ul id="modalPlatoIngredientes" class="lista-ingredientes mb-3">
+                </ul>
+
+              <div id="modalPlatoNotasAdicionales" class="text-muted fst-italic mb-3">
                 </div>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>Precio:</h4>
+                <span id="modalPlatoPrecio" class="badge bg-warning fs-4">S/ 00.00</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
     </div>
   </div>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="index.js"></script>
+</div>
   
-  <!-- Script para el modal de platos -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const modal = document.getElementById('platoDetalleModal');
-      
-      modal.addEventListener('show.bs.modal', function(event) {
-        const button = event.relatedTarget;
-        const nombre = button.getAttribute('data-nombre');
-        const nombreExtendido = button.getAttribute('data-nombre-extendido');
-        const imgSrc = button.getAttribute('data-img');
-        const descripcion = button.getAttribute('data-descripcion-larga');
-        const ingredientes = button.getAttribute('data-ingredientes').split(',');
-        const precio = button.getAttribute('data-precio');
-        const notas = button.getAttribute('data-notas');
-        
-        // Actualizar el modal con los datos
-        modal.querySelector('#platoDetalleModalLabel').textContent = nombre;
-        modal.querySelector('#modalPlatoNombreExtendido').textContent = nombreExtendido;
-        modal.querySelector('#modalPlatoImg').src = imgSrc;
-        modal.querySelector('#modalPlatoImg').alt = nombre;
-        modal.querySelector('#modalPlatoDescripcion').textContent = descripcion;
-        modal.querySelector('#modalPlatoPrecio').textContent = precio;
-        
-        // Limpiar y agregar ingredientes
-        const ingredientesList = modal.querySelector('#modalPlatoIngredientes');
-        ingredientesList.innerHTML = '';
-        ingredientes.forEach(ingrediente => {
-          const li = document.createElement('li');
-          li.textContent = ingrediente.trim();
-          ingredientesList.appendChild(li);
-        });
-        
-        // Notas adicionales
-        const notasDiv = modal.querySelector('#modalPlatoNotasAdicionales');
-        if(notas) {
-          notasDiv.innerHTML = `<strong>Nota:</strong> ${notas}`;
-        } else {
-          notasDiv.innerHTML = '';
-        }
-      });
-    });
-  </script>
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script de Dark Mode -->
+  <script src="index.js"></script>
 </body>
 </html>
+

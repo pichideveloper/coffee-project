@@ -126,8 +126,3 @@ body.dark-mode #platoDetalleModal .modal-footer {
     color: #000 !important;
 }
 
-body.dark-mode #platoDetalleModal .badge.bg-warning {
-    /* El color del texto ya está forzado a negro, el fondo es warning de Bootstrap */
-    /* Podrías hacerlo un poco más brillante si es necesario */
-    /* background-color: #ffca2c !important; */
-}
