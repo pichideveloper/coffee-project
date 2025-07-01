@@ -10,7 +10,13 @@
    =========================== */
 :root {
   /* MODO CLARO - Colores cálidos y elegantes */
-  --reservas-bg-hero: linear-gradient(115deg,#FF6D00 0%,#FF8C00 40%,#FFAB40 80%);
+  --reservas-bg-hero: linear-gradient(
+    135deg,
+    #ff8c00 0%,
+    #ffa500 40%,
+    #ffd700 75%,
+    #ffb000 100%
+  );
   --reservas-bg-main: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
   --reservas-card-bg: rgba(255, 255, 255, 0.95);
   --reservas-card-border: rgba(255, 140, 0, 0.2);

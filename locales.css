@@ -10,19 +10,14 @@
    =========================== */
 :root {
   /* MODO CLARO - Colores brillantes y cálidos */
+  /* MODO CLARO - Colores vibrantes y limpios */
   --locales-bg-hero: linear-gradient(
     135deg,
-    #ff8c00 0%,
-    #ffa500 40%,
-    #ffd700 75%,
-    #ffb000 100%
-  );
-  --locales-bg-main: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #f8f9fa 50%,
-    #e8f4fd 100%
-  );
+    #f08401 0%,
+    #e09303 40%,
+    #ccae02 75%,
+    #d49202 100%
+  );  
   --locales-card-bg: rgba(255, 255, 255, 0.95);
   --locales-card-border: rgba(255, 140, 0, 0.2);
   --locales-card-shadow: 0 8px 25px rgba(255, 140, 0, 0.15);
@@ -34,26 +29,15 @@
   --locales-btn-bg: linear-gradient(135deg, #ff8c00 0%, #ffd700 100%);
   --locales-btn-text: #ffffff;
   --locales-btn-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
-  --locales-hero-overlay: rgba(255, 140, 0, 0.1);
   --locales-pattern: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><pattern id='grain-light' width='100' height='100' patternUnits='userSpaceOnUse'><circle cx='25' cy='25' r='2' fill='%23FF8C00' opacity='0.1'/><circle cx='75' cy='75' r='1.5' fill='%23FFD700' opacity='0.08'/><circle cx='50' cy='10' r='1' fill='%23FFC107' opacity='0.06'/></pattern></defs><rect width='100' height='100' fill='url(%23grain-light)'/></svg>");
 }
 
 body.dark-mode {
   /* MODO OSCURO - Colores profundos y contrastantes */
-  --locales-bg-hero: linear-gradient(
-    115deg,
-    #ffab40 0%,
-    #ff8c00 40%,
-    #ff6d00 80%
-  );
-  --locales-bg-main: linear-gradient(
-    135deg,
-    #66380067 0%,
-    #161b22 50%,
-    #66380067 100%
-  );
+  --locales-bg-hero: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%);
+  --locales-bg-main: linear-gradient(135deg, #0D1117 0%, #161B22 100%);
   --locales-card-bg: rgba(33, 38, 45, 0.95);
-  --locales-card-border: rgba(255, 215, 0, 0.3);
+  --locales-card-border: rgba(255, 217, 0, 0.3); /* Opacidad ligeramente mayor que en modo claro */
   --locales-card-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
   --locales-title-color: #f0f6fc;
   --locales-subtitle-color: #ffffff;
@@ -63,7 +47,6 @@ body.dark-mode {
   --locales-btn-bg: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
   --locales-btn-text: #ffffff;
   --locales-btn-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-  --locales-hero-overlay: rgba(255, 215, 0, 0.15);
   --locales-pattern: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><pattern id='grain-dark' width='100' height='100' patternUnits='userSpaceOnUse'><circle cx='25' cy='25' r='2' fill='%23FFD700' opacity='0.15'/><circle cx='75' cy='75' r='1.5' fill='%23FF8C00' opacity='0.12'/><circle cx='50' cy='10' r='1' fill='%23FFC107' opacity='0.1'/></pattern></defs><rect width='100' height='100' fill='url(%23grain-dark)'/></svg>");
 }
 
@@ -71,8 +54,12 @@ body.dark-mode {
    SECCIÓN HERO DE LOCALES
    =========================== */
 #locales-hero {
-  background: var(--locales-bg-hero);
-  height: 500px;
+ 
+   background:var(--locales-bg-hero);
+       
+    
+ filter: brightness(1.08) contrast(1.15) saturate(1.2);
+     height: 500px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -101,7 +88,7 @@ body.dark-mode {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--locales-hero-overlay);
+
   pointer-events: none;
 }
 
