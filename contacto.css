@@ -4,8 +4,8 @@
 :root {
   --contacto-primary: #FF8C00;
   --contacto-secondary: #FFD700;
-  --contacto-dark: #1A1A1A;
-  --contacto-medium: #2A2A2A;
+  --contacto-dark: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%);
+  --contacto-medium: linear-gradient(135deg, #1a2029 0%, #212831 50%, #272e38 100%);
   --contacto-light: #F5F5F5;
   --contacto-white: #FFFFFF;
   --contacto-shadow: rgba(0, 0, 0, 0.1);
@@ -431,7 +431,7 @@ textarea.form-control {
 /* MODO OSCURO */
 /* =============================================== */
 body.dark-mode .contacto-section {
-  background: linear-gradient(135deg, var(--contacto-medium) 0%, var(--contacto-dark) 100%);
+  background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%);;
 }
 
 body.dark-mode .contacto-section::before {
@@ -439,7 +439,7 @@ body.dark-mode .contacto-section::before {
 }
 
 body.dark-mode .contacto-card {
-  background: rgba(42, 42, 42, 0.95);
+  background: linear-gradient(135deg, #252A33 0%, #2E343E 50%, #383F49 100%);
   border-color: rgba(255, 140, 0, 0.3);
   color: white;
 }

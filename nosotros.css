@@ -309,7 +309,7 @@
 
 /* Sección Nosotros en Modo Oscuro */
 body.dark-mode #nosotros {
-  background: var(--gradient-dark);
+  background: linear-gradient(135deg, #0D1117 0%, #161B22 50%,  #21262D 100%);;
 }
 
 body.dark-mode #nosotros::before {
@@ -331,7 +331,7 @@ body.dark-mode #nosotros p:first-of-type::first-letter {
 }
 
 body.dark-mode #nosotros .col-md-6 > div {
-  background: rgba(26, 26, 26, 0.9);
+  background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%);;
   border-color: rgba(255, 215, 0, 0.3);
 }
 
@@ -349,7 +349,7 @@ body.dark-mode #nosotros .col-md-6 p {
 
 /* Equipo en Modo Oscuro */
 body.dark-mode #equipo {
-  background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 100%);
+  background:linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%);;
 }
 
 body.dark-mode #equipo h3 {

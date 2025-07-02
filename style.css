@@ -21,7 +21,7 @@
   /* Gris oscuro */
   --bg-light: #f5f5f5;
   /* Gris muy claro */
-  --bg-dark: #0d0d0d;
+  --bg-dark: rgb(15, 19, 24);
   /* Negro profundo */
   --bg-medium: #1a1a1a;
   /* Negro medio */
@@ -32,6 +32,8 @@
   --shadow-medium: rgba(0, 0, 0, 0.15);
   --shadow-dark: rgba(0, 0, 0, 0.25);
   --shadow-orange: rgba(255, 140, 0, 0.3);
+  --carta-pattern: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><pattern id='carta-dark' width='100' height='100' patternUnits='userSpaceOnUse'><circle cx='25' cy='25' r='2' fill='%23FFD700' opacity='0.15'/><circle cx='75' cy='75' r='1.5' fill='%23FF8C00' opacity='0.12'/></pattern></defs><rect width='100' height='100' fill='url(%23carta-dark)'/></svg>");
+
 }
 
 /* Ajustar margen top para compensar navbar fijo */
@@ -342,6 +344,9 @@ section {
 #nosotros .container {
   position: relative;
   z-index: 1;
+
+  
+
 }
 
 #nosotros .lead {
@@ -1049,7 +1054,32 @@ body.dark-mode .carousel-caption p {
 
 /* Sección Nosotros en modo oscuro */
 body.dark-mode #nosotros {
-  background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
+  background: var(--carta-bg-hero);
+  padding: 6rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+body.dark-mode #nosotros::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--carta-pattern);
+  opacity: 0.3;
+  pointer-events: none;
+}
+body.dark-mode #nosotros::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 140, 0, 0.1) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 body.dark-mode #nosotros .lead {
@@ -1081,7 +1111,7 @@ body.dark-mode .glass p {
 
 /* Servicios en modo oscuro */
 body.dark-mode #servicios {
-  background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
+  background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%);
 }
 
 body.dark-mode #servicios .card {
@@ -1104,7 +1134,7 @@ body.dark-mode #servicios .card-text {
 
 /* Reservas en modo oscuro */
 body.dark-mode #reserva {
-  background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
+  background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%);
 }
 
 body.dark-mode #reserva h2 {
@@ -1139,7 +1169,7 @@ body.dark-mode .form-label {
 
 /* Locales en modo oscuro */
 body.dark-mode #locales {
-  background: var(--bg-medium);
+  background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%);;
 }
 
 body.dark-mode #locales h2 {
@@ -1156,7 +1186,7 @@ body.dark-mode #locales p {
 
 /* GALERÍA EN MODO OSCURO - CORREGIDO */
 body.dark-mode #galeria {
-  background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
+  background:linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%);
 }
 
 body.dark-mode #galeria h2 {
@@ -1165,7 +1195,7 @@ body.dark-mode #galeria h2 {
 
 /* TESTIMONIOS EN MODO OSCURO - CORREGIDO */
 body.dark-mode #testimonios {
-  background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-card) 100%);
+  background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%);
 }
 
 body.dark-mode #testimonios h2 {
@@ -1173,7 +1203,7 @@ body.dark-mode #testimonios h2 {
 }
 
 body.dark-mode #testimonios .card {
-  background-color: rgba(42, 42, 42, 0.9);
+  background: linear-gradient(135deg, #1C242D 0%, #252F3A 50%, #2E3A47 100%);
   color: #e2e8f0;
   border-color: rgba(255, 140, 0, 0.4);
 }
@@ -1421,11 +1451,7 @@ body.dark-mode .btn-warning:hover {
 
 /* CONTACTO EN MODO OSCURO - CORREGIDO FINAL */
 body.dark-mode #contacto-index {
-  background: linear-gradient(
-    135deg,
-    var(--bg-medium) 0%,
-    var(--bg-card) 100%
-  ) !important;
+  background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%)!important;
   color: var(--white);
 }
 

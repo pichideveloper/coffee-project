@@ -2,33 +2,28 @@
 <html lang="es">
 
 <head>
-    <link rel="icon" href="images/icon.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería Completa - Restaurante SAPE</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="galeriaCompleta.css"> 
-    
-    <link rel="stylesheet" href="style.css"> 
-    <!-- Font Awesome  -->
+    <title>Sitemap - Café Peruano</title>
+   <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Estilos locales -->
+  <link rel="stylesheet" href="style.css">
+<!-- Font Awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Estilos de la carta -->
+  <link rel="stylesheet" href="sitemap.css">
+  <link rel="icon" href="images/logo1.png" type="image/png">
+    <style>
 
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-    // (function(){
-    //   emailjs.init("VFO34VNSCYXvEdt_b");  
-    // })();
-    // function enviarCorreo(e) { /* ... tu función ... */ }
-    </script>
+    </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+    <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img
@@ -85,74 +80,84 @@
       </div>
     </nav>
 
-    <!-- Sección Hero de Galería -->
-    <section class="galeria-hero">
+    <!-- Hero Section -->
+    <section class="sitemap-hero">
         <div class="container">
-          <br>
-          <br>
-            <h2>Nuestra Galería de Fotos</h2>
-            <p>Descubre los momentos más especiales de nuestro restaurante. Haz clic en cualquier imagen para verla en grande y navegar por toda la galería.</p>
+            <h1 class="sitemap-title">Mapa del Sitio</h1>
+            <p class="sitemap-subtitle">Navegación completa de nuestro sitio web</p>
         </div>
     </section>
 
-    <main class="container">
-        <div class="gallery-container">
+    <!-- Sitemap Content -->
+    <section class="sitemap-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Diagrama Visual -->
+                    <div class="sitemap-diagram">
+                        <h2 class="mb-4" style="font-family: 'Oswald', sans-serif; color: var(--text-color);">Estructura
+                            Visual del Sitio</h2>
+                        <img src="sitemap.png" alt="Diagrama del sitemap" class="img-fluid">
+                    </div>
 
-            <!--imagen 1 -->
-            <a href="images/gallery/ejemplo1Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 1" class="gallery-item">
-                <img src="images/gallery/ejemplo1Galeria.jpg" alt="Descripción de la Imagen 1" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img1';">
-            </a>
-            <!--imagen 2 -->
-            <a href="images/gallery/ejemplo2Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 2" class="gallery-item">
-                <img src="images/gallery/ejemplo2Galeria.jpg" alt="Descripción de la Imagen 2" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img2';">
-            </a>
-            <!--imagen 3 -->
-            <a href="images/gallery/ejemplo3Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 3" class="gallery-item">
-                <img src="images/gallery/ejemplo3Galeria.jpg" alt="Descripción de la Imagen 3" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img3';">
-            </a>
-            <!--imagen 4 -->
-            <a href="images/gallery/ejemplo4Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 4" class="gallery-item">
-                <img src="images/gallery/ejemplo4Galeria.jpg" alt="Descripción de la Imagen 4" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img4';">
-            </a>
-            <!--imagen 5 -->
-            <a href="images/gallery/ejemplo5Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 5" class="gallery-item">
-                <img src="images/gallery/ejemplo5Galeria.jpg" alt="Descripción de la Imagen 5" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img5';">
-            </a>
-            <!--imagen 6 -->
-            <a href="images/gallery/ejemplo6Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 6" class="gallery-item">
-                <img src="images/gallery/ejemplo6Galeria.jpg" alt="Descripción de la Imagen 6" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img6';">
-            </a>
-            
-            <!--imagen 7 -->
-            <a href="images/gallery/ejemplo7Galeria.png" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 7" class="gallery-item">
-                <img src="images/gallery/ejemplo7Galeria.png" alt="Descripción de la Imagen 7" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img7';">
-            </a>
-            <!--imagen 8 -->
-            <a href="images/gallery/ejemplo8Galeria.webp" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 8" class="gallery-item">
-                <img src="images/gallery/ejemplo8Galeria.webp" alt="Descripción de la Imagen 8" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img8';">
-            </a>
-            <!--imagen 9 -->
-            <a href="images/gallery/ejemplo9Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 9" class="gallery-item">
-                <img src="images/gallery/ejemplo9Galeria.jpg" alt="Descripción de la Imagen 9" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img9';">
-            </a>
-            <!--imagen 10 -->
-            <a href="images/gallery/ejemplo10Galeria.jpg" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 10" class="gallery-item">
-                <img src="images/gallery/ejemplo10Galeria.jpg" alt="Descripción de la Imagen 10" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img10';">
-            </a>
-            <!--imagen 11 -->
-             <a href="images/gallery/ejemplo11Galeria.webp" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 11" class="gallery-item">
-                <img src="images/gallery/ejemplo11Galeria.webp" alt="Descripción de la Imagen 11" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img11';">
-            </a>
-            <!--imagen 12 -->
-             <a href="images/gallery/ejemplo12Galeria.webp" data-lightbox="restaurante-sape" data-title="Descripción de la Imagen 12" class="gallery-item">
-                <img src="images/gallery/ejemplo12Galeria.webp" alt="Descripción de la Imagen 12" onerror="this.onerror=null; this.src='https://placehold.co/280x200/cccccc/000000?text=Error+Img12';">
-            </a>
+                    <!-- Enlaces del Sitemap -->
+                    <div class="sitemap-links">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="sitemap-section">
+                                    <h3><i class="bi bi-house-door"></i> Páginas Principales</h3>
+                                    <a href="index.html" class="sitemap-link">
+                                        <i class="bi bi-house"></i> Inicio
+                                    </a>
+                                    <a href="nosotros.html" class="sitemap-link">
+                                        <i class="bi bi-people"></i> Sobre Nosotros
+                                    </a>
+                                    <a href="contacto.html" class="sitemap-link">
+                                        <i class="bi bi-envelope"></i> Contacto
+                                    </a>
+                                </div>
+
+                                <div class="sitemap-section">
+                                    <h3><i class="bi bi-geo-alt"></i> Ubicaciones y Servicios</h3>
+                                    <a href="Locales.html" class="sitemap-link">
+                                        <i class="bi bi-building"></i> Nuestros Locales
+                                    </a>
+                                    <a href="Lista-Servicios.html" class="sitemap-link">
+                                        <i class="bi bi-gear"></i> Servicios
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="sitemap-section">
+                                    <h3><i class="bi bi-cup-hot"></i> Menú y Experiencia</h3>
+                                    <a href="carta.html" class="sitemap-link">
+                                        <i class="bi bi-journal-text"></i> Nuestra Carta
+                                    </a>
+                                    <a href="galeriaCompleta.html" class="sitemap-link">
+                                        <i class="bi bi-images"></i> Galería de Fotos
+                                    </a>
+                                </div>
+
+                                <div class="sitemap-section">
+                                    <h3><i class="bi bi-calendar-check"></i> Reservas y Navegación</h3>
+                                    <a href="reservar.html" class="sitemap-link">
+                                        <i class="bi bi-calendar-plus"></i> Hacer Reserva
+                                    </a>
+                                    <a href="sitemap.html" class="sitemap-link">
+                                        <i class="bi bi-diagram-3"></i> Mapa del Sitio
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-    </main>
+        </div>
+    </section>
 
-    <!-- Pie de página -->
-  <!-- Footer -->
- <footer class="bg-dark text-light py-4">
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
     <div class="container">
         <div class="row">
             <!-- Columna de contacto o info (izquierda) -->
@@ -242,27 +247,35 @@
     </div>
   </div>
 </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-    
-    <script src="index.js"></script>
-
     <script>
-    // Comprobación de carga de Lightbox2 y configuración
-    if (typeof lightbox !== 'undefined') {
-        console.log('Lightbox2 cargado correctamente.');
-        lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true,
-            'albumLabel': "Imagen %1 de %2",
-            'disableScrolling': true // Buena opción para evitar scroll de fondo
-        });
-    } else {
-        console.error('ERROR: Lightbox2 no se cargó. Revisa el enlace al JS de Lightbox2 o errores de red.');
-    }
-    </script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const icon = darkModeToggle.querySelector('i');
 
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            icon.classList.remove('bi-moon-fill');
+            icon.classList.add('bi-sun-fill');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('bi-moon-fill');
+                icon.classList.add('bi-sun-fill');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('bi-sun-fill');
+                icon.classList.add('bi-moon-fill');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 </body>
+
 </html>

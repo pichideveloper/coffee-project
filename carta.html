@@ -29,67 +29,70 @@
 
 <body class="body-c">
 <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img
-            id="navbarLogo"
-            src="images/logo1.png"
-            alt="SAPE Logo"
-            width="120"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarContent"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#inicio">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="nosotros.html">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Lista-Servicios.html">Servicios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="carta.html">Platos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="reservar.html">Reservas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Locales.html">Locales</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="galeriaCompleta.html">Galería</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <button
-                id="darkModeToggle"
-                class="btn btn-outline-secondary nav-dark-toggle ms-2"
-              >
-                🌙
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <!-- Inicio como link normal -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#inicio">Inicio</a>
+        </li>
+ 
+        <!-- Nosotros -->
+       <li class="nav-item">
+          <a class="nav-link" href="nosotros.html">Nosotros </a>
+        </li>
+
+        <!-- Servicios -->
+         <li class="nav-item">
+          <a class="nav-link" href="Lista-Servicios.html">Servicios </a>
+        </li>
+  
+        <!-- Platos -->
+        <li class="nav-item">
+          <a class="nav-link" href="carta.html">Platos </a>
+        </li>
+        <!-- Reservas -->
+        <li class="nav-item">
+          <a class="nav-link" href="reservar.html">Reservas </a>
+        </li>
+        <!-- Locales Nuevo-->
+        <li class="nav-item">
+          <a class="nav-link" href="Locales.html">Locales</a>
+        </li>
+      
+        <!-- Galería -->
+
+        <li class="nav-item">
+          <a class="nav-link" href="galeriaCompleta.html">Galería</a>
+        </li>
+
+        
+        <!-- Contacto -->
+          <li class="nav-item">
+          <a class="nav-link" href="contacto.html">Contacto</a>
+        </li>
+        
+        <!-- Botón modo oscuro -->
+        <li class="nav-item">
+          <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
   <!-- HEADER -->
   <header class="header-carta">
     <div class="header-overlay">
-      <h1 class="text-center text-white display-4">Nuestra Carta</h1>
+      <br><br>  
+      <h1 class="text-center display-4">Nuestra Carta</h1>
       <p class="text-center lead carta-descripcion">Descubre los sabores auténticos del Perú</p>
 
     </div>
@@ -100,31 +103,32 @@
     <div class="row g-4">
       
       <!-- Plato 1 -->
-      
-      <div class="card menu-item shadow" 
-       data-bs-toggle="modal" 
-       data-bs-target="#platoDetalleModal"
-       data-nombre="Ceviche Mixto"
-       data-nombre-extendido="Nuestro Clásico Ceviche Mixto"
-       data-img="images/ceviche-mixto.jpg"
-       data-descripcion-larga="Deléitate con la frescura incomparable de nuestro Ceviche Mixto, preparado con trozos de pescado blanco del día y una generosa selección de mariscos frescos como pulpo, calamar y langostinos. Todo marinado al instante en nuestra vibrante leche de tigre casera, con el toque justo de ají limo y cilantro. Servido con camote glaseado, choclo tierno y cancha serrana crocante. ¡Una explosión de sabor peruano!"
-       data-ingredientes="Pescado del día,Pulpo,Calamar,Langostinos,Limón,Ají Limo,Cilantro,Cebolla Roja,Camote,Choclo,Cancha"
-       data-precio="S/ 35.00"
-       data-notas="Picante opcional y ajustable a tu gusto. Pregunta por el pescado del día."
-       >
-    <img src="images/ceviche-mixto.jpg" class="card-img-top" alt="Ceviche Mixto">
-    <div class="card-body">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h3 class="card-title mb-0">Ceviche Mixto</h3>
-        <span class="badge bg-warning fs-5">S/ 35.00</span>
+      <div class="col-lg-6">
+        <div class="card menu-item shadow" 
+             data-bs-toggle="modal" 
+             data-bs-target="#platoDetalleModal"
+             data-nombre="Ceviche Mixto"
+             data-nombre-extendido="Nuestro Clásico Ceviche Mixto"
+             data-img="images/ceviche-mixto.jpg"
+             data-descripcion-larga="Deléitate con la frescura incomparable de nuestro Ceviche Mixto, preparado con trozos de pescado blanco del día y una generosa selección de mariscos frescos como pulpo, calamar y langostinos. Todo marinado al instante en nuestra vibrante leche de tigre casera, con el toque justo de ají limo y cilantro. Servido con camote glaseado, choclo tierno y cancha serrana crocante. ¡Una explosión de sabor peruano!"
+             data-ingredientes="Pescado del día,Pulpo,Calamar,Langostinos,Limón,Ají Limo,Cilantro,Cebolla Roja,Camote,Choclo,Cancha"
+             data-precio="S/ 35.00"
+             data-notas="Picante opcional y ajustable a tu gusto. Pregunta por el pescado del día."
+             >
+          <img src="images/ceviche-mixto.jpg" class="card-img-top" alt="Ceviche Mixto">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="card-title mb-0">Ceviche Mixto</h3>
+              <span class="badge bg-warning fs-5">S/ 35.00</span>
+            </div>
+            <p class="card-text">Pescado fresco, mariscos, leche de tigre, camote, choclo y cancha serrana.</p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><span class="badge bg-secondary">Pescado del día</span></li>
+              <li class="list-inline-item"><span class="badge bg-secondary">Picante opcional</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <p class="card-text">Pescado fresco, mariscos, leche de tigre, camote, choclo y cancha serrana.</p>
-      <ul class="list-inline">
-        <li class="list-inline-item"><span class="badge bg-secondary">Pescado del día</span></li>
-        <li class="list-inline-item"><span class="badge bg-secondary">Picante opcional</span></li>
-      </ul>
-    </div>
-  </div>
 
 <!-- Plato 2 -->
       <div class="col-lg-6">
@@ -190,23 +194,27 @@
   <!-- FOOTERS -->
   <!-- Pie de página -->
   <!-- Footer -->
- <footer class="bg-dark text-light pt-4 pb-3">
-  <div class="container">
+  <footer class="bg-dark text-light py-3">
+    <div class="container text-center">
+      © 2025 SAPE Internacional
+    </div>
+  </footer>
 
-    <!-- Primera fila: logo, enlaces y redes/pagos -->
-    <div class="row">
+  <!-- Pie de página -->
+ <footer class="bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+            <!-- Columna de contacto o info (izquierda) -->
+            <div class="col-md-4 mb-3 d-flex align-items-center">
+                <img src="images/logo3.png" alt="Logo SAPE" class="me-3" style="width: 80px;">
+                <div>
+                    <h5>SAPE</h5>
+                    <p class="mb-0">© 2025 SAPE - Todos los derechos reservados.</p>
+                </div>
+            </div>
 
-      <!-- Logo y derechos -->
-      <div class="col-md-4 mb-4 d-flex align-items-center">
-        <img src="images/logo3.png" alt="Logo SAPE" class="me-3" style="width: 80px;">
-        <div>
-          <h5 class="mb-1">SAPE</h5>
-          <p class="mb-0 small">© 2025 SAPE Internacional<br>Todos los derechos reservados.</p>
-        </div>
-      </div>
-
-      <!-- Enlaces rápidos / Secciones -->
-      <div class="col-md-4 mb-4">
+            <!-- Columna de secciones (centro) -->
+           <div class="col-md-4 mb-4">
         <h5 class="mb-3">Enlaces</h5>
         <div class="row">
           <div class="col-6">
@@ -230,41 +238,45 @@
         </div>
       </div>
 
-      <!-- Redes sociales y métodos de pago -->
-      <div class="col-md-4 mb-4">
-        <div class="row">
-          <div class="col-12 col-sm-6 mb-3 mb-sm-0">
-            <h5 class="mb-2">Síguenos</h5>
-            <div class="social-icons">
-              <a href="https://www.facebook.com/share/1LvsywagCF/" target="_blank" class="text-light me-2">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://www.instagram.com/kenzowo_?igsh=eGV1ODM5bGx2bzh5" target="_blank" class="text-light me-2">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://www.tiktok.com/@butisito1/video/7468897608619117830" target="_blank" class="text-light me-2">
-                <i class="fab fa-tiktok"></i>
-              </a>
-              <a href="https://www.twitter.com" target="_blank" class="text-light">
-                <i class="fab fa-twitter"></i>
-              </a>
+            <!-- Columna de redes y pagos (derecha) -->
+            <div class="col-md-4 mb-3">
+                <div class="row align-items-center">
+                    <!-- Redes Sociales -->
+                    <div class="col-12 col-sm-6 mb-3 mb-sm-0">
+                        <h5>Síguenos</h5>
+                        <div class="social-icons">
+                            <a href="https://www.twitter.com" target="_blank" class="text-light me-2">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/kenzowo_?igsh=eGV1ODM5bGx2bzh5" target="_blank" class="text-light me-2">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1LvsywagCF/" target="_blank" class="text-light me-2">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@butisito1/video/7468897608619117830" target="_blank" class="text-light">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Métodos de Pago y Sitemap -->
+                    <div class="col-12 col-sm-6">
+                        <h5>Métodos de Pago</h5>
+                        <div class="d-flex gap-2 flex-wrap mb-2">
+                            <img src="images/visa.png" alt="Visa" style="width: 40px; height: auto;">
+                            <img src="images/mercado-pago.png" alt="Mercado Pago" style="width: 40px; height: auto;">
+                            <img src="images/mastercard.png" alt="Mastercard" style="width: 40px; height: auto;">
+                            <img src="images/pagoefectivo.png" alt="PagoEfectivo" style="width: 40px; height: auto;">
+                        </div>
+                        <a href="sitemap.html" class="btn btn-outline-light btn-sm mt-2" style="font-size: 0.8rem;">
+                            <i class="fas fa-sitemap me-1"></i>Sitemap
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-12 col-sm-6">
-            <h5 class="mb-2">Métodos de Pago</h5>
-            <div class="d-flex gap-2 flex-wrap">
-              <img src="images/visa.png" alt="Visa" style="width: 40px; height: auto;">
-              <img src="images/mercado-pago.png" alt="Mercado Pago" style="width: 40px; height: auto;">
-              <img src="images/mastercard.png" alt="Mastercard" style="width: 40px; height: auto;">
-              <img src="images/pagoefectivo.png" alt="PagoEfectivo" style="width: 40px; height: auto;">
-            </div>
-          </div>
         </div>
-      </div>
-
     </div>
-
-    <!-- Línea divisoria -->
     <hr class="border-secondary">
 
     <!-- Info de contacto -->

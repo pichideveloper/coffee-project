@@ -1,128 +1,697 @@
-/* ——— Fondo general de la sección de cartas en modo oscuro ——— */
-.dark-mode body,
-.dark-mode .body-c,
-.dark-mode #carta {
-  background-color: #121212 !important;
+/* ===========================
+   CARTA.CSS - PÁGINA DE CARTA/MENÚ
+   =========================== */
+
+/* Importación de fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600&display=swap");
+
+/* ===========================
+   VARIABLES CSS ESPECÍFICAS PARA CARTA
+   =========================== */
+:root {
+  /* MODO CLARO - Colores cálidos y gastronómicos */
+  --carta-bg-hero: linear-gradient(
+    135deg,
+    #ff8c00 0%,
+    #ffa500 40%,
+    #ffd700 75%,
+    #ffb000 100%
+  );
+  --carta-bg-main: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
+  --carta-card-bg: rgba(255, 255, 255, 0.95);
+  --carta-card-border: rgba(255, 140, 0, 0.2);
+  --carta-card-shadow: 0 8px 25px rgba(255, 140, 0, 0.15);
+  --carta-title-color: #2C3E50;
+  --carta-subtitle-color: #5D6D7E;
+  --carta-text-color: #34495E;
+  --carta-accent-color: #FF8C00;
+  --carta-price-bg: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
+  --carta-price-text: #FFFFFF;
+  --carta-badge-bg: #6C757D;
+  --carta-badge-text: #FFFFFF;
+  --carta-hover-shadow: 0 15px 40px rgba(255, 140, 0, 0.3);
+  --carta-modal-bg: #FFFFFF;
+  --carta-modal-text: #2C3E50;
+  --carta-pattern: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><pattern id='carta-light' width='100' height='100' patternUnits='userSpaceOnUse'><circle cx='25' cy='25' r='2' fill='%23FF8C00' opacity='0.1'/><circle cx='75' cy='75' r='1.5' fill='%23FFD700' opacity='0.08'/></pattern></defs><rect width='100' height='100' fill='url(%23carta-light)'/></svg>");
 }
 
-/* Asegurarnos de que ningún contenedor interno tenga fondo blanco */
-.dark-mode #carta .row,
-.dark-mode #carta .container {
+body.dark-mode {
+  /* MODO OSCURO - Colores profundos y elegantes */
+  --carta-bg-hero: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%);
+  --carta-bg-main: linear-gradient(135deg, #0D1117 0%, #161B22 100%);
+  --carta-card-bg: rgba(33, 38, 45, 0.95);
+  --carta-card-border: rgba(255, 215, 0, 0.3);
+  --carta-card-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  --carta-title-color: #F0F6FC;
+  --carta-subtitle-color: #8B949E;
+  --carta-text-color: #C9D1D9;
+  --carta-accent-color: #FFD700;
+  --carta-price-bg: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
+  --carta-price-text: #000000;
+  --carta-badge-bg: #30363D;
+  --carta-badge-text: #C9D1D9;
+  --carta-hover-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+  --carta-modal-bg: #21262D;
+  --carta-modal-text: #F0F6FC;
+  --carta-pattern: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><pattern id='carta-dark' width='100' height='100' patternUnits='userSpaceOnUse'><circle cx='25' cy='25' r='2' fill='%23FFD700' opacity='0.15'/><circle cx='75' cy='75' r='1.5' fill='%23FF8C00' opacity='0.12'/></pattern></defs><rect width='100' height='100' fill='url(%23carta-dark)'/></svg>");
+}
+
+/* ===========================
+   BODY Y CONFIGURACIÓN GENERAL
+   =========================== */
+body,
+.body-c {
+  background: var(--carta-bg-main) !important;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--carta-pattern);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ===========================
+   HEADER DE CARTA
+   =========================== */
+.header-carta {
+  background: var(--carta-bg-hero);
+  padding: 6rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.header-carta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--carta-pattern);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.header-carta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 140, 0, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header-overlay {
+  position: relative;
+  z-index: 3;
+}
+
+.header-carta h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--carta-title-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease-out;
+  transition: all 0.3s ease;
+}
+
+.carta-descripcion {
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
+  color: var(--carta-subtitle-color) !important;
+  margin-bottom: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   SECCIÓN PRINCIPAL DE CARTA
+   =========================== */
+#carta {
+  background: var(--carta-bg-main) !important;
+  padding: 4rem 0;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+#carta .row,
+#carta .container {
   background: transparent !important;
 }
 
-/* ——— Tarjetas de platos en modo oscuro ——— */
-.dark-mode .card {
-  background-color: #1e1e1e !important;
-  color: #fff !important;
-  border-color: #333 !important;
-}
-
-/* ——— Títulos, descripciones y badges en modo oscuro ——— */
-.dark-mode .card-title,
-.dark-mode .card-text,
-.dark-mode .list-inline-item span {
-  color: #fff !important;
-}
-
-/* Badges con fondo en modo oscuro */
-.dark-mode .badge.bg-primary {
-  background-color: #3b82f6 !important; /* Azul claro */
-  color: #fff !important;
-}
-
-.dark-mode .badge.bg-secondary {
-  background-color: #6c757d !important;
-  color: #fff !important;
-}
-
-/* Descripción del encabezado (modo claro) */
-.carta-descripcion {
-  color: #333;
-}
-
-/* Descripción del encabezado (modo oscuro) */
-body.dark-mode .carta-descripcion {
-  color: #fff;
-}
-
-
-
-/* --- Estilos para la sección #carta --- */
-#carta .card.menu-item {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  cursor: pointer; /* Indica visualmente que es clickeable */
-  height: 100%; /* Asegura que las cards en una fila tengan la misma altura */
-  display: flex;
-  flex-direction: column; /* Para que el card-body pueda crecer */
-}
-
-#carta .card.menu-item:hover {
-  transform: scale(1.04); /* Un poco más grande al pasar el mouse */
-  box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,.2) !important; /* Sombra más pronunciada */
-}
-
-#carta .card.menu-item .card-img-top {
-  width: 100%;
-  height: 220px; /* Ajusta esta altura según tus imágenes */
-  object-fit: cover; /* Mantiene la proporción de la imagen */
-}
-
-#carta .card.menu-item .card-body {
-  flex-grow: 1; /* Hace que el cuerpo de la tarjeta ocupe el espacio disponible */
+/* ===========================
+   TARJETAS DE PLATOS
+   =========================== */
+.card.menu-item {
+  background: var(--carta-card-bg) !important;
+  border: 2px solid var(--carta-card-border) !important;
+  border-radius: 20px;
+  box-shadow: var(--carta-card-shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Empuja el contenido y las badges/tags hacia abajo */
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
 }
 
-/* Tus estilos de modo oscuro para .card, .card-title, etc., ya están definidos y deberían funcionar bien. */
-/* Solo nos aseguramos de que la sombra del hover se vea bien en modo oscuro también. */
-body.dark-mode #carta .card.menu-item:hover {
-  box-shadow: 0 0.75rem 1.5rem rgba(255,255,255,.08) !important;
+.card.menu-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 0%, rgba(255, 140, 0, 0.05) 100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1;
 }
 
+.card.menu-item:hover::before {
+  opacity: 1;
+}
 
-/* --- Estilos para el Modal del Plato --- */
+.card.menu-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--carta-hover-shadow);
+  border-color: var(--carta-accent-color);
+}
+
+/* ===========================
+   IMÁGENES DE PLATOS
+   =========================== */
+.card.menu-item .card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px 18px 0 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(1) contrast(1.05);
+  position: relative;
+  z-index: 2;
+}
+
+.card.menu-item:hover .card-img-top {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1);
+}
+
+/* ===========================
+   CONTENIDO DE TARJETAS
+   =========================== */
+.card.menu-item .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.card.menu-item .card-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--carta-title-color) !important;
+  margin-bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.card.menu-item .card-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--carta-text-color) !important;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   BADGES Y PRECIOS
+   =========================== */
+.card.menu-item .badge.bg-warning {
+  background: var(--carta-price-bg) !important;
+  color: var(--carta-price-text) !important;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.card.menu-item .badge.bg-secondary {
+  background: var(--carta-badge-bg) !important;
+  color: var(--carta-badge-text) !important;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.card.menu-item:hover .badge.bg-warning {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+}
+
+/* ===========================
+   MODAL DE DETALLES
+   =========================== */
+#platoDetalleModal .modal-content {
+  background: var(--carta-modal-bg) !important;
+  color: var(--carta-modal-text) !important;
+  border-radius: 20px;
+  border: 2px solid var(--carta-card-border);
+  box-shadow: var(--carta-card-shadow);
+  transition: all 0.3s ease;
+}
+
+#platoDetalleModal .modal-header {
+  border-bottom: 2px solid var(--carta-card-border);
+  padding: 1.5rem;
+}
+
+#platoDetalleModal .modal-footer {
+  border-top: 2px solid var(--carta-card-border);
+  padding: 1.5rem;
+}
+
+#platoDetalleModal .modal-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--carta-title-color);
+}
+
 #platoDetalleModal .modal-body .img-fluid {
-  max-height: 450px; /* Altura máxima para la imagen dentro del modal */
+  max-height: 400px;
   width: 100%;
   object-fit: cover;
-  border-radius: 0.25rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-#platoDetalleModal .lista-ingredientes {
+#platoDetalleModal h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--carta-title-color);
+  margin-bottom: 1rem;
+}
+
+#platoDetalleModal p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--carta-text-color);
+}
+
+#platoDetalleModal h5 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--carta-title-color);
+  margin-bottom: 0.8rem;
+}
+
+/* ===========================
+   LISTA DE INGREDIENTES
+   =========================== */
+.lista-ingredientes {
   list-style: none;
   padding-left: 0;
+  margin-bottom: 1.5rem;
 }
 
-#platoDetalleModal .lista-ingredientes li {
-  padding: 4px 0;
+.lista-ingredientes li {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: var(--carta-text-color);
+  padding: 0.4rem 0;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
-#platoDetalleModal .lista-ingredientes li::before {
-  content: '🍽️'; /* O usa un ícono de FontAwesome, Bootstrap Icons, o un SVG */
-  margin-right: 8px;
-  font-size: 0.9em;
+.lista-ingredientes li::before {
+  content: '🍽️';
+  margin-right: 0.8rem;
+  font-size: 1rem;
+  filter: grayscale(0.3);
 }
 
-/* Ajustes Modo Oscuro para el Modal (tus reglas generales para .modal-content deberían cubrir esto) */
-/* Si necesitas más especificidad: */
+.lista-ingredientes li:hover {
+  color: var(--carta-accent-color);
+  transform: translateX(5px);
+}
+
+/* ===========================
+   NOTAS ADICIONALES
+   =========================== */
+#modalPlatoNotasAdicionales {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: var(--carta-subtitle-color);
+  font-style: italic;
+  background: rgba(255, 140, 0, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--carta-accent-color);
+}
+
+/* ===========================
+   ANIMACIONES
+   =========================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animaciones escalonadas para las tarjetas */
+.card.menu-item:nth-child(odd) {
+  animation: slideInLeft 0.8s ease-out both;
+}
+
+.card.menu-item:nth-child(even) {
+  animation: slideInRight 0.8s ease-out both;
+}
+
+.card.menu-item:nth-child(1) { animation-delay: 0.1s; }
+.card.menu-item:nth-child(2) { animation-delay: 0.3s; }
+.card.menu-item:nth-child(3) { animation-delay: 0.5s; }
+.card.menu-item:nth-child(4) { animation-delay: 0.7s; }
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+@media (max-width: 1200px) {
+  .header-carta h1 {
+    font-size: 3.5rem;
+  }
+  
+  .carta-descripcion {
+    font-size: 1.2rem;
+  }
+  
+  .card.menu-item .card-img-top {
+    height: 230px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-carta {
+    padding: 5rem 0 3rem;
+  }
+  
+  .header-carta h1 {
+    font-size: 3rem;
+  }
+  
+  .carta-descripcion {
+    font-size: 1.1rem;
+  }
+  
+  .card.menu-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .card.menu-item .card-img-top {
+    height: 220px;
+  }
+  
+  .card.menu-item .card-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-carta {
+    padding: 4rem 0 2.5rem;
+  }
+  
+  .header-carta h1 {
+    font-size: 2.5rem;
+  }
+  
+  .carta-descripcion {
+    font-size: 1rem;
+  }
+  
+  .card.menu-item {
+    border-radius: 15px;
+    margin-bottom: 1.2rem;
+  }
+  
+  .card.menu-item .card-img-top {
+    height: 200px;
+    border-radius: 13px 13px 0 0;
+  }
+  
+  .card.menu-item .card-body {
+    padding: 1.2rem;
+  }
+  
+  .card.menu-item .card-title {
+    font-size: 1.3rem;
+  }
+  
+  .card.menu-item .card-text {
+    font-size: 0.9rem;
+  }
+  
+  .card.menu-item .badge.bg-warning {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  #platoDetalleModal .modal-body .img-fluid {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-carta {
+    padding: 3.5rem 0 2rem;
+  }
+  
+  .header-carta h1 {
+    font-size: 2rem;
+  }
+  
+  .carta-descripcion {
+    font-size: 0.9rem;
+  }
+  
+  .card.menu-item {
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+  
+  .card.menu-item .card-img-top {
+    height: 180px;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .card.menu-item .card-body {
+    padding: 1rem;
+  }
+  
+  .card.menu-item .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .card.menu-item .card-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .card.menu-item .badge.bg-warning {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.7rem;
+  }
+  
+  .card.menu-item .badge.bg-secondary {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .card.menu-item:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+  
+  #platoDetalleModal .modal-body .img-fluid {
+    max-height: 250px;
+  }
+  
+  #platoDetalleModal .modal-title {
+    font-size: 1.5rem;
+  }
+  
+  #platoDetalleModal h3 {
+    font-size: 1.4rem;
+  }
+  
+  .lista-ingredientes li {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===========================
+   TRANSICIONES DE MODO OSCURO
+   =========================== */
+body,
+.body-c,
+.header-carta,
+#carta,
+.card.menu-item,
+.card.menu-item .card-title,
+.card.menu-item .card-text,
+.card.menu-item .badge,
+#platoDetalleModal .modal-content,
+.lista-ingredientes li {
+  transition: all 0.5s ease;
+}
+
+/* Asegurar que los cambios de modo sean muy visibles */
+body.dark-mode,
+body.dark-mode .body-c {
+  background: var(--carta-bg-main) !important;
+}
+
+body.dark-mode .header-carta {
+  background: var(--carta-bg-hero) !important;
+}
+
+body.dark-mode #carta {
+  background: var(--carta-bg-main) !important;
+}
+
+body.dark-mode .card.menu-item {
+  background: var(--carta-card-bg) !important;
+  border-color: var(--carta-card-border) !important;
+  box-shadow: var(--carta-card-shadow);
+}
+
+body.dark-mode .card.menu-item:hover {
+  box-shadow: var(--carta-hover-shadow);
+  border-color: var(--carta-accent-color);
+}
+
+body.dark-mode .header-carta h1,
+body.dark-mode .card.menu-item .card-title,
+body.dark-mode #platoDetalleModal .modal-title,
+body.dark-mode #platoDetalleModal h3,
+body.dark-mode #platoDetalleModal h5 {
+  color: var(--carta-title-color);
+}
+
+body.dark-mode .carta-descripcion,
+body.dark-mode #modalPlatoNotasAdicionales {
+  color: var(--carta-subtitle-color) !important;
+}
+
+body.dark-mode .card.menu-item .card-text,
+body.dark-mode #platoDetalleModal p,
+body.dark-mode .lista-ingredientes li {
+  color: var(--carta-text-color) !important;
+}
+
+body.dark-mode .card.menu-item .badge.bg-warning {
+  background: var(--carta-price-bg) !important;
+  color: var(--carta-price-text) !important;
+}
+
+body.dark-mode .card.menu-item .badge.bg-secondary {
+  background: var(--carta-badge-bg) !important;
+  color: var(--carta-badge-text) !important;
+}
+
 body.dark-mode #platoDetalleModal .modal-content {
-  background-color: #1e1e1e; /* El color que usas para las cards */
-  color: #e0e0e0;
+  background: var(--carta-modal-bg) !important;
+  color: var(--carta-modal-text) !important;
+  border-color: var(--carta-card-border);
 }
-body.dark-mode #platoDetalleModal .modal-header {
-  border-bottom-color: #333;
-}
-body.dark-mode #platoDetalleModal .modal-footer {
-  border-top-color: #333;
-}
-/* El btn-close ya está cubierto por tus estilos globales de modo oscuro para modal */
 
-/* Asegurar que el badge de precio en el modal mantenga su estilo y contraste */
-#platoDetalleModal .badge.bg-warning {
-    color: #000 !important;
+body.dark-mode #platoDetalleModal .modal-header,
+body.dark-mode #platoDetalleModal .modal-footer {
+  border-color: var(--carta-card-border);
+}
+
+/* ===========================
+   EFECTOS ADICIONALES
+   =========================== */
+.card.menu-item:active {
+  transform: translateY(-8px) scale(1.01);
+}
+
+.card.menu-item:focus-within {
+  outline: 3px solid var(--carta-accent-color);
+  outline-offset: 2px;
+}
+
+/* Mejora de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .card.menu-item,
+  .card.menu-item .card-img-top,
+  .card.menu-item::before,
+  .card.menu-item .badge,
+  .lista-ingredientes li {
+    transition: none;
+    animation: none;
+  }
+  
+  .card.menu-item:hover {
+    transform: none;
+  }
 }
 
