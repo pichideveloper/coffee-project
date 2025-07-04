@@ -1250,6 +1250,13 @@ body.dark-mode .section-title {
   color: #e2e8f0;
 }
 
+body.dark-mode .navbar-toggler{
+    background-color: rgb(53, 62, 82);
+    color: rgb(46, 46, 46);
+}
+
+
+
 /* =============================================== */
 /* BOTÓN MODO OSCURO */
 /* =============================================== */
@@ -3139,4 +3146,50 @@ body.dark-mode .badge-item:hover {
     display: none;
   }
 }
+
+
+
+@media (max-width: 992px) {
+  .footer-main .col-lg-4,
+  .footer-main .col-lg-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-brand .brand-logo-container {
+    justify-content: center;
+  }
+
+  .footer-title {
+    justify-content: center;
+  }
+
+  .footer-nav,
+  .contact-info {
+    align-items: center;
+  }
+
+  .footer-social-payment .social-section,
+  .footer-social-payment .payment-section {
+    text-align: center;
+  }
+
+  .footer-social-payment .social-icons-enhanced,
+  .footer-social-payment .payment-methods {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-bottom .text-md-start,
+  .footer-bottom .text-md-end {
+    text-align: center !important;
+  }
+
+  .footer-bottom .footer-badges {
+    justify-content: center;
+  }
+}
+
 
