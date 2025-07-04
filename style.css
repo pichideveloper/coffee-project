@@ -1548,3 +1548,1595 @@ body.dark-mode .form-label {
   transform: translateY(-10px);
   box-shadow: 10px 6px 30px var(--shadow-orange);
 }
+
+/* =============================================== */
+/* FOOTER MEJORADO - ESTILOS AVANZADOS */
+/* =============================================== */
+
+.footer-enhanced {
+  position: relative;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 50%, #1a1a1a 100%);
+  color: white;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+/* Onda decorativa superior */
+.footer-wave {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.footer-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.footer-wave .shape-fill {
+  fill: var(--bg-light);
+}
+
+/* Contenido principal del footer */
+.footer-content {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem 0 1.5rem;
+}
+
+/* Patrón de fondo decorativo */
+.footer-enhanced::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footer-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="%23FF8C00" opacity="0.1"/><circle cx="15" cy="15" r="0.5" fill="%23FFD700" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23footer-dots)"/></svg>');
+  z-index: 1;
+}
+
+/* Sección principal del footer */
+.footer-main {
+  margin-bottom: 2rem;
+}
+
+/* Marca y logo */
+.footer-brand {
+  padding-right: 2rem;
+}
+
+.brand-logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  width: 70px;
+  height: auto;
+  margin-right: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.brand-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.brand-tagline {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-style: italic;
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Awards/badges en el footer */
+.footer-awards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.award-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 140, 0, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.award-item:hover {
+  background: rgba(255, 140, 0, 0.2);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.award-item i {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+/* Títulos de sección en footer */
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+.footer-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 1px;
+}
+
+/* Enlaces de navegación */
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.3rem 0;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.footer-nav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.footer-nav a:hover {
+  color: var(--primary-color);
+  padding-left: 1rem;
+}
+
+.footer-nav a:hover::before {
+  width: 20px;
+}
+
+.footer-nav a i {
+  font-size: 0.8rem;
+  width: 16px;
+  text-align: center;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.footer-nav a:hover i {
+  opacity: 1;
+}
+
+/* Información de contacto */
+.footer-contact {
+  padding-left: 1rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: rgba(255, 140, 0, 0.1);
+  border-color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+.contact-item i {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+  min-width: 20px;
+}
+
+.contact-item strong {
+  color: white;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.contact-item p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Sección de redes sociales y pagos */
+.footer-social-payment {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem 0;
+  margin: 1.5rem 0;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 140, 0, 0.2);
+}
+
+.social-title,
+.payment-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Iconos de redes sociales mejorados */
+.social-icons-enhanced {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.social-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.social-icon i {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon:hover i {
+  transform: scale(1.2);
+}
+
+/* Colores específicos para cada red social */
+.social-icon.facebook::before {
+  background: linear-gradient(135deg, #1877f2, #42a5f5);
+}
+
+.social-icon.instagram::before {
+  background: linear-gradient(135deg, #e4405f, #f77737, #fccc63);
+}
+
+.social-icon.twitter::before {
+  background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+}
+
+.social-icon.tiktok::before {
+  background: linear-gradient(135deg, #000000, #ff0050);
+}
+
+.social-icon:hover::before {
+  opacity: 1;
+}
+
+/* Tooltips para redes sociales */
+.social-tooltip {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.social-icon:hover .social-tooltip {
+  opacity: 1;
+}
+
+/* Métodos de pago */
+.payment-methods {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.payment-item {
+  background: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.payment-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(255, 140, 0, 0.3);
+  border-color: var(--primary-color);
+}
+
+.payment-logo {
+  width: 40px;
+  height: auto;
+  display: block;
+}
+
+/* Línea divisoria decorativa */
+.footer-divider {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 1rem;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+}
+
+.divider-icon {
+  background: var(--primary-color);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 140, 0, 0.3);
+  padding-top: 1.5rem;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.copyright strong {
+  color: var(--primary-color);
+}
+
+.made-with {
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.made-with i {
+  animation: pulse 2s infinite;
+}
+
+/* Badges del footer */
+.footer-badges {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 140, 0, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.badge-item:hover {
+  background: rgba(255, 140, 0, 0.2);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.badge-item i {
+  font-size: 0.8rem;
+  color: var(--primary-color);
+}
+
+/* =============================================== */
+/* FOOTER EN MODO OSCURO */
+/* =============================================== */
+
+body.dark-mode .footer-enhanced {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+}
+
+body.dark-mode .footer-wave .shape-fill {
+  fill: var(--bg-dark);
+}
+
+body.dark-mode .footer-enhanced::before {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footer-dots-dark" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="%23FF8C00" opacity="0.15"/><circle cx="15" cy="15" r="0.5" fill="%23FFD700" opacity="0.12"/></pattern></defs><rect width="100" height="100" fill="url(%23footer-dots-dark)"/></svg>');
+}
+
+body.dark-mode .footer-social-payment {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 140, 0, 0.4);
+}
+
+body.dark-mode .contact-item {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 140, 0, 0.3);
+}
+
+body.dark-mode .contact-item:hover {
+  background: rgba(255, 140, 0, 0.15);
+}
+
+body.dark-mode .award-item {
+  background: rgba(255, 140, 0, 0.15);
+  border-color: rgba(255, 140, 0, 0.4);
+}
+
+body.dark-mode .award-item:hover {
+  background: rgba(255, 140, 0, 0.25);
+}
+
+body.dark-mode .badge-item {
+  background: rgba(255, 140, 0, 0.15);
+  border-color: rgba(255, 140, 0, 0.4);
+}
+
+body.dark-mode .badge-item:hover {
+  background: rgba(255, 140, 0, 0.25);
+}
+
+/* =============================================== */
+/* RESPONSIVE DESIGN PARA FOOTER */
+/* =============================================== */
+
+@media (max-width: 992px) {
+  .footer-content {
+    padding: 2rem 0 1rem;
+  }
+  
+  .footer-brand {
+    padding-right: 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-contact {
+    padding-left: 0;
+  }
+  
+  .footer-main {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-wave svg {
+    height: 40px;
+  }
+  
+  .footer-content {
+    padding: 1.5rem 0 1rem;
+  }
+  
+  .brand-logo-container {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .brand-name {
+    font-size: 1.5rem;
+  }
+  
+  .footer-awards {
+    justify-content: center;
+  }
+  
+  .footer-title {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .footer-nav {
+    text-align: center;
+  }
+  
+  .contact-info {
+    gap: 1rem;
+  }
+  
+  .contact-item {
+    padding: 0.6rem;
+  }
+  
+  .social-icons-enhanced {
+    gap: 0.8rem;
+  }
+  
+  .social-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .payment-methods {
+    gap: 0.8rem;
+  }
+  
+  .payment-logo {
+    width: 35px;
+  }
+  
+  .footer-badges {
+    justify-content: center;
+  }
+  
+  .made-with {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-wave svg {
+    height: 30px;
+  }
+  
+  .footer-content {
+    padding: 1rem 0 0.8rem;
+  }
+  
+  .brand-name {
+    font-size: 1.3rem;
+  }
+  
+  .footer-description {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .footer-awards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .award-item {
+    justify-content: center;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .contact-item i {
+    margin-top: 0;
+  }
+  
+  .footer-social-payment {
+    padding: 1rem 0;
+    margin: 1rem 0;
+  }
+  
+  .social-icons-enhanced {
+    gap: 0.6rem;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-icon i {
+    font-size: 1rem;
+  }
+  
+  .payment-methods {
+    gap: 0.6rem;
+  }
+  
+  .payment-logo {
+    width: 30px;
+  }
+  
+  .footer-badges {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .copyright {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+
+
+/* =============================================== */
+/* DISEÑO RESPONSIVO COMPLETO - TODAS LAS SECCIONES */
+/* =============================================== */
+
+/* =============================================== */
+/* RESPONSIVE DESIGN - TABLETS (768px - 1024px) */
+/* =============================================== */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  /* Navbar en tablets */
+  .navbar-nav .nav-link {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 1rem;
+  }
+  
+  /* Carrusel en tablets */
+  .carousel-caption h1 {
+    font-size: 3rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+  
+  .carousel-caption {
+    bottom: 8%;
+    left: 8%;
+    right: 8%;
+    padding: 1.8rem;
+  }
+  
+  /* Sección Nosotros en tablets */
+  #nosotros .lead {
+    font-size: 1.3rem;
+    padding: 1.8rem;
+    max-width: 700px;
+  }
+  
+  .glass {
+    padding: 1.8rem;
+  }
+  
+  .glass i {
+    font-size: 3rem !important;
+  }
+  
+  .glass h5 {
+    font-size: 1.3rem;
+  }
+  
+  /* Servicios en tablets */
+  #servicios .card .icon-container {
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    font-size: 3rem;
+  }
+  
+  #servicios .card-title {
+    font-size: 1.3rem;
+  }
+  
+  /* Menú digital en tablets */
+  .menu-digital-img {
+    height: 280px;
+  }
+  
+  .menu-digital-caption h4 {
+    font-size: 1.5rem;
+  }
+  
+  /* Formulario de reservas en tablets */
+  #reservaForm {
+    padding: 2rem;
+  }
+  
+  .form-control,
+  .form-select {
+    padding: 0.7rem 0.9rem;
+  }
+}
+
+/* =============================================== */
+/* RESPONSIVE DESIGN - MÓVILES GRANDES (481px - 768px) */
+/* =============================================== */
+
+@media (max-width: 768px) and (min-width: 481px) {
+  /* Ajustes generales */
+  body {
+    padding-top: 75px;
+  }
+  
+  /* Navbar móviles grandes */
+  .navbar {
+    padding: 0.8rem 0;
+  }
+  
+  .navbar-brand img {
+    width: 100px;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.8rem 1rem !important;
+    font-size: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-nav .nav-link:last-child {
+    border-bottom: none;
+  }
+  
+  #darkModeToggle {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+  }
+  
+  /* Carrusel móviles grandes */
+  .carousel-item img {
+    max-height: 60vh;
+  }
+  
+  .carousel-caption {
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    padding: 1.5rem;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .carousel-caption .btn {
+    padding: 0.6rem 1.8rem;
+    font-size: 0.95rem;
+    margin: 0.3rem;
+  }
+  
+  /* Títulos de sección móviles grandes */
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2.2rem;
+  }
+  
+  /* Sección Nosotros móviles grandes */
+  #nosotros .lead {
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .glass {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .glass i {
+    font-size: 2.8rem !important;
+    margin-bottom: 1rem;
+  }
+  
+  .glass h5 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .glass p {
+    font-size: 0.95rem;
+  }
+  
+  /* Servicios móviles grandes */
+  #servicios .card {
+    margin-bottom: 1.5rem;
+  }
+  
+  #servicios .card .icon-container {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  #servicios .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  #servicios .card-text {
+    font-size: 0.95rem;
+  }
+  
+  /* Menú digital móviles grandes */
+  .menu-digital-img {
+    height: 250px;
+  }
+  
+  .menu-digital-caption {
+    min-height: 120px;
+    padding: 1.5rem;
+  }
+  
+  .menu-digital-caption h4 {
+    font-size: 1.4rem;
+  }
+  
+  /* Reservas móviles grandes */
+  #reserva h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  #reserva p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  #reservaForm {
+    padding: 2rem;
+  }
+  
+  .form-label {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .form-control,
+  .form-select {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.95rem;
+  }
+  
+  #reservaForm .btn-warning {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+  
+  /* Locales móviles grandes */
+  #locales h2 {
+    font-size: 2.2rem;
+  }
+  
+  #locales h5 {
+    font-size: 1.3rem;
+  }
+  
+  #locales p {
+    font-size: 1rem;
+  }
+  
+  #locales iframe {
+    height: 220px;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Galería móviles grandes */
+  .img-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Testimonios móviles grandes */
+  #testimonios .card {
+    margin-bottom: 1.5rem;
+  }
+  
+  #testimonios .card-body p {
+    font-size: 0.95rem;
+  }
+  
+  /* Contacto móviles grandes */
+  #contacto-index h2 {
+    font-size: 2.2rem;
+  }
+  
+  #contacto-index h5 {
+    font-size: 1.3rem;
+  }
+  
+  #contacto-index .form-control,
+  #contacto-index textarea {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.95rem;
+  }
+  
+  #contacto-index .btn-warning {
+    padding: 0.8rem 2rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* =============================================== */
+/* RESPONSIVE DESIGN - MÓVILES PEQUEÑOS (320px - 480px) */
+/* =============================================== */
+
+@media (max-width: 480px) {
+  /* Ajustes generales móviles pequeños */
+  body {
+    padding-top: 70px;
+    font-size: 14px;
+  }
+  
+  /* Navbar móviles pequeños */
+  .navbar {
+    padding: 0.5rem 0;
+  }
+  
+  .navbar-brand img {
+    width: 90px;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.7rem 0.8rem !important;
+    font-size: 0.9rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  #darkModeToggle {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  /* Carrusel móviles pequeños */
+  .carousel-item img {
+    max-height: 50vh;
+  }
+  
+  .carousel-caption {
+    bottom: 3%;
+    left: 3%;
+    right: 3%;
+    padding: 1rem;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  
+  .carousel-caption .btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+    margin: 0.2rem;
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Títulos de sección móviles pequeños */
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+  }
+  
+  h5 {
+    font-size: 1.1rem;
+  }
+  
+  /* Secciones generales móviles pequeños */
+  section {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Sección Nosotros móviles pequeños */
+  #nosotros .lead {
+    font-size: 1rem;
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+  
+  .glass {
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .glass i {
+    font-size: 2.5rem !important;
+    margin-bottom: 0.8rem;
+  }
+  
+  .glass h5 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .glass p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  /* Servicios móviles pequeños */
+  #servicios .card {
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+  }
+  
+  #servicios .card .icon-container {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  #servicios .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  #servicios .card-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  /* Menú digital móviles pequeños */
+  .menu-digital-img {
+    height: 200px;
+  }
+  
+  .menu-digital-caption {
+    min-height: 100px;
+    padding: 1rem;
+  }
+  
+  .menu-digital-caption h4 {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+  
+  /* Reservas móviles pequeños */
+  #reserva h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  #reserva p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+  
+  #reservaForm {
+    padding: 1.5rem;
+  }
+  
+  .form-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .form-control,
+  .form-select {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  #reservaForm .btn-warning {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  
+  /* Locales móviles pequeños */
+  #locales h2 {
+    font-size: 1.6rem;
+  }
+  
+  #locales h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  #locales p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+  }
+  
+  #locales .btn-outline-primary {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  #locales iframe {
+    height: 200px;
+    margin-bottom: 1.2rem;
+  }
+  
+  /* Galería móviles pequeños */
+  .img-container {
+    margin-bottom: 1.2rem;
+  }
+  
+  .img-container::before {
+    height: 8px;
+  }
+  
+  .img-container::after {
+    width: 8px;
+  }
+  
+  /* Testimonios móviles pequeños */
+  #testimonios .card {
+    margin-bottom: 1.2rem;
+  }
+  
+  #testimonios .card-body {
+    padding: 1rem;
+  }
+  
+  #testimonios .card-body p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  /* Contacto móviles pequeños */
+  #contacto-index h2 {
+    font-size: 1.6rem;
+  }
+  
+  #contacto-index h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  #contacto-index p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  #contacto-index .form-control,
+  #contacto-index textarea {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  #contacto-index .btn-warning {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+}
+
+/* =============================================== */
+/* RESPONSIVE DESIGN - MÓVILES EXTRA PEQUEÑOS (hasta 320px) */
+/* =============================================== */
+
+@media (max-width: 320px) {
+  /* Ajustes para pantallas muy pequeñas */
+  body {
+    padding-top: 65px;
+    font-size: 13px;
+  }
+  
+  .container {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+  
+  /* Navbar extra pequeño */
+  .navbar-brand img {
+    width: 80px;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.6rem !important;
+    font-size: 0.85rem;
+  }
+  
+  #darkModeToggle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  
+  /* Carrusel extra pequeño */
+  .carousel-item img {
+    max-height: 45vh;
+  }
+  
+  .carousel-caption {
+    padding: 0.8rem;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 1.5rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.8rem;
+  }
+  
+  .carousel-caption .btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Títulos extra pequeños */
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  /* Secciones extra pequeñas */
+  section {
+    padding: 2.5rem 0;
+  }
+  
+  .glass {
+    padding: 1rem;
+  }
+  
+  .glass i {
+    font-size: 2rem !important;
+  }
+  
+  .glass h5 {
+    font-size: 0.95rem;
+  }
+  
+  .glass p {
+    font-size: 0.8rem;
+  }
+  
+  /* Servicios extra pequeños */
+  #servicios .card .icon-container {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.8rem;
+  }
+  
+  /* Menú digital extra pequeño */
+  .menu-digital-img {
+    height: 180px;
+  }
+  
+  .menu-digital-caption h4 {
+    font-size: 1rem;
+  }
+  
+  /* Formularios extra pequeños */
+  .form-control,
+  .form-select {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.85rem;
+  }
+  
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* =============================================== */
+/* MEJORAS ESPECÍFICAS PARA TOUCH DEVICES */
+/* =============================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Mejoras para dispositivos táctiles */
+  
+  /* Botones más grandes para touch */
+  .btn {
+    min-height: 44px;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  /* Enlaces más grandes */
+  .navbar-nav .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Iconos sociales más grandes */
+  .social-icon {
+    min-width: 48px;
+    min-height: 48px;
+  }
+  
+  /* Formularios más amigables al touch */
+  .form-control,
+  .form-select {
+    min-height: 44px;
+  }
+  
+  /* Eliminar efectos hover en dispositivos táctiles */
+  .glass:hover,
+  #servicios .card:hover,
+  .menu-digital-link:hover .menu-digital-item,
+  .img-container:hover {
+    transform: none;
+    box-shadow: inherit;
+  }
+  
+  /* Mantener solo efectos de focus para accesibilidad */
+  .form-control:focus,
+  .form-select:focus {
+    transform: none;
+  }
+}
+
+/* =============================================== */
+/* MEJORAS PARA LANDSCAPE EN MÓVILES */
+/* =============================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Ajustes para móviles en horizontal */
+  body {
+    padding-top: 60px;
+  }
+  
+  .navbar {
+    padding: 0.3rem 0;
+  }
+  
+  .carousel-item img {
+    max-height: 80vh;
+  }
+  
+  .carousel-caption {
+    bottom: 2%;
+    padding: 1rem;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 2rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .carousel-caption .btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    display: inline-block;
+    width: auto;
+    margin: 0.2rem;
+  }
+  
+  section {
+    padding: 2rem 0;
+  }
+}
+
+/* =============================================== */
+/* MEJORAS PARA ACCESIBILIDAD */
+/* =============================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Reducir animaciones para usuarios que prefieren menos movimiento */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .carousel {
+    animation: none;
+  }
+  
+  .carousel-item {
+    transition: none;
+  }
+}
+
+/* =============================================== */
+/* MEJORAS PARA ALTO CONTRASTE */
+/* =============================================== */
+
+@media (prefers-contrast: high) {
+  /* Mejoras para usuarios que necesitan alto contraste */
+  .btn {
+    border: 2px solid;
+  }
+  
+  .card {
+    border: 2px solid var(--text-dark);
+  }
+  
+  .form-control,
+  .form-select {
+    border: 2px solid var(--text-dark);
+  }
+  
+  body.dark-mode .card {
+    border-color: white;
+  }
+  
+  body.dark-mode .form-control,
+  body.dark-mode .form-select {
+    border-color: white;
+  }
+}
+
+/* =============================================== */
+/* OPTIMIZACIONES PARA IMPRESIÓN */
+/* =============================================== */
+
+@media print {
+  /* Estilos para impresión */
+  body {
+    padding-top: 0;
+    background: white !important;
+    color: black !important;
+  }
+  
+  .navbar,
+  .carousel-control-prev,
+  .carousel-control-next,
+  #darkModeToggle,
+  .social-icons,
+  .social-icons-enhanced {
+    display: none !important;
+  }
+  
+  .carousel-caption {
+    position: static;
+    background: none;
+    color: black;
+  }
+  
+  section {
+    page-break-inside: avoid;
+    padding: 1rem 0;
+  }
+  
+  .footer-enhanced {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .footer-wave {
+    display: none;
+  }
+}
+
