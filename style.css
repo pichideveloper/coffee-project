@@ -1255,7 +1255,9 @@ body.dark-mode .navbar-toggler{
     color: rgb(46, 46, 46);
 }
 
-
+body.dark-mode h4{
+  color: white;
+}
 
 /* =============================================== */
 /* BOTÓN MODO OSCURO */
