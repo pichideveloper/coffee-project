@@ -18,49 +18,62 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img id="navbarLogo" src="images/logo1.png" alt="SAPE Logo" width="120" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#inicio">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="nosotros.html">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Lista-Servicios.html">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="carta.html">Platos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="reservar.html">Reservas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Locales.html">Locales</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="galeriaCompleta.html">Galería</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contacto.html">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">
-              🌙
-            </button>
-          </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            id="navbarLogo"
+            src="images/logo1.png"
+            alt="SAPE Logo"
+            width="120"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Lista-Servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="carta.html">Platos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reservar.html">Reservas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Locales.html">Locales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="galeriaCompleta.html">Galería</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <button
+                id="darkModeToggle"
+                class="btn btn-outline-secondary nav-dark-toggle ms-2"
+              >
+                🌙
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   <!-- Hero Section -->
   <section id="reservas-hero">
@@ -437,18 +450,7 @@
       icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
     }
 
-    darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-
-      if (body.classList.contains('dark-mode')) {
-        icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
-        localStorage.setItem('theme', 'light');
-      }
-    });
-
+    
     // Form Validation and Submission
     document.getElementById('reservaForm').addEventListener('submit', function (e) {
       e.preventDefault();
