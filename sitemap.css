@@ -79,6 +79,7 @@
             box-shadow: 0 8px 25px rgba(255, 140, 0, 0.15);
             backdrop-filter: blur(10px);
             text-align: center;
+            overflow-x: auto; /* Permite el scroll horizontal si el contenido es muy ancho */
         }
 
         body.dark-mode .sitemap-diagram {
