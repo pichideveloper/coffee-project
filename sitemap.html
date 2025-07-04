@@ -357,20 +357,8 @@
             icon.classList.add('bi-sun-fill');
         }
 
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-
-            if (body.classList.contains('dark-mode')) {
-                icon.classList.remove('bi-moon-fill');
-                icon.classList.add('bi-sun-fill');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                icon.classList.remove('bi-sun-fill');
-                icon.classList.add('bi-moon-fill');
-                localStorage.setItem('theme', 'light');
-            }
-        });
     </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
