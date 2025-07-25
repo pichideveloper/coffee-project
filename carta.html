@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carta | SAPE</title>
+  <title>Menu | SAPE</title>
   <meta name="description" content="SAPE: Restaurante de comida peruana. Platos tradicionales y fusión. Ceviche, Lomo Saltado, Ají de Gallina y más. ¡Ven a disfrutar de auténtica sazón peruana!">
   <meta name="keywords" content="SAPE, restaurante, comida peruana, carta, ceviche, lomo saltado, ají de gallina, anticuchos, causa limeña">
   <link rel="icon" href="images/icon.png" type="image/png">
@@ -25,6 +25,8 @@
   <!-- Estilos de la carta -->
   <link rel="stylesheet" href="carta.css">
   <link rel="icon" href="images/logo1.png" type="image/png">
+  <!-- Language Switcher CSS -->
+  <link rel="stylesheet" href="language-switcher.css">
 </head>
 
 <body class="body-c">
@@ -39,50 +41,49 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto">
-        <!-- Inicio como link normal -->
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#inicio">Inicio</a>
+         <!-- Inicio como link normal -->        <li class="nav-item">
+          <a class="nav-link" href="index.html#inicio" data-translate="nav-inicio">Home</a>
+        
         </li>
  
         <!-- Nosotros -->
        <li class="nav-item">
-          <a class="nav-link" href="nosotros.html">Nosotros </a>
+          <a class="nav-link" href="nosotros.html" data-translate="nav-nosotros">About Us</a>
         </li>
-
         <!-- Servicios -->
          <li class="nav-item">
-          <a class="nav-link" href="Lista-Servicios.html">Servicios </a>
+          <a class="nav-link" href="Lista-Servicios.html" data-translate="nav-servicios">Services</a>
         </li>
   
         <!-- Platos -->
         <li class="nav-item">
-          <a class="nav-link" href="carta.html">Platos </a>
+          <a class="nav-link" href="carta.html" data-translate="nav-platos">Dishes</a>
         </li>
         <!-- Reservas -->
         <li class="nav-item">
-          <a class="nav-link" href="reservar.html">Reservas </a>
+          <a class="nav-link" href="reservar.html" data-translate="nav-reservas">Reservations</a>
         </li>
         <!-- Locales Nuevo-->
         <li class="nav-item">
-          <a class="nav-link" href="Locales.html">Locales</a>
+          <a class="nav-link" href="Locales.html" data-translate="nav-locales">Locations</a>
         </li>
       
         <!-- Galería -->
 
         <li class="nav-item">
-          <a class="nav-link" href="galeriaCompleta.html">Galería</a>
+          <a class="nav-link" href="galeriaCompleta.html" data-translate="nav-galeria">Gallery</a>
         </li>
 
         
         <!-- Contacto -->
           <li class="nav-item">
-          <a class="nav-link" href="contacto.html">Contacto</a>
+          <a class="nav-link" href="contacto.html" data-translate="nav-contacto">Contact</a>
         </li>
         
         <!-- Botón modo oscuro -->
         <li class="nav-item">
           <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
-        </li>
+        </li>        
       </ul>
     </div>
   </div>
@@ -92,8 +93,8 @@
   <header class="header-carta">
     <div class="header-overlay">
       <br><br>  
-      <h1 class="text-center display-4">Nuestra Carta</h1>
-      <p class="text-center lead carta-descripcion">Descubre los sabores auténticos del Perú</p>
+      <h1 class="text-center display-4" data-translate="menu-title">Our Menu</h1>
+      <p class="text-center lead carta-descripcion" data-translate="menu-subtitle">Discover the authentic flavors of Peru</p>
 
     </div>
   </header>
@@ -107,24 +108,24 @@
         <div class="card menu-item shadow" 
              data-bs-toggle="modal" 
              data-bs-target="#platoDetalleModal"
-             data-nombre="Ceviche Mixto"
-             data-nombre-extendido="Nuestro Clásico Ceviche Mixto"
+             data-nombre="Mixed Ceviche"
+             data-nombre-extendido="Our Classic Mixed Ceviche"
              data-img="images/ceviche-mixto.jpg"
-             data-descripcion-larga="Deléitate con la frescura incomparable de nuestro Ceviche Mixto, preparado con trozos de pescado blanco del día y una generosa selección de mariscos frescos como pulpo, calamar y langostinos. Todo marinado al instante en nuestra vibrante leche de tigre casera, con el toque justo de ají limo y cilantro. Servido con camote glaseado, choclo tierno y cancha serrana crocante. ¡Una explosión de sabor peruano!"
-             data-ingredientes="Pescado del día,Pulpo,Calamar,Langostinos,Limón,Ají Limo,Cilantro,Cebolla Roja,Camote,Choclo,Cancha"
+             data-descripcion-larga="Delight yourself with the incomparable freshness of our Mixed Ceviche, prepared with pieces of fresh white fish of the day and a generous selection of fresh seafood such as octopus, squid and prawns. All marinated instantly in our vibrant homemade tiger\'s milk, with just the right touch of ají limo and cilantro. Served with glazed sweet potato, tender corn and crispy cancha serrana. An explosion of Peruvian flavor!"
+             data-ingredientes="Fish of the day,Octopus,Squid,Prawns,Lime,Ají Limo,Cilantro,Red Onion,Sweet Potato,Corn,Cancha"
              data-precio="S/ 35.00"
-             data-notas="Picante opcional y ajustable a tu gusto. Pregunta por el pescado del día."
+             data-notas="Optional spice level adjustable to your taste. Ask about the fish of the day."
              >
-          <img src="images/ceviche-mixto.jpg" class="card-img-top" alt="Ceviche Mixto">
+          <img src="images/ceviche-mixto.jpg" class="card-img-top" alt="Mixed Ceviche">
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-3">
-              <h3 class="card-title mb-0">Ceviche Mixto</h3>
+              <h3 class="card-title mb-0" data-translate="dish-ceviche-title">Mixed Ceviche</h3>
               <span class="badge bg-warning fs-5">S/ 35.00</span>
             </div>
-            <p class="card-text">Pescado fresco, mariscos, leche de tigre, camote, choclo y cancha serrana.</p>
+            <p class="card-text" data-translate="dish-ceviche-desc">Fresh fish, seafood, tiger\'s milk, sweet potato, corn and cancha serrana.</p>
             <ul class="list-inline">
-              <li class="list-inline-item"><span class="badge bg-secondary">Pescado del día</span></li>
-              <li class="list-inline-item"><span class="badge bg-secondary">Picante opcional</span></li>
+              <li class="list-inline-item"><span class="badge bg-secondary" data-translate="dish-fish-day">Fish of the day</span></li>
+              <li class="list-inline-item"><span class="badge bg-secondary" data-translate="dish-optional-spice">Optional spice</span></li>
             </ul>
           </div>
         </div>
@@ -136,22 +137,22 @@
          data-bs-toggle="modal" 
          data-bs-target="#platoDetalleModal"
          data-nombre="Lomo Saltado"
-         data-nombre-extendido="Jugoso Lomo Saltado Tradicional"
+         data-nombre-extendido="Juicy Traditional Lomo Saltado"
          data-img="images/lomosaltado.png"
-         data-descripcion-larga="Trozos de lomo fino de res flambeados al wok con cebolla roja crujiente, tomates jugosos, ají amarillo y un toque de sillao y vinagre. Acompañado de papas fritas doradas y arroz blanco graneado. Un clásico que nunca falla."
-         data-ingredientes="Lomo fino de res,Cebolla roja,Tomate,Ají amarillo,Sillao,Vinagre,Papas fritas,Arroz,Culantro"
+         data-descripcion-larga="Pieces of fine beef tenderloin flambéed in a wok with crispy red onion, juicy tomatoes, yellow ají and a touch of soy sauce and vinegar. Accompanied by golden french fries and fluffy white rice. A classic that never fails."
+         data-ingredientes="Fine beef tenderloin,Red onion,Tomato,Yellow ají,Soy sauce,Vinegar,French fries,Rice,Cilantro"
          data-precio="S/ 30.00"
-         data-notas="Puedes pedirlo con arroz chaufa por un adicional."
+         data-notas="You can order it with chaufa rice for an additional cost."
          >
       <img src="images/lomosaltado.png" class="card-img-top" alt="Lomo Saltado">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h3 class="card-title mb-0">Lomo Saltado</h3>
+          <h3 class="card-title mb-0" data-translate="dish-lomo-title">Lomo Saltado</h3>
           <span class="badge bg-warning fs-5">S/ 30.00</span>
         </div>
-        <p class="card-text">Salteado de lomo fino con cebolla, tomate, ají amarillo y papas fritas.</p>
+        <p class="card-text" data-translate="dish-lomo-desc">Stir-fried beef tenderloin with onion, tomato, yellow ají and french fries.</p>
         <ul class="list-inline">
-          <li class="list-inline-item"><span class="badge bg-secondary">Arroz Chaufa opcional</span></li>
+          <li class="list-inline-item"><span class="badge bg-secondary" data-translate="dish-chaufa-rice">Optional Chaufa Rice</span></li>
         </ul>
       </div>
     </div>
@@ -162,23 +163,23 @@
     <div class="card menu-item shadow" 
          data-bs-toggle="modal" 
          data-bs-target="#platoDetalleModal"
-         data-nombre="7 Colores"
-         data-nombre-extendido="Exquisita Tradicion Peruana"
+         data-nombre="7 Colors"
+         data-nombre-extendido="Exquisite Peruvian Tradition"
          data-img="images/7colores.png"
-         data-descripcion-larga="Arroz blanco graneado, tallarines rojos, papas a la huancaína, ensalada fresca de betarraga, puré de pallares y arroz con aceitunas, acompañando un jugoso pollo dorado al horno. Una explosión de sabor y color en cada bocado"
-         data-ingredientes="Arroz blanco graneado, Tallarines rojos, Papas a la huancaína, Ensalada de betarraga, Puré de pallares, Arroz con aceitunas, Pollo al horno, Culantro"
+         data-descripcion-larga="Fluffy white rice, red noodles, potatoes a la huancaína, fresh beet salad, lima bean puree and rice with olives, accompanying a juicy golden baked chicken. An explosion of flavor and color in every bite"
+         data-ingredientes="Fluffy white rice, Red noodles, Potatoes a la huancaína, Beet salad, Lima bean puree, Rice with olives, Baked chicken, Cilantro"
          data-precio="S/ 90.00"
-         data-notas="Puedes pedirlo con caviar por un adicional."
+         data-notas="You can order it with caviar for an additional cost."
          >
-      <img src="images/7colores.png" class="card-img-top" alt="7 Colores">
+      <img src="images/7colores.png" class="card-img-top" alt="7 Colors">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h3 class="card-title mb-0">7 Colores</h3>
+          <h3 class="card-title mb-0" data-translate="dish-7colors-title">7 Colors</h3>
           <span class="badge bg-warning fs-5">S/ 90.00</span>
         </div>
-        <p class="card-text">Arroz graneado, tallarines rojos, papas a la huancaína, ensalada de betarraga, puré de pallares, arroz con aceitunas y pollo al horno.</p>
+        <p class="card-text" data-translate="dish-7colors-desc">Fluffy rice, red noodles, potatoes a la huancaína, beet salad, lima bean puree, rice with olives and baked chicken.</p>
         <ul class="list-inline">
-          <li class="list-inline-item"><span class="badge bg-secondary">Caviar opcional</span></li>
+          <li class="list-inline-item"><span class="badge bg-secondary" data-translate="dish-caviar">Optional caviar</span></li>
         </ul>
       </div>
     </div>
@@ -205,21 +206,21 @@
                   <img src="images/logo2.png" alt="Logo SAPE" class="footer-logo">
                   <div class="brand-info">
                     <h3 class="brand-name">SAPE</h3>
-                    <p class="brand-tagline">Sabores Marinos y Criollos</p>
+                    <p class="brand-tagline" data-translate="footer-tagline">Seafood and Creole Flavors</p>
                   </div>
                 </div>
-                <p class="footer-description">
-                  Restaurante peruano que te ofrece un ambiente acogedor para todos los paladares, 
-                  con productos de primera calidad y un equipo humano apasionado.
+                <p class="footer-description" data-translate="footer-description">
+                  Peruvian restaurant that offers you a cozy atmosphere for all palates, 
+                  with first-quality products and a passionate human team.
                 </p>
                 <div class="footer-awards">
                   <div class="award-item">
                     <i class="fas fa-star"></i>
-                    <span>Calidad Premium</span>
+                    <span data-translate="footer-quality">Premium Quality</span>
                   </div>
                   <div class="award-item">
                     <i class="fas fa-heart"></i>
-                    <span>Ambiente Familiar</span>
+                    <span data-translate="footer-family">Family Atmosphere</span>
                   </div>
                 </div>
               </div>
@@ -229,14 +230,14 @@
             <div class="col-lg-2 col-md-6 mb-4">
               <div class="footer-links">
                 <h5 class="footer-title">
-                  <i class="fas fa-compass me-2"></i>Navegación
+                  <i class="fas fa-compass me-2"></i><span data-translate="footer-navigation">Navigation</span>
                 </h5>
                 <ul class="footer-nav">
-                  <li><a href="index.html#inicio"><i class="fas fa-home"></i>Inicio</a></li>
-                  <li><a href="nosotros.html"><i class="fas fa-users"></i>Nosotros</a></li>
-                  <li><a href="Lista-Servicios.html"><i class="fas fa-concierge-bell"></i>Servicios</a></li>
-                  <li><a href="carta.html"><i class="fas fa-utensils"></i>Carta</a></li>
-                  <li><a href="Locales.html"><i class="fas fa-map-marker-alt"></i>Locales</a></li>
+                  <li><a href="index.html#inicio" data-translate="nav-inicio"><i class="fas fa-home"></i>Home</a></li>
+                  <li><a href="nosotros.html" data-translate="nav-nosotros"><i class="fas fa-users"></i>About Us</a></li>
+                  <li><a href="Lista-Servicios.html" data-translate="nav-servicios"><i class="fas fa-concierge-bell"></i>Services</a></li>
+                  <li><a href="carta.html" data-translate="nav-platos"><i class="fas fa-utensils"></i>Menu</a></li>
+                  <li><a href="Locales.html" data-translate="nav-locales"><i class="fas fa-map-marker-alt"></i>Locations</a></li>
                 </ul>
               </div>
             </div>
@@ -245,12 +246,12 @@
             <div class="col-lg-2 col-md-6 mb-4">
               <div class="footer-links">
                 <h5 class="footer-title">
-                  <i class="fas fa-cogs me-2"></i>Servicios
+                  <i class="fas fa-cogs me-2"></i><span data-translate="footer-services">Services</span>
                 </h5>
                 <ul class="footer-nav">
-                  <li><a href="reservar.html"><i class="fas fa-calendar-check"></i>Reservas</a></li>
-                  <li><a href="contacto.html"><i class="fas fa-envelope"></i>Contacto</a></li>
-                  <li><a href="galeriaCompleta.html"><i class="fas fa-images"></i>Galería</a></li>
+                  <li><a href="reservar.html" data-translate="nav-reservas"><i class="fas fa-calendar-check"></i>Reservations</a></li>
+                  <li><a href="contacto.html" data-translate="nav-contacto"><i class="fas fa-envelope"></i>Contact</a></li>
+                  <li><a href="galeriaCompleta.html" data-translate="nav-galeria"><i class="fas fa-images"></i>Gallery</a></li>
                   <li><a href="sitemap.html"><i class="fas fa-sitemap"></i>Sitemap</a></li>
                 </ul>
               </div>
@@ -260,20 +261,20 @@
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="footer-contact">
                 <h5 class="footer-title">
-                  <i class="fas fa-phone me-2"></i>Contacto
+                  <i class="fas fa-phone me-2"></i><span data-translate="footer-contact">Contact</span>
                 </h5>
                 <div class="contact-info">
                   <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
-                      <strong>Huanchaco</strong>
-                      <p>Av. Victor Larco 812, Huanchaco</p>
+                      <strong data-translate="location-huanchaco">Huanchaco</strong>
+                      <p data-translate="location-huanchaco-address">Av. Victor Larco 812, Huanchaco</p>
                     </div>
                   </div>
                   <div class="contact-item">
                     <i class="fas fa-phone-alt"></i>
                     <div>
-                      <strong>Teléfonos</strong>
+                      <strong data-translate="contact-phones">Phones</strong>
                       <p>(044) 278997 - (044) 216410</p>
                     </div>
                   </div>
@@ -287,8 +288,8 @@
                   <div class="contact-item">
                     <i class="fas fa-clock"></i>
                     <div>
-                      <strong>Horarios</strong>
-                      <p>Lunes a Domingo: 9:00am - 5:00pm</p>
+                      <strong data-translate="contact-schedule">Hours</strong>
+                      <p data-translate="contact-schedule-time">Monday to Sunday: 9:00am - 5:00pm</p>
                     </div>
                   </div>
                 </div>
@@ -301,7 +302,7 @@
             <div class="row align-items-center">
               <div class="col-md-6 mb-3 mb-md-0">
                 <div class="social-section">
-                  <h6 class="social-title">Síguenos en nuestras redes</h6>
+                  <h6 class="social-title" data-translate="footer-follow">Follow us on our networks</h6>
                   <div class="social-icons-enhanced">
                     <a href="https://www.facebook.com/share/1LvsywagCF/" target="_blank" class="social-icon facebook">
                       <i class="fab fa-facebook-f"></i>
@@ -324,7 +325,7 @@
               </div>
               <div class="col-md-6">
                 <div class="payment-section">
-                  <h6 class="payment-title">Métodos de pago aceptados</h6>
+                  <h6 class="payment-title" data-translate="footer-payment">Accepted payment methods</h6>
                   <div class="payment-methods">
                     <div class="payment-item">
                       <img src="images/visa.png" alt="Visa" class="payment-logo">
@@ -348,23 +349,23 @@
           <div class="row align-items-center">
               <div class="col-md-6 text-center text-md-start">
                 <p class="copyright">
-                  © 2025 <strong>SAPE</strong> - Todos los derechos reservados.
-                  <span class="made-with">Hecho con <i class="fas fa-heart text-danger"></i> en Perú</span>
+                  © 2025 <strong>SAPE</strong> - <span data-translate="footer-copyright">All rights reserved.</span>
+                  <span class="made-with" data-translate="footer-made">Made with <i class="fas fa-heart text-danger"></i> <span data-translate="footer-peru">in Peru</span></span>
                 </p>
               </div>
               <div class="col-md-6 text-center text-md-end">
                 <div class="footer-badges">
-                  <span class="badge-item">
+                  <span class="badge-item" data-translate="footer-secure">
                     <i class="fas fa-shield-alt"></i>
-                    Sitio Seguro
+                    Secure Site
                   </span>
-                  <span class="badge-item">
+                  <span class="badge-item" data-translate="footer-eco">
                     <i class="fas fa-leaf"></i>
                     Eco-Friendly
                   </span>
-                  <span class="badge-item">
+                  <span class="badge-item" data-translate="footer-premium">
                     <i class="fas fa-award"></i>
-                    Calidad Premium
+                    Premium Quality
                   </span>
                 </div>
               </div>
@@ -383,20 +384,20 @@
 <div class="modal fade" id="platoDetalleModal" tabindex="-1" aria-labelledby="platoDetalleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered"> <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="platoDetalleModalLabel">Nombre del Plato</h5>
+        <h5 class="modal-title" id="platoDetalleModalLabel" data-translate="modal-dish-name">Dish Name</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-6 mb-3 mb-md-0">
-              <img src="images/placeholder-plato.jpg" id="modalPlatoImg" class="img-fluid" alt="Imagen del Plato">
+              <img src="images/placeholder-plato.jpg" id="modalPlatoImg" class="img-fluid" alt="Dish Image">
             </div>
             <div class="col-md-6">
-              <h3 id="modalPlatoNombreExtendido">Nombre del Plato Detallado</h3>
-              <p id="modalPlatoDescripcion" class="my-3">Descripción detallada del plato aquí...</p>
+              <h3 id="modalPlatoNombreExtendido" data-translate="modal-detailed-dish-name">Detailed Dish Name</h3>
+              <p id="modalPlatoDescripcion" class="my-3" data-translate="modal-detailed-desc">Detailed description of the dish here...</p>
               
-              <h5>Ingredientes Principales:</h5>
+              <h5 data-translate="modal-ingredients-title">Main Ingredients:</h5>
               <ul id="modalPlatoIngredientes" class="lista-ingredientes mb-3">
                 </ul>
 
@@ -404,7 +405,7 @@
                 </div>
 
               <div class="d-flex justify-content-between align-items-center">
-                <h4>Precio:</h4>
+                <h4 data-translate="modal-price-title">Price:</h4>
                 <span id="modalPlatoPrecio" class="badge bg-warning fs-4">S/ 00.00</span>
               </div>
             </div>
@@ -412,7 +413,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-translate="modal-close-btn">Close</button>
         </div>
     </div>
   </div>
@@ -421,6 +422,7 @@
   <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Script de Dark Mode -->
+  <script src="language-switcher.js"></script>
   <script src="index.js"></script>
 </body>
 </html>

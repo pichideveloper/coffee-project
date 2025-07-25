@@ -10,7 +10,7 @@
    =========================== */
 :root {
   /* MODO CLARO - Colores cálidos y profesionales */
-  --servicios-bg-hero: linear-gradient(135deg, #FFF8DC 0%, #FFE4B5 50%, #FFEFD5 100%);
+  --servicios-bg-hero: #FF8C00;
   --servicios-bg-main: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
   --servicios-card-bg: rgba(255, 255, 255, 0.95);
   --servicios-card-border: rgba(255, 140, 0, 0.2);

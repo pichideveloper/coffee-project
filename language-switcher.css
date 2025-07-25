@@ -1,0 +1,119 @@
+/* Estilos para el selector de idioma */
+.language-switcher {
+  position: relative;
+  display: inline-block;
+}
+
+.language-btn {
+  background: none;
+  border: 1px solid #6c757d;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.language-btn:hover {
+  background-color: #f8f9fa;
+  border-color: #495057;
+  color: #495057;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 120px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.language-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.language-option {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.language-option:hover {
+  background-color: #f8f9fa;
+}
+
+.language-option.active {
+  background-color: #ffc107;
+  color: #000;
+  font-weight: 500;
+}
+
+.language-option:first-child {
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+}
+
+.language-option:last-child {
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .language-dropdown {
+    right: auto;
+    left: 0;
+  }
+}
+
+/* Dark mode styles */
+[data-bs-theme="dark"] .language-btn {
+  color: #adb5bd;
+  border-color: #6c757d;
+}
+
+[data-bs-theme="dark"] .language-btn:hover {
+  background-color: #495057;
+  border-color: #adb5bd;
+  color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .language-dropdown {
+  background: #343a40;
+  border-color: #495057;
+}
+
+[data-bs-theme="dark"] .language-option {
+  color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .language-option:hover {
+  background-color: #495057;
+}
+
+[data-bs-theme="dark"] .language-option.active {
+  background-color: #ffc107;
+  color: #000;
+}
+

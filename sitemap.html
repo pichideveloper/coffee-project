@@ -4,17 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitemap - Café Peruano</title>
-   <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Boxicons -->
+    <title data-translate="sitemap-title-tag">Sitemap - Café Peruano</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <!-- Estilos locales -->
   <link rel="stylesheet" href="style.css">
-<!-- Font Awesome  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Estilos de la carta -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="sitemap.css">
+  <link rel="stylesheet" href="language-switcher.css">
   <link rel="icon" href="images/logo1.png" type="image/png">
     <style>
 
@@ -22,8 +18,7 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img
@@ -44,35 +39,35 @@
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html#inicio">Inicio</a>
+              <a class="nav-link" href="index.html#inicio" data-translate="nav-inicio">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="nosotros.html">Nosotros</a>
+              <a class="nav-link" href="nosotros.html" data-translate="nav-nosotros">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Lista-Servicios.html">Servicios</a>
+              <a class="nav-link" href="Lista-Servicios.html" data-translate="nav-servicios">Servicios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="carta.html">Platos</a>
+              <a class="nav-link" href="carta.html" data-translate="nav-platos">Platos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="reservar.html">Reservas</a>
+              <a class="nav-link" href="reservar.html" data-translate="nav-reservas">Reservas</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="Locales.html" data-translate="nav-locales">Locales</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Locales.html">Locales</a>
+              <a class="nav-link" href="galeriaCompleta.html" data-translate="nav-galeria">Galería</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="galeriaCompleta.html">Galería</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contacto.html">Contacto</a>
+              <a class="nav-link" href="contacto.html" data-translate="nav-contacto">Contacto</a>
             </li>
             <li class="nav-item">
               <button
                 id="darkModeToggle"
                 class="btn btn-outline-secondary nav-dark-toggle ms-2"
               >
-                🌙
+                 🌙
               </button>
             </li>
           </ul>
@@ -80,286 +75,257 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="sitemap-hero">
         <div class="container">
-            <h1 class="sitemap-title">Mapa del Sitio</h1>
-            <p class="sitemap-subtitle">Navegación completa de nuestro sitio web</p>
+            <h1 class="sitemap-title" data-translate="sitemap-title">Mapa del Sitio</h1>
+            <p class="sitemap-subtitle" data-translate="sitemap-subtitle">Navegación completa de nuestro sitio web</p>
         </div>
     </section>
 
-    <!-- Sitemap Content -->
     <section class="sitemap-content">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <!-- Diagrama Visual -->
                     <div class="sitemap-diagram">
-                        <h2 class="mb-4" style="font-family: 'Oswald', sans-serif; color: var(--text-color);">Estructura
+                        <h2 class="mb-4" style="font-family: 'Oswald', sans-serif; color: var(--text-color);" data-translate="sitemap-structure-title">Estructura
                             Visual del Sitio</h2>
                         <img src="sitemap.png" alt="Diagrama del sitemap" class="img-fluid" style="min-width: 600px;">
                     </div>
 
-                    <!-- Enlaces del Sitemap -->
-                    <div class="sitemap-links">
+                     <div class="sitemap-links">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="sitemap-section">
-                                    <h3><i class="bi bi-house-door"></i> Páginas Principales</h3>
-                                    <a href="index.html" class="sitemap-link">
+                                    <h3 data-translate="sitemap-main-pages"><i class="bi bi-house-door"></i> Páginas Principales</h3>
+                                    <a href="index.html" class="sitemap-link" data-translate="sitemap-home">
                                         <i class="bi bi-house"></i> Inicio
                                     </a>
-                                    <a href="nosotros.html" class="sitemap-link">
+                                     <a href="nosotros.html" class="sitemap-link" data-translate="sitemap-about-us">
                                         <i class="bi bi-people"></i> Sobre Nosotros
                                     </a>
-                                    <a href="contacto.html" class="sitemap-link">
+                                     <a href="contacto.html" class="sitemap-link" data-translate="sitemap-contact">
                                         <i class="bi bi-envelope"></i> Contacto
-                                    </a>
+                                     </a>
                                 </div>
 
                                 <div class="sitemap-section">
-                                    <h3><i class="bi bi-geo-alt"></i> Ubicaciones y Servicios</h3>
-                                    <a href="Locales.html" class="sitemap-link">
+                                     <h3 data-translate="sitemap-locations-services"><i class="bi bi-geo-alt"></i> Ubicaciones y Servicios</h3>
+                                    <a href="Locales.html" class="sitemap-link" data-translate="sitemap-our-locations">
                                         <i class="bi bi-building"></i> Nuestros Locales
-                                    </a>
-                                    <a href="Lista-Servicios.html" class="sitemap-link">
-                                        <i class="bi bi-gear"></i> Servicios
+                                     </a>
+                                    <a href="Lista-Servicios.html" class="sitemap-link" data-translate="sitemap-services">
+                                         <i class="bi bi-gear"></i> Servicios
                                     </a>
                                 </div>
-                            </div>
+                             </div>
 
                             <div class="col-md-6">
                                 <div class="sitemap-section">
-                                    <h3><i class="bi bi-cup-hot"></i> Menú y Experiencia</h3>
-                                    <a href="carta.html" class="sitemap-link">
+                                     <h3 data-translate="sitemap-menu-experience"><i class="bi bi-cup-hot"></i> Menú y Experiencia</h3>
+                                    <a href="carta.html" class="sitemap-link" data-translate="sitemap-our-menu">
                                         <i class="bi bi-journal-text"></i> Nuestra Carta
-                                    </a>
-                                    <a href="galeriaCompleta.html" class="sitemap-link">
-                                        <i class="bi bi-images"></i> Galería de Fotos
+                                     </a>
+                                    <a href="galeriaCompleta.html" class="sitemap-link" data-translate="sitemap-gallery">
+                                       <i class="bi bi-images"></i> Galería de Fotos
                                     </a>
                                 </div>
 
-                                <div class="sitemap-section">
-                                    <h3><i class="bi bi-calendar-check"></i> Reservas y Navegación</h3>
-                                    <a href="reservar.html" class="sitemap-link">
-                                        <i class="bi bi-calendar-plus"></i> Hacer Reserva
+                                 <div class="sitemap-section">
+                                    <h3 data-translate="sitemap-reservations-navigation"><i class="bi bi-calendar-check"></i> Reservas y Navegación</h3>
+                                    <a href="reservar.html" class="sitemap-link" data-translate="sitemap-make-reservation">
+                                         <i class="bi bi-calendar-plus"></i> Hacer Reserva
                                     </a>
-                                    <a href="sitemap.html" class="sitemap-link">
+                                     <a href="sitemap.html" class="sitemap-link" data-translate="sitemap-sitemap">
                                         <i class="bi bi-diagram-3"></i> Mapa del Sitio
                                     </a>
-                                </div>
+                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <!-- Footer Mejorado -->
-   <footer class="footer-enhanced">
-      
+    <footer class="footer-enhanced">
       <div class="footer-content">
         <div class="container">
-          <!-- Sección principal del footer -->
           <div class="row footer-main">
-            <!-- Columna de información de la empresa -->
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="footer-brand">
                 <div class="brand-logo-container">
                   <img src="images/logo2.png" alt="Logo SAPE" class="footer-logo">
-                  <div class="brand-info">
+                   <div class="brand-info">
                     <h3 class="brand-name">SAPE</h3>
-                    <p class="brand-tagline">Sabores Marinos y Criollos</p>
+                    <p class="brand-tagline" data-translate="footer-tagline">Sabores Marinos y Criollos</p>
                   </div>
                 </div>
-                <p class="footer-description">
+                 <p class="footer-description" data-translate="footer-description">
                   Restaurante peruano que te ofrece un ambiente acogedor para todos los paladares, 
-                  con productos de primera calidad y un equipo humano apasionado.
-                </p>
+                  con productos de primera calidad y un equipo humano apasionado. </p>
                 <div class="footer-awards">
                   <div class="award-item">
                     <i class="fas fa-star"></i>
-                    <span>Calidad Premium</span>
+                    <span data-translate="footer-quality">Calidad Premium</span>
                   </div>
-                  <div class="award-item">
+                   <div class="award-item">
                     <i class="fas fa-heart"></i>
-                    <span>Ambiente Familiar</span>
+                    <span data-translate="footer-family">Ambiente Familiar</span>
                   </div>
                 </div>
-              </div>
+               </div>
             </div>
 
-            <!-- Columna de enlaces rápidos -->
             <div class="col-lg-2 col-md-6 mb-4">
               <div class="footer-links">
-                <h5 class="footer-title">
-                  <i class="fas fa-compass me-2"></i>Navegación
+                <h5 class="footer-title" data-translate="footer-navigation">
+                   <i class="fas fa-compass me-2"></i>Navegación
                 </h5>
                 <ul class="footer-nav">
-                  <li><a href="index.html#inicio"><i class="fas fa-home"></i>Inicio</a></li>
-                  <li><a href="nosotros.html"><i class="fas fa-users"></i>Nosotros</a></li>
-                  <li><a href="Lista-Servicios.html"><i class="fas fa-concierge-bell"></i>Servicios</a></li>
-                  <li><a href="carta.html"><i class="fas fa-utensils"></i>Carta</a></li>
-                  <li><a href="Locales.html"><i class="fas fa-map-marker-alt"></i>Locales</a></li>
+                  <li><a href="index.html#inicio"><i class="fas fa-home"></i><span data-translate="nav-inicio">Inicio</span></a></li>
+                  <li><a href="nosotros.html"><i class="fas fa-users"></i><span data-translate="nav-nosotros">Nosotros</span></a></li>
+                  <li><a href="Lista-Servicios.html"><i class="fas fa-concierge-bell"></i><span data-translate="nav-servicios">Servicios</span></a></li>
+                  <li><a href="carta.html"><i class="fas fa-utensils"></i><span data-translate="nav-platos">Carta</span></a></li>
+                  <li><a href="Locales.html"><i class="fas fa-map-marker-alt"></i><span data-translate="nav-locales">Locales</span></a></li>
                 </ul>
               </div>
             </div>
 
-            <!-- Columna de servicios -->
             <div class="col-lg-2 col-md-6 mb-4">
               <div class="footer-links">
-                <h5 class="footer-title">
+                <h5 class="footer-title" data-translate="footer-services">
                   <i class="fas fa-cogs me-2"></i>Servicios
                 </h5>
-                <ul class="footer-nav">
-                  <li><a href="reservar.html"><i class="fas fa-calendar-check"></i>Reservas</a></li>
-                  <li><a href="contacto.html"><i class="fas fa-envelope"></i>Contacto</a></li>
-                  <li><a href="galeriaCompleta.html"><i class="fas fa-images"></i>Galería</a></li>
-                  <li><a href="sitemap.html"><i class="fas fa-sitemap"></i>Sitemap</a></li>
-                </ul>
+                 <ul class="footer-nav">
+                  <li><a href="reservar.html"><i class="fas fa-calendar-check"></i><span data-translate="nav-reservas">Reservas</span></a></li>
+                  <li><a href="contacto.html"><i class="fas fa-envelope"></i><span data-translate="nav-contacto">Contacto</span></a></li>
+                  <li><a href="galeriaCompleta.html"><i class="fas fa-images"></i><span data-translate="nav-galeria">Galería</span></a></li>
+                  <li><a href="sitemap.html"><i class="fas fa-sitemap"></i><span data-translate="sitemap-sitemap-link">Sitemap</span></a></li>
+                 </ul>
               </div>
             </div>
 
-            <!-- Columna de contacto -->
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="footer-contact">
-                <h5 class="footer-title">
-                  <i class="fas fa-phone me-2"></i>Contacto
+                <h5 class="footer-title" data-translate="footer-contact">
+                   <i class="fas fa-phone me-2"></i>Contacto
                 </h5>
                 <div class="contact-info">
                   <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                      <strong>Huanchaco</strong>
-                      <p>Av. Victor Larco 812, Huanchaco</p>
+                     <div>
+                      <strong data-translate="location-huanchaco">Huanchaco</strong>
+                      <p data-translate="location-huanchaco-address">Av. Victor Larco 812, Huanchaco</p>
                     </div>
                   </div>
                   <div class="contact-item">
                     <i class="fas fa-phone-alt"></i>
-                    <div>
-                      <strong>Teléfonos</strong>
+                     <div>
+                      <strong data-translate="contact-phones">Teléfonos</strong>
                       <p>(044) 278997 - (044) 216410</p>
                     </div>
                   </div>
-                  <div class="contact-item">
+                   <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <div>
                       <strong>Email</strong>
                       <p>sapecompany.in@gmail.com</p>
-                    </div>
+                     </div>
                   </div>
                   <div class="contact-item">
                     <i class="fas fa-clock"></i>
                     <div>
-                      <strong>Horarios</strong>
-                      <p>Lunes a Domingo: 9:00am - 5:00pm</p>
+                       <strong data-translate="contact-schedule">Horarios</strong>
+                      <p data-translate="contact-schedule-time">Lunes a Domingo: 9:00am - 5:00pm</p>
                     </div>
                   </div>
                 </div>
-              </div>
+               </div>
             </div>
           </div>
 
-          <!-- Sección de redes sociales y métodos de pago -->
           <div class="footer-social-payment">
             <div class="row align-items-center">
               <div class="col-md-6 mb-3 mb-md-0">
-                <div class="social-section">
-                  <h6 class="social-title">Síguenos en nuestras redes</h6>
+                 <div class="social-section">
+                  <h6 class="social-title" data-translate="footer-follow">Síguenos en nuestras redes</h6>
                   <div class="social-icons-enhanced">
                     <a href="https://www.facebook.com/share/1LvsywagCF/" target="_blank" class="social-icon facebook">
                       <i class="fab fa-facebook-f"></i>
-                      <span class="social-tooltip">Facebook</span>
+                       <span class="social-tooltip">Facebook</span>
                     </a>
                     <a href="https://www.instagram.com/kenzowo_?igsh=eGV1ODM5bGx2bzh5" target="_blank" class="social-icon instagram">
                       <i class="fab fa-instagram"></i>
-                      <span class="social-tooltip">Instagram</span>
+                       <span class="social-tooltip">Instagram</span>
                     </a>
                     <a href="https://www.twitter.com" target="_blank" class="social-icon twitter">
                       <i class="fab fa-twitter"></i>
-                      <span class="social-tooltip">Twitter</span>
+                       <span class="social-tooltip">Twitter</span>
                     </a>
                     <a href="https://www.tiktok.com/@butisito1/video/7468897608619117830" target="_blank" class="social-icon tiktok">
                       <i class="fab fa-tiktok"></i>
                       <span class="social-tooltip">TikTok</span>
-                    </a>
+                     </a>
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="payment-section">
-                  <h6 class="payment-title">Métodos de pago aceptados</h6>
+                   <h6 class="payment-title" data-translate="footer-payment">Métodos de pago aceptados</h6>
                   <div class="payment-methods">
                     <div class="payment-item">
                       <img src="images/visa.png" alt="Visa" class="payment-logo">
-                    </div>
+                     </div>
                     <div class="payment-item">
                       <img src="images/mastercard.png" alt="Mastercard" class="payment-logo">
                     </div>
                     <div class="payment-item">
-                      <img src="images/mercado-pago.png" alt="Mercado Pago" class="payment-logo">
+                       <img src="images/mercado-pago.png" alt="Mercado Pago" class="payment-logo">
                     </div>
                     <div class="payment-item">
                       <img src="images/pagoefectivo.png" alt="PagoEfectivo" class="payment-logo">
-                    </div>
+                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Línea divisoria decorativa -->
           <div class="row align-items-center">
-              <div class="col-md-6 text-center text-md-start">
+               <div class="col-md-6 text-center text-md-start">
                 <p class="copyright">
-                  © 2025 <strong>SAPE</strong> - Todos los derechos reservados.
-                  <span class="made-with">Hecho con <i class="fas fa-heart text-danger"></i> en Perú</span>
+                  © 2025 <strong>SAPE</strong> - <span data-translate="footer-copyright">Todos los derechos reservados.</span> <span class="made-with"><span data-translate="footer-made">Hecho con</span> <i class="fas fa-heart text-danger"></i> <span data-translate="footer-peru">en Perú</span></span>
                 </p>
               </div>
               <div class="col-md-6 text-center text-md-end">
                 <div class="footer-badges">
                   <span class="badge-item">
-                    <i class="fas fa-shield-alt"></i>
-                    Sitio Seguro
+                     <i class="fas fa-shield-alt"></i>
+                    <span data-translate="footer-secure">Sitio Seguro</span>
                   </span>
                   <span class="badge-item">
                     <i class="fas fa-leaf"></i>
-                    Eco-Friendly
+                       <span data-translate="footer-eco">Eco-Friendly</span>
                   </span>
                   <span class="badge-item">
                     <i class="fas fa-award"></i>
-                    Calidad Premium
-                  </span>
+                    <span data-translate="footer-premium">Calidad Premium</span>
+                   </span>
                 </div>
               </div>
             </div>
             <br>
-          <!-- Footer bottom -->
           <div class="footer-bottom">
-            
+           
           </div>
         </div>
       </div>
     </footer>
+    <script src="language-switcher.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-        const icon = darkModeToggle.querySelector('i');
-
-        // Check for saved theme preference or default to light mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-            icon.classList.remove('bi-moon-fill');
-            icon.classList.add('bi-sun-fill');
-        }
-
+        // El script de cambio de idioma va aquí
     </script>
     <script src="index.js"></script>
 </body>
-
 </html>
