@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <link rel="stylesheet" href="Lista-Servicios.css">
+  <!-- Language Switcher CSS -->
+  <link rel="stylesheet" href="language-switcher.css">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
@@ -47,32 +49,33 @@
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html#inicio">Inicio</a>
+          <a class="nav-link" href="index.html#inicio" data-translate="nav-inicio">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="nosotros.html">Nosotros</a>
+          <a class="nav-link" href="nosotros.html" data-translate="nav-nosotros">Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Lista-Servicios.html">Servicios</a>
+          <a class="nav-link" href="Lista-Servicios.html" data-translate="nav-servicios">Servicios</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="carta.html">Platos</a>
+          <a class="nav-link" href="carta.html" data-translate="nav-platos">Platos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="reservar.html">Reservas</a>
+          <a class="nav-link" href="reservar.html" data-translate="nav-reservas">Reservas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Locales.html">Locales</a>
+          <a class="nav-link" href="Locales.html" data-translate="nav-locales">Locales</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="galeriaCompleta.html">Galería</a>
+          <a class="nav-link" href="galeriaCompleta.html" data-translate="nav-galeria">Galería</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contacto.html">Contacto</a>
+          <a class="nav-link" href="contacto.html" data-translate="nav-contacto">Contacto</a>
         </li>
         <li class="nav-item">
           <button id="darkModeToggle" class="btn btn-outline-secondary nav-dark-toggle ms-2">🌙</button>
         </li>
+       
       </ul>
     </div>
   </div>
@@ -80,13 +83,16 @@
 
     <!-- Sección Hero de Servicios -->
     <br><br><br><br>
-      <section id="nuestros-servicios" data-bs-theme="dark" class="py-5"> 
-    <div class="container">
-      <h2 class="section-title">Nuestros Servicios Exclusivos</h2>
-      <p class="text-center lead mb-5">En Restaurante SAPE, nos esforzamos por brindarte una experiencia completa y satisfactoria. Descubre los servicios que hemos diseñado pensando en tu comodidad y disfrute.</p>
+    <div class="Fondo">
+     <section id="nuestros-servicios" data-bs-theme="dark" class="py-5">
+  <div class="container">
+    <h2 class="section-title" data-translate="services-title">Nuestros Servicios Exclusivos</h2>
+    <p class="lead mb-0" data-translate="services-description">
+      En Restaurante SAPE, nos esforzamos por brindarte una experiencia completa y satisfactoria. Descubre los servicios que hemos diseñado pensando en tu comodidad y disfrute.
+    </p>
+  </div>
 </section>
-   
-
+</div>
   <main id="main-content">
   
    <section id="nuestros-servicios" class="py-5"> 
@@ -99,12 +105,12 @@
           <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjAzNTV8MHwxfGFsbHwxfHx8fHx8fHwxNzE1NzUwNzY0fA&ixlib=rb-4.0.3&q=80&w=800" alt="Clientes disfrutando de WiFi en Restaurante SAPE" class="img-fluid rounded shadow-lg">
         </div>
         <div class="col-lg-6 col-md-12 ps-lg-5">
-          <h3 class="h4 fw-bold mb-3"><i class="bi bi-wifi fs-3 me-2 text-warning"></i>Conexión WiFi de Alta Velocidad</h3>
-          <p class="text-muted mb-3">Mantente siempre conectado. Ofrecemos acceso a internet de alta velocidad completamente gratuito en todas nuestras instalaciones. Ideal para quienes desean compartir sus momentos especiales, trabajar remotamente o simplemente navegar mientras disfrutan de nuestra gastronomía.</p>
+          <h3 class="h4 fw-bold mb-3"><i class="bi bi-wifi fs-3 me-2 text-warning"></i><span data-translate="service-wifi-title">Conexión WiFi de Alta Velocidad</span></h3>
+          <p class="text-muted mb-3" data-translate="service-wifi-desc">Mantente siempre conectado. Ofrecemos acceso a internet de alta velocidad completamente gratuito en todas nuestras instalaciones. Ideal para quienes desean compartir sus momentos especiales, trabajar remotamente o simplemente navegar mientras disfrutan de nuestra gastronomía.</p>
           <ul class="list-unstyled service-features">
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Navegación rápida y estable para todos tus dispositivos.</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Cobertura completa en todas las áreas del restaurante.</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Conexión segura y de fácil acceso para todos nuestros clientes.</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-translate="service-wifi-feature-1">Navegación rápida y estable para todos tus dispositivos.</span></li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-translate="service-wifi-feature-2">Cobertura completa en todas las áreas del restaurante.</span></li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-translate="service-wifi-feature-3">Conexión segura y de fácil acceso para todos nuestros clientes.</span></li>
           </ul>
         </div>
       </div>
@@ -114,12 +120,12 @@
           <img src="https://images.unsplash.com/photo-1614140510473-b271511d98e4?auto=format&fit=crop&w=1472&q=80" alt="Amplio y seguro estacionamiento del Restaurante SAPE" class="img-fluid rounded shadow-lg">
         </div>
         <div class="col-lg-6 col-md-12 pe-lg-5">
-          <h3 class="h4 fw-bold mb-3"><i class="bi bi-p-square-fill fs-3 me-2 text-warning"></i>Estacionamiento Privado y Seguro</h3>
-          <p class="text-muted mb-3">Tu comodidad y tranquilidad son nuestra prioridad. Contamos con una amplia playa de estacionamiento privada y vigilada, exclusiva para nuestros clientes. Disfruta de tu visita sabiendo que tu vehículo está en un lugar seguro y de fácil acceso.</p>
+          <h3 class="h4 fw-bold mb-3"><i class="bi bi-p-square-fill fs-3 me-2 text-warning"></i><span data-translate="service-parking-title">Estacionamiento Privado y Seguro</span></h3>
+          <p class="text-muted mb-3" data-translate="service-parking-desc">Tu comodidad y tranquilidad son nuestra prioridad. Contamos con una amplia playa de estacionamiento privada y vigilada, exclusiva para nuestros clientes. Disfruta de tu visita sabiendo que tu vehículo está en un lugar seguro y de fácil acceso.</p>
           <ul class="list-unstyled service-features">
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Espacios amplios y bien iluminados para tu conveniencia.</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Personal de vigilancia para garantizar la seguridad.</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Acceso directo y cómodo desde el estacionamiento al restaurante.</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-translate="service-parking-feature-1">Espacios amplios y bien iluminados para tu conveniencia.</span></li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-translate="service-parking-feature-2">Personal de vigilancia para garantizar la seguridad.</span></li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-translate="service-parking-feature-3">Acceso directo y cómodo desde el estacionamiento al restaurante.</span></li>
           </ul>
         </div>
       </div>
@@ -130,12 +136,12 @@
           <img src="https://images.unsplash.com/photo-1718254951410-65e64d191625?w=1287&q=80&auto=format&fit=crop" alt="Área de juegos para niños en Restaurante SAPE" class="img-fluid rounded shadow-lg">
         </div>
         <div class="col-lg-6 col-md-12 ps-lg-5">
-          <h3 class="h4 fw-bold mb-3"><i class="bi bi-joystick fs-3 me-2 text-warning"></i>Espacio de Juegos para Niños</h3>
-          <p class="text-muted mb-3">En SAPE pensamos en toda la familia. Hemos diseñado un área de entretenimiento segura, colorida y divertida, especialmente para los más pequeños. Mientras ellos juegan y se divierten, tú puedes relajarte y disfrutar de tu comida con total tranquilidad.</p>
+          <h3 class="h4 fw-bold mb-3"><i class="bi bi-joystick fs-3 me-2 text-warning"></i><span data-translate="service-games-title">Espacio de Juegos para Niños</span></h3>
+          <p class="text-muted mb-3" data-translate="service-games-desc">En SAPE pensamos en toda la familia. Hemos diseñado un área de entretenimiento segura, colorida y divertida, especialmente para los más pequeños. Mientras ellos juegan y se divierten, tú puedes relajarte y disfrutar de tu comida con total tranquilidad.</p>
           <ul class="list-unstyled service-features">
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Juegos variados, seguros y adecuados para diferentes edades.</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Superficies blandas y diseño seguro para prevenir accidentes.</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Un ambiente estimulante para que los niños disfruten al máximo.</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-translate="service-games-feature-1">Juegos variados, seguros y adecuados para diferentes edades.</span></li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-translate="service-games-feature-2">Superficies blandas y diseño seguro para prevenir accidentes.</span></li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-translate="service-games-feature-3">Un ambiente estimulante para que los niños disfruten al máximo.</span></li>
           </ul>
         </div>
       </div>
@@ -146,12 +152,12 @@
           <img src="https://images.unsplash.com/photo-1623652621708-e641fe4810f1?w=1364&q=80&auto=format&fit=crop" alt="Servicio de delivery de Restaurante SAPE" class="img-fluid rounded shadow-lg">
         </div>
         <div class="col-lg-6 col-md-12 pe-lg-5">
-          <h3 class="h4 fw-bold mb-3"><i class="bi bi-truck fs-3 me-2 text-warning"></i>Delivery Rápido y Confiable</h3>
-          <p class="text-muted mb-3">¿Antojo de SAPE en casa? Nuestro eficiente servicio de delivery lleva la exquisitez de nuestros platos directamente a tu puerta. Realiza tu pedido al <strong>(044) 216410</strong> y disfruta de una comida deliciosa sin salir de casa.</p>
+          <h3 class="h4 fw-bold mb-3"><i class="bi bi-truck fs-3 me-2 text-warning"></i><span data-translate="service-delivery-title">Delivery Rápido y Confiable</span></h3>
+          <p class="text-muted mb-3" data-translate="service-delivery-desc">¿Antojo de SAPE en casa? Nuestro eficiente servicio de delivery lleva la exquisitez de nuestros platos directamente a tu puerta. Realiza tu pedido al <strong>(044) 216410</strong> y disfruta de una comida deliciosa sin salir de casa.</p>
           <ul class="list-unstyled service-features">
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Entrega puntual en nuestra amplia zona de cobertura.</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Embalaje cuidadoso para que tus alimentos lleguen perfectos.</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>La misma calidad y sabor de SAPE, ahora en tu hogar u oficina.</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-translate="service-delivery-feature-1">Entrega puntual en nuestra amplia zona de cobertura.</span></li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-translate="service-delivery-feature-2">Embalaje cuidadoso para que tus alimentos lleguen perfectos.</span></li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-translate="service-delivery-feature-3">La misma calidad y sabor de SAPE, ahora en tu hogar u oficina.</span></li>
           </ul>
         </div>
       </div>
@@ -178,21 +184,21 @@
                   <img src="images/logo2.png" alt="Logo SAPE" class="footer-logo">
                   <div class="brand-info">
                     <h3 class="brand-name">SAPE</h3>
-                    <p class="brand-tagline">Sabores Marinos y Criollos</p>
+                    <p class="brand-tagline" data-translate="footer-tagline">Sabores Marinos y Criollos</p>
                   </div>
                 </div>
-                <p class="footer-description">
+                <p class="footer-description" data-translate="footer-description">
                   Restaurante peruano que te ofrece un ambiente acogedor para todos los paladares, 
                   con productos de primera calidad y un equipo humano apasionado.
                 </p>
                 <div class="footer-awards">
                   <div class="award-item">
                     <i class="fas fa-star"></i>
-                    <span>Calidad Premium</span>
+                    <span data-translate="footer-quality">Calidad Premium</span>
                   </div>
                   <div class="award-item">
                     <i class="fas fa-heart"></i>
-                    <span>Ambiente Familiar</span>
+                    <span data-translate="footer-family">Ambiente Familiar</span>
                   </div>
                 </div>
               </div>
@@ -202,14 +208,14 @@
             <div class="col-lg-2 col-md-6 mb-4">
               <div class="footer-links">
                 <h5 class="footer-title">
-                  <i class="fas fa-compass me-2"></i>Navegación
+                  <i class="fas fa-compass me-2"></i><span data-translate="footer-navigation">Navegación</span>
                 </h5>
                 <ul class="footer-nav">
-                  <li><a href="index.html#inicio"><i class="fas fa-home"></i>Inicio</a></li>
-                  <li><a href="nosotros.html"><i class="fas fa-users"></i>Nosotros</a></li>
-                  <li><a href="Lista-Servicios.html"><i class="fas fa-concierge-bell"></i>Servicios</a></li>
-                  <li><a href="carta.html"><i class="fas fa-utensils"></i>Carta</a></li>
-                  <li><a href="Locales.html"><i class="fas fa-map-marker-alt"></i>Locales</a></li>
+                  <li><a href="index.html#inicio" data-translate="nav-inicio"><i class="fas fa-home"></i>Inicio</a></li>
+                  <li><a href="nosotros.html" data-translate="nav-nosotros"><i class="fas fa-users"></i>Nosotros</a></li>
+                  <li><a href="Lista-Servicios.html" data-translate="nav-servicios"><i class="fas fa-concierge-bell"></i>Servicios</a></li>
+                  <li><a href="carta.html" data-translate="nav-platos"><i class="fas fa-utensils"></i>Carta</a></li>
+                  <li><a href="Locales.html" data-translate="nav-locales"><i class="fas fa-map-marker-alt"></i>Locales</a></li>
                 </ul>
               </div>
             </div>
@@ -218,12 +224,12 @@
             <div class="col-lg-2 col-md-6 mb-4">
               <div class="footer-links">
                 <h5 class="footer-title">
-                  <i class="fas fa-cogs me-2"></i>Servicios
+                  <i class="fas fa-cogs me-2"></i><span data-translate="footer-services">Servicios</span>
                 </h5>
                 <ul class="footer-nav">
-                  <li><a href="reservar.html"><i class="fas fa-calendar-check"></i>Reservas</a></li>
-                  <li><a href="contacto.html"><i class="fas fa-envelope"></i>Contacto</a></li>
-                  <li><a href="galeriaCompleta.html"><i class="fas fa-images"></i>Galería</a></li>
+                  <li><a href="reservar.html" data-translate="nav-reservas"><i class="fas fa-calendar-check"></i>Reservas</a></li>
+                  <li><a href="contacto.html" data-translate="nav-contacto"><i class="fas fa-envelope"></i>Contacto</a></li>
+                  <li><a href="galeriaCompleta.html" data-translate="nav-galeria"><i class="fas fa-images"></i>Galería</a></li>
                   <li><a href="sitemap.html"><i class="fas fa-sitemap"></i>Sitemap</a></li>
                 </ul>
               </div>
@@ -233,20 +239,20 @@
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="footer-contact">
                 <h5 class="footer-title">
-                  <i class="fas fa-phone me-2"></i>Contacto
+                  <i class="fas fa-phone me-2"></i><span data-translate="footer-contact">Contacto</span>
                 </h5>
                 <div class="contact-info">
                   <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
-                      <strong>Huanchaco</strong>
-                      <p>Av. Victor Larco 812, Huanchaco</p>
+                      <strong data-translate="location-huanchaco">Huanchaco</strong>
+                      <p data-translate="location-huanchaco-address">Av. Victor Larco 812, Huanchaco</p>
                     </div>
                   </div>
                   <div class="contact-item">
                     <i class="fas fa-phone-alt"></i>
                     <div>
-                      <strong>Teléfonos</strong>
+                      <strong data-translate="contact-phones">Teléfonos</strong>
                       <p>(044) 278997 - (044) 216410</p>
                     </div>
                   </div>
@@ -260,8 +266,8 @@
                   <div class="contact-item">
                     <i class="fas fa-clock"></i>
                     <div>
-                      <strong>Horarios</strong>
-                      <p>Lunes a Domingo: 9:00am - 5:00pm</p>
+                      <strong data-translate="contact-schedule">Horarios</strong>
+                      <p data-translate="contact-schedule-time">Lunes a Domingo: 9:00am - 5:00pm</p>
                     </div>
                   </div>
                 </div>
@@ -274,7 +280,7 @@
             <div class="row align-items-center">
               <div class="col-md-6 mb-3 mb-md-0">
                 <div class="social-section">
-                  <h6 class="social-title">Síguenos en nuestras redes</h6>
+                  <h6 class="social-title" data-translate="footer-follow">Síguenos en nuestras redes</h6>
                   <div class="social-icons-enhanced">
                     <a href="https://www.facebook.com/share/1LvsywagCF/" target="_blank" class="social-icon facebook">
                       <i class="fab fa-facebook-f"></i>
@@ -297,7 +303,7 @@
               </div>
               <div class="col-md-6">
                 <div class="payment-section">
-                  <h6 class="payment-title">Métodos de pago aceptados</h6>
+                  <h6 class="payment-title" data-translate="footer-payment">Métodos de pago aceptados</h6>
                   <div class="payment-methods">
                     <div class="payment-item">
                       <img src="images/visa.png" alt="Visa" class="payment-logo">
@@ -321,21 +327,21 @@
           <div class="row align-items-center">
               <div class="col-md-6 text-center text-md-start">
                 <p class="copyright">
-                  © 2025 <strong>SAPE</strong> - Todos los derechos reservados.
-                  <span class="made-with">Hecho con <i class="fas fa-heart text-danger"></i> en Perú</span>
+                  © 2025 <strong>SAPE</strong> - <span data-translate="footer-copyright">Todos los derechos reservados.</span>
+                  <span class="made-with" data-translate="footer-made">Hecho con <i class="fas fa-heart text-danger"></i> <span data-translate="footer-peru">en Perú</span></span>
                 </p>
               </div>
               <div class="col-md-6 text-center text-md-end">
                 <div class="footer-badges">
-                  <span class="badge-item">
+                  <span class="badge-item" data-translate="footer-secure">
                     <i class="fas fa-shield-alt"></i>
                     Sitio Seguro
                   </span>
-                  <span class="badge-item">
+                  <span class="badge-item" data-translate="footer-eco">
                     <i class="fas fa-leaf"></i>
                     Eco-Friendly
                   </span>
-                  <span class="badge-item">
+                  <span class="badge-item" data-translate="footer-premium">
                     <i class="fas fa-award"></i>
                     Calidad Premium
                   </span>
@@ -351,6 +357,8 @@
       </div>
     </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Language Switcher JS -->
+<script src="language-switcher.js"></script>
 <script src="index.js"></script>
 
 </body>

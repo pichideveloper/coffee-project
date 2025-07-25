@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reservar Mesa - Restaurante SAPE</title>
+  <title>Reserve Table - Restaurant SAPE</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
   <link rel="stylesheet" href="style.css" />
@@ -14,6 +14,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="reservas.css">
+  <!-- Language Switcher CSS -->
+  <link rel="stylesheet" href="language-switcher.css">
 </head>
 
 <body>
@@ -39,28 +41,28 @@
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html#inicio">Inicio</a>
+              <a class="nav-link" href="index.html#inicio" data-translate="nav-inicio">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="nosotros.html">Nosotros</a>
+              <a class="nav-link" href="nosotros.html" data-translate="nav-nosotros">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Lista-Servicios.html">Servicios</a>
+              <a class="nav-link" href="Lista-Servicios.html" data-translate="nav-servicios">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="carta.html">Platos</a>
+              <a class="nav-link" href="carta.html" data-translate="nav-platos">Dishes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="reservar.html">Reservas</a>
+              <a class="nav-link" href="reservar.html" data-translate="nav-reservas">Reservations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Locales.html">Locales</a>
+              <a class="nav-link" href="Locales.html" data-translate="nav-locales">Locations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="galeriaCompleta.html">Galería</a>
+              <a class="nav-link" href="galeriaCompleta.html" data-translate="nav-galeria">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contacto.html">Contacto</a>
+              <a class="nav-link" href="contacto.html" data-translate="nav-contacto">Contact</a>
             </li>
             <li class="nav-item">
               <button
@@ -70,6 +72,8 @@
                 🌙
               </button>
             </li>
+            
+        
           </ul>
         </div>
       </div>
@@ -82,9 +86,9 @@
         <div class="col-lg-8">
           <br>
           <br>
-          <h1 class="display-3 fw-bold mb-4">Reserva tu Mesa</h1>
-          <p class="lead mb-5">Disfruta de una experiencia gastronómica única en nuestros locales. Reserva tu mesa y
-            vive momentos inolvidables.</p>
+          <h1 class="display-3 fw-bold mb-4">Reserve Your Table</h1>
+          <p class="lead mb-5">Enjoy a unique gastronomic experience in our locations. Reserve your table and
+            live unforgettable moments.</p>
         </div>
       </div>
     </div>
@@ -99,22 +103,22 @@
             <div class="card-header text-center">
               <h2 class="mb-0">
                 <i class="bi bi-calendar-check me-2"></i>
-                Formulario de Reserva
+                Reservation Form
               </h2>
-              <p class="text-muted mt-2">Completa los datos para confirmar tu reserva</p>
+              <p class="text-muted mt-2">Complete the information to confirm your reservation</p>
             </div>
             <div class="card-body">
               <form id="reservaForm">
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="nombre" class="form-label">
-                      <i class="bi bi-person me-1"></i>Nombre Completo
+                      <i class="bi bi-person me-1"></i>Full Name
                     </label>
                     <input type="text" class="form-control" id="nombre" required>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="telefono" class="form-label">
-                      <i class="bi bi-telephone me-1"></i>Teléfono
+                      <i class="bi bi-telephone me-1"></i>Phone
                     </label>
                     <input type="tel" class="form-control" id="telefono" required>
                   </div>
@@ -128,35 +132,35 @@
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="personas" class="form-label">
-                      <i class="bi bi-people me-1"></i>Número de Personas
+                      <i class="bi bi-people me-1"></i>Number of People
                     </label>
                     <select class="form-select" id="personas" required>
-                      <option value="">Selecciona...</option>
-                      <option value="1">1 persona</option>
-                      <option value="2">2 personas</option>
-                      <option value="3">3 personas</option>
-                      <option value="4">4 personas</option>
-                      <option value="5">5 personas</option>
-                      <option value="6">6 personas</option>
-                      <option value="7">7 personas</option>
-                      <option value="8">8 personas</option>
-                      <option value="9+">Más de 8 personas</option>
+                      <option value="">Select...</option>
+                      <option value="1">1 person</option>
+                      <option value="2">2 people</option>
+                      <option value="3">3 people</option>
+                      <option value="4">4 people</option>
+                      <option value="5">5 people</option>
+                      <option value="6">6 people</option>
+                      <option value="7">7 people</option>
+                      <option value="8">8 people</option>
+                      <option value="9+">More than 8 people</option>
                     </select>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="fecha" class="form-label">
-                      <i class="bi bi-calendar me-1"></i>Fecha
+                      <i class="bi bi-calendar me-1"></i>Date
                     </label>
                     <input type="date" class="form-control" id="fecha" required>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="hora" class="form-label">
-                      <i class="bi bi-clock me-1"></i>Hora
+                      <i class="bi bi-clock me-1"></i>Time
                     </label>
                     <select class="form-select" id="hora" required>
-                      <option value="">Selecciona...</option>
+                      <option value="">Select...</option>
                       <option value="12:00">12:00 PM</option>
                       <option value="12:30">12:30 PM</option>
                       <option value="13:00">1:00 PM</option>
@@ -176,10 +180,10 @@
                 </div>
                 <div class="mb-3">
                   <label for="local" class="form-label">
-                    <i class="bi bi-geo-alt me-1"></i>Local Preferido
+                    <i class="bi bi-geo-alt me-1"></i>Preferred Location
                   </label>
                   <select class="form-select" id="local" required>
-                    <option value="">Selecciona un local...</option>
+                    <option value="">Select a location...</option>
                     <option value="santa-ines">Santa Inés</option>
                     <option value="san-andres">San Andrés</option>
                     <option value="huanchaco">Huanchaco</option>
@@ -188,15 +192,15 @@
                 </div>
                 <div class="mb-4">
                   <label for="comentarios" class="form-label">
-                    <i class="bi bi-chat-text me-1"></i>Comentarios Especiales
+                    <i class="bi bi-chat-text me-1"></i>Special Comments
                   </label>
                   <textarea class="form-control" id="comentarios" rows="3"
-                    placeholder="Ocasión especial, alergias, preferencias de mesa, etc."></textarea>
+                    placeholder="Special occasion, allergies, table preferences, etc."></textarea>
                 </div>
                 <div class="text-center">
                   <button type="submit" class="btn btn-reserva btn-lg">
                     <i class="bi bi-check-circle me-2"></i>
-                    Confirmar Reserva
+                    Confirm Reservation
                   </button>
                 </div>
               </form>
@@ -216,10 +220,10 @@
             <div class="info-icon">
               <i class="bi bi-clock-history"></i>
             </div>
-            <h4>Horarios de Atención</h4>
-            <p class="mb-2"><strong>Almuerzo:</strong> 12:00 PM - 3:00 PM</p>
-            <p><strong>Cena:</strong> 7:00 PM - 10:00 PM</p>
-            <small class="text-muted">Lunes a Domingo</small>
+            <h4>Business Hours</h4>
+            <p class="mb-2"><strong>Lunch:</strong> 12:00 PM - 3:00 PM</p>
+            <p><strong>Dinner:</strong> 7:00 PM - 10:00 PM</p>
+            <small class="text-muted">Monday to Sunday</small>
           </div>
         </div>
         <div class="col-lg-4 mb-4">
@@ -227,10 +231,10 @@
             <div class="info-icon">
               <i class="bi bi-shield-check"></i>
             </div>
-            <h4>Política de Reservas</h4>
-            <p class="mb-2">Confirmación inmediata</p>
-            <p class="mb-2">Cancelación gratuita hasta 2 horas antes</p>
-            <small class="text-muted">Sujeto a disponibilidad</small>
+            <h4>Reservation Policy</h4>
+            <p class="mb-2">Immediate confirmation</p>
+            <p class="mb-2">Free cancellation up to 2 hours before</p>
+            <small class="text-muted">Subject to availability</small>
           </div>
         </div>
         <div class="col-lg-4 mb-4">
@@ -238,10 +242,10 @@
             <div class="info-icon">
               <i class="bi bi-telephone"></i>
             </div>
-            <h4>¿Necesitas Ayuda?</h4>
-            <p class="mb-2">Llámanos al:</p>
+            <h4>Need Help?</h4>
+            <p class="mb-2">Call us at:</p>
             <p class="fw-bold">(044) 123-4567</p>
-            <small class="text-muted">Atención personalizada</small>
+            <small class="text-muted">Personalized attention</small>
           </div>
         </div>
       </div>
@@ -262,21 +266,21 @@
                   <img src="images/logo2.png" alt="Logo SAPE" class="footer-logo">
                   <div class="brand-info">
                     <h3 class="brand-name">SAPE</h3>
-                    <p class="brand-tagline">Sabores Marinos y Criollos</p>
+                    <p class="brand-tagline">Seafood and Creole Flavors</p>
                   </div>
                 </div>
                 <p class="footer-description">
-                  Restaurante peruano que te ofrece un ambiente acogedor para todos los paladares, 
-                  con productos de primera calidad y un equipo humano apasionado.
+                  Peruvian restaurant that offers you a cozy atmosphere for all palates, 
+                  with first-quality products and a passionate human team.
                 </p>
                 <div class="footer-awards">
                   <div class="award-item">
                     <i class="fas fa-star"></i>
-                    <span>Calidad Premium</span>
+                    <span>Premium Quality</span>
                   </div>
                   <div class="award-item">
                     <i class="fas fa-heart"></i>
-                    <span>Ambiente Familiar</span>
+                    <span>Family Atmosphere</span>
                   </div>
                 </div>
               </div>
@@ -286,14 +290,14 @@
             <div class="col-lg-2 col-md-6 mb-4">
               <div class="footer-links">
                 <h5 class="footer-title">
-                  <i class="fas fa-compass me-2"></i>Navegación
+                  <i class="fas fa-compass me-2"></i>Navigation
                 </h5>
                 <ul class="footer-nav">
-                  <li><a href="index.html#inicio"><i class="fas fa-home"></i>Inicio</a></li>
-                  <li><a href="nosotros.html"><i class="fas fa-users"></i>Nosotros</a></li>
-                  <li><a href="Lista-Servicios.html"><i class="fas fa-concierge-bell"></i>Servicios</a></li>
-                  <li><a href="carta.html"><i class="fas fa-utensils"></i>Carta</a></li>
-                  <li><a href="Locales.html"><i class="fas fa-map-marker-alt"></i>Locales</a></li>
+                  <li><a href="index.html#inicio"><i class="fas fa-home"></i>Home</a></li>
+                  <li><a href="nosotros.html"><i class="fas fa-users"></i>About Us</a></li>
+                  <li><a href="Lista-Servicios.html"><i class="fas fa-concierge-bell"></i>Services</a></li>
+                  <li><a href="carta.html"><i class="fas fa-utensils"></i>Menu</a></li>
+                  <li><a href="Locales.html"><i class="fas fa-map-marker-alt"></i>Locations</a></li>
                 </ul>
               </div>
             </div>
@@ -302,12 +306,12 @@
             <div class="col-lg-2 col-md-6 mb-4">
               <div class="footer-links">
                 <h5 class="footer-title">
-                  <i class="fas fa-cogs me-2"></i>Servicios
+                  <i class="fas fa-cogs me-2"></i>Services
                 </h5>
                 <ul class="footer-nav">
-                  <li><a href="reservar.html"><i class="fas fa-calendar-check"></i>Reservas</a></li>
-                  <li><a href="contacto.html"><i class="fas fa-envelope"></i>Contacto</a></li>
-                  <li><a href="galeriaCompleta.html"><i class="fas fa-images"></i>Galería</a></li>
+                  <li><a href="reservar.html"><i class="fas fa-calendar-check"></i>Reservations</a></li>
+                  <li><a href="contacto.html"><i class="fas fa-envelope"></i>Contact</a></li>
+                  <li><a href="galeriaCompleta.html"><i class="fas fa-images"></i>Gallery</a></li>
                   <li><a href="sitemap.html"><i class="fas fa-sitemap"></i>Sitemap</a></li>
                 </ul>
               </div>
@@ -317,20 +321,20 @@
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="footer-contact">
                 <h5 class="footer-title">
-                  <i class="fas fa-phone me-2"></i>Contacto
+                  <i class="fas fa-phone me-2"></i>Contact
                 </h5>
                 <div class="contact-info">
                   <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
                       <strong>Huanchaco</strong>
-                      <p>Av. Victor Larco 812, Huanchaco</p>
+                      <p>Victor Larco Ave 812, Huanchaco</p>
                     </div>
                   </div>
                   <div class="contact-item">
                     <i class="fas fa-phone-alt"></i>
                     <div>
-                      <strong>Teléfonos</strong>
+                      <strong>Phones</strong>
                       <p>(044) 278997 - (044) 216410</p>
                     </div>
                   </div>
@@ -344,8 +348,8 @@
                   <div class="contact-item">
                     <i class="fas fa-clock"></i>
                     <div>
-                      <strong>Horarios</strong>
-                      <p>Lunes a Domingo: 9:00am - 5:00pm</p>
+                      <strong>Hours</strong>
+                      <p>Monday to Sunday: 9:00am - 5:00pm</p>
                     </div>
                   </div>
                 </div>
@@ -358,7 +362,7 @@
             <div class="row align-items-center">
               <div class="col-md-6 mb-3 mb-md-0">
                 <div class="social-section">
-                  <h6 class="social-title">Síguenos en nuestras redes</h6>
+                  <h6 class="social-title">Follow us on our networks</h6>
                   <div class="social-icons-enhanced">
                     <a href="https://www.facebook.com/share/1LvsywagCF/" target="_blank" class="social-icon facebook">
                       <i class="fab fa-facebook-f"></i>
@@ -381,7 +385,7 @@
               </div>
               <div class="col-md-6">
                 <div class="payment-section">
-                  <h6 class="payment-title">Métodos de pago aceptados</h6>
+                  <h6 class="payment-title">Accepted payment methods</h6>
                   <div class="payment-methods">
                     <div class="payment-item">
                       <img src="images/visa.png" alt="Visa" class="payment-logo">
@@ -484,7 +488,10 @@
     // Set minimum date to today
     document.getElementById('fecha').min = new Date().toISOString().split('T')[0];
   </script>
+  <!-- Language Switcher JS -->
+  <script src="language-switcher.js"></script>
   <script src="index.js"></script>
 </body>
 
 </html>
+

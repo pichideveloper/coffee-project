@@ -10,7 +10,7 @@
    =========================== */
 :root {
   /* MODO CLARO - Colores cálidos y profesionales */
-  --servicios-bg-hero: linear-gradient(135deg, #FFF8DC 0%, #FFE4B5 50%, #FFEFD5 100%);
+  --servicios-bg-hero: #FF8C00;
   --servicios-bg-main: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
   --servicios-card-bg: rgba(255, 255, 255, 0.95);
   --servicios-card-border: rgba(255, 140, 0, 0.2);
@@ -128,6 +128,15 @@ body::before {
 /* ===========================
    SECCIÓN PRINCIPAL DE SERVICIOS
    =========================== */
+   .fondo{
+    background:  linear-gradient(
+    135deg,
+    #ff8c00 0%,
+    #ffa500 40%,
+    #ffd700 75%,
+    #ffb000 100%
+  );
+   }
 #nuestros-servicios {
   background: var(--servicios-bg-main);
   padding: 4rem 0;
